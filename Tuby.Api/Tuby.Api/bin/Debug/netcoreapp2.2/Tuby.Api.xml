@@ -1,0 +1,404 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Tuby.Api</name>
+    </assembly>
+    <members>
+        <member name="T:Tuby.Api.Controllers.ar_usergroup_data_accessController">
+            <summary>
+            ar_usergroup_data_accessControllers
+            </summary>	
+        </member>
+        <member name="T:Tuby.Api.Controllers.ar_usergroup_ui_accessController">
+            <summary>
+            ar_usergroup_ui_accessControllers
+            </summary>	
+        </member>
+        <member name="T:Tuby.Api.Controllers.ar_usergroup_userController">
+            <summary>
+            ar_usergroup_userControllers
+            </summary>	
+        </member>
+        <member name="T:Tuby.Api.Controllers.ar_user_data_accessController">
+            <summary>
+            ar_user_data_accessControllers
+            </summary>	
+        </member>
+        <member name="T:Tuby.Api.Controllers.ar_user_ui_accessController">
+            <summary>
+            ar_user_ui_accessControllers
+            </summary>	
+        </member>
+        <member name="T:Tuby.Api.Controllers.a_data_accessController">
+            <summary>
+            a_data_access
+            </summary>
+        </member>
+        <member name="M:Tuby.Api.Controllers.a_data_accessController.Get">
+            <summary>
+            获取所有数据
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Tuby.Api.Controllers.a_ui_accessController">
+            <summary>
+            a_ui_accessControllers
+            </summary>	
+        </member>
+        <member name="T:Tuby.Api.Controllers.a_ui_access_typeController">
+            <summary>
+            a_ui_access_typeControllers
+            </summary>	
+        </member>
+        <member name="T:Tuby.Api.Controllers.a_userController">
+            <summary>
+            a_userControllers
+            </summary>	
+        </member>
+        <member name="T:Tuby.Api.Controllers.a_usergroupController">
+            <summary>
+            a_usergroupControllers
+            </summary>	
+        </member>
+        <member name="T:Tuby.Api.Controllers.b_administrative_divisionController">
+            <summary>
+            b_administrative_divisionControllers
+            </summary>	
+        </member>
+        <member name="T:Tuby.Api.Controllers.b_alarm_device_typeController">
+            <summary>
+            b_alarm_device_typeControllers
+            </summary>	
+        </member>
+        <member name="T:Tuby.Api.Controllers.b_alarm_levelController">
+            <summary>
+            b_alarm_levelControllers
+            </summary>	
+        </member>
+        <member name="T:Tuby.Api.Controllers.b_alarm_typeController">
+            <summary>
+            b_alarm_typeControllers
+            </summary>	
+        </member>
+        <member name="T:Tuby.Api.Controllers.b_camera_groupController">
+            <summary>
+            b_camera_groupControllers
+            </summary>	
+        </member>
+        <member name="T:Tuby.Api.Controllers.b_camera_typeController">
+            <summary>
+            b_camera_typeControllers
+            </summary>	
+        </member>
+        <member name="T:Tuby.Api.Controllers.b_car_statusController">
+            <summary>
+            b_car_statusControllers
+            </summary>	
+        </member>
+        <member name="T:Tuby.Api.Controllers.b_car_typeController">
+            <summary>
+            b_car_typeControllers
+            </summary>	
+        </member>
+        <member name="T:Tuby.Api.Controllers.b_department_typeController">
+            <summary>
+            b_department_typeControllers
+            </summary>	
+        </member>
+        <member name="T:Tuby.Api.Controllers.b_device_groupController">
+            <summary>
+            b_device_groupControllers
+            </summary>	
+        </member>
+        <member name="T:Tuby.Api.Controllers.b_device_statusController">
+            <summary>
+            b_device_statusControllers
+            </summary>	
+        </member>
+        <member name="T:Tuby.Api.Controllers.b_device_typeController">
+            <summary>
+            b_device_typeControllers
+            </summary>	
+        </member>
+        <member name="T:Tuby.Api.Controllers.b_device_usageController">
+            <summary>
+            b_device_usageControllers
+            </summary>	
+        </member>
+        <member name="T:Tuby.Api.Controllers.b_education_levelController">
+            <summary>
+            b_education_levelControllers
+            </summary>	
+        </member>
+        <member name="T:Tuby.Api.Controllers.b_equipment_statusController">
+            <summary>
+            b_equipment_statusControllers
+            </summary>	
+        </member>
+        <member name="T:Tuby.Api.Controllers.b_equipment_typeController">
+            <summary>
+            b_equipment_typeControllers
+            </summary>	
+        </member>
+        <member name="T:Tuby.Api.Controllers.b_gun_typeController">
+            <summary>
+            b_gun_typeControllers
+            </summary>	
+        </member>
+        <member name="T:Tuby.Api.Controllers.b_healthController">
+            <summary>
+            b_healthControllers
+            </summary>	
+        </member>
+        <member name="T:Tuby.Api.Controllers.b_leave_reasonController">
+            <summary>
+            b_leave_reasonControllers
+            </summary>	
+        </member>
+        <member name="T:Tuby.Api.Controllers.b_marial_statusController">
+            <summary>
+            b_marial_statusControllers
+            </summary>	
+        </member>
+        <member name="T:Tuby.Api.Controllers.b_nationController">
+            <summary>
+            b_nationControllers
+            </summary>	
+        </member>
+        <member name="T:Tuby.Api.Controllers.b_pap_postController">
+            <summary>
+            b_pap_postControllers
+            </summary>	
+        </member>
+        <member name="T:Tuby.Api.Controllers.b_pap_rankController">
+            <summary>
+            b_pap_rankControllers
+            </summary>	
+        </member>
+        <member name="T:Tuby.Api.Controllers.b_phone_table_typeController">
+            <summary>
+            b_phone_table_typeControllers
+            </summary>	
+        </member>
+        <member name="T:Tuby.Api.Controllers.b_politic_roleController">
+            <summary>
+            b_politic_roleControllers
+            </summary>	
+        </member>
+        <member name="T:Tuby.Api.Controllers.b_shaowei_typeController">
+            <summary>
+            b_shaowei_typeControllers
+            </summary>	
+        </member>
+        <member name="T:Tuby.Api.Controllers.b_soldier_stateController">
+            <summary>
+            b_soldier_stateControllers
+            </summary>	
+        </member>
+        <member name="T:Tuby.Api.Controllers.b_target_car_security_levelController">
+            <summary>
+            b_target_car_security_levelControllers
+            </summary>	
+        </member>
+        <member name="T:Tuby.Api.Controllers.b_target_car_typeController">
+            <summary>
+            b_target_car_typeControllers
+            </summary>	
+        </member>
+        <member name="T:Tuby.Api.Controllers.b_target_people_security_levelController">
+            <summary>
+            b_target_people_security_levelControllers
+            </summary>	
+        </member>
+        <member name="T:Tuby.Api.Controllers.b_target_people_typeController">
+            <summary>
+            b_target_people_typeControllers
+            </summary>	
+        </member>
+        <member name="T:Tuby.Api.Controllers.b_zhd_architectureController">
+            <summary>
+            b_zhd_architectureControllers
+            </summary>	
+        </member>
+        <member name="T:Tuby.Api.Controllers.dr_arsenal_equipmentController">
+            <summary>
+            dr_arsenal_equipmentControllers
+            </summary>	
+        </member>
+        <member name="T:Tuby.Api.Controllers.dr_cameragroup_cameraController">
+            <summary>
+            dr_cameragroup_cameraControllers
+            </summary>	
+        </member>
+        <member name="T:Tuby.Api.Controllers.dr_department_soldierController">
+            <summary>
+            dr_department_soldierControllers
+            </summary>	
+        </member>
+        <member name="T:Tuby.Api.Controllers.d_alarm_deviceController">
+            <summary>
+            d_alarm_deviceControllers
+            </summary>	
+        </member>
+        <member name="T:Tuby.Api.Controllers.d_alarm_infoController">
+            <summary>
+            d_alarm_infoControllers
+            </summary>	
+        </member>
+        <member name="T:Tuby.Api.Controllers.d_cameraController">
+            <summary>
+            d_cameraControllers
+            </summary>	
+        </member>
+        <member name="T:Tuby.Api.Controllers.d_camera_groupController">
+            <summary>
+            d_camera_groupControllers
+            </summary>	
+        </member>
+        <member name="T:Tuby.Api.Controllers.d_pap_arsenalController">
+            <summary>
+            d_pap_arsenalControllers
+            </summary>	
+        </member>
+        <member name="T:Tuby.Api.Controllers.d_pap_camera_record_carController">
+            <summary>
+            d_pap_camera_record_carControllers
+            </summary>	
+        </member>
+        <member name="T:Tuby.Api.Controllers.d_pap_camera_record_peopleController">
+            <summary>
+            d_pap_camera_record_peopleControllers
+            </summary>	
+        </member>
+        <member name="T:Tuby.Api.Controllers.d_pap_carController">
+            <summary>
+            d_pap_carControllers
+            </summary>	
+        </member>
+        <member name="T:Tuby.Api.Controllers.d_pap_car_leaveController">
+            <summary>
+            d_pap_car_leaveControllers
+            </summary>	
+        </member>
+        <member name="T:Tuby.Api.Controllers.d_pap_car_maintainController">
+            <summary>
+            d_pap_car_maintainControllers
+            </summary>	
+        </member>
+        <member name="T:Tuby.Api.Controllers.d_pap_equipmentController">
+            <summary>
+            d_pap_equipmentControllers
+            </summary>	
+        </member>
+        <member name="T:Tuby.Api.Controllers.d_pap_gunController">
+            <summary>
+            d_pap_gunControllers
+            </summary>	
+        </member>
+        <member name="T:Tuby.Api.Controllers.d_pap_matterController">
+            <summary>
+            d_pap_matterControllers
+            </summary>	
+        </member>
+        <member name="T:Tuby.Api.Controllers.d_phone_tableController">
+            <summary>
+            d_phone_tableControllers
+            </summary>	
+        </member>
+        <member name="T:Tuby.Api.Controllers.d_shaoweiController">
+            <summary>
+            d_shaoweiControllers
+            </summary>	
+        </member>
+        <member name="T:Tuby.Api.Controllers.d_shaowei_arrangeController">
+            <summary>
+            d_shaowei_arrangeControllers
+            </summary>	
+        </member>
+        <member name="T:Tuby.Api.Controllers.d_shaowei_checkController">
+            <summary>
+            d_shaowei_checkControllers
+            </summary>	
+        </member>
+        <member name="T:Tuby.Api.Controllers.d_shaowei_preplanController">
+            <summary>
+            d_shaowei_preplanControllers
+            </summary>	
+        </member>
+        <member name="T:Tuby.Api.Controllers.d_shaowei_turnController">
+            <summary>
+            d_shaowei_turnControllers
+            </summary>	
+        </member>
+        <member name="T:Tuby.Api.Controllers.d_soldierController">
+            <summary>
+            d_soldierControllers
+            </summary>	
+        </member>
+        <member name="T:Tuby.Api.Controllers.d_soldier_leaveController">
+            <summary>
+            d_soldier_leaveControllers
+            </summary>	
+        </member>
+        <member name="T:Tuby.Api.Controllers.d_soldier_trainController">
+            <summary>
+            d_soldier_trainControllers
+            </summary>	
+        </member>
+        <member name="T:Tuby.Api.Controllers.d_soldier_treatmentController">
+            <summary>
+            d_soldier_treatmentControllers
+            </summary>	
+        </member>
+        <member name="T:Tuby.Api.Controllers.d_target_camera_record_carController">
+            <summary>
+            d_target_camera_record_carControllers
+            </summary>	
+        </member>
+        <member name="T:Tuby.Api.Controllers.d_target_camera_record_peopleController">
+            <summary>
+            d_target_camera_record_peopleControllers
+            </summary>	
+        </member>
+        <member name="T:Tuby.Api.Controllers.d_target_carController">
+            <summary>
+            d_target_carControllers
+            </summary>	
+        </member>
+        <member name="T:Tuby.Api.Controllers.d_target_car_blacklistController">
+            <summary>
+            d_target_car_blacklistControllers
+            </summary>	
+        </member>
+        <member name="T:Tuby.Api.Controllers.d_target_car_controlController">
+            <summary>
+            d_target_car_controlControllers
+            </summary>	
+        </member>
+        <member name="T:Tuby.Api.Controllers.d_target_car_whitelistController">
+            <summary>
+            d_target_car_whitelistControllers
+            </summary>	
+        </member>
+        <member name="T:Tuby.Api.Controllers.d_target_peopleController">
+            <summary>
+            d_target_peopleControllers
+            </summary>	
+        </member>
+        <member name="T:Tuby.Api.Controllers.d_target_people_blacklistController">
+            <summary>
+            d_target_people_blacklistControllers
+            </summary>	
+        </member>
+        <member name="T:Tuby.Api.Controllers.d_target_people_controlController">
+            <summary>
+            d_target_people_controlControllers
+            </summary>	
+        </member>
+        <member name="T:Tuby.Api.Controllers.d_target_people_whitelistController">
+            <summary>
+            d_target_people_whitelistControllers
+            </summary>	
+        </member>
+    </members>
+</doc>

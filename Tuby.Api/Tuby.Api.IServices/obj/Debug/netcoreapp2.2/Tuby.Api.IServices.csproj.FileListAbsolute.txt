@@ -1,0 +1,13 @@
+H:\MyProjects\Tuby.Api\Tuby.Api.IServices\bin\Debug\netcoreapp2.2\Tuby.Api.IServices.deps.json
+H:\MyProjects\Tuby.Api\Tuby.Api.IServices\bin\Debug\netcoreapp2.2\Tuby.Api.IServices.dll
+H:\MyProjects\Tuby.Api\Tuby.Api.IServices\bin\Debug\netcoreapp2.2\Tuby.Api.IServices.pdb
+H:\MyProjects\Tuby.Api\Tuby.Api.IServices\obj\Debug\netcoreapp2.2\Tuby.Api.IServices.csprojAssemblyReference.cache
+H:\MyProjects\Tuby.Api\Tuby.Api.IServices\obj\Debug\netcoreapp2.2\Tuby.Api.IServices.csproj.CoreCompileInputs.cache
+H:\MyProjects\Tuby.Api\Tuby.Api.IServices\obj\Debug\netcoreapp2.2\Tuby.Api.IServices.AssemblyInfoInputs.cache
+H:\MyProjects\Tuby.Api\Tuby.Api.IServices\obj\Debug\netcoreapp2.2\Tuby.Api.IServices.AssemblyInfo.cs
+H:\MyProjects\Tuby.Api\Tuby.Api.IServices\obj\Debug\netcoreapp2.2\Tuby.Api.IServices.dll
+H:\MyProjects\Tuby.Api\Tuby.Api.IServices\obj\Debug\netcoreapp2.2\Tuby.Api.IServices.pdb
+H:\MyProjects\Tuby.Api\Tuby.Api.IServices\bin\Debug\netcoreapp2.2\Tuby.Api.Model.dll
+H:\MyProjects\Tuby.Api\Tuby.Api.IServices\bin\Debug\netcoreapp2.2\Tuby.Api.Model.pdb
+H:\MyProjects\Tuby.Api\Tuby.Api.IServices\bin\Debug\netcoreapp2.2\Tuby.Api.Model.xml
+H:\MyProjects\Tuby.Api\Tuby.Api.IServices\obj\Debug\netcoreapp2.2\Tuby.Api.IServices.csproj.CopyComplete
