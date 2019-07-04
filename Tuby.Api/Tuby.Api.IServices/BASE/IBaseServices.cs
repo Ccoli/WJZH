@@ -42,5 +42,17 @@ namespace Tuby.Api.IServices.BASE
 
 
         Task<List<TEntity>> QueryPage(Expression<Func<TEntity, bool>> whereExpression, int intPageIndex = 0, int intPageSize = 20, string strOrderByFileds = null);
+        List<TResult> QueryMuch<T, T2, TResult>(
+         Expression<Func<T, T2, object[]>> joinExpression) where T : class, new();
+        List<TResult> QueryMuch<T, T2, T3,  TResult>(
+          Expression<Func<T, T2, T3, object[]>> joinExpression) where T : class, new();
+        List<TResult> QueryMuch<T, T2, T3, T4, TResult>(
+         Expression<Func<T, T2, T3, T4, object[]>> joinExpression) where T : class, new();
+
+
+        List<TResult> QueryMuch<T, T2, T3, T4, T5, TResult>(
+          Expression<Func<T, T2, T3, T4, T5, object[]>> joinExpression,
+          Expression<Func<T, T2, T3, T4, T5, TResult>> selectExpression,
+          Expression<Func<T, T2, T3, T4, T5, bool>> whereLambda = null) where T : class, new();
     }
 }

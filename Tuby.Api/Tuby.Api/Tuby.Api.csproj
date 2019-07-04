@@ -15,6 +15,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="4.4.0" />
+    <PackageReference Include="Autofac.Extras.DynamicProxy" Version="4.5.0" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.2.3" />
@@ -22,9 +24,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Tuby.Api.IRepositoty\Tuby.Api.IRepositoty.csproj" />
     <ProjectReference Include="..\Tuby.Api.IServices\Tuby.Api.IServices.csproj" />
     <ProjectReference Include="..\Tuby.Api.Model\Tuby.Api.Model.csproj" />
-    <ProjectReference Include="..\Tuby.Api.Services\Tuby.Api.Services.csproj" />
+    <ProjectReference Include="..\Tuby.Api.Repository\Tuby.Api.Repository.csproj" />
   </ItemGroup>
 
 </Project>

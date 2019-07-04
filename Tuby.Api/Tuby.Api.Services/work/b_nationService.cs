@@ -12,8 +12,13 @@ namespace Tuby.Api.Services
 	public class b_nationServices : BaseServices<b_nation>, Ib_nationServices
     {
 	
-        
+        Ib_nationRepository dal;
+        public b_nationServices(Ib_nationRepository dal)
+        {
+            this.dal = dal;
+        }
        
     }
 }
+	
 	

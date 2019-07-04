@@ -12,8 +12,13 @@ namespace Tuby.Api.Services
 	public class d_cameraServices : BaseServices<d_camera>, Id_cameraServices
     {
 	
-        
+        Id_cameraRepository dal;
+        public d_cameraServices(Id_cameraRepository dal)
+        {
+            this.dal = dal;
+        }
        
     }
 }
+	
 	

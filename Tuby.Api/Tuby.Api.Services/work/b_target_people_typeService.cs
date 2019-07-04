@@ -12,8 +12,13 @@ namespace Tuby.Api.Services
 	public class b_target_people_typeServices : BaseServices<b_target_people_type>, Ib_target_people_typeServices
     {
 	
-        
+        Ib_target_people_typeRepository dal;
+        public b_target_people_typeServices(Ib_target_people_typeRepository dal)
+        {
+            this.dal = dal;
+        }
        
     }
 }
+	
 	

@@ -12,8 +12,13 @@ namespace Tuby.Api.Services
 	public class d_target_carServices : BaseServices<d_target_car>, Id_target_carServices
     {
 	
-        
+        Id_target_carRepository dal;
+        public d_target_carServices(Id_target_carRepository dal)
+        {
+            this.dal = dal;
+        }
        
     }
 }
+	
 	

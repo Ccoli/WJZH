@@ -12,8 +12,13 @@ namespace Tuby.Api.Services
 	public class b_equipment_statusServices : BaseServices<b_equipment_status>, Ib_equipment_statusServices
     {
 	
-        
+        Ib_equipment_statusRepository dal;
+        public b_equipment_statusServices(Ib_equipment_statusRepository dal)
+        {
+            this.dal = dal;
+        }
        
     }
 }
+	
 	

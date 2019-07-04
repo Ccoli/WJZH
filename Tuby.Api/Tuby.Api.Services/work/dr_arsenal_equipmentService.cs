@@ -12,8 +12,13 @@ namespace Tuby.Api.Services
 	public class dr_arsenal_equipmentServices : BaseServices<dr_arsenal_equipment>, Idr_arsenal_equipmentServices
     {
 	
-        
+        Idr_arsenal_equipmentRepository dal;
+        public dr_arsenal_equipmentServices(Idr_arsenal_equipmentRepository dal)
+        {
+            this.dal = dal;
+        }
        
     }
 }
+	
 	

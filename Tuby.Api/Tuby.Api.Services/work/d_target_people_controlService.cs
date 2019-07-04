@@ -12,8 +12,13 @@ namespace Tuby.Api.Services
 	public class d_target_people_controlServices : BaseServices<d_target_people_control>, Id_target_people_controlServices
     {
 	
-        
+        Id_target_people_controlRepository dal;
+        public d_target_people_controlServices(Id_target_people_controlRepository dal)
+        {
+            this.dal = dal;
+        }
        
     }
 }
+	
 	

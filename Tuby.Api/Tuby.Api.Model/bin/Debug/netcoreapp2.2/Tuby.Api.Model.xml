@@ -79,6 +79,46 @@
             返回数据集
             </summary>
         </member>
+        <member name="P:Tuby.Api.Model.viewmodels.AlarmInfoView.Name">
+            <summary>
+            报警名称
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.AlarmInfoView.Description">
+            <summary>
+            报警描述
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.AlarmInfoView.AlarmLevelID">
+            <summary>
+            报警等级ID
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.AlarmInfoView.DeviceName">
+            <summary>
+            设备名称
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.AlarmInfoView.AlarmDeviceTypeID">
+            <summary>
+            报警设备报警登记
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.AlarmInfoView.LevelName">
+            <summary>
+            报警等级名称
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.AlarmInfoView.LevelDescription">
+            <summary>
+            报警等级描述
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.AlarmInfoView.Entrytime">
+            <summary>
+            输入时间
+            </summary>
+        </member>
         <member name="T:Tuby.Api.Model.ar_usergroup_data_access">
             <summary>
             ar_usergroup_data_access Entity Model
@@ -409,12 +449,17 @@
             
             </summary>
         </member>
-        <member name="P:Tuby.Api.Model.b_alarm_level.Name">
+        <member name="P:Tuby.Api.Model.b_alarm_level.LevelName">
             <summary>
             
             </summary>
         </member>
-        <member name="P:Tuby.Api.Model.b_alarm_level.Description">
+        <member name="P:Tuby.Api.Model.b_alarm_level.LevelDescription">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.b_alarm_level.Entrytime">
             <summary>
             
             </summary>
@@ -444,26 +489,6 @@
             
             </summary>
         </member>
-        <member name="T:Tuby.Api.Model.b_camera_group">
-            <summary>
-            b_camera_group Entity Model
-            </summary>   
-        </member>
-        <member name="P:Tuby.Api.Model.b_camera_group.ID">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="P:Tuby.Api.Model.b_camera_group.Name">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="P:Tuby.Api.Model.b_camera_group.Description">
-            <summary>
-            
-            </summary>
-        </member>
         <member name="T:Tuby.Api.Model.b_camera_type">
             <summary>
             b_camera_type Entity Model
@@ -480,6 +505,26 @@
             </summary>
         </member>
         <member name="P:Tuby.Api.Model.b_camera_type.Description">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Tuby.Api.Model.b_camera_usage_group">
+            <summary>
+            b_camera_usage_group Entity Model
+            </summary>   
+        </member>
+        <member name="P:Tuby.Api.Model.b_camera_usage_group.ID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.b_camera_usage_group.Name">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.b_camera_usage_group.Description">
             <summary>
             
             </summary>
@@ -1004,7 +1049,7 @@
             
             </summary>
         </member>
-        <member name="P:Tuby.Api.Model.d_alarm_device.Name">
+        <member name="P:Tuby.Api.Model.d_alarm_device.DeviceName">
             <summary>
             
             </summary>
@@ -1091,37 +1136,37 @@
         </member>
         <member name="P:Tuby.Api.Model.d_camera.Longitude">
             <summary>
-            
+            经度
             </summary>
         </member>
         <member name="P:Tuby.Api.Model.d_camera.Latitude">
             <summary>
-            
+            纬度
             </summary>
         </member>
         <member name="P:Tuby.Api.Model.d_camera.Altitude">
             <summary>
-            
+            高度
             </summary>
         </member>
         <member name="P:Tuby.Api.Model.d_camera.CameraTypeID">
             <summary>
-            
+            摄像机类型
             </summary>
         </member>
         <member name="P:Tuby.Api.Model.d_camera.IPAddress">
             <summary>
-            
+            ip地址
             </summary>
         </member>
         <member name="P:Tuby.Api.Model.d_camera.Port">
             <summary>
-            
+            端口
             </summary>
         </member>
         <member name="P:Tuby.Api.Model.d_camera.UpdateTime">
             <summary>
-            
+            更新时间
             </summary>
         </member>
         <member name="P:Tuby.Api.Model.d_camera.RecStatus">
@@ -1689,6 +1734,31 @@
             
             </summary>
         </member>
+        <member name="P:Tuby.Api.Model.d_shaowei_arrange.AdvanceTime">
+            <summary>
+            提前时间
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_shaowei_arrange.DelayTime">
+            <summary>
+            延后时间
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_shaowei_arrange.ScheduleName">
+            <summary>
+            排班表名
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_shaowei_arrange.Name">
+            <summary>
+            当班士兵
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_shaowei_arrange.DutyTime">
+            <summary>
+            值班时间
+            </summary>
+        </member>
         <member name="T:Tuby.Api.Model.d_shaowei_check">
             <summary>
             d_shaowei_check Entity Model
@@ -2131,7 +2201,7 @@
         </member>
         <member name="P:Tuby.Api.Model.d_target_camera_record_people.RecTime">
             <summary>
-            时间
+            创建时间
             </summary>
         </member>
         <member name="P:Tuby.Api.Model.d_target_camera_record_people.ImagePath">
@@ -2327,6 +2397,11 @@
         <member name="P:Tuby.Api.Model.d_target_people.UpdateTime">
             <summary>
             
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_target_people.Visreason">
+            <summary>
+            来访事由
             </summary>
         </member>
         <member name="T:Tuby.Api.Model.d_target_people_blacklist">

@@ -1,15 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Threading.Tasks;
+using System.Reflection;
+using Autofac;
+using Autofac.Extensions.DependencyInjection;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
 using Swashbuckle.AspNetCore.Swagger;
 using Tuby.Api.Repository.sugar;
 
@@ -24,12 +22,14 @@ namespace Tuby.Api
 
         public IConfiguration Configuration { get; }
 
+
         // This method gets called by the runtime. Use this method to add services to the container.
-        public void ConfigureServices(IServiceCollection services)
+        public IServiceProvider ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
             #region Swagger
+            var basePath = Microsoft.DotNet.PlatformAbstractions.ApplicationEnvironment.ApplicationBasePath;
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new Info
@@ -41,7 +41,6 @@ namespace Tuby.Api
                     Contact = new Swashbuckle.AspNetCore.Swagger.Contact { Name = "Tuby.Api", Email = "", Url = "https://www..com" }
                 });
 
-                var basePath = Microsoft.DotNet.PlatformAbstractions.ApplicationEnvironment.ApplicationBasePath;
                 var xmlPath = Path.Combine(basePath, "Tuby.Api.xml");//这个就是刚刚配置的xml文件名
                 c.IncludeXmlComments(xmlPath, true);//默认的第二个参数是false，这个是controller的注释，记得修改
 
@@ -56,6 +55,68 @@ namespace Tuby.Api
             
             BaseDBConfig.ConnectionString = Configuration.GetSection("AppSettings:MySqlConnection").Value;
             #endregion
+
+            #region CORS
+            //跨域第二种方法，声明策略，记得下边app中配置
+            services.AddCors(c =>
+            {
+                //↓↓↓↓↓↓↓注意正式环境不要使用这种全开放的处理↓↓↓↓↓↓↓↓↓↓
+                c.AddPolicy("AllRequests", policy =>
+                {
+                    policy
+                    .AllowAnyOrigin()//允许任何源
+                    .AllowAnyMethod()//允许任何方式
+                    .AllowAnyHeader()//允许任何头
+                    .AllowCredentials();//允许cookie
+                });
+                //↑↑↑↑↑↑↑注意正式环境不要使用这种全开放的处理↑↑↑↑↑↑↑↑↑↑
+
+                //一般采用这种方法
+                c.AddPolicy("LimitRequests", policy =>
+                {
+                    policy
+                    .WithOrigins("http://127.0.0.1:8013", "http://localhost:8013", "http://localhost:8012", "http://127.0.0.1:8013", "http://localhost:32100", "http://192.168.18.123:8012")//支持多个域名端口，注意端口号后不要带/斜杆：比如localhost:8000/，是错的
+                    .AllowAnyHeader()//Ensures that the policy allows any header.
+                    .AllowAnyMethod();
+                });
+            });
+
+            //跨域第一种办法，注意下边 Configure 中进行配置
+            //services.AddCors();
+            #endregion
+
+            #region AutoFac
+
+            //实例化 AutoFac  容器   
+            var builder = new ContainerBuilder();
+
+            //注册要通过反射创建的组件
+            // builder.RegisterType<a_data_access_typeServices>().As<Ia_data_access_typeServices>();
+
+            //var assemblysServices = Assembly.Load("Tuby.Api.Services");
+            //builder.RegisterAssemblyTypes(assemblysServices).AsImplementedInterfaces();//指定已扫描程序集中的类型注册为提供所有其实现的接口。
+            //var assemblysRepository = Assembly.Load("Tuby.Api.Repository");//模式是 Load(解决方案名)
+            //builder.RegisterAssemblyTypes(assemblysRepository).AsImplementedInterfaces();
+
+            var servicesDllFile = Path.Combine(basePath, "Tuby.Api.Services.dll");//获取注入项目绝对路径
+            var assemblysServices = Assembly.LoadFile(servicesDllFile);//直接采用加载文件的方法
+            builder.RegisterAssemblyTypes(assemblysServices).AsImplementedInterfaces();//指定已扫描程序集中的类型注册为提供所有其实现的接口。
+            var repositoryDllFile = Path.Combine(basePath, "Tuby.Api.Repository.dll");
+            var assemblysRepository = Assembly.LoadFrom(repositoryDllFile);
+            builder.RegisterAssemblyTypes(assemblysRepository).AsImplementedInterfaces();
+
+
+            //将services填充到Autofac容器生成器中
+            builder.Populate(services);
+
+            //使用已进行的组件登记创建新容器
+            var ApplicationContainer = builder.Build();
+
+            #endregion
+
+            
+
+            return new AutofacServiceProvider(ApplicationContainer);//第三方IOC接管 core内置DI容器
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -76,6 +137,29 @@ namespace Tuby.Api
                                    //这个时候去launchSettings.json中把"launchUrl": "swagger/index.html"去掉， 然后直接访问localhost:8001/index.html即可
             });
             #endregion
+
+            #region CORS
+            //跨域第二种方法，使用策略，详细策略信息在ConfigureService中
+            app.UseCors("AllRequests");//将 CORS 中间件添加到 web 应用程序管线中, 以允许跨域请求。
+
+
+            #region 跨域第一种版本
+            //跨域第一种版本，请要ConfigureService中配置服务 services.AddCors();
+            //    app.UseCors(options => options.WithOrigins("http://localhost:8021").AllowAnyHeader()
+            //.AllowAnyMethod());  
+            #endregion
+
+            #endregion
+
+            // 跳转https
+            //app.UseHttpsRedirection();
+            // 使用静态文件
+            app.UseStaticFiles();
+            // 使用cookie
+            app.UseCookiePolicy();
+            // 返回错误码
+            app.UseStatusCodePages();//把错误码返回前台，比如是404
+
             app.UseMvc();
         }
     }

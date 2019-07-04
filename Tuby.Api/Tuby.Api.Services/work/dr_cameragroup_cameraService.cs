@@ -12,8 +12,13 @@ namespace Tuby.Api.Services
 	public class dr_cameragroup_cameraServices : BaseServices<dr_cameragroup_camera>, Idr_cameragroup_cameraServices
     {
 	
-        
+        Idr_cameragroup_cameraRepository dal;
+        public dr_cameragroup_cameraServices(Idr_cameragroup_cameraRepository dal)
+        {
+            this.dal = dal;
+        }
        
     }
 }
+	
 	

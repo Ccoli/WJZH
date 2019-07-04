@@ -12,8 +12,13 @@ namespace Tuby.Api.Services
 	public class b_shaowei_typeServices : BaseServices<b_shaowei_type>, Ib_shaowei_typeServices
     {
 	
-        
+        Ib_shaowei_typeRepository dal;
+        public b_shaowei_typeServices(Ib_shaowei_typeRepository dal)
+        {
+            this.dal = dal;
+        }
        
     }
 }
+	
 	

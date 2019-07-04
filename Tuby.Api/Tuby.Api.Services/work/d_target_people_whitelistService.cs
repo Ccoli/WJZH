@@ -12,8 +12,13 @@ namespace Tuby.Api.Services
 	public class d_target_people_whitelistServices : BaseServices<d_target_people_whitelist>, Id_target_people_whitelistServices
     {
 	
-        
+        Id_target_people_whitelistRepository dal;
+        public d_target_people_whitelistServices(Id_target_people_whitelistRepository dal)
+        {
+            this.dal = dal;
+        }
        
     }
 }
+	
 	

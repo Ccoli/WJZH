@@ -12,8 +12,13 @@ namespace Tuby.Api.Services
 	public class b_pap_postServices : BaseServices<b_pap_post>, Ib_pap_postServices
     {
 	
-        
+        Ib_pap_postRepository dal;
+        public b_pap_postServices(Ib_pap_postRepository dal)
+        {
+            this.dal = dal;
+        }
        
     }
 }
+	
 	

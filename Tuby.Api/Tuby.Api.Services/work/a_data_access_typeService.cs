@@ -12,8 +12,13 @@ namespace Tuby.Api.Services
 	public class a_data_access_typeServices : BaseServices<a_data_access_type>, Ia_data_access_typeServices
     {
 	
-        
+        Ia_data_access_typeRepository dal;
+        public a_data_access_typeServices(Ia_data_access_typeRepository dal)
+        {
+            this.dal = dal;
+        }
        
     }
 }
+	
 	

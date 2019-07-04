@@ -12,8 +12,13 @@ namespace Tuby.Api.Services
 	public class b_department_typeServices : BaseServices<b_department_type>, Ib_department_typeServices
     {
 	
-        
+        Ib_department_typeRepository dal;
+        public b_department_typeServices(Ib_department_typeRepository dal)
+        {
+            this.dal = dal;
+        }
        
     }
 }
+	
 	

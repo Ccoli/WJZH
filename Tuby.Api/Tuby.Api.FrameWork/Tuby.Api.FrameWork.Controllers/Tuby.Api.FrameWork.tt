@@ -41,7 +41,6 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using <#=config.ModelNameSpace#>;
-using <#=config.ServicesNameSpace#>;
 using <#=config.IServicesNameSpace#>;
 
 namespace <#=config.ControllersNameSpace#>
@@ -53,18 +52,28 @@ namespace <#=config.ControllersNameSpace#>
     [ApiController]
 	public class <#=tableName#>Controller : ControllerBase
     { 
-		 I<#=tableName#>Services <#=tableName#>Services=new <#=tableName#>Services();
+		 readonly I<#=tableName#>Services _<#=tableName#>Services;
+
+		 /// <summary>
+        /// 构造函数
+        /// </summary>
+        /// <returns></returns>
+        public <#=tableName#>Controller(I<#=tableName#>Services <#=tableName#>Services)
+        {
+            _<#=tableName#>Services = <#=tableName#>Services;
+        }
+
 		 [HttpGet]
         public async Task<List<<#=tableName#>>> Get()
         {
-            return await <#=tableName#>Services.Query();
+            return await _<#=tableName#>Services.Query();
         }
 
         // GET: api/a_data_access/5
         [HttpGet("{id}")]
         public async Task<List<<#=tableName#>>> Get(int id)
         {
-            return await <#=tableName#>Services.Query(c => c.ID == id);
+            return await _<#=tableName#>Services.Query(c => c.ID == id);
         }
 
         // POST: api/a_department
@@ -112,7 +121,6 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using <#=config.ModelNameSpace#>;
-using <#=config.ServicesNameSpace#>;
 using <#=config.IServicesNameSpace#>;
 
 namespace <#=config.ControllersNameSpace#>
@@ -124,18 +132,29 @@ namespace <#=config.ControllersNameSpace#>
     [ApiController]
 	public class <#=row["TABLE_NAME"].ToString()#>Controller : ControllerBase
     { 
-		 I<#=row["TABLE_NAME"].ToString()#>Services <#=row["TABLE_NAME"].ToString()#>Services=new <#=row["TABLE_NAME"].ToString()#>Services();
+		 readonly I<#=row["TABLE_NAME"].ToString()#>Services _<#=row["TABLE_NAME"].ToString()#>Services;
+
+		 /// <summary>
+        /// 构造函数
+        /// </summary>
+        /// <returns></returns>
+        public <#=row["TABLE_NAME"].ToString()#>Controller(I<#=row["TABLE_NAME"].ToString()#>Services <#=row["TABLE_NAME"].ToString()#>Services)
+        {
+            _<#=row["TABLE_NAME"].ToString()#>Services = <#=row["TABLE_NAME"].ToString()#>Services;
+        }
+
+
 		 [HttpGet]
         public async Task<List<<#=row["TABLE_NAME"].ToString()#>>> Get()
         {
-            return await <#=row["TABLE_NAME"].ToString()#>Services.Query();
+            return await _<#=row["TABLE_NAME"].ToString()#>Services.Query();
         }
 
         // GET: api/a_data_access/5
         [HttpGet("{id}")]
         public async Task<List<<#=row["TABLE_NAME"].ToString()#>>> Get(int id)
         {
-            return await <#=row["TABLE_NAME"].ToString()#>Services.Query(c => c.ID == id);
+            return await _<#=row["TABLE_NAME"].ToString()#>Services.Query(c => c.ID == id);
         }
 
         // POST: api/a_department

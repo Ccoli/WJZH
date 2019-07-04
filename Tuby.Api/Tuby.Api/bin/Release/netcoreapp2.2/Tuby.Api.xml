@@ -4,39 +4,102 @@
         <name>Tuby.Api</name>
     </assembly>
     <members>
+        <member name="T:Tuby.Api.Controllers.AlarmInfoController">
+            <summary>
+            测试多表查询接口
+            </summary>
+        </member>
+        <member name="M:Tuby.Api.Controllers.AlarmInfoController.#ctor(Tuby.Api.IServices.ISoldierInfoServices)">
+            <summary>
+            构造函数
+            </summary>
+            <returns></returns>
+        </member>
         <member name="T:Tuby.Api.Controllers.ar_usergroup_data_accessController">
             <summary>
             ar_usergroup_data_accessControllers
             </summary>	
+        </member>
+        <member name="M:Tuby.Api.Controllers.ar_usergroup_data_accessController.#ctor(Tuby.Api.IServices.Iar_usergroup_data_accessServices)">
+            <summary>
+            构造函数
+            </summary>
+            <returns></returns>
         </member>
         <member name="T:Tuby.Api.Controllers.ar_usergroup_ui_accessController">
             <summary>
             ar_usergroup_ui_accessControllers
             </summary>	
         </member>
+        <member name="M:Tuby.Api.Controllers.ar_usergroup_ui_accessController.#ctor(Tuby.Api.IServices.Iar_usergroup_ui_accessServices)">
+            <summary>
+            构造函数
+            </summary>
+            <returns></returns>
+        </member>
         <member name="T:Tuby.Api.Controllers.ar_usergroup_userController">
             <summary>
             ar_usergroup_userControllers
             </summary>	
+        </member>
+        <member name="M:Tuby.Api.Controllers.ar_usergroup_userController.#ctor(Tuby.Api.IServices.Iar_usergroup_userServices)">
+            <summary>
+            构造函数
+            </summary>
+            <returns></returns>
         </member>
         <member name="T:Tuby.Api.Controllers.ar_user_data_accessController">
             <summary>
             ar_user_data_accessControllers
             </summary>	
         </member>
+        <member name="M:Tuby.Api.Controllers.ar_user_data_accessController.#ctor(Tuby.Api.IServices.Iar_user_data_accessServices)">
+            <summary>
+            构造函数
+            </summary>
+            <returns></returns>
+        </member>
         <member name="T:Tuby.Api.Controllers.ar_user_ui_accessController">
             <summary>
             ar_user_ui_accessControllers
             </summary>	
         </member>
+        <member name="M:Tuby.Api.Controllers.ar_user_ui_accessController.#ctor(Tuby.Api.IServices.Iar_user_ui_accessServices)">
+            <summary>
+            构造函数
+            </summary>
+            <returns></returns>
+        </member>
         <member name="T:Tuby.Api.Controllers.a_data_accessController">
             <summary>
-            a_data_access
-            </summary>
+            a_data_accessControllers
+            </summary>	
         </member>
-        <member name="M:Tuby.Api.Controllers.a_data_accessController.Get">
+        <member name="M:Tuby.Api.Controllers.a_data_accessController.#ctor(Tuby.Api.IServices.Ia_data_accessServices)">
             <summary>
-            获取所有数据
+            构造函数
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Tuby.Api.Controllers.a_data_access_typeController">
+            <summary>
+            a_data_access_typeControllers
+            </summary>	
+        </member>
+        <member name="M:Tuby.Api.Controllers.a_data_access_typeController.#ctor(Tuby.Api.IServices.Ia_data_access_typeServices)">
+            <summary>
+            构造函数
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Tuby.Api.Controllers.a_departmentController">
+            <summary>
+            a_departmentControllers
+            </summary>	
+        </member>
+        <member name="M:Tuby.Api.Controllers.a_departmentController.#ctor(Tuby.Api.IServices.Ia_departmentServices)">
+            <summary>
+            构造函数
             </summary>
             <returns></returns>
         </member>
@@ -45,360 +108,792 @@
             a_ui_accessControllers
             </summary>	
         </member>
+        <member name="M:Tuby.Api.Controllers.a_ui_accessController.#ctor(Tuby.Api.IServices.Ia_ui_accessServices)">
+            <summary>
+            构造函数
+            </summary>
+            <returns></returns>
+        </member>
         <member name="T:Tuby.Api.Controllers.a_ui_access_typeController">
             <summary>
             a_ui_access_typeControllers
             </summary>	
+        </member>
+        <member name="M:Tuby.Api.Controllers.a_ui_access_typeController.#ctor(Tuby.Api.IServices.Ia_ui_access_typeServices)">
+            <summary>
+            构造函数
+            </summary>
+            <returns></returns>
         </member>
         <member name="T:Tuby.Api.Controllers.a_userController">
             <summary>
             a_userControllers
             </summary>	
         </member>
+        <member name="M:Tuby.Api.Controllers.a_userController.#ctor(Tuby.Api.IServices.Ia_userServices)">
+            <summary>
+            构造函数
+            </summary>
+            <returns></returns>
+        </member>
         <member name="T:Tuby.Api.Controllers.a_usergroupController">
             <summary>
             a_usergroupControllers
             </summary>	
+        </member>
+        <member name="M:Tuby.Api.Controllers.a_usergroupController.#ctor(Tuby.Api.IServices.Ia_usergroupServices)">
+            <summary>
+            构造函数
+            </summary>
+            <returns></returns>
         </member>
         <member name="T:Tuby.Api.Controllers.b_administrative_divisionController">
             <summary>
             b_administrative_divisionControllers
             </summary>	
         </member>
+        <member name="M:Tuby.Api.Controllers.b_administrative_divisionController.#ctor(Tuby.Api.IServices.Ib_administrative_divisionServices)">
+            <summary>
+            构造函数
+            </summary>
+            <returns></returns>
+        </member>
         <member name="T:Tuby.Api.Controllers.b_alarm_device_typeController">
             <summary>
             b_alarm_device_typeControllers
             </summary>	
+        </member>
+        <member name="M:Tuby.Api.Controllers.b_alarm_device_typeController.#ctor(Tuby.Api.IServices.Ib_alarm_device_typeServices)">
+            <summary>
+            构造函数
+            </summary>
+            <returns></returns>
         </member>
         <member name="T:Tuby.Api.Controllers.b_alarm_levelController">
             <summary>
             b_alarm_levelControllers
             </summary>	
         </member>
+        <member name="M:Tuby.Api.Controllers.b_alarm_levelController.#ctor(Tuby.Api.IServices.Ib_alarm_levelServices)">
+            <summary>
+            构造函数
+            </summary>
+            <returns></returns>
+        </member>
         <member name="T:Tuby.Api.Controllers.b_alarm_typeController">
             <summary>
             b_alarm_typeControllers
             </summary>	
         </member>
-        <member name="T:Tuby.Api.Controllers.b_camera_groupController">
+        <member name="M:Tuby.Api.Controllers.b_alarm_typeController.#ctor(Tuby.Api.IServices.Ib_alarm_typeServices)">
             <summary>
-            b_camera_groupControllers
-            </summary>	
+            构造函数
+            </summary>
+            <returns></returns>
         </member>
         <member name="T:Tuby.Api.Controllers.b_camera_typeController">
             <summary>
             b_camera_typeControllers
             </summary>	
         </member>
+        <member name="M:Tuby.Api.Controllers.b_camera_typeController.#ctor(Tuby.Api.IServices.Ib_camera_typeServices)">
+            <summary>
+            构造函数
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Tuby.Api.Controllers.b_camera_usage_groupController">
+            <summary>
+            b_camera_usage_groupControllers
+            </summary>	
+        </member>
+        <member name="M:Tuby.Api.Controllers.b_camera_usage_groupController.#ctor(Tuby.Api.IServices.Ib_camera_usage_groupServices)">
+            <summary>
+            构造函数
+            </summary>
+            <returns></returns>
+        </member>
         <member name="T:Tuby.Api.Controllers.b_car_statusController">
             <summary>
             b_car_statusControllers
             </summary>	
+        </member>
+        <member name="M:Tuby.Api.Controllers.b_car_statusController.#ctor(Tuby.Api.IServices.Ib_car_statusServices)">
+            <summary>
+            构造函数
+            </summary>
+            <returns></returns>
         </member>
         <member name="T:Tuby.Api.Controllers.b_car_typeController">
             <summary>
             b_car_typeControllers
             </summary>	
         </member>
+        <member name="M:Tuby.Api.Controllers.b_car_typeController.#ctor(Tuby.Api.IServices.Ib_car_typeServices)">
+            <summary>
+            构造函数
+            </summary>
+            <returns></returns>
+        </member>
         <member name="T:Tuby.Api.Controllers.b_department_typeController">
             <summary>
             b_department_typeControllers
             </summary>	
+        </member>
+        <member name="M:Tuby.Api.Controllers.b_department_typeController.#ctor(Tuby.Api.IServices.Ib_department_typeServices)">
+            <summary>
+            构造函数
+            </summary>
+            <returns></returns>
         </member>
         <member name="T:Tuby.Api.Controllers.b_device_groupController">
             <summary>
             b_device_groupControllers
             </summary>	
         </member>
+        <member name="M:Tuby.Api.Controllers.b_device_groupController.#ctor(Tuby.Api.IServices.Ib_device_groupServices)">
+            <summary>
+            构造函数
+            </summary>
+            <returns></returns>
+        </member>
         <member name="T:Tuby.Api.Controllers.b_device_statusController">
             <summary>
             b_device_statusControllers
             </summary>	
+        </member>
+        <member name="M:Tuby.Api.Controllers.b_device_statusController.#ctor(Tuby.Api.IServices.Ib_device_statusServices)">
+            <summary>
+            构造函数
+            </summary>
+            <returns></returns>
         </member>
         <member name="T:Tuby.Api.Controllers.b_device_typeController">
             <summary>
             b_device_typeControllers
             </summary>	
         </member>
+        <member name="M:Tuby.Api.Controllers.b_device_typeController.#ctor(Tuby.Api.IServices.Ib_device_typeServices)">
+            <summary>
+            构造函数
+            </summary>
+            <returns></returns>
+        </member>
         <member name="T:Tuby.Api.Controllers.b_device_usageController">
             <summary>
             b_device_usageControllers
             </summary>	
+        </member>
+        <member name="M:Tuby.Api.Controllers.b_device_usageController.#ctor(Tuby.Api.IServices.Ib_device_usageServices)">
+            <summary>
+            构造函数
+            </summary>
+            <returns></returns>
         </member>
         <member name="T:Tuby.Api.Controllers.b_education_levelController">
             <summary>
             b_education_levelControllers
             </summary>	
         </member>
+        <member name="M:Tuby.Api.Controllers.b_education_levelController.#ctor(Tuby.Api.IServices.Ib_education_levelServices)">
+            <summary>
+            构造函数
+            </summary>
+            <returns></returns>
+        </member>
         <member name="T:Tuby.Api.Controllers.b_equipment_statusController">
             <summary>
             b_equipment_statusControllers
             </summary>	
+        </member>
+        <member name="M:Tuby.Api.Controllers.b_equipment_statusController.#ctor(Tuby.Api.IServices.Ib_equipment_statusServices)">
+            <summary>
+            构造函数
+            </summary>
+            <returns></returns>
         </member>
         <member name="T:Tuby.Api.Controllers.b_equipment_typeController">
             <summary>
             b_equipment_typeControllers
             </summary>	
         </member>
+        <member name="M:Tuby.Api.Controllers.b_equipment_typeController.#ctor(Tuby.Api.IServices.Ib_equipment_typeServices)">
+            <summary>
+            构造函数
+            </summary>
+            <returns></returns>
+        </member>
         <member name="T:Tuby.Api.Controllers.b_gun_typeController">
             <summary>
             b_gun_typeControllers
             </summary>	
+        </member>
+        <member name="M:Tuby.Api.Controllers.b_gun_typeController.#ctor(Tuby.Api.IServices.Ib_gun_typeServices)">
+            <summary>
+            构造函数
+            </summary>
+            <returns></returns>
         </member>
         <member name="T:Tuby.Api.Controllers.b_healthController">
             <summary>
             b_healthControllers
             </summary>	
         </member>
+        <member name="M:Tuby.Api.Controllers.b_healthController.#ctor(Tuby.Api.IServices.Ib_healthServices)">
+            <summary>
+            构造函数
+            </summary>
+            <returns></returns>
+        </member>
         <member name="T:Tuby.Api.Controllers.b_leave_reasonController">
             <summary>
             b_leave_reasonControllers
             </summary>	
+        </member>
+        <member name="M:Tuby.Api.Controllers.b_leave_reasonController.#ctor(Tuby.Api.IServices.Ib_leave_reasonServices)">
+            <summary>
+            构造函数
+            </summary>
+            <returns></returns>
         </member>
         <member name="T:Tuby.Api.Controllers.b_marial_statusController">
             <summary>
             b_marial_statusControllers
             </summary>	
         </member>
+        <member name="M:Tuby.Api.Controllers.b_marial_statusController.#ctor(Tuby.Api.IServices.Ib_marial_statusServices)">
+            <summary>
+            构造函数
+            </summary>
+            <returns></returns>
+        </member>
         <member name="T:Tuby.Api.Controllers.b_nationController">
             <summary>
             b_nationControllers
             </summary>	
+        </member>
+        <member name="M:Tuby.Api.Controllers.b_nationController.#ctor(Tuby.Api.IServices.Ib_nationServices)">
+            <summary>
+            构造函数
+            </summary>
+            <returns></returns>
         </member>
         <member name="T:Tuby.Api.Controllers.b_pap_postController">
             <summary>
             b_pap_postControllers
             </summary>	
         </member>
+        <member name="M:Tuby.Api.Controllers.b_pap_postController.#ctor(Tuby.Api.IServices.Ib_pap_postServices)">
+            <summary>
+            构造函数
+            </summary>
+            <returns></returns>
+        </member>
         <member name="T:Tuby.Api.Controllers.b_pap_rankController">
             <summary>
             b_pap_rankControllers
             </summary>	
+        </member>
+        <member name="M:Tuby.Api.Controllers.b_pap_rankController.#ctor(Tuby.Api.IServices.Ib_pap_rankServices)">
+            <summary>
+            构造函数
+            </summary>
+            <returns></returns>
         </member>
         <member name="T:Tuby.Api.Controllers.b_phone_table_typeController">
             <summary>
             b_phone_table_typeControllers
             </summary>	
         </member>
+        <member name="M:Tuby.Api.Controllers.b_phone_table_typeController.#ctor(Tuby.Api.IServices.Ib_phone_table_typeServices)">
+            <summary>
+            构造函数
+            </summary>
+            <returns></returns>
+        </member>
         <member name="T:Tuby.Api.Controllers.b_politic_roleController">
             <summary>
             b_politic_roleControllers
             </summary>	
+        </member>
+        <member name="M:Tuby.Api.Controllers.b_politic_roleController.#ctor(Tuby.Api.IServices.Ib_politic_roleServices)">
+            <summary>
+            构造函数
+            </summary>
+            <returns></returns>
         </member>
         <member name="T:Tuby.Api.Controllers.b_shaowei_typeController">
             <summary>
             b_shaowei_typeControllers
             </summary>	
         </member>
+        <member name="M:Tuby.Api.Controllers.b_shaowei_typeController.#ctor(Tuby.Api.IServices.Ib_shaowei_typeServices)">
+            <summary>
+            构造函数
+            </summary>
+            <returns></returns>
+        </member>
         <member name="T:Tuby.Api.Controllers.b_soldier_stateController">
             <summary>
             b_soldier_stateControllers
             </summary>	
+        </member>
+        <member name="M:Tuby.Api.Controllers.b_soldier_stateController.#ctor(Tuby.Api.IServices.Ib_soldier_stateServices)">
+            <summary>
+            构造函数
+            </summary>
+            <returns></returns>
         </member>
         <member name="T:Tuby.Api.Controllers.b_target_car_security_levelController">
             <summary>
             b_target_car_security_levelControllers
             </summary>	
         </member>
+        <member name="M:Tuby.Api.Controllers.b_target_car_security_levelController.#ctor(Tuby.Api.IServices.Ib_target_car_security_levelServices)">
+            <summary>
+            构造函数
+            </summary>
+            <returns></returns>
+        </member>
         <member name="T:Tuby.Api.Controllers.b_target_car_typeController">
             <summary>
             b_target_car_typeControllers
             </summary>	
+        </member>
+        <member name="M:Tuby.Api.Controllers.b_target_car_typeController.#ctor(Tuby.Api.IServices.Ib_target_car_typeServices)">
+            <summary>
+            构造函数
+            </summary>
+            <returns></returns>
         </member>
         <member name="T:Tuby.Api.Controllers.b_target_people_security_levelController">
             <summary>
             b_target_people_security_levelControllers
             </summary>	
         </member>
+        <member name="M:Tuby.Api.Controllers.b_target_people_security_levelController.#ctor(Tuby.Api.IServices.Ib_target_people_security_levelServices)">
+            <summary>
+            构造函数
+            </summary>
+            <returns></returns>
+        </member>
         <member name="T:Tuby.Api.Controllers.b_target_people_typeController">
             <summary>
             b_target_people_typeControllers
             </summary>	
+        </member>
+        <member name="M:Tuby.Api.Controllers.b_target_people_typeController.#ctor(Tuby.Api.IServices.Ib_target_people_typeServices)">
+            <summary>
+            构造函数
+            </summary>
+            <returns></returns>
         </member>
         <member name="T:Tuby.Api.Controllers.b_zhd_architectureController">
             <summary>
             b_zhd_architectureControllers
             </summary>	
         </member>
+        <member name="M:Tuby.Api.Controllers.b_zhd_architectureController.#ctor(Tuby.Api.IServices.Ib_zhd_architectureServices)">
+            <summary>
+            构造函数
+            </summary>
+            <returns></returns>
+        </member>
         <member name="T:Tuby.Api.Controllers.dr_arsenal_equipmentController">
             <summary>
             dr_arsenal_equipmentControllers
             </summary>	
+        </member>
+        <member name="M:Tuby.Api.Controllers.dr_arsenal_equipmentController.#ctor(Tuby.Api.IServices.Idr_arsenal_equipmentServices)">
+            <summary>
+            构造函数
+            </summary>
+            <returns></returns>
         </member>
         <member name="T:Tuby.Api.Controllers.dr_cameragroup_cameraController">
             <summary>
             dr_cameragroup_cameraControllers
             </summary>	
         </member>
+        <member name="M:Tuby.Api.Controllers.dr_cameragroup_cameraController.#ctor(Tuby.Api.IServices.Idr_cameragroup_cameraServices)">
+            <summary>
+            构造函数
+            </summary>
+            <returns></returns>
+        </member>
         <member name="T:Tuby.Api.Controllers.dr_department_soldierController">
             <summary>
             dr_department_soldierControllers
             </summary>	
+        </member>
+        <member name="M:Tuby.Api.Controllers.dr_department_soldierController.#ctor(Tuby.Api.IServices.Idr_department_soldierServices)">
+            <summary>
+            构造函数
+            </summary>
+            <returns></returns>
         </member>
         <member name="T:Tuby.Api.Controllers.d_alarm_deviceController">
             <summary>
             d_alarm_deviceControllers
             </summary>	
         </member>
+        <member name="M:Tuby.Api.Controllers.d_alarm_deviceController.#ctor(Tuby.Api.IServices.Id_alarm_deviceServices)">
+            <summary>
+            构造函数
+            </summary>
+            <returns></returns>
+        </member>
         <member name="T:Tuby.Api.Controllers.d_alarm_infoController">
             <summary>
             d_alarm_infoControllers
             </summary>	
+        </member>
+        <member name="M:Tuby.Api.Controllers.d_alarm_infoController.#ctor(Tuby.Api.IServices.Id_alarm_infoServices)">
+            <summary>
+            构造函数
+            </summary>
+            <returns></returns>
         </member>
         <member name="T:Tuby.Api.Controllers.d_cameraController">
             <summary>
             d_cameraControllers
             </summary>	
         </member>
+        <member name="M:Tuby.Api.Controllers.d_cameraController.#ctor(Tuby.Api.IServices.Id_cameraServices)">
+            <summary>
+            构造函数
+            </summary>
+            <returns></returns>
+        </member>
         <member name="T:Tuby.Api.Controllers.d_camera_groupController">
             <summary>
             d_camera_groupControllers
             </summary>	
+        </member>
+        <member name="M:Tuby.Api.Controllers.d_camera_groupController.#ctor(Tuby.Api.IServices.Id_camera_groupServices)">
+            <summary>
+            构造函数
+            </summary>
+            <returns></returns>
         </member>
         <member name="T:Tuby.Api.Controllers.d_pap_arsenalController">
             <summary>
             d_pap_arsenalControllers
             </summary>	
         </member>
+        <member name="M:Tuby.Api.Controllers.d_pap_arsenalController.#ctor(Tuby.Api.IServices.Id_pap_arsenalServices)">
+            <summary>
+            构造函数
+            </summary>
+            <returns></returns>
+        </member>
         <member name="T:Tuby.Api.Controllers.d_pap_camera_record_carController">
             <summary>
             d_pap_camera_record_carControllers
             </summary>	
+        </member>
+        <member name="M:Tuby.Api.Controllers.d_pap_camera_record_carController.#ctor(Tuby.Api.IServices.Id_pap_camera_record_carServices)">
+            <summary>
+            构造函数
+            </summary>
+            <returns></returns>
         </member>
         <member name="T:Tuby.Api.Controllers.d_pap_camera_record_peopleController">
             <summary>
             d_pap_camera_record_peopleControllers
             </summary>	
         </member>
+        <member name="M:Tuby.Api.Controllers.d_pap_camera_record_peopleController.#ctor(Tuby.Api.IServices.Id_pap_camera_record_peopleServices)">
+            <summary>
+            构造函数
+            </summary>
+            <returns></returns>
+        </member>
         <member name="T:Tuby.Api.Controllers.d_pap_carController">
             <summary>
             d_pap_carControllers
             </summary>	
+        </member>
+        <member name="M:Tuby.Api.Controllers.d_pap_carController.#ctor(Tuby.Api.IServices.Id_pap_carServices)">
+            <summary>
+            构造函数
+            </summary>
+            <returns></returns>
         </member>
         <member name="T:Tuby.Api.Controllers.d_pap_car_leaveController">
             <summary>
             d_pap_car_leaveControllers
             </summary>	
         </member>
+        <member name="M:Tuby.Api.Controllers.d_pap_car_leaveController.#ctor(Tuby.Api.IServices.Id_pap_car_leaveServices)">
+            <summary>
+            构造函数
+            </summary>
+            <returns></returns>
+        </member>
         <member name="T:Tuby.Api.Controllers.d_pap_car_maintainController">
             <summary>
             d_pap_car_maintainControllers
             </summary>	
+        </member>
+        <member name="M:Tuby.Api.Controllers.d_pap_car_maintainController.#ctor(Tuby.Api.IServices.Id_pap_car_maintainServices)">
+            <summary>
+            构造函数
+            </summary>
+            <returns></returns>
         </member>
         <member name="T:Tuby.Api.Controllers.d_pap_equipmentController">
             <summary>
             d_pap_equipmentControllers
             </summary>	
         </member>
+        <member name="M:Tuby.Api.Controllers.d_pap_equipmentController.#ctor(Tuby.Api.IServices.Id_pap_equipmentServices)">
+            <summary>
+            构造函数
+            </summary>
+            <returns></returns>
+        </member>
         <member name="T:Tuby.Api.Controllers.d_pap_gunController">
             <summary>
             d_pap_gunControllers
             </summary>	
+        </member>
+        <member name="M:Tuby.Api.Controllers.d_pap_gunController.#ctor(Tuby.Api.IServices.Id_pap_gunServices)">
+            <summary>
+            构造函数
+            </summary>
+            <returns></returns>
         </member>
         <member name="T:Tuby.Api.Controllers.d_pap_matterController">
             <summary>
             d_pap_matterControllers
             </summary>	
         </member>
+        <member name="M:Tuby.Api.Controllers.d_pap_matterController.#ctor(Tuby.Api.IServices.Id_pap_matterServices)">
+            <summary>
+            构造函数
+            </summary>
+            <returns></returns>
+        </member>
         <member name="T:Tuby.Api.Controllers.d_phone_tableController">
             <summary>
             d_phone_tableControllers
             </summary>	
+        </member>
+        <member name="M:Tuby.Api.Controllers.d_phone_tableController.#ctor(Tuby.Api.IServices.Id_phone_tableServices)">
+            <summary>
+            构造函数
+            </summary>
+            <returns></returns>
         </member>
         <member name="T:Tuby.Api.Controllers.d_shaoweiController">
             <summary>
             d_shaoweiControllers
             </summary>	
         </member>
+        <member name="M:Tuby.Api.Controllers.d_shaoweiController.#ctor(Tuby.Api.IServices.Id_shaoweiServices)">
+            <summary>
+            构造函数
+            </summary>
+            <returns></returns>
+        </member>
         <member name="T:Tuby.Api.Controllers.d_shaowei_arrangeController">
             <summary>
             d_shaowei_arrangeControllers
             </summary>	
+        </member>
+        <member name="M:Tuby.Api.Controllers.d_shaowei_arrangeController.#ctor(Tuby.Api.IServices.Id_shaowei_arrangeServices)">
+            <summary>
+            构造函数
+            </summary>
+            <returns></returns>
         </member>
         <member name="T:Tuby.Api.Controllers.d_shaowei_checkController">
             <summary>
             d_shaowei_checkControllers
             </summary>	
         </member>
+        <member name="M:Tuby.Api.Controllers.d_shaowei_checkController.#ctor(Tuby.Api.IServices.Id_shaowei_checkServices)">
+            <summary>
+            构造函数
+            </summary>
+            <returns></returns>
+        </member>
         <member name="T:Tuby.Api.Controllers.d_shaowei_preplanController">
             <summary>
             d_shaowei_preplanControllers
             </summary>	
+        </member>
+        <member name="M:Tuby.Api.Controllers.d_shaowei_preplanController.#ctor(Tuby.Api.IServices.Id_shaowei_preplanServices)">
+            <summary>
+            构造函数
+            </summary>
+            <returns></returns>
         </member>
         <member name="T:Tuby.Api.Controllers.d_shaowei_turnController">
             <summary>
             d_shaowei_turnControllers
             </summary>	
         </member>
+        <member name="M:Tuby.Api.Controllers.d_shaowei_turnController.#ctor(Tuby.Api.IServices.Id_shaowei_turnServices)">
+            <summary>
+            构造函数
+            </summary>
+            <returns></returns>
+        </member>
         <member name="T:Tuby.Api.Controllers.d_soldierController">
             <summary>
             d_soldierControllers
             </summary>	
+        </member>
+        <member name="M:Tuby.Api.Controllers.d_soldierController.#ctor(Tuby.Api.IServices.Id_soldierServices)">
+            <summary>
+            构造函数
+            </summary>
+            <returns></returns>
         </member>
         <member name="T:Tuby.Api.Controllers.d_soldier_leaveController">
             <summary>
             d_soldier_leaveControllers
             </summary>	
         </member>
+        <member name="M:Tuby.Api.Controllers.d_soldier_leaveController.#ctor(Tuby.Api.IServices.Id_soldier_leaveServices)">
+            <summary>
+            构造函数
+            </summary>
+            <returns></returns>
+        </member>
         <member name="T:Tuby.Api.Controllers.d_soldier_trainController">
             <summary>
             d_soldier_trainControllers
             </summary>	
+        </member>
+        <member name="M:Tuby.Api.Controllers.d_soldier_trainController.#ctor(Tuby.Api.IServices.Id_soldier_trainServices)">
+            <summary>
+            构造函数
+            </summary>
+            <returns></returns>
         </member>
         <member name="T:Tuby.Api.Controllers.d_soldier_treatmentController">
             <summary>
             d_soldier_treatmentControllers
             </summary>	
         </member>
+        <member name="M:Tuby.Api.Controllers.d_soldier_treatmentController.#ctor(Tuby.Api.IServices.Id_soldier_treatmentServices)">
+            <summary>
+            构造函数
+            </summary>
+            <returns></returns>
+        </member>
         <member name="T:Tuby.Api.Controllers.d_target_camera_record_carController">
             <summary>
             d_target_camera_record_carControllers
             </summary>	
+        </member>
+        <member name="M:Tuby.Api.Controllers.d_target_camera_record_carController.#ctor(Tuby.Api.IServices.Id_target_camera_record_carServices)">
+            <summary>
+            构造函数
+            </summary>
+            <returns></returns>
         </member>
         <member name="T:Tuby.Api.Controllers.d_target_camera_record_peopleController">
             <summary>
             d_target_camera_record_peopleControllers
             </summary>	
         </member>
+        <member name="M:Tuby.Api.Controllers.d_target_camera_record_peopleController.#ctor(Tuby.Api.IServices.Id_target_camera_record_peopleServices)">
+            <summary>
+            构造函数
+            </summary>
+            <returns></returns>
+        </member>
         <member name="T:Tuby.Api.Controllers.d_target_carController">
             <summary>
             d_target_carControllers
             </summary>	
+        </member>
+        <member name="M:Tuby.Api.Controllers.d_target_carController.#ctor(Tuby.Api.IServices.Id_target_carServices)">
+            <summary>
+            构造函数
+            </summary>
+            <returns></returns>
         </member>
         <member name="T:Tuby.Api.Controllers.d_target_car_blacklistController">
             <summary>
             d_target_car_blacklistControllers
             </summary>	
         </member>
+        <member name="M:Tuby.Api.Controllers.d_target_car_blacklistController.#ctor(Tuby.Api.IServices.Id_target_car_blacklistServices)">
+            <summary>
+            构造函数
+            </summary>
+            <returns></returns>
+        </member>
         <member name="T:Tuby.Api.Controllers.d_target_car_controlController">
             <summary>
             d_target_car_controlControllers
             </summary>	
+        </member>
+        <member name="M:Tuby.Api.Controllers.d_target_car_controlController.#ctor(Tuby.Api.IServices.Id_target_car_controlServices)">
+            <summary>
+            构造函数
+            </summary>
+            <returns></returns>
         </member>
         <member name="T:Tuby.Api.Controllers.d_target_car_whitelistController">
             <summary>
             d_target_car_whitelistControllers
             </summary>	
         </member>
+        <member name="M:Tuby.Api.Controllers.d_target_car_whitelistController.#ctor(Tuby.Api.IServices.Id_target_car_whitelistServices)">
+            <summary>
+            构造函数
+            </summary>
+            <returns></returns>
+        </member>
         <member name="T:Tuby.Api.Controllers.d_target_peopleController">
             <summary>
             d_target_peopleControllers
             </summary>	
+        </member>
+        <member name="M:Tuby.Api.Controllers.d_target_peopleController.#ctor(Tuby.Api.IServices.Id_target_peopleServices)">
+            <summary>
+            构造函数
+            </summary>
+            <returns></returns>
         </member>
         <member name="T:Tuby.Api.Controllers.d_target_people_blacklistController">
             <summary>
             d_target_people_blacklistControllers
             </summary>	
         </member>
+        <member name="M:Tuby.Api.Controllers.d_target_people_blacklistController.#ctor(Tuby.Api.IServices.Id_target_people_blacklistServices)">
+            <summary>
+            构造函数
+            </summary>
+            <returns></returns>
+        </member>
         <member name="T:Tuby.Api.Controllers.d_target_people_controlController">
             <summary>
             d_target_people_controlControllers
             </summary>	
         </member>
+        <member name="M:Tuby.Api.Controllers.d_target_people_controlController.#ctor(Tuby.Api.IServices.Id_target_people_controlServices)">
+            <summary>
+            构造函数
+            </summary>
+            <returns></returns>
+        </member>
         <member name="T:Tuby.Api.Controllers.d_target_people_whitelistController">
             <summary>
             d_target_people_whitelistControllers
             </summary>	
+        </member>
+        <member name="M:Tuby.Api.Controllers.d_target_people_whitelistController.#ctor(Tuby.Api.IServices.Id_target_people_whitelistServices)">
+            <summary>
+            构造函数
+            </summary>
+            <returns></returns>
         </member>
     </members>
 </doc>

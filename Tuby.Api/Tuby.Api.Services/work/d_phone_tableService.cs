@@ -12,8 +12,13 @@ namespace Tuby.Api.Services
 	public class d_phone_tableServices : BaseServices<d_phone_table>, Id_phone_tableServices
     {
 	
-        
+        Id_phone_tableRepository dal;
+        public d_phone_tableServices(Id_phone_tableRepository dal)
+        {
+            this.dal = dal;
+        }
        
     }
 }
+	
 	

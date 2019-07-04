@@ -12,8 +12,13 @@ namespace Tuby.Api.Services
 	public class b_device_groupServices : BaseServices<b_device_group>, Ib_device_groupServices
     {
 	
-        
+        Ib_device_groupRepository dal;
+        public b_device_groupServices(Ib_device_groupRepository dal)
+        {
+            this.dal = dal;
+        }
        
     }
 }
+	
 	

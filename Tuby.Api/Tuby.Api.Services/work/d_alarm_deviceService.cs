@@ -12,8 +12,13 @@ namespace Tuby.Api.Services
 	public class d_alarm_deviceServices : BaseServices<d_alarm_device>, Id_alarm_deviceServices
     {
 	
-        
+        Id_alarm_deviceRepository dal;
+        public d_alarm_deviceServices(Id_alarm_deviceRepository dal)
+        {
+            this.dal = dal;
+        }
        
     }
 }
+	
 	

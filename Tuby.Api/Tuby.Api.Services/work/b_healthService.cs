@@ -12,8 +12,13 @@ namespace Tuby.Api.Services
 	public class b_healthServices : BaseServices<b_health>, Ib_healthServices
     {
 	
-        
+        Ib_healthRepository dal;
+        public b_healthServices(Ib_healthRepository dal)
+        {
+            this.dal = dal;
+        }
        
     }
 }
+	
 	

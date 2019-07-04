@@ -12,8 +12,13 @@ namespace Tuby.Api.Services
 	public class b_alarm_typeServices : BaseServices<b_alarm_type>, Ib_alarm_typeServices
     {
 	
-        
+        Ib_alarm_typeRepository dal;
+        public b_alarm_typeServices(Ib_alarm_typeRepository dal)
+        {
+            this.dal = dal;
+        }
        
     }
 }
+	
 	

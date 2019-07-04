@@ -12,8 +12,13 @@ namespace Tuby.Api.Services
 	public class d_soldierServices : BaseServices<d_soldier>, Id_soldierServices
     {
 	
-        
+        Id_soldierRepository dal;
+        public d_soldierServices(Id_soldierRepository dal)
+        {
+            this.dal = dal;
+        }
        
     }
 }
+	
 	

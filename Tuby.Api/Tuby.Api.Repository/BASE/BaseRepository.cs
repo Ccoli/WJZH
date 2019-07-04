@@ -313,6 +313,70 @@ namespace Tuby.Api.Repository.Base
             .WhereIF(whereExpression != null, whereExpression)
             .ToPageList(intPageIndex, intPageSize));
         }
+
+        /// <summary> 
+        ///查询-多表查询
+        /// </summary> 
+        /// <typeparam name="T">实体1</typeparam> 
+        /// <typeparam name="T2">实体2</typeparam> 
+        /// <typeparam name="T3">实体3</typeparam>
+        /// <typeparam name="TResult">返回对象</typeparam>
+        /// <param name="joinExpression">关联表达式 (join1,join2) => new object[] {JoinType.Left,join1.UserNo==join2.UserNo}</param> 
+        /// <param name="selectExpression">返回表达式 (s1, s2) => new { Id =s1.UserNo, Id1 = s2.UserNo}</param>
+        /// <param name="whereLambda">查询表达式 (w1, w2) =>w1.UserNo == "")</param> 
+        /// <returns>值</returns>
+        public List<TResult> QueryMuch<T, T2,  TResult>(
+            Expression<Func<T, T2, object[]>> joinExpression) where T : class, new()
+        {
+            return db.Queryable(joinExpression).Select<TResult>().ToList();
+        }
+
+        /// <summary> 
+        ///查询-多表查询
+        /// </summary> 
+        /// <typeparam name="T">实体1</typeparam> 
+        /// <typeparam name="T2">实体2</typeparam> 
+        /// <typeparam name="T3">实体3</typeparam>
+        /// <typeparam name="TResult">返回对象</typeparam>
+        /// <param name="joinExpression">关联表达式 (join1,join2) => new object[] {JoinType.Left,join1.UserNo==join2.UserNo}</param> 
+        /// <param name="selectExpression">返回表达式 (s1, s2) => new { Id =s1.UserNo, Id1 = s2.UserNo}</param>
+        /// <param name="whereLambda">查询表达式 (w1, w2) =>w1.UserNo == "")</param> 
+        /// <returns>值</returns>
+        public List<TResult> QueryMuch<T, T2, T3, TResult>(
+            Expression<Func<T, T2, T3, object[]>> joinExpression) where T : class, new()
+        {
+            return db.Queryable(joinExpression).Select<TResult>().ToList();
+        }
+        public List<TResult> QueryMuch<T, T2, T3, T4, TResult>(
+            Expression<Func<T, T2, T3, T4, object[]>> joinExpression) where T : class, new()
+        {
+            return db.Queryable(joinExpression).Select<TResult>().ToList();
+        }
+
+        /// <summary> 
+        ///查询-多表查询
+        /// </summary> 
+        /// <typeparam name="T">实体1</typeparam> 
+        /// <typeparam name="T2">实体2</typeparam> 
+        /// <typeparam name="T3">实体3</typeparam>
+        /// <typeparam name="T4">实体4</typeparam>
+        /// <typeparam name="T5">实体5</typeparam> 
+        /// <typeparam name="TResult">返回对象</typeparam>
+        /// <param name="joinExpression">关联表达式 (join1,join2) => new object[] {JoinType.Left,join1.UserNo==join2.UserNo}</param> 
+        /// <param name="selectExpression">返回表达式 (s1, s2) => new { Id =s1.UserNo, Id1 = s2.UserNo}</param>
+        /// <param name="whereLambda">查询表达式 (w1, w2) =>w1.UserNo == "")</param> 
+        /// <returns>值</returns>
+        public List<TResult> QueryMuch<T, T2, T3, T4, T5, TResult>(
+            Expression<Func<T, T2, T3, T4, T5, object[]>> joinExpression,
+            Expression<Func<T, T2, T3, T4, T5, TResult>> selectExpression,
+            Expression<Func<T, T2, T3, T4, T5, bool>> whereLambda = null) where T : class, new()
+        {
+            if (whereLambda == null)
+            {
+                return db.Queryable(joinExpression).Select(selectExpression).ToList();
+            }
+            return db.Queryable(joinExpression).Where(whereLambda).Select(selectExpression).ToList();
+        }
     }
 
 }

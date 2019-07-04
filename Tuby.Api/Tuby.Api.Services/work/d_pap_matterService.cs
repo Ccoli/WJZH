@@ -12,8 +12,13 @@ namespace Tuby.Api.Services
 	public class d_pap_matterServices : BaseServices<d_pap_matter>, Id_pap_matterServices
     {
 	
-        
+        Id_pap_matterRepository dal;
+        public d_pap_matterServices(Id_pap_matterRepository dal)
+        {
+            this.dal = dal;
+        }
        
     }
 }
+	
 	

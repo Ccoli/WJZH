@@ -12,8 +12,13 @@ namespace Tuby.Api.Services
 	public class b_device_typeServices : BaseServices<b_device_type>, Ib_device_typeServices
     {
 	
-        
+        Ib_device_typeRepository dal;
+        public b_device_typeServices(Ib_device_typeRepository dal)
+        {
+            this.dal = dal;
+        }
        
     }
 }
+	
 	

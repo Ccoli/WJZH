@@ -47,7 +47,11 @@ namespace <#=config.ServicesNameSpace#>
 	/// </summary>	
 	public class <#=tableName#>Services : BaseServices<<#=tableName#>>, I<#=tableName#>Services
     { 
-		 
+		 I<#=tableName#>Repository dal;
+        public <#=tableName#>Services(I<#=tableName#>Repository dal)
+        {
+            this.dal = dal;
+        } 
     }
 }
 
@@ -83,37 +87,15 @@ namespace <#=config.ServicesNameSpace#>
 	public class <#=row["TABLE_NAME"].ToString()#>Services : BaseServices<<#=row["TABLE_NAME"].ToString()#>>, I<#=row["TABLE_NAME"].ToString() #>Services
     {
 	
-        
+        I<#=row["TABLE_NAME"].ToString() #>Repository dal;
+        public <#=row["TABLE_NAME"].ToString() #>Services(I<#=row["TABLE_NAME"].ToString() #>Repository dal)
+        {
+            this.dal = dal;
+        }
        
     }
 }
-	<# 
-		manager.EndBlock(); 
-		} 
-
-		{  
-		manager.StartBlock("BaseService.cs");
-	 #>
-using System;
-using <#=config.ModelNameSpace#>;
-using <#=config.IRepositoryNameSpace#>;
-using <#=config.IServicesNameSpace#>;
-
-namespace <#=config.ServicesNameSpace#>
-{	
-	/// <summary>
-	/// IBaseRepository
-	/// </summary>	
-	public class BaseService<TEntity> : IBaseServices<TEntity> where TEntity : class, new()
-    {
-		public IBaseRepository<TEntity> _repository;
-
-		public BaseService(IBaseRepository<TEntity> repository)
-        {
-            _repository = repository;
-        }
-    }
-}
+	
 	<# 
 		manager.EndBlock(); 
 		} 

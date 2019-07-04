@@ -12,8 +12,13 @@ namespace Tuby.Api.Services
 	public class a_usergroupServices : BaseServices<a_usergroup>, Ia_usergroupServices
     {
 	
-        
+        Ia_usergroupRepository dal;
+        public a_usergroupServices(Ia_usergroupRepository dal)
+        {
+            this.dal = dal;
+        }
        
     }
 }
+	
 	

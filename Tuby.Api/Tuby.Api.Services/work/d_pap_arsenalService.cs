@@ -12,8 +12,13 @@ namespace Tuby.Api.Services
 	public class d_pap_arsenalServices : BaseServices<d_pap_arsenal>, Id_pap_arsenalServices
     {
 	
-        
+        Id_pap_arsenalRepository dal;
+        public d_pap_arsenalServices(Id_pap_arsenalRepository dal)
+        {
+            this.dal = dal;
+        }
        
     }
 }
+	
 	

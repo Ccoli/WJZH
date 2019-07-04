@@ -13,3 +13,11 @@ H:\MyProjects\Tuby.Api\Tuby.Api.Repository\obj\Release\netcoreapp2.2\Tuby.Api.Re
 H:\MyProjects\Tuby.Api\Tuby.Api.Repository\obj\Release\netcoreapp2.2\Tuby.Api.Repository.dll
 H:\MyProjects\Tuby.Api\Tuby.Api.Repository\obj\Release\netcoreapp2.2\Tuby.Api.Repository.pdb
 H:\MyProjects\Tuby.Api\Tuby.Api.Repository\bin\Release\netcoreapp2.2\Tuby.Api.Model.xml
+H:\MyProjects\Tuby.Api\Tuby.Api.Repository\bin\Release\netcoreapp2.2\Tuby.Api.Common.dll
+H:\MyProjects\Tuby.Api\Tuby.Api.Repository\bin\Release\netcoreapp2.2\Tuby.Api.Common.pdb
+H:\MyProjects\Tuby.Api\Tuby.Api\bin\Debug\netcoreapp2.2\Tuby.Api.Repository.deps.json
+H:\MyProjects\Tuby.Api\Tuby.Api\bin\Debug\netcoreapp2.2\Tuby.Api.Repository.dll
+H:\MyProjects\Tuby.Api\Tuby.Api\bin\Debug\netcoreapp2.2\Tuby.Api.Repository.pdb
+H:\MyProjects\Tuby.Api\Tuby.Api\bin\Release\netcoreapp2.2\Tuby.Api.Repository.deps.json
+H:\MyProjects\Tuby.Api\Tuby.Api\bin\Release\netcoreapp2.2\Tuby.Api.Repository.dll
+H:\MyProjects\Tuby.Api\Tuby.Api\bin\Release\netcoreapp2.2\Tuby.Api.Repository.pdb

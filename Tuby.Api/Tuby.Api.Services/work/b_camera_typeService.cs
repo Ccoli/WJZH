@@ -12,8 +12,13 @@ namespace Tuby.Api.Services
 	public class b_camera_typeServices : BaseServices<b_camera_type>, Ib_camera_typeServices
     {
 	
-        
+        Ib_camera_typeRepository dal;
+        public b_camera_typeServices(Ib_camera_typeRepository dal)
+        {
+            this.dal = dal;
+        }
        
     }
 }
+	
 	

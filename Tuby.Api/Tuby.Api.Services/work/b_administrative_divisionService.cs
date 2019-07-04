@@ -12,8 +12,13 @@ namespace Tuby.Api.Services
 	public class b_administrative_divisionServices : BaseServices<b_administrative_division>, Ib_administrative_divisionServices
     {
 	
-        
+        Ib_administrative_divisionRepository dal;
+        public b_administrative_divisionServices(Ib_administrative_divisionRepository dal)
+        {
+            this.dal = dal;
+        }
        
     }
 }
+	
 	

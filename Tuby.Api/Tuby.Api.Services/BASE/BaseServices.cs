@@ -5,13 +5,13 @@ using System.Text;
 using System.Threading.Tasks;
 using Tuby.Api.IRepository.Base;
 using Tuby.Api.IServices.BASE;
-using Tuby.Api.Repository.Base;
 
 namespace Tuby.Api.Services.BASE
 {
     public class BaseServices<TEntity> : IBaseServices<TEntity> where TEntity : class, new()
     {
-        public IBaseRepository<TEntity> baseDal = new BaseRepository<TEntity>();
+        //public IBaseRepository<TEntity> baseDal = new BaseRepository<TEntity>();
+        public IBaseRepository<TEntity> baseDal;//通过在子类的构造函数中注入，这里是基类，不用构造函数
 
         public async Task<TEntity> QueryByID(object objId)
         {
@@ -248,6 +248,70 @@ namespace Tuby.Api.Services.BASE
             return await baseDal.QueryPage(whereExpression,
          intPageIndex = 0, intPageSize, strOrderByFileds);
         }
+        /// <summary> 
+        ///查询-多表查询
+        /// </summary> 
+        /// <typeparam name="T">实体1</typeparam> 
+        /// <typeparam name="T2">实体2</typeparam> 
+        /// <typeparam name="T3">实体3</typeparam>
+        /// <typeparam name="TResult">返回对象</typeparam>
+        /// <param name="joinExpression">关联表达式 (join1,join2) => new object[] {JoinType.Left,join1.UserNo==join2.UserNo}</param> 
+        /// <param name="selectExpression">返回表达式 (s1, s2) => new { Id =s1.UserNo, Id1 = s2.UserNo}</param>
+        /// <param name="whereLambda">查询表达式 (w1, w2) =>w1.UserNo == "")</param> 
+        /// <returns>值</returns>
+        public List<TResult> QueryMuch<T, T2, TResult>(Expression<Func<T, T2,object[]>> joinExpression) where T : class, new()
+        {
+            return baseDal.QueryMuch<T, T2, TResult>(joinExpression);
+        }
 
+        /// <summary> 
+        ///查询-多表查询
+        /// </summary> 
+        /// <typeparam name="T">实体1</typeparam> 
+        /// <typeparam name="T2">实体2</typeparam> 
+        /// <typeparam name="T3">实体3</typeparam>
+        /// <typeparam name="TResult">返回对象</typeparam>
+        /// <param name="joinExpression">关联表达式 (join1,join2) => new object[] {JoinType.Left,join1.UserNo==join2.UserNo}</param> 
+        /// <param name="selectExpression">返回表达式 (s1, s2) => new { Id =s1.UserNo, Id1 = s2.UserNo}</param>
+        /// <param name="whereLambda">查询表达式 (w1, w2) =>w1.UserNo == "")</param> 
+        /// <returns>值</returns>
+        public List<TResult> QueryMuch<T, T2, T3, TResult>(Expression<Func<T, T2, T3, object[]>> joinExpression) where T : class, new()
+        {
+            return baseDal.QueryMuch<T, T2, T3, TResult>(joinExpression);
+        }
+
+        /// <summary> 
+        ///查询-多表查询
+        /// </summary> 
+        /// <typeparam name="T">实体1</typeparam> 
+        /// <typeparam name="T2">实体2</typeparam> 
+        /// <typeparam name="T3">实体3</typeparam>
+        /// <typeparam name="TResult">返回对象</typeparam>
+        /// <param name="joinExpression">关联表达式 (join1,join2) => new object[] {JoinType.Left,join1.UserNo==join2.UserNo}</param> 
+        /// <param name="selectExpression">返回表达式 (s1, s2) => new { Id =s1.UserNo, Id1 = s2.UserNo}</param>
+        /// <param name="whereLambda">查询表达式 (w1, w2) =>w1.UserNo == "")</param> 
+        /// <returns>值</returns>
+        public List<TResult> QueryMuch<T, T2, T3, T4, TResult>(Expression<Func<T, T2, T3, T4, object[]>> joinExpression) where T : class, new()
+        {
+            return baseDal.QueryMuch<T, T2, T3, T4, TResult>(joinExpression);
+        }
+
+        /// <summary> 
+        ///查询-多表查询
+        /// </summary> 
+        /// <typeparam name="T">实体1</typeparam> 
+        /// <typeparam name="T2">实体2</typeparam> 
+        /// <typeparam name="T3">实体3</typeparam>
+        /// <typeparam name="T4">实体4</typeparam>
+        /// <typeparam name="T5">实体5</typeparam> 
+        /// <typeparam name="TResult">返回对象</typeparam>
+        /// <param name="joinExpression">关联表达式 (join1,join2) => new object[] {JoinType.Left,join1.UserNo==join2.UserNo}</param> 
+        /// <param name="selectExpression">返回表达式 (s1, s2) => new { Id =s1.UserNo, Id1 = s2.UserNo}</param>
+        /// <param name="whereLambda">查询表达式 (w1, w2) =>w1.UserNo == "")</param> 
+        /// <returns>值</returns>
+        public List<TResult> QueryMuch<T, T2, T3, T4, T5, TResult>(Expression<Func<T, T2, T3, T4, T5, object[]>> joinExpression, Expression<Func<T, T2, T3, T4, T5, TResult>> selectExpression, Expression<Func<T, T2, T3, T4, T5, bool>> whereLambda = null) where T : class, new()
+        {
+            return baseDal.QueryMuch<T, T2, T3, T4, T5, TResult>(joinExpression, selectExpression, whereLambda);
+        }
     }
 }

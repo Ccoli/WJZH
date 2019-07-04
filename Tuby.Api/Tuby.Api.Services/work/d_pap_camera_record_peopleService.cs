@@ -12,8 +12,13 @@ namespace Tuby.Api.Services
 	public class d_pap_camera_record_peopleServices : BaseServices<d_pap_camera_record_people>, Id_pap_camera_record_peopleServices
     {
 	
-        
+        Id_pap_camera_record_peopleRepository dal;
+        public d_pap_camera_record_peopleServices(Id_pap_camera_record_peopleRepository dal)
+        {
+            this.dal = dal;
+        }
        
     }
 }
+	
 	

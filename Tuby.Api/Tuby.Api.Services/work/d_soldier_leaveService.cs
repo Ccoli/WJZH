@@ -12,8 +12,13 @@ namespace Tuby.Api.Services
 	public class d_soldier_leaveServices : BaseServices<d_soldier_leave>, Id_soldier_leaveServices
     {
 	
-        
+        Id_soldier_leaveRepository dal;
+        public d_soldier_leaveServices(Id_soldier_leaveRepository dal)
+        {
+            this.dal = dal;
+        }
        
     }
 }
+	
 	

@@ -12,8 +12,13 @@ namespace Tuby.Api.Services
 	public class d_pap_car_leaveServices : BaseServices<d_pap_car_leave>, Id_pap_car_leaveServices
     {
 	
-        
+        Id_pap_car_leaveRepository dal;
+        public d_pap_car_leaveServices(Id_pap_car_leaveRepository dal)
+        {
+            this.dal = dal;
+        }
        
     }
 }
+	
 	

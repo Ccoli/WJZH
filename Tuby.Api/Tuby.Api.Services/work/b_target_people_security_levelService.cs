@@ -12,8 +12,13 @@ namespace Tuby.Api.Services
 	public class b_target_people_security_levelServices : BaseServices<b_target_people_security_level>, Ib_target_people_security_levelServices
     {
 	
-        
+        Ib_target_people_security_levelRepository dal;
+        public b_target_people_security_levelServices(Ib_target_people_security_levelRepository dal)
+        {
+            this.dal = dal;
+        }
        
     }
 }
+	
 	
