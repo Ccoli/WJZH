@@ -13,6 +13,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="8.1.1" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="6.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Tuby.Api.IRepositoty\Tuby.Api.IRepositoty.csproj" />
     <ProjectReference Include="..\Tuby.Api.IServices\Tuby.Api.IServices.csproj" />
     <ProjectReference Include="..\Tuby.Api.Repository\Tuby.Api.Repository.csproj" />

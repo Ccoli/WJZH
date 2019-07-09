@@ -16,6 +16,7 @@ namespace Tuby.Api.Services
         public d_pap_carServices(Id_pap_carRepository dal)
         {
             this.dal = dal;
+			base.baseDal = dal;
         }
        
     }

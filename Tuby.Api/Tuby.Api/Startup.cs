@@ -3,21 +3,35 @@ using System.IO;
 using System.Reflection;
 using Autofac;
 using Autofac.Extensions.DependencyInjection;
+using AutoMapper;
+using log4net;
+using log4net.Config;
+using log4net.Repository;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Swashbuckle.AspNetCore.Swagger;
-using Tuby.Api.Repository.sugar;
+using Tuby.Api.Common.LogHelper;
+using Tuby.Api.Filter;
 
 namespace Tuby.Api
 {
     public class Startup
     {
+        /// <summary>
+        /// log4net 仓储库
+        /// </summary>
+        public static ILoggerRepository Repository { get; set; }
+
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
+            //log4net
+            Repository = LogManager.CreateRepository(Configuration["Logging:Log4Net:Name"]);
+            //指定配置文件，如果这里你遇到问题，应该是使用了InProcess模式，请查看Blog.Core.csproj,并删之
+            XmlConfigurator.Configure(Repository, new FileInfo("log4net.config"));
         }
 
         public IConfiguration Configuration { get; }
@@ -26,7 +40,11 @@ namespace Tuby.Api
         // This method gets called by the runtime. Use this method to add services to the container.
         public IServiceProvider ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            
+            #region 部分服务注入-netcore自带方法
+            //log日志注入
+            services.AddSingleton<ILoggerHelper, LogHelper>();
+            #endregion
 
             #region Swagger
             var basePath = Microsoft.DotNet.PlatformAbstractions.ApplicationEnvironment.ApplicationBasePath;
@@ -52,8 +70,12 @@ namespace Tuby.Api
             #endregion
 
             #region 数据库配置
-            
-            BaseDBConfig.ConnectionString = Configuration.GetSection("AppSettings:MySqlConnection").Value;
+            services.AddScoped<Tuby.Api.Model.Seed.MyContext>();
+            //BaseDBConfig.ConnectionString = Configuration.GetSection("AppSettings:MySqlConnection").Value;
+            #endregion
+
+            #region Automapper
+            services.AddAutoMapper(typeof(Startup));
             #endregion
 
             #region CORS
@@ -83,6 +105,16 @@ namespace Tuby.Api
 
             //跨域第一种办法，注意下边 Configure 中进行配置
             //services.AddCors();
+            #endregion
+
+            #region MVC + GlobalExceptions
+            //注入全局异常捕获
+            services.AddMvc(o =>
+            {
+                // 全局异常过滤
+                o.Filters.Add(typeof(GlobalExceptionsFilter));
+            })
+            .SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
             #endregion
 
             #region AutoFac
@@ -137,6 +169,7 @@ namespace Tuby.Api
                                    //这个时候去launchSettings.json中把"launchUrl": "swagger/index.html"去掉， 然后直接访问localhost:8001/index.html即可
             });
             #endregion
+
 
             #region CORS
             //跨域第二种方法，使用策略，详细策略信息在ConfigureService中

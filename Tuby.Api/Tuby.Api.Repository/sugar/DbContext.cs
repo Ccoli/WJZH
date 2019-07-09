@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Tuby.Api.Common.LogHelper;
 
 namespace Tuby.Api.Repository.sugar
 {
@@ -11,10 +12,11 @@ namespace Tuby.Api.Repository.sugar
         private static string _connectionString;
         private static DbType _dbType;
         private SqlSugarClient _db;
+        private readonly ILoggerHelper _loggerHelper = new LogHelper();
 
         /// <summary>
         /// 连接字符串 
-        /// Blog.Core
+        /// Tuby.Api
         /// </summary>
         public static string ConnectionString
         {
@@ -23,7 +25,7 @@ namespace Tuby.Api.Repository.sugar
         }
         /// <summary>
         /// 数据库类型 
-        /// Blog.Core 
+        /// Tuby.Api 
         /// </summary>
         public static DbType DbType
         {
@@ -32,7 +34,7 @@ namespace Tuby.Api.Repository.sugar
         }
         /// <summary>
         /// 数据连接对象 
-        /// Blog.Core 
+        /// Tuby.Api 
         /// </summary>
         public SqlSugarClient Db
         {
@@ -42,7 +44,7 @@ namespace Tuby.Api.Repository.sugar
 
         /// <summary>
         /// 数据库上下文实例（自动关闭连接）
-        /// Blog.Core 
+        /// Tuby.Api 
         /// </summary>
         public static DbContext Context
         {
@@ -56,36 +58,10 @@ namespace Tuby.Api.Repository.sugar
 
         /// <summary>
         /// 功能描述:构造函数
-        /// 作　　者:Blog.Core
-        /// </summary>
-        private DbContext()
-        {
-            if (string.IsNullOrEmpty(_connectionString))
-                throw new ArgumentNullException("数据库连接字符串为空");
-            _db = new SqlSugarClient(new ConnectionConfig()
-            {
-                ConnectionString = _connectionString,
-                DbType = _dbType,
-                IsAutoCloseConnection = true,
-                IsShardSameThread = true,
-                ConfigureExternalServices = new ConfigureExternalServices()
-                {
-                    //DataInfoCacheService = new HttpRuntimeCache()
-                },
-                MoreSettings = new ConnMoreSettings()
-                {
-                    //IsWithNoLockQuery = true,
-                    IsAutoRemoveDataCache = true
-                }
-            });
-        }
-
-        /// <summary>
-        /// 功能描述:构造函数
-        /// 作　　者:Blog.Core
+        /// 作　　者:Tuby.Api
         /// </summary>
         /// <param name="blnIsAutoCloseConnection">是否自动关闭连接</param>
-        private DbContext(bool blnIsAutoCloseConnection)
+        private DbContext(bool blnIsAutoCloseConnection = true)
         {
             if (string.IsNullOrEmpty(_connectionString))
                 throw new ArgumentNullException("数据库连接字符串为空");
@@ -94,7 +70,7 @@ namespace Tuby.Api.Repository.sugar
                 ConnectionString = _connectionString,
                 DbType = _dbType,
                 IsAutoCloseConnection = blnIsAutoCloseConnection,
-                IsShardSameThread = true,
+                IsShardSameThread = false,
                 ConfigureExternalServices = new ConfigureExternalServices()
                 {
                     //DataInfoCacheService = new HttpRuntimeCache()
@@ -105,12 +81,28 @@ namespace Tuby.Api.Repository.sugar
                     IsAutoRemoveDataCache = true
                 }
             });
+
+            //_db.Aop.OnLogExecuted = (sql, pars) => //SQL执行完事件
+            //{
+            //    OutSql2Log(sql, GetParas(pars));
+            //};
+
+            //_db.Aop.OnLogExecuting = (sql, pars) => //SQL执行中事件
+            //{
+            //    Parallel.For(0, 1, e =>
+            //    {
+            //        MiniProfiler.Current.CustomTiming("SQL：", GetParas(pars) + "【SQL语句】：" + sql);
+            //        LogLock.OutSql2Log("SqlLog", new string[] { GetParas(pars), "【SQL语句】：" + sql });
+
+            //    });
+            //};
+
         }
 
         #region 实例方法
         /// <summary>
         /// 功能描述:获取数据库处理对象
-        /// 作　　者:Blog.Core
+        /// 作　　者:Tuby.Api
         /// </summary>
         /// <returns>返回值</returns>
         public SimpleClient<T> GetEntityDB<T>() where T : class, new()
@@ -119,7 +111,7 @@ namespace Tuby.Api.Repository.sugar
         }
         /// <summary>
         /// 功能描述:获取数据库处理对象
-        /// 作　　者:Blog.Core
+        /// 作　　者:Tuby.Api
         /// </summary>
         /// <param name="db">db</param>
         /// <returns>返回值</returns>
@@ -131,16 +123,16 @@ namespace Tuby.Api.Repository.sugar
         #region 根据数据库表生产实体类
         /// <summary>
         /// 功能描述:根据数据库表生产实体类
-        /// 作　　者:Blog.Core
+        /// 作　　者:Tuby.Api
         /// </summary>       
         /// <param name="strPath">实体类存放路径</param>
         public void CreateClassFileByDBTalbe(string strPath)
         {
-            CreateClassFileByDBTalbe(strPath, "Km.PosZC");
+            CreateClassFileByDBTalbe(strPath, "Tuby.Api.Model");
         }
         /// <summary>
         /// 功能描述:根据数据库表生产实体类
-        /// 作　　者:Blog.Core
+        /// 作　　者:Tuby.Api
         /// </summary>
         /// <param name="strPath">实体类存放路径</param>
         /// <param name="strNameSpace">命名空间</param>
@@ -151,7 +143,7 @@ namespace Tuby.Api.Repository.sugar
 
         /// <summary>
         /// 功能描述:根据数据库表生产实体类
-        /// 作　　者:Blog.Core
+        /// 作　　者:Tuby.Api
         /// </summary>
         /// <param name="strPath">实体类存放路径</param>
         /// <param name="strNameSpace">命名空间</param>
@@ -166,7 +158,7 @@ namespace Tuby.Api.Repository.sugar
 
         /// <summary>
         /// 功能描述:根据数据库表生产实体类
-        /// 作　　者:Blog.Core
+        /// 作　　者:Tuby.Api
         /// </summary>
         /// <param name="strPath">实体类存放路径</param>
         /// <param name="strNameSpace">命名空间</param>
@@ -265,7 +257,7 @@ namespace {Namespace}
         #region 根据实体类生成数据库表
         /// <summary>
         /// 功能描述:根据实体类生成数据库表
-        /// 作　　者:Blog.Core
+        /// 作　　者:Tuby.Api
         /// </summary>
         /// <param name="blnBackupTable">是否备份表</param>
         /// <param name="lstEntitys">指定的实体</param>
@@ -286,7 +278,7 @@ namespace {Namespace}
 
         /// <summary>
         /// 功能描述:根据实体类生成数据库表
-        /// 作　　者:Blog.Core
+        /// 作　　者:Tuby.Api
         /// </summary>
         /// <param name="blnBackupTable">是否备份表</param>
         /// <param name="lstEntitys">指定的实体</param>
@@ -305,11 +297,24 @@ namespace {Namespace}
 
         #endregion
 
+        private string GetParas(SugarParameter[] pars)
+        {
+            string key = "【SQL参数】：";
+            foreach (var param in pars)
+            {
+                key += $"{param.ParameterName}:{param.Value}\n";
+            }
+
+            return key;
+        }
+
+
+
         #region 静态方法
 
         /// <summary>
         /// 功能描述:获得一个DbContext
-        /// 作　　者:Blog.Core
+        /// 作　　者:Tuby.Api
         /// </summary>
         /// <param name="blnIsAutoCloseConnection">是否自动关闭连接（如果为false，则使用接受时需要手动关闭Db）</param>
         /// <returns>返回值</returns>
@@ -320,11 +325,11 @@ namespace {Namespace}
 
         /// <summary>
         /// 功能描述:设置初始化参数
-        /// 作　　者:Blog.Core
+        /// 作　　者:Tuby.Api
         /// </summary>
         /// <param name="strConnectionString">连接字符串</param>
         /// <param name="enmDbType">数据库类型</param>
-        public static void Init(string strConnectionString, DbType enmDbType = SqlSugar.DbType.MySql)
+        public static void Init(string strConnectionString, DbType enmDbType = SqlSugar.DbType.SqlServer)
         {
             _connectionString = strConnectionString;
             _dbType = enmDbType;
@@ -332,7 +337,7 @@ namespace {Namespace}
 
         /// <summary>
         /// 功能描述:创建一个链接配置
-        /// 作　　者:Blog.Core
+        /// 作　　者:Tuby.Api
         /// </summary>
         /// <param name="blnIsAutoCloseConnection">是否自动关闭连接</param>
         /// <param name="blnIsShardSameThread">是否夸类事务</param>
@@ -355,7 +360,7 @@ namespace {Namespace}
 
         /// <summary>
         /// 功能描述:获取一个自定义的DB
-        /// 作　　者:Blog.Core
+        /// 作　　者:Tuby.Api
         /// </summary>
         /// <param name="config">config</param>
         /// <returns>返回值</returns>
@@ -365,7 +370,7 @@ namespace {Namespace}
         }
         /// <summary>
         /// 功能描述:获取一个自定义的数据库处理对象
-        /// 作　　者:Blog.Core
+        /// 作　　者:Tuby.Api
         /// </summary>
         /// <param name="sugarClient">sugarClient</param>
         /// <returns>返回值</returns>
@@ -375,7 +380,7 @@ namespace {Namespace}
         }
         /// <summary>
         /// 功能描述:获取一个自定义的数据库处理对象
-        /// 作　　者:Blog.Core
+        /// 作　　者:Tuby.Api
         /// </summary>
         /// <param name="config">config</param>
         /// <returns>返回值</returns>

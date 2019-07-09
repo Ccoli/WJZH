@@ -16,6 +16,7 @@ namespace Tuby.Api.Services
         public d_soldier_trainServices(Id_soldier_trainRepository dal)
         {
             this.dal = dal;
+			base.baseDal = dal;
         }
        
     }

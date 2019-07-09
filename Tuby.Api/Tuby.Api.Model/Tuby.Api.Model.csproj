@@ -21,4 +21,8 @@
     <Folder Include="models\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Tuby.Api.Common\Tuby.Api.Common.csproj" />
+  </ItemGroup>
+
 </Project>

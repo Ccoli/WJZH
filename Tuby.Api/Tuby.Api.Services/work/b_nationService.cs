@@ -16,6 +16,7 @@ namespace Tuby.Api.Services
         public b_nationServices(Ib_nationRepository dal)
         {
             this.dal = dal;
+			base.baseDal = dal;
         }
        
     }

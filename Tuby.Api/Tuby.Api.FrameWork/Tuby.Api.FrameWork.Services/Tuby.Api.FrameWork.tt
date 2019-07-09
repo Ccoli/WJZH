@@ -51,6 +51,7 @@ namespace <#=config.ServicesNameSpace#>
         public <#=tableName#>Services(I<#=tableName#>Repository dal)
         {
             this.dal = dal;
+			base.baseDal = dal;
         } 
     }
 }
@@ -91,6 +92,7 @@ namespace <#=config.ServicesNameSpace#>
         public <#=row["TABLE_NAME"].ToString() #>Services(I<#=row["TABLE_NAME"].ToString() #>Repository dal)
         {
             this.dal = dal;
+			base.baseDal = dal;
         }
        
     }

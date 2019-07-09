@@ -16,6 +16,7 @@ namespace Tuby.Api.Services
         public b_healthServices(Ib_healthRepository dal)
         {
             this.dal = dal;
+			base.baseDal = dal;
         }
        
     }

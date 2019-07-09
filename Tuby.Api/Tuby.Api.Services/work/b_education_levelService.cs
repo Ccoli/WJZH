@@ -16,6 +16,7 @@ namespace Tuby.Api.Services
         public b_education_levelServices(Ib_education_levelRepository dal)
         {
             this.dal = dal;
+			base.baseDal = dal;
         }
        
     }

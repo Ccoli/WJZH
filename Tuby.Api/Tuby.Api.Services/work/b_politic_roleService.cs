@@ -16,6 +16,7 @@ namespace Tuby.Api.Services
         public b_politic_roleServices(Ib_politic_roleRepository dal)
         {
             this.dal = dal;
+			base.baseDal = dal;
         }
        
     }

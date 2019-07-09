@@ -16,6 +16,7 @@ namespace Tuby.Api.Services
         public b_equipment_statusServices(Ib_equipment_statusRepository dal)
         {
             this.dal = dal;
+			base.baseDal = dal;
         }
        
     }

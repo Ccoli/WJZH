@@ -16,6 +16,7 @@ namespace Tuby.Api.Services
         public ar_usergroup_userServices(Iar_usergroup_userRepository dal)
         {
             this.dal = dal;
+			base.baseDal = dal;
         }
        
     }

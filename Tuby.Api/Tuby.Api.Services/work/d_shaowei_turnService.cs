@@ -16,6 +16,7 @@ namespace Tuby.Api.Services
         public d_shaowei_turnServices(Id_shaowei_turnRepository dal)
         {
             this.dal = dal;
+			base.baseDal = dal;
         }
        
     }

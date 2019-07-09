@@ -180,6 +180,19 @@
             </summary>
             <returns></returns>
         </member>
+        <member name="M:Tuby.Api.Controllers.b_alarm_levelController.Get">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Tuby.Api.Controllers.b_alarm_levelController.Get(System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
         <member name="T:Tuby.Api.Controllers.b_alarm_typeController">
             <summary>
             b_alarm_typeControllers

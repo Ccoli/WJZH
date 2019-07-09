@@ -16,6 +16,7 @@ namespace Tuby.Api.Services
         public b_pap_rankServices(Ib_pap_rankRepository dal)
         {
             this.dal = dal;
+			base.baseDal = dal;
         }
        
     }

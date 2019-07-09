@@ -16,6 +16,7 @@ namespace Tuby.Api.Services
         public d_alarm_infoServices(Id_alarm_infoRepository dal)
         {
             this.dal = dal;
+			base.baseDal = dal;
         }
        
     }

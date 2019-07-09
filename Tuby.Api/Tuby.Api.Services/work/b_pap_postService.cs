@@ -16,6 +16,7 @@ namespace Tuby.Api.Services
         public b_pap_postServices(Ib_pap_postRepository dal)
         {
             this.dal = dal;
+			base.baseDal = dal;
         }
        
     }

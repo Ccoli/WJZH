@@ -16,6 +16,7 @@ namespace Tuby.Api.Services
         public dr_department_soldierServices(Idr_department_soldierRepository dal)
         {
             this.dal = dal;
+			base.baseDal = dal;
         }
        
     }

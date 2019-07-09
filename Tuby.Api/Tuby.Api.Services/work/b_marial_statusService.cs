@@ -16,6 +16,7 @@ namespace Tuby.Api.Services
         public b_marial_statusServices(Ib_marial_statusRepository dal)
         {
             this.dal = dal;
+			base.baseDal = dal;
         }
        
     }

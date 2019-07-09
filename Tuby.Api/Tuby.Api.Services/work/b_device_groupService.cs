@@ -16,6 +16,7 @@ namespace Tuby.Api.Services
         public b_device_groupServices(Ib_device_groupRepository dal)
         {
             this.dal = dal;
+			base.baseDal = dal;
         }
        
     }

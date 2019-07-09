@@ -16,6 +16,7 @@ namespace Tuby.Api.Services
         public b_zhd_architectureServices(Ib_zhd_architectureRepository dal)
         {
             this.dal = dal;
+			base.baseDal = dal;
         }
        
     }

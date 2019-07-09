@@ -11,3 +11,5 @@ H:\MyProjects\Tuby.Api\Tuby.Api.IRepositoty\bin\Debug\netcoreapp2.2\Tuby.Api.Mod
 H:\MyProjects\Tuby.Api\Tuby.Api.IRepositoty\bin\Debug\netcoreapp2.2\Tuby.Api.Model.pdb
 H:\MyProjects\Tuby.Api\Tuby.Api.IRepositoty\bin\Debug\netcoreapp2.2\Tuby.Api.Model.xml
 H:\MyProjects\Tuby.Api\Tuby.Api.IRepositoty\obj\Debug\netcoreapp2.2\Tuby.Api.IRepositoty.csproj.CopyComplete
+H:\MyProjects\Tuby.Api\Tuby.Api.IRepositoty\bin\Debug\netcoreapp2.2\Tuby.Api.Common.dll
+H:\MyProjects\Tuby.Api\Tuby.Api.IRepositoty\bin\Debug\netcoreapp2.2\Tuby.Api.Common.pdb

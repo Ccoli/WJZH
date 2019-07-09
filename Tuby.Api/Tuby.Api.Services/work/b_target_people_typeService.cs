@@ -16,6 +16,7 @@ namespace Tuby.Api.Services
         public b_target_people_typeServices(Ib_target_people_typeRepository dal)
         {
             this.dal = dal;
+			base.baseDal = dal;
         }
        
     }

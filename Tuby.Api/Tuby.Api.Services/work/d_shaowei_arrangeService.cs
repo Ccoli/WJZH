@@ -16,6 +16,7 @@ namespace Tuby.Api.Services
         public d_shaowei_arrangeServices(Id_shaowei_arrangeRepository dal)
         {
             this.dal = dal;
+			base.baseDal = dal;
         }
        
     }

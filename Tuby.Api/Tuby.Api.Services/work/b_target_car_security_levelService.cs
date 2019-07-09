@@ -16,6 +16,7 @@ namespace Tuby.Api.Services
         public b_target_car_security_levelServices(Ib_target_car_security_levelRepository dal)
         {
             this.dal = dal;
+			base.baseDal = dal;
         }
        
     }

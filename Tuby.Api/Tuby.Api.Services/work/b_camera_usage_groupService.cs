@@ -16,6 +16,7 @@ namespace Tuby.Api.Services
         public b_camera_usage_groupServices(Ib_camera_usage_groupRepository dal)
         {
             this.dal = dal;
+			base.baseDal = dal;
         }
        
     }

@@ -16,6 +16,7 @@ namespace Tuby.Api.Services
         public b_target_car_typeServices(Ib_target_car_typeRepository dal)
         {
             this.dal = dal;
+			base.baseDal = dal;
         }
        
     }

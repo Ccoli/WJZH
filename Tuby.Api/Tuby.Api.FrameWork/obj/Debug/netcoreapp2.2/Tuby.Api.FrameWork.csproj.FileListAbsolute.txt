@@ -15,3 +15,5 @@ H:\MyProjects\Tuby.Api\Tuby.Api.FrameWork\bin\Debug\netcoreapp2.2\Tuby.Api.IServ
 H:\MyProjects\Tuby.Api\Tuby.Api.FrameWork\bin\Debug\netcoreapp2.2\Tuby.Api.Model.pdb
 H:\MyProjects\Tuby.Api\Tuby.Api.FrameWork\bin\Debug\netcoreapp2.2\Tuby.Api.Model.xml
 H:\MyProjects\Tuby.Api\Tuby.Api.FrameWork\obj\Debug\netcoreapp2.2\Tuby.Api.FrameWork.csproj.CopyComplete
+H:\MyProjects\Tuby.Api\Tuby.Api.FrameWork\bin\Debug\netcoreapp2.2\Tuby.Api.Common.dll
+H:\MyProjects\Tuby.Api\Tuby.Api.FrameWork\bin\Debug\netcoreapp2.2\Tuby.Api.Common.pdb

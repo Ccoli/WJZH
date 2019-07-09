@@ -16,6 +16,7 @@ namespace Tuby.Api.Services
         public a_ui_accessServices(Ia_ui_accessRepository dal)
         {
             this.dal = dal;
+			base.baseDal = dal;
         }
        
     }

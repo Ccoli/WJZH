@@ -16,6 +16,7 @@ namespace Tuby.Api.Services
         public d_soldier_leaveServices(Id_soldier_leaveRepository dal)
         {
             this.dal = dal;
+			base.baseDal = dal;
         }
        
     }

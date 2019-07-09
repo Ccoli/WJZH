@@ -27,13 +27,21 @@ namespace Tuby.Api.Controllers
             _b_alarm_levelServices = b_alarm_levelServices;
         }
 
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
 		 [HttpGet]
         public async Task<List<b_alarm_level>> Get()
         {
             return await _b_alarm_levelServices.Query();
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         // GET: api/a_data_access/5
         [HttpGet("{id}")]
         public async Task<List<b_alarm_level>> Get(int id)

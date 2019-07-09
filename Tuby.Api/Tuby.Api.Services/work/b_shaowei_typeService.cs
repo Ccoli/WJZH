@@ -16,6 +16,7 @@ namespace Tuby.Api.Services
         public b_shaowei_typeServices(Ib_shaowei_typeRepository dal)
         {
             this.dal = dal;
+			base.baseDal = dal;
         }
        
     }

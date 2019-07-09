@@ -16,6 +16,7 @@ namespace Tuby.Api.Services
         public b_leave_reasonServices(Ib_leave_reasonRepository dal)
         {
             this.dal = dal;
+			base.baseDal = dal;
         }
        
     }

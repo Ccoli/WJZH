@@ -16,6 +16,7 @@ namespace Tuby.Api.Services
         public d_pap_gunServices(Id_pap_gunRepository dal)
         {
             this.dal = dal;
+			base.baseDal = dal;
         }
        
     }

@@ -16,6 +16,7 @@ namespace Tuby.Api.Services
         public d_target_people_blacklistServices(Id_target_people_blacklistRepository dal)
         {
             this.dal = dal;
+			base.baseDal = dal;
         }
        
     }

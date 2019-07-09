@@ -16,6 +16,7 @@ namespace Tuby.Api.Services
         public b_phone_table_typeServices(Ib_phone_table_typeRepository dal)
         {
             this.dal = dal;
+			base.baseDal = dal;
         }
        
     }

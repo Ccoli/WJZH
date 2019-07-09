@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text;
 
-namespace Blog.Core.Common
+namespace Tuby.Api.Common
 {
     /// <summary>
     /// appsettings.json操作类

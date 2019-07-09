@@ -4,6 +4,11 @@
         <name>Tuby.Api</name>
     </assembly>
     <members>
+        <member name="M:Tuby.Api.AutoMapper.CustomProfile.#ctor">
+            <summary>
+            配置构造函数，用来创建关系映射
+            </summary>
+        </member>
         <member name="T:Tuby.Api.Controllers.AlarmInfoController">
             <summary>
             测试多表查询接口
@@ -178,6 +183,19 @@
             <summary>
             构造函数
             </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Tuby.Api.Controllers.b_alarm_levelController.Get">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Tuby.Api.Controllers.b_alarm_levelController.Get(System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="id"></param>
             <returns></returns>
         </member>
         <member name="T:Tuby.Api.Controllers.b_alarm_typeController">
@@ -894,6 +912,34 @@
             构造函数
             </summary>
             <returns></returns>
+        </member>
+        <member name="T:Tuby.Api.Filter.GlobalExceptionsFilter">
+            <summary>
+            全局异常错误日志
+            </summary>
+        </member>
+        <member name="M:Tuby.Api.Filter.GlobalExceptionsFilter.WriteLog(System.String,System.Exception)">
+            <summary>
+            自定义返回格式
+            </summary>
+            <param name="throwMsg"></param>
+            <param name="ex"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Tuby.Api.Filter.JsonErrorResponse.Message">
+            <summary>
+            生产环境的消息
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Filter.JsonErrorResponse.DevelopmentMessage">
+            <summary>
+            开发环境的消息
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Startup.Repository">
+            <summary>
+            log4net 仓储库
+            </summary>
         </member>
     </members>
 </doc>

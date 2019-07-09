@@ -16,6 +16,7 @@ namespace Tuby.Api.Services
         public b_alarm_typeServices(Ib_alarm_typeRepository dal)
         {
             this.dal = dal;
+			base.baseDal = dal;
         }
        
     }
