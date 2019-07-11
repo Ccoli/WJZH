@@ -11,3 +11,5 @@ H:\MyProjects\Tuby.Api\Tuby.Api.IServices\obj\Release\netcoreapp2.2\Tuby.Api.ISe
 H:\MyProjects\Tuby.Api\Tuby.Api.IServices\obj\Release\netcoreapp2.2\Tuby.Api.IServices.dll
 H:\MyProjects\Tuby.Api\Tuby.Api.IServices\obj\Release\netcoreapp2.2\Tuby.Api.IServices.pdb
 H:\MyProjects\Tuby.Api\Tuby.Api.IServices\bin\Release\netcoreapp2.2\Tuby.Api.Model.xml
+H:\MyProjects\Tuby.Api\Tuby.Api.IServices\bin\Release\netcoreapp2.2\Tuby.Api.Common.dll
+H:\MyProjects\Tuby.Api\Tuby.Api.IServices\bin\Release\netcoreapp2.2\Tuby.Api.Common.pdb

@@ -1,0 +1,26 @@
+2019-07-10 09:32:55,495| 
+【自定义错误】：Cannot add or update a child row: a foreign key constraint fails (`wjzh`.`d_alarm_info`, CONSTRAINT `k_ararm_device` FOREIGN KEY (`AlarmDeviceID`) REFERENCES `d_alarm_device` (`ID`) ON DELETE NO ACTION ON UPDATE NO ACTION) 
+【异常类型】：MySqlException 
+【异常信息】：Cannot add or update a child row: a foreign key constraint fails (`wjzh`.`d_alarm_info`, CONSTRAINT `k_ararm_device` FOREIGN KEY (`AlarmDeviceID`) REFERENCES `d_alarm_device` (`ID`) ON DELETE NO ACTION ON UPDATE NO ACTION) 
+【堆栈调用】：   at SqlSugar.AdoProvider.GetScalar(String sql, SugarParameter[] parameters)
+   at SqlSugar.InsertableProvider`1.ExecuteReturnBigIdentity()
+   at Tuby.Api.Repository.Base.BaseRepository`1.<>c__DisplayClass16_0.<Add>b__0() in H:\MyProjects\Tuby.Api\Tuby.Api.Repository\BASE\BaseRepository.cs:line 80
+   at System.Threading.Tasks.Task`1.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot)
+--- End of stack trace from previous location where exception was thrown ---
+   at Tuby.Api.Repository.Base.BaseRepository`1.Add(TEntity entity) in H:\MyProjects\Tuby.Api\Tuby.Api.Repository\BASE\BaseRepository.cs:line 80
+   at Tuby.Api.Services.BASE.BaseServices`1.Add(TEntity entity) in H:\MyProjects\Tuby.Api\Tuby.Api.Services\BASE\BaseServices.cs:line 51
+   at Tuby.Api.Controllers.d_alarm_infoController.Post(d_alarm_info d_alarm_info) in H:\MyProjects\Tuby.Api\Tuby.Api\work\d_alarm_infoControllers.cs:line 50
+   at lambda_method(Closure , Object )
+   at Microsoft.Extensions.Internal.ObjectMethodExecutorAwaitable.Awaiter.GetResult()
+   at Microsoft.AspNetCore.Mvc.Internal.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at System.Threading.Tasks.ValueTask`1.get_Result()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeNextActionFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextExceptionFilterAsync()
+--------------------------------

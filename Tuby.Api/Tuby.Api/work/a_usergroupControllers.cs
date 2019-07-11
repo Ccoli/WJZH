@@ -12,6 +12,7 @@ namespace Tuby.Api.Controllers
 	/// <summary>
 	/// a_usergroupControllers
 	/// </summary>	
+	[Produces("application/json")]
 	[Route("api/[controller]")]
     [ApiController]
 	public class a_usergroupController : ControllerBase
@@ -26,37 +27,90 @@ namespace Tuby.Api.Controllers
         {
             _a_usergroupServices = a_usergroupServices;
         }
-
-
+		/// <summary>
+		/// api/a_usergroup 查询所有数据
+		/// </summary>	
 		 [HttpGet]
         public async Task<List<a_usergroup>> Get()
         {
             return await _a_usergroupServices.Query();
         }
 
-        // GET: api/a_data_access/5
+        /// <summary>
+		/// api/a_usergroup/{id} 根据id查询数据
+		/// </summary>
         [HttpGet("{id}")]
         public async Task<List<a_usergroup>> Get(int id)
         {
             return await _a_usergroupServices.Query(c => c.ID == id);
         }
 
-        // POST: api/a_department
+        /// <summary>
+		/// api/a_usergroup post添加数据
+		/// </summary>
         [HttpPost]
-        public void Post([FromBody] string value)
+       public async Task<MessageModel<string>> Post([FromBody] a_usergroup a_usergroup)
         {
+			var data = new MessageModel<string>();
+
+            var id = (await _a_usergroupServices.Add(a_usergroup));
+            data.success = id > 0;
+            if (data.success)
+            {
+                data.response = id.ObjToString();
+                data.msg = "添加成功";
+            }
+
+            return data;
         }
 
-        // PUT: api/a_department/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+         /// <summary>
+		/// api/a_usergroup put更新数据
+		/// </summary>
+        [HttpPut]
+        public async Task<MessageModel<string>> Update([FromBody] a_usergroup a_usergroup)
         {
+			var data = new MessageModel<string>();
+            if (a_usergroup != null && a_usergroup.ID > 0)
+            {
+                var id = (await _a_usergroupServices.Update(a_usergroup));
+                data.success = id;
+                if (data.success)
+                {
+                    data.response = "id为" +a_usergroup.ID.ToString() + "的数据更新成功";
+                    data.msg = "更新成功";
+                }
+                else
+                {
+                    data.response = "id为" +a_usergroup.ID.ToString() + "的数据不存在";
+                }
+            }
+
+            return data;
         }
 
-        // DELETE: api/ApiWithActions/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
+        /// <summary>
+		/// api/a_usergroup/delete get删除数据
+		/// </summary>
+        [HttpGet]
+        [Route("delete")]
+		 public async Task<MessageModel<string>> Delete(int id)
         {
+            var flag = (await _a_usergroupServices.DeleteById(id));
+            var data = new MessageModel<string>();
+            data.success = flag;
+            if (flag)
+            {
+                data.response = id.ToString()+"数据删除";
+                data.msg = "删除成功";
+            }
+            else
+            {
+                data.response ="id为"+ id.ToString() + "的数据找不到";
+                data.msg = "删除失败";
+            }
+
+            return data;
         }
     }
 }

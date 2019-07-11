@@ -12,6 +12,7 @@ namespace Tuby.Api.Controllers
 	/// <summary>
 	/// b_equipment_typeControllers
 	/// </summary>	
+	[Produces("application/json")]
 	[Route("api/[controller]")]
     [ApiController]
 	public class b_equipment_typeController : ControllerBase
@@ -26,37 +27,90 @@ namespace Tuby.Api.Controllers
         {
             _b_equipment_typeServices = b_equipment_typeServices;
         }
-
-
+		/// <summary>
+		/// api/b_equipment_type 查询所有数据
+		/// </summary>	
 		 [HttpGet]
         public async Task<List<b_equipment_type>> Get()
         {
             return await _b_equipment_typeServices.Query();
         }
 
-        // GET: api/a_data_access/5
+        /// <summary>
+		/// api/b_equipment_type/{id} 根据id查询数据
+		/// </summary>
         [HttpGet("{id}")]
         public async Task<List<b_equipment_type>> Get(int id)
         {
             return await _b_equipment_typeServices.Query(c => c.ID == id);
         }
 
-        // POST: api/a_department
+        /// <summary>
+		/// api/b_equipment_type post添加数据
+		/// </summary>
         [HttpPost]
-        public void Post([FromBody] string value)
+       public async Task<MessageModel<string>> Post([FromBody] b_equipment_type b_equipment_type)
         {
+			var data = new MessageModel<string>();
+
+            var id = (await _b_equipment_typeServices.Add(b_equipment_type));
+            data.success = id > 0;
+            if (data.success)
+            {
+                data.response = id.ObjToString();
+                data.msg = "添加成功";
+            }
+
+            return data;
         }
 
-        // PUT: api/a_department/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+         /// <summary>
+		/// api/b_equipment_type put更新数据
+		/// </summary>
+        [HttpPut]
+        public async Task<MessageModel<string>> Update([FromBody] b_equipment_type b_equipment_type)
         {
+			var data = new MessageModel<string>();
+            if (b_equipment_type != null && b_equipment_type.ID > 0)
+            {
+                var id = (await _b_equipment_typeServices.Update(b_equipment_type));
+                data.success = id;
+                if (data.success)
+                {
+                    data.response = "id为" +b_equipment_type.ID.ToString() + "的数据更新成功";
+                    data.msg = "更新成功";
+                }
+                else
+                {
+                    data.response = "id为" +b_equipment_type.ID.ToString() + "的数据不存在";
+                }
+            }
+
+            return data;
         }
 
-        // DELETE: api/ApiWithActions/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
+        /// <summary>
+		/// api/b_equipment_type/delete get删除数据
+		/// </summary>
+        [HttpGet]
+        [Route("delete")]
+		 public async Task<MessageModel<string>> Delete(int id)
         {
+            var flag = (await _b_equipment_typeServices.DeleteById(id));
+            var data = new MessageModel<string>();
+            data.success = flag;
+            if (flag)
+            {
+                data.response = id.ToString()+"数据删除";
+                data.msg = "删除成功";
+            }
+            else
+            {
+                data.response ="id为"+ id.ToString() + "的数据找不到";
+                data.msg = "删除失败";
+            }
+
+            return data;
         }
     }
 }

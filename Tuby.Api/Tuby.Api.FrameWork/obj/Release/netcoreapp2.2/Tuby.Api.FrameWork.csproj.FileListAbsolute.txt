@@ -15,3 +15,5 @@ H:\MyProjects\Tuby.Api\Tuby.Api.FrameWork\obj\Release\netcoreapp2.2\Tuby.Api.Fra
 H:\MyProjects\Tuby.Api\Tuby.Api.FrameWork\obj\Release\netcoreapp2.2\Tuby.Api.FrameWork.dll
 H:\MyProjects\Tuby.Api\Tuby.Api.FrameWork\obj\Release\netcoreapp2.2\Tuby.Api.FrameWork.pdb
 H:\MyProjects\Tuby.Api\Tuby.Api.FrameWork\bin\Release\netcoreapp2.2\Tuby.Api.Model.xml
+H:\MyProjects\Tuby.Api\Tuby.Api.FrameWork\bin\Release\netcoreapp2.2\Tuby.Api.Common.dll
+H:\MyProjects\Tuby.Api\Tuby.Api.FrameWork\bin\Release\netcoreapp2.2\Tuby.Api.Common.pdb

@@ -8,3 +8,6 @@ H:\MyProjects\Tuby.Api\Tuby.Api.Model\obj\Release\netcoreapp2.2\Tuby.Api.Model.A
 H:\MyProjects\Tuby.Api\Tuby.Api.Model\obj\Release\netcoreapp2.2\Tuby.Api.Model.dll
 H:\MyProjects\Tuby.Api\Tuby.Api.Model\obj\Release\netcoreapp2.2\Tuby.Api.Model.pdb
 H:\MyProjects\Tuby.Api\Tuby.Api.Model\bin\Release\netcoreapp2.2\Tuby.Api.Model.xml
+H:\MyProjects\Tuby.Api\Tuby.Api.Model\bin\Release\netcoreapp2.2\Tuby.Api.Common.dll
+H:\MyProjects\Tuby.Api\Tuby.Api.Model\bin\Release\netcoreapp2.2\Tuby.Api.Common.pdb
+H:\MyProjects\Tuby.Api\Tuby.Api.Model\obj\Release\netcoreapp2.2\Tuby.Api.Model.csproj.CopyComplete

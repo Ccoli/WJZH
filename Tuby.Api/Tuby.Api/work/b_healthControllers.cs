@@ -12,6 +12,7 @@ namespace Tuby.Api.Controllers
 	/// <summary>
 	/// b_healthControllers
 	/// </summary>	
+	[Produces("application/json")]
 	[Route("api/[controller]")]
     [ApiController]
 	public class b_healthController : ControllerBase
@@ -26,37 +27,90 @@ namespace Tuby.Api.Controllers
         {
             _b_healthServices = b_healthServices;
         }
-
-
+		/// <summary>
+		/// api/b_health 查询所有数据
+		/// </summary>	
 		 [HttpGet]
         public async Task<List<b_health>> Get()
         {
             return await _b_healthServices.Query();
         }
 
-        // GET: api/a_data_access/5
+        /// <summary>
+		/// api/b_health/{id} 根据id查询数据
+		/// </summary>
         [HttpGet("{id}")]
         public async Task<List<b_health>> Get(int id)
         {
             return await _b_healthServices.Query(c => c.ID == id);
         }
 
-        // POST: api/a_department
+        /// <summary>
+		/// api/b_health post添加数据
+		/// </summary>
         [HttpPost]
-        public void Post([FromBody] string value)
+       public async Task<MessageModel<string>> Post([FromBody] b_health b_health)
         {
+			var data = new MessageModel<string>();
+
+            var id = (await _b_healthServices.Add(b_health));
+            data.success = id > 0;
+            if (data.success)
+            {
+                data.response = id.ObjToString();
+                data.msg = "添加成功";
+            }
+
+            return data;
         }
 
-        // PUT: api/a_department/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+         /// <summary>
+		/// api/b_health put更新数据
+		/// </summary>
+        [HttpPut]
+        public async Task<MessageModel<string>> Update([FromBody] b_health b_health)
         {
+			var data = new MessageModel<string>();
+            if (b_health != null && b_health.ID > 0)
+            {
+                var id = (await _b_healthServices.Update(b_health));
+                data.success = id;
+                if (data.success)
+                {
+                    data.response = "id为" +b_health.ID.ToString() + "的数据更新成功";
+                    data.msg = "更新成功";
+                }
+                else
+                {
+                    data.response = "id为" +b_health.ID.ToString() + "的数据不存在";
+                }
+            }
+
+            return data;
         }
 
-        // DELETE: api/ApiWithActions/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
+        /// <summary>
+		/// api/b_health/delete get删除数据
+		/// </summary>
+        [HttpGet]
+        [Route("delete")]
+		 public async Task<MessageModel<string>> Delete(int id)
         {
+            var flag = (await _b_healthServices.DeleteById(id));
+            var data = new MessageModel<string>();
+            data.success = flag;
+            if (flag)
+            {
+                data.response = id.ToString()+"数据删除";
+                data.msg = "删除成功";
+            }
+            else
+            {
+                data.response ="id为"+ id.ToString() + "的数据找不到";
+                data.msg = "删除失败";
+            }
+
+            return data;
         }
     }
 }

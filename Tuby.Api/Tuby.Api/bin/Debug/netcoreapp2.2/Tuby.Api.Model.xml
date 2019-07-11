@@ -9,17 +9,17 @@
             通用返回信息类
             </summary>
         </member>
-        <member name="P:Tuby.Api.Model.MessageModel`1.Success">
+        <member name="P:Tuby.Api.Model.MessageModel`1.success">
             <summary>
             操作是否成功
             </summary>
         </member>
-        <member name="P:Tuby.Api.Model.MessageModel`1.Msg">
+        <member name="P:Tuby.Api.Model.MessageModel`1.msg">
             <summary>
             返回信息
             </summary>
         </member>
-        <member name="P:Tuby.Api.Model.MessageModel`1.Data">
+        <member name="P:Tuby.Api.Model.MessageModel`1.response">
             <summary>
             返回数据集合
             </summary>

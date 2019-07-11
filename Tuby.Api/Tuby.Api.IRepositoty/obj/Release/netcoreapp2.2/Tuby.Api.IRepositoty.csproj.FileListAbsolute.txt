@@ -11,3 +11,5 @@ H:\MyProjects\Tuby.Api\Tuby.Api.IRepositoty\obj\Release\netcoreapp2.2\Tuby.Api.I
 H:\MyProjects\Tuby.Api\Tuby.Api.IRepositoty\obj\Release\netcoreapp2.2\Tuby.Api.IRepositoty.dll
 H:\MyProjects\Tuby.Api\Tuby.Api.IRepositoty\obj\Release\netcoreapp2.2\Tuby.Api.IRepositoty.pdb
 H:\MyProjects\Tuby.Api\Tuby.Api.IRepositoty\bin\Release\netcoreapp2.2\Tuby.Api.Model.xml
+H:\MyProjects\Tuby.Api\Tuby.Api.IRepositoty\bin\Release\netcoreapp2.2\Tuby.Api.Common.dll
+H:\MyProjects\Tuby.Api\Tuby.Api.IRepositoty\bin\Release\netcoreapp2.2\Tuby.Api.Common.pdb
