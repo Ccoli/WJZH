@@ -8,10 +8,11 @@ using Tuby.Api.Model.viewmodels;
 using Tuby.Api.Repository.sugar;
 using SqlSugar;
 using System.Linq.Expressions;
+using System.Threading.Tasks;
 
 namespace Tuby.Api.Repository
 {
-    public class SoldierInfoRepository : BaseRepository<AlarmInfoView>, ISoldierInfoRepository
+    public class AlarmInfoRepository : BaseRepository<AlarmInfoView>, IAlarmInfoRepository
     {
 
 
@@ -29,14 +30,14 @@ namespace Tuby.Api.Repository
 
         //    return list;
         //}
-        public List<AlarmInfoView> QueryMuchTable()
+        public async Task<PageModel<AlarmInfoView>> QueryMuchTable(int page)
         {
-            return QueryMuch<d_alarm_info, b_alarm_type, d_alarm_device,b_alarm_level, AlarmInfoView>(
-                    (dinfo, btype, ddevice,blevel) => new object[] {
+            return await QueryMuch<d_alarm_info, b_alarm_type, d_alarm_device, b_alarm_level, AlarmInfoView>(
+                    (dinfo, btype, ddevice, blevel) => new object[] {
                 JoinType.Left,dinfo.AlarmTypeID==btype.ID,
                JoinType.Left,dinfo.AlarmDeviceID==ddevice.ID,
                JoinType.Left,btype.AlarmLevelID==blevel.ID
-                    }
+                    }, page, 10
                     );
         }
     }

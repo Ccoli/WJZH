@@ -1,26 +1,28 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 using Tuby.Api.IRepositoty;
 using Tuby.Api.IServices;
+using Tuby.Api.Model;
 using Tuby.Api.Model.viewmodels;
 using Tuby.Api.Repository;
 using Tuby.Api.Services.BASE;
 
 namespace Tuby.Api.Services
 {
-    public class SoldierInfoServices:BaseServices<AlarmInfoView>,  ISoldierInfoServices
+    public class AlarmInfoServices:BaseServices<AlarmInfoView>,  IAlarmInfoServices
     {
-        public ISoldierInfoRepository _dal;
+        public IAlarmInfoRepository _dal;
 
-        public SoldierInfoServices(ISoldierInfoRepository dal)
+        public AlarmInfoServices(IAlarmInfoRepository dal)
         {
             this._dal = dal;
         }
 
-        public List<AlarmInfoView> QueryMuchTable()
+        public async Task<PageModel<AlarmInfoView>> QueryMuchTable(int page)
         {
-            return _dal.QueryMuchTable();
+            return await _dal.QueryMuchTable(page);
         }
 
         //public List<AlarmInfoView> Query()

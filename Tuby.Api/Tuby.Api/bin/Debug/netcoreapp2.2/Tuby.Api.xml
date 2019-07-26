@@ -4,6 +4,11 @@
         <name>Tuby.Api</name>
     </assembly>
     <members>
+        <member name="T:Tuby.Api.AOP.ApiCacheAOP">
+            <summary>
+            面向切面的缓存使用
+            </summary>
+        </member>
         <member name="M:Tuby.Api.AutoMapper.CustomProfile.#ctor">
             <summary>
             配置构造函数，用来创建关系映射
@@ -11,13 +16,20 @@
         </member>
         <member name="T:Tuby.Api.Controllers.AlarmInfoController">
             <summary>
-            测试多表查询接口
+            报警信息接口
             </summary>
         </member>
-        <member name="M:Tuby.Api.Controllers.AlarmInfoController.#ctor(Tuby.Api.IServices.ISoldierInfoServices)">
+        <member name="M:Tuby.Api.Controllers.AlarmInfoController.#ctor(Tuby.Api.IServices.IAlarmInfoServices)">
             <summary>
             构造函数
             </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Tuby.Api.Controllers.AlarmInfoController.GetPage(System.Int32)">
+            <summary>
+            分页查询报警信息
+            </summary>
+            <param name="page">页码</param>
             <returns></returns>
         </member>
         <member name="T:Tuby.Api.Controllers.ar_usergroup_data_accessController">

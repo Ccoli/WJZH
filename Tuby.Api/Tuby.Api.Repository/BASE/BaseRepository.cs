@@ -320,7 +320,6 @@ namespace Tuby.Api.Repository.Base
         /// </summary> 
         /// <typeparam name="T">实体1</typeparam> 
         /// <typeparam name="T2">实体2</typeparam> 
-        /// <typeparam name="T3">实体3</typeparam>
         /// <typeparam name="TResult">返回对象</typeparam>
         /// <param name="joinExpression">关联表达式 (join1,join2) => new object[] {JoinType.Left,join1.UserNo==join2.UserNo}</param> 
         /// <param name="selectExpression">返回表达式 (s1, s2) => new { Id =s1.UserNo, Id1 = s2.UserNo}</param>
@@ -330,6 +329,7 @@ namespace Tuby.Api.Repository.Base
             Expression<Func<T, T2, object[]>> joinExpression) where T : class, new()
         {
             return db.Queryable(joinExpression).Select<TResult>().ToList();
+                
         }
 
         /// <summary> 
@@ -342,16 +342,25 @@ namespace Tuby.Api.Repository.Base
         /// <param name="joinExpression">关联表达式 (join1,join2) => new object[] {JoinType.Left,join1.UserNo==join2.UserNo}</param> 
         /// <param name="selectExpression">返回表达式 (s1, s2) => new { Id =s1.UserNo, Id1 = s2.UserNo}</param>
         /// <param name="whereLambda">查询表达式 (w1, w2) =>w1.UserNo == "")</param> 
+        /// <param name="intPageIndex">页码（下标0）</param>
+        /// <param name="intPageSize">页大小</param>
         /// <returns>值</returns>
         public List<TResult> QueryMuch<T, T2, T3, TResult>(
-            Expression<Func<T, T2, T3, object[]>> joinExpression) where T : class, new()
+            Expression<Func<T, T2, T3, object[]>> joinExpression, int intPageIndex = 0, int intPageSize = 20) where T : class, new()
         {
-            return db.Queryable(joinExpression).Select<TResult>().ToList();
+            return db.Queryable(joinExpression)
+                .Select<TResult>()
+                .ToPageList(intPageIndex, intPageSize);
         }
-        public List<TResult> QueryMuch<T, T2, T3, T4, TResult>(
-            Expression<Func<T, T2, T3, T4, object[]>> joinExpression) where T : class, new()
+        public async Task<PageModel<TResult>> QueryMuch<T, T2, T3, T4, TResult>(
+            Expression<Func<T, T2, T3, T4, object[]>> joinExpression, int intPageIndex = 0, int intPageSize = 20) where T : class, new()
         {
-            return db.Queryable(joinExpression).Select<TResult>().ToList();
+             RefAsync<int> totalCount = 0;
+            var list= await db.Queryable(joinExpression).Select<TResult>()
+                .Select<TResult>()
+                .ToPageListAsync(intPageIndex, intPageSize, totalCount);
+            int pageCount = (Math.Ceiling(totalCount.ObjToDecimal() / intPageSize.ObjToDecimal())).ObjToInt();
+            return new PageModel<TResult>() { dataCount = totalCount, pageCount = pageCount, page = intPageIndex, PageSize = intPageSize, data = list };
         }
 
         /// <summary> 

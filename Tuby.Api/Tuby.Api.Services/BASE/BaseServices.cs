@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Tuby.Api.IRepository.Base;
 using Tuby.Api.IServices.BASE;
+using Tuby.Api.Model;
 using Tuby.Api.Repository.Base;
 
 namespace Tuby.Api.Services.BASE
@@ -276,9 +277,9 @@ namespace Tuby.Api.Services.BASE
         /// <param name="selectExpression">返回表达式 (s1, s2) => new { Id =s1.UserNo, Id1 = s2.UserNo}</param>
         /// <param name="whereLambda">查询表达式 (w1, w2) =>w1.UserNo == "")</param> 
         /// <returns>值</returns>
-        public List<TResult> QueryMuch<T, T2, T3, TResult>(Expression<Func<T, T2, T3, object[]>> joinExpression) where T : class, new()
+        public List<TResult> QueryMuch<T, T2, T3, TResult>(Expression<Func<T, T2, T3, object[]>> joinExpression, int intPageIndex = 0, int intPageSize = 20) where T : class, new()
         {
-            return baseDal.QueryMuch<T, T2, T3, TResult>(joinExpression);
+            return baseDal.QueryMuch<T, T2, T3, TResult>(joinExpression, intPageIndex, intPageSize);
         }
 
         /// <summary> 
@@ -292,9 +293,9 @@ namespace Tuby.Api.Services.BASE
         /// <param name="selectExpression">返回表达式 (s1, s2) => new { Id =s1.UserNo, Id1 = s2.UserNo}</param>
         /// <param name="whereLambda">查询表达式 (w1, w2) =>w1.UserNo == "")</param> 
         /// <returns>值</returns>
-        public List<TResult> QueryMuch<T, T2, T3, T4, TResult>(Expression<Func<T, T2, T3, T4, object[]>> joinExpression) where T : class, new()
+        public async Task<PageModel<TResult>> QueryMuch<T, T2, T3, T4, TResult>(Expression<Func<T, T2, T3, T4, object[]>> joinExpression, int intPageIndex = 0, int intPageSize = 20) where T : class, new()
         {
-            return baseDal.QueryMuch<T, T2, T3, T4, TResult>(joinExpression);
+            return await baseDal.QueryMuch<T, T2, T3, T4, TResult>(joinExpression, intPageIndex, intPageSize);
         }
 
         /// <summary> 

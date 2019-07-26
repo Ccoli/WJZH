@@ -42,9 +42,9 @@ namespace Tuby.Api.IRepository.Base
         List<TResult> QueryMuch<T, T2, TResult>(
           Expression<Func<T, T2,object[]>> joinExpression) where T : class, new();
         List<TResult> QueryMuch<T, T2, T3, TResult>(
-           Expression<Func<T, T2, T3, object[]>> joinExpression) where T : class, new();
-        List<TResult> QueryMuch<T, T2, T3, T4, TResult>(
-           Expression<Func<T, T2, T3, T4, object[]>> joinExpression) where T : class, new();
+           Expression<Func<T, T2, T3, object[]>> joinExpression, int intPageIndex = 0, int intPageSize = 20) where T : class, new();
+        Task<PageModel<TResult>> QueryMuch<T, T2, T3, T4, TResult>(
+           Expression<Func<T, T2, T3, T4, object[]>> joinExpression, int intPageIndex = 0, int intPageSize = 20) where T : class, new();
         List<TResult> QueryMuch<T, T2, T3, T4, T5, TResult>(
            Expression<Func<T, T2, T3, T4, T5, object[]>> joinExpression,
            Expression<Func<T, T2, T3, T4, T5, TResult>> selectExpression,

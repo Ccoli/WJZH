@@ -12,58 +12,38 @@ using Tuby.Api.Model.viewmodels;
 namespace Tuby.Api.Controllers
 {
     /// <summary>
-    /// 测试多表查询接口
+    /// 报警信息接口
     /// </summary>
     [Route("api/[controller]")]
     [ApiController]
     public class AlarmInfoController : ControllerBase
     {
-        readonly ISoldierInfoServices _SoldierInfoServices;
+        readonly IAlarmInfoServices _AlarmInfoServices;
 
         /// <summary>
         /// 构造函数
         /// </summary>
         /// <returns></returns>
-        public AlarmInfoController(ISoldierInfoServices SoldierInfoServices)
+        public AlarmInfoController(IAlarmInfoServices AlarmInfoServices)
         {
-            _SoldierInfoServices = SoldierInfoServices;
+            _AlarmInfoServices = AlarmInfoServices;
         }
         // GET: api/AlarmInfo
+        /// <summary>
+        /// 分页查询报警信息
+        /// </summary>
+        /// <param name="page">页码</param>
+        /// <returns></returns>
         [HttpGet]
-        public List<AlarmInfoView> Get()
+        public async Task<PageModel<AlarmInfoView>> GetPage(int page)
         {
             //    var list = db.Queryable<d_alarm_info, b_alarm_type, d_alarm_device>(
             //        (dinfo, btype, ddevice) => new object[] {
             //    JoinType.Left,dinfo.AlarmTypeID==btype.ID,
             //    JoinType.Left,dinfo.AlarmDeviceID==ddevice.ID})
             //    .Select<AlarmInfoView>().ToList();
-            var list = _SoldierInfoServices.QueryMuchTable();
+            var list =await _AlarmInfoServices.QueryMuchTable(page);
             return list;
-        }
-
-        // GET: api/AlarmInfo/5
-        [HttpGet("{id}")]
-        public string Get(int id)
-        {
-            return "value";
-        }
-
-        // POST: api/AlarmInfo
-        [HttpPost]
-        public void Post([FromBody] string value)
-        {
-        }
-
-        // PUT: api/AlarmInfo/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
-        {
-        }
-
-        // DELETE: api/ApiWithActions/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
         }
     }
 }

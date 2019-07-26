@@ -6,4 +6,3 @@ H:\MyProjects\Tuby.Api\Tuby.Api.Common\obj\Debug\netcoreapp2.2\Tuby.Api.Common.A
 H:\MyProjects\Tuby.Api\Tuby.Api.Common\obj\Debug\netcoreapp2.2\Tuby.Api.Common.AssemblyInfo.cs
 H:\MyProjects\Tuby.Api\Tuby.Api.Common\obj\Debug\netcoreapp2.2\Tuby.Api.Common.dll
 H:\MyProjects\Tuby.Api\Tuby.Api.Common\obj\Debug\netcoreapp2.2\Tuby.Api.Common.pdb
-H:\MyProjects\Tuby.Api\Tuby.Api.Common\obj\Debug\netcoreapp2.2\Tuby.Api.Common.csprojAssemblyReference.cache

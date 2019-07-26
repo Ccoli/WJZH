@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
+using Tuby.Api.Model;
 
 namespace Tuby.Api.IServices.BASE
 {
@@ -45,9 +46,9 @@ namespace Tuby.Api.IServices.BASE
         List<TResult> QueryMuch<T, T2, TResult>(
          Expression<Func<T, T2, object[]>> joinExpression) where T : class, new();
         List<TResult> QueryMuch<T, T2, T3,  TResult>(
-          Expression<Func<T, T2, T3, object[]>> joinExpression) where T : class, new();
-        List<TResult> QueryMuch<T, T2, T3, T4, TResult>(
-         Expression<Func<T, T2, T3, T4, object[]>> joinExpression) where T : class, new();
+          Expression<Func<T, T2, T3, object[]>> joinExpression, int intPageIndex = 0, int intPageSize = 20) where T : class, new();
+        Task<PageModel<TResult>> QueryMuch<T, T2, T3, T4, TResult>(
+         Expression<Func<T, T2, T3, T4, object[]>> joinExpression, int intPageIndex = 0, int intPageSize = 20) where T : class, new();
 
 
         List<TResult> QueryMuch<T, T2, T3, T4, T5, TResult>(
