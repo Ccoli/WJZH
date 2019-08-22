@@ -75,7 +75,7 @@ namespace Tuby.Api.Model
         /// <summary>
         /// 性别
         /// </summary>
-        public int Gender { get; set; }
+        public string Gender { get; set; }
    
         /// <summary>
         /// 健康状况
@@ -96,5 +96,28 @@ namespace Tuby.Api.Model
         /// 记录状态
         /// </summary>
         public int RecStatus { get; set; }
+
+        /// <summary>
+        /// 婚姻状态
+        /// </summary>
+        public int IsMarriageID { get; set; }
+
+        /// <summary>
+        /// 教育程度
+        /// </summary>
+        public int EducationID { get; set; }
+
+        /// <summary>
+        /// 政治面貌
+        /// </summary>
+        public int PoliticalRoleID { get; set; }
+        /// <summary>
+        /// 地址
+        /// </summary>
+        public string Address { get; set; }
+        /// <summary>
+        /// 联系人
+        /// </summary>
+        public string Contact { get; set; }
     }
 }

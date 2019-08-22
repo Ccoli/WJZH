@@ -4,6 +4,11 @@
         <name>Tuby.Api</name>
     </assembly>
     <members>
+        <member name="T:Tuby.Api.AOP.ApiCacheAOP">
+            <summary>
+            面向切面的缓存使用
+            </summary>
+        </member>
         <member name="M:Tuby.Api.AutoMapper.CustomProfile.#ctor">
             <summary>
             配置构造函数，用来创建关系映射
@@ -11,14 +16,68 @@
         </member>
         <member name="T:Tuby.Api.Controllers.AlarmInfoController">
             <summary>
-            测试多表查询接口
+            报警信息接口
             </summary>
         </member>
-        <member name="M:Tuby.Api.Controllers.AlarmInfoController.#ctor(Tuby.Api.IServices.ISoldierInfoServices)">
+        <member name="M:Tuby.Api.Controllers.AlarmInfoController.#ctor(Tuby.Api.IServices.IAlarmInfoServices)">
             <summary>
             构造函数
             </summary>
             <returns></returns>
+        </member>
+        <member name="M:Tuby.Api.Controllers.AlarmInfoController.GetPage(System.Int32)">
+            <summary>
+            分页查询报警信息
+            </summary>
+            <param name="page">页码</param>
+            <returns></returns>
+        </member>
+        <member name="M:Tuby.Api.Controllers.GunInfoController.#ctor(Tuby.Api.IServices.IGunInfoServices)">
+            <summary>
+            构造函数
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Tuby.Api.Controllers.ImgController">
+            <summary>
+            图片管理
+            </summary>
+        </member>
+        <member name="M:Tuby.Api.Controllers.ImgController.DownImg(Microsoft.AspNetCore.Hosting.IHostingEnvironment)">
+            <summary>
+            下载图片（支持中文字符）
+            </summary>
+            <param name="environment"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tuby.Api.Controllers.ImgController.InsertPicture(Microsoft.AspNetCore.Hosting.IHostingEnvironment)">
+            <summary>
+            上传图片,多文件，可以使用 postman 测试，
+            如果是单文件，可以 参数写 IFormFile file1
+            </summary>
+            <param name="environment"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tuby.Api.Controllers.SoldierInfoController.#ctor(Tuby.Api.IServices.ISoldierInfoServices)">
+            <summary>
+            构造函数
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Tuby.Api.Controllers.SoldierInfoController.GetPage(System.String)">
+            <summary>
+            根据名字查询士兵信息
+            </summary>
+             <param name="name">名字</param>
+            <returns></returns>
+        </member>
+        <member name="M:Tuby.Api.Controllers.SoldierInfoController.GetPage(System.Int32,System.Int32)">
+             <summary>
+             分页查询士兵信息
+             </summary>
+             <param name="page">页码</param>
+            <param name="pagesize">页大小</param>
+             <returns></returns>
         </member>
         <member name="T:Tuby.Api.Controllers.ar_usergroup_data_accessController">
             <summary>
@@ -32,29 +91,43 @@
             <returns></returns>
         </member>
         <member name="M:Tuby.Api.Controllers.ar_usergroup_data_accessController.Get">
+             <summary>
+            查询所有数据
+             </summary>	
+        </member>
+        <member name="M:Tuby.Api.Controllers.ar_usergroup_data_accessController.GetPage(System.Int32)">
             <summary>
-            api/ar_usergroup_data_access 查询所有数据
-            </summary>	
+            分页查询
+            </summary>
+            <param name="page"></param>
+            <returns></returns>
         </member>
         <member name="M:Tuby.Api.Controllers.ar_usergroup_data_accessController.Get(System.Int32)">
-            <summary>
-            api/ar_usergroup_data_access/{id} 根据id查询数据
-            </summary>
+             <summary>
+            根据id查询数据
+             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.ar_usergroup_data_accessController.Post(Tuby.Api.Model.ar_usergroup_data_access)">
             <summary>
-            api/ar_usergroup_data_access post添加数据
+            使用post方法添加数据
             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.ar_usergroup_data_accessController.Update(Tuby.Api.Model.ar_usergroup_data_access)">
-            <summary>
-            api/ar_usergroup_data_access put更新数据
-            </summary>
+             <summary>
+            更新数据
+             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.ar_usergroup_data_accessController.Delete(System.Int32)">
             <summary>
-            api/ar_usergroup_data_access/delete get删除数据
+            根据id使用get方法删除数据
             </summary>
+        </member>
+        <member name="M:Tuby.Api.Controllers.ar_usergroup_data_accessController.DeleteMuch(System.Object[])">
+            <summary>
+            批量删除
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
         </member>
         <member name="T:Tuby.Api.Controllers.ar_usergroup_ui_accessController">
             <summary>
@@ -68,29 +141,43 @@
             <returns></returns>
         </member>
         <member name="M:Tuby.Api.Controllers.ar_usergroup_ui_accessController.Get">
+             <summary>
+            查询所有数据
+             </summary>	
+        </member>
+        <member name="M:Tuby.Api.Controllers.ar_usergroup_ui_accessController.GetPage(System.Int32)">
             <summary>
-            api/ar_usergroup_ui_access 查询所有数据
-            </summary>	
+            分页查询
+            </summary>
+            <param name="page"></param>
+            <returns></returns>
         </member>
         <member name="M:Tuby.Api.Controllers.ar_usergroup_ui_accessController.Get(System.Int32)">
-            <summary>
-            api/ar_usergroup_ui_access/{id} 根据id查询数据
-            </summary>
+             <summary>
+            根据id查询数据
+             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.ar_usergroup_ui_accessController.Post(Tuby.Api.Model.ar_usergroup_ui_access)">
             <summary>
-            api/ar_usergroup_ui_access post添加数据
+            使用post方法添加数据
             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.ar_usergroup_ui_accessController.Update(Tuby.Api.Model.ar_usergroup_ui_access)">
-            <summary>
-            api/ar_usergroup_ui_access put更新数据
-            </summary>
+             <summary>
+            更新数据
+             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.ar_usergroup_ui_accessController.Delete(System.Int32)">
             <summary>
-            api/ar_usergroup_ui_access/delete get删除数据
+            根据id使用get方法删除数据
             </summary>
+        </member>
+        <member name="M:Tuby.Api.Controllers.ar_usergroup_ui_accessController.DeleteMuch(System.Object[])">
+            <summary>
+            批量删除
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
         </member>
         <member name="T:Tuby.Api.Controllers.ar_usergroup_userController">
             <summary>
@@ -104,29 +191,43 @@
             <returns></returns>
         </member>
         <member name="M:Tuby.Api.Controllers.ar_usergroup_userController.Get">
+             <summary>
+            查询所有数据
+             </summary>	
+        </member>
+        <member name="M:Tuby.Api.Controllers.ar_usergroup_userController.GetPage(System.Int32)">
             <summary>
-            api/ar_usergroup_user 查询所有数据
-            </summary>	
+            分页查询
+            </summary>
+            <param name="page"></param>
+            <returns></returns>
         </member>
         <member name="M:Tuby.Api.Controllers.ar_usergroup_userController.Get(System.Int32)">
-            <summary>
-            api/ar_usergroup_user/{id} 根据id查询数据
-            </summary>
+             <summary>
+            根据id查询数据
+             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.ar_usergroup_userController.Post(Tuby.Api.Model.ar_usergroup_user)">
             <summary>
-            api/ar_usergroup_user post添加数据
+            使用post方法添加数据
             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.ar_usergroup_userController.Update(Tuby.Api.Model.ar_usergroup_user)">
-            <summary>
-            api/ar_usergroup_user put更新数据
-            </summary>
+             <summary>
+            更新数据
+             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.ar_usergroup_userController.Delete(System.Int32)">
             <summary>
-            api/ar_usergroup_user/delete get删除数据
+            根据id使用get方法删除数据
             </summary>
+        </member>
+        <member name="M:Tuby.Api.Controllers.ar_usergroup_userController.DeleteMuch(System.Object[])">
+            <summary>
+            批量删除
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
         </member>
         <member name="T:Tuby.Api.Controllers.ar_user_data_accessController">
             <summary>
@@ -140,29 +241,43 @@
             <returns></returns>
         </member>
         <member name="M:Tuby.Api.Controllers.ar_user_data_accessController.Get">
+             <summary>
+            查询所有数据
+             </summary>	
+        </member>
+        <member name="M:Tuby.Api.Controllers.ar_user_data_accessController.GetPage(System.Int32)">
             <summary>
-            api/ar_user_data_access 查询所有数据
-            </summary>	
+            分页查询
+            </summary>
+            <param name="page"></param>
+            <returns></returns>
         </member>
         <member name="M:Tuby.Api.Controllers.ar_user_data_accessController.Get(System.Int32)">
-            <summary>
-            api/ar_user_data_access/{id} 根据id查询数据
-            </summary>
+             <summary>
+            根据id查询数据
+             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.ar_user_data_accessController.Post(Tuby.Api.Model.ar_user_data_access)">
             <summary>
-            api/ar_user_data_access post添加数据
+            使用post方法添加数据
             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.ar_user_data_accessController.Update(Tuby.Api.Model.ar_user_data_access)">
-            <summary>
-            api/ar_user_data_access put更新数据
-            </summary>
+             <summary>
+            更新数据
+             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.ar_user_data_accessController.Delete(System.Int32)">
             <summary>
-            api/ar_user_data_access/delete get删除数据
+            根据id使用get方法删除数据
             </summary>
+        </member>
+        <member name="M:Tuby.Api.Controllers.ar_user_data_accessController.DeleteMuch(System.Object[])">
+            <summary>
+            批量删除
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
         </member>
         <member name="T:Tuby.Api.Controllers.ar_user_ui_accessController">
             <summary>
@@ -176,29 +291,43 @@
             <returns></returns>
         </member>
         <member name="M:Tuby.Api.Controllers.ar_user_ui_accessController.Get">
+             <summary>
+            查询所有数据
+             </summary>	
+        </member>
+        <member name="M:Tuby.Api.Controllers.ar_user_ui_accessController.GetPage(System.Int32)">
             <summary>
-            api/ar_user_ui_access 查询所有数据
-            </summary>	
+            分页查询
+            </summary>
+            <param name="page"></param>
+            <returns></returns>
         </member>
         <member name="M:Tuby.Api.Controllers.ar_user_ui_accessController.Get(System.Int32)">
-            <summary>
-            api/ar_user_ui_access/{id} 根据id查询数据
-            </summary>
+             <summary>
+            根据id查询数据
+             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.ar_user_ui_accessController.Post(Tuby.Api.Model.ar_user_ui_access)">
             <summary>
-            api/ar_user_ui_access post添加数据
+            使用post方法添加数据
             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.ar_user_ui_accessController.Update(Tuby.Api.Model.ar_user_ui_access)">
-            <summary>
-            api/ar_user_ui_access put更新数据
-            </summary>
+             <summary>
+            更新数据
+             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.ar_user_ui_accessController.Delete(System.Int32)">
             <summary>
-            api/ar_user_ui_access/delete get删除数据
+            根据id使用get方法删除数据
             </summary>
+        </member>
+        <member name="M:Tuby.Api.Controllers.ar_user_ui_accessController.DeleteMuch(System.Object[])">
+            <summary>
+            批量删除
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
         </member>
         <member name="T:Tuby.Api.Controllers.a_data_accessController">
             <summary>
@@ -212,29 +341,43 @@
             <returns></returns>
         </member>
         <member name="M:Tuby.Api.Controllers.a_data_accessController.Get">
+             <summary>
+            查询所有数据
+             </summary>	
+        </member>
+        <member name="M:Tuby.Api.Controllers.a_data_accessController.GetPage(System.Int32)">
             <summary>
-            api/a_data_access 查询所有数据
-            </summary>	
+            分页查询
+            </summary>
+            <param name="page"></param>
+            <returns></returns>
         </member>
         <member name="M:Tuby.Api.Controllers.a_data_accessController.Get(System.Int32)">
-            <summary>
-            api/a_data_access/{id} 根据id查询数据
-            </summary>
+             <summary>
+            根据id查询数据
+             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.a_data_accessController.Post(Tuby.Api.Model.a_data_access)">
             <summary>
-            api/a_data_access post添加数据
+            使用post方法添加数据
             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.a_data_accessController.Update(Tuby.Api.Model.a_data_access)">
-            <summary>
-            api/a_data_access put更新数据
-            </summary>
+             <summary>
+            更新数据
+             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.a_data_accessController.Delete(System.Int32)">
             <summary>
-            api/a_data_access/delete get删除数据
+            根据id使用get方法删除数据
             </summary>
+        </member>
+        <member name="M:Tuby.Api.Controllers.a_data_accessController.DeleteMuch(System.Object[])">
+            <summary>
+            批量删除
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
         </member>
         <member name="T:Tuby.Api.Controllers.a_data_access_typeController">
             <summary>
@@ -248,29 +391,43 @@
             <returns></returns>
         </member>
         <member name="M:Tuby.Api.Controllers.a_data_access_typeController.Get">
+             <summary>
+            查询所有数据
+             </summary>	
+        </member>
+        <member name="M:Tuby.Api.Controllers.a_data_access_typeController.GetPage(System.Int32)">
             <summary>
-            api/a_data_access_type 查询所有数据
-            </summary>	
+            分页查询
+            </summary>
+            <param name="page"></param>
+            <returns></returns>
         </member>
         <member name="M:Tuby.Api.Controllers.a_data_access_typeController.Get(System.Int32)">
-            <summary>
-            api/a_data_access_type/{id} 根据id查询数据
-            </summary>
+             <summary>
+            根据id查询数据
+             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.a_data_access_typeController.Post(Tuby.Api.Model.a_data_access_type)">
             <summary>
-            api/a_data_access_type post添加数据
+            使用post方法添加数据
             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.a_data_access_typeController.Update(Tuby.Api.Model.a_data_access_type)">
-            <summary>
-            api/a_data_access_type put更新数据
-            </summary>
+             <summary>
+            更新数据
+             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.a_data_access_typeController.Delete(System.Int32)">
             <summary>
-            api/a_data_access_type/delete get删除数据
+            根据id使用get方法删除数据
             </summary>
+        </member>
+        <member name="M:Tuby.Api.Controllers.a_data_access_typeController.DeleteMuch(System.Object[])">
+            <summary>
+            批量删除
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
         </member>
         <member name="T:Tuby.Api.Controllers.a_departmentController">
             <summary>
@@ -284,29 +441,43 @@
             <returns></returns>
         </member>
         <member name="M:Tuby.Api.Controllers.a_departmentController.Get">
+             <summary>
+            查询所有数据
+             </summary>	
+        </member>
+        <member name="M:Tuby.Api.Controllers.a_departmentController.GetPage(System.Int32)">
             <summary>
-            api/a_department 查询所有数据
-            </summary>	
+            分页查询
+            </summary>
+            <param name="page"></param>
+            <returns></returns>
         </member>
         <member name="M:Tuby.Api.Controllers.a_departmentController.Get(System.Int32)">
-            <summary>
-            api/a_department/{id} 根据id查询数据
-            </summary>
+             <summary>
+            根据id查询数据
+             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.a_departmentController.Post(Tuby.Api.Model.a_department)">
             <summary>
-            api/a_department post添加数据
+            使用post方法添加数据
             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.a_departmentController.Update(Tuby.Api.Model.a_department)">
-            <summary>
-            api/a_department put更新数据
-            </summary>
+             <summary>
+            更新数据
+             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.a_departmentController.Delete(System.Int32)">
             <summary>
-            api/a_department/delete get删除数据
+            根据id使用get方法删除数据
             </summary>
+        </member>
+        <member name="M:Tuby.Api.Controllers.a_departmentController.DeleteMuch(System.Object[])">
+            <summary>
+            批量删除
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
         </member>
         <member name="T:Tuby.Api.Controllers.a_ui_accessController">
             <summary>
@@ -320,29 +491,43 @@
             <returns></returns>
         </member>
         <member name="M:Tuby.Api.Controllers.a_ui_accessController.Get">
+             <summary>
+            查询所有数据
+             </summary>	
+        </member>
+        <member name="M:Tuby.Api.Controllers.a_ui_accessController.GetPage(System.Int32)">
             <summary>
-            api/a_ui_access 查询所有数据
-            </summary>	
+            分页查询
+            </summary>
+            <param name="page"></param>
+            <returns></returns>
         </member>
         <member name="M:Tuby.Api.Controllers.a_ui_accessController.Get(System.Int32)">
-            <summary>
-            api/a_ui_access/{id} 根据id查询数据
-            </summary>
+             <summary>
+            根据id查询数据
+             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.a_ui_accessController.Post(Tuby.Api.Model.a_ui_access)">
             <summary>
-            api/a_ui_access post添加数据
+            使用post方法添加数据
             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.a_ui_accessController.Update(Tuby.Api.Model.a_ui_access)">
-            <summary>
-            api/a_ui_access put更新数据
-            </summary>
+             <summary>
+            更新数据
+             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.a_ui_accessController.Delete(System.Int32)">
             <summary>
-            api/a_ui_access/delete get删除数据
+            根据id使用get方法删除数据
             </summary>
+        </member>
+        <member name="M:Tuby.Api.Controllers.a_ui_accessController.DeleteMuch(System.Object[])">
+            <summary>
+            批量删除
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
         </member>
         <member name="T:Tuby.Api.Controllers.a_ui_access_typeController">
             <summary>
@@ -356,29 +541,43 @@
             <returns></returns>
         </member>
         <member name="M:Tuby.Api.Controllers.a_ui_access_typeController.Get">
+             <summary>
+            查询所有数据
+             </summary>	
+        </member>
+        <member name="M:Tuby.Api.Controllers.a_ui_access_typeController.GetPage(System.Int32)">
             <summary>
-            api/a_ui_access_type 查询所有数据
-            </summary>	
+            分页查询
+            </summary>
+            <param name="page"></param>
+            <returns></returns>
         </member>
         <member name="M:Tuby.Api.Controllers.a_ui_access_typeController.Get(System.Int32)">
-            <summary>
-            api/a_ui_access_type/{id} 根据id查询数据
-            </summary>
+             <summary>
+            根据id查询数据
+             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.a_ui_access_typeController.Post(Tuby.Api.Model.a_ui_access_type)">
             <summary>
-            api/a_ui_access_type post添加数据
+            使用post方法添加数据
             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.a_ui_access_typeController.Update(Tuby.Api.Model.a_ui_access_type)">
-            <summary>
-            api/a_ui_access_type put更新数据
-            </summary>
+             <summary>
+            更新数据
+             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.a_ui_access_typeController.Delete(System.Int32)">
             <summary>
-            api/a_ui_access_type/delete get删除数据
+            根据id使用get方法删除数据
             </summary>
+        </member>
+        <member name="M:Tuby.Api.Controllers.a_ui_access_typeController.DeleteMuch(System.Object[])">
+            <summary>
+            批量删除
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
         </member>
         <member name="T:Tuby.Api.Controllers.a_userController">
             <summary>
@@ -392,29 +591,43 @@
             <returns></returns>
         </member>
         <member name="M:Tuby.Api.Controllers.a_userController.Get">
+             <summary>
+            查询所有数据
+             </summary>	
+        </member>
+        <member name="M:Tuby.Api.Controllers.a_userController.GetPage(System.Int32)">
             <summary>
-            api/a_user 查询所有数据
-            </summary>	
+            分页查询
+            </summary>
+            <param name="page"></param>
+            <returns></returns>
         </member>
         <member name="M:Tuby.Api.Controllers.a_userController.Get(System.Int32)">
-            <summary>
-            api/a_user/{id} 根据id查询数据
-            </summary>
+             <summary>
+            根据id查询数据
+             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.a_userController.Post(Tuby.Api.Model.a_user)">
             <summary>
-            api/a_user post添加数据
+            使用post方法添加数据
             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.a_userController.Update(Tuby.Api.Model.a_user)">
-            <summary>
-            api/a_user put更新数据
-            </summary>
+             <summary>
+            更新数据
+             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.a_userController.Delete(System.Int32)">
             <summary>
-            api/a_user/delete get删除数据
+            根据id使用get方法删除数据
             </summary>
+        </member>
+        <member name="M:Tuby.Api.Controllers.a_userController.DeleteMuch(System.Object[])">
+            <summary>
+            批量删除
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
         </member>
         <member name="T:Tuby.Api.Controllers.a_usergroupController">
             <summary>
@@ -428,29 +641,43 @@
             <returns></returns>
         </member>
         <member name="M:Tuby.Api.Controllers.a_usergroupController.Get">
+             <summary>
+            查询所有数据
+             </summary>	
+        </member>
+        <member name="M:Tuby.Api.Controllers.a_usergroupController.GetPage(System.Int32)">
             <summary>
-            api/a_usergroup 查询所有数据
-            </summary>	
+            分页查询
+            </summary>
+            <param name="page"></param>
+            <returns></returns>
         </member>
         <member name="M:Tuby.Api.Controllers.a_usergroupController.Get(System.Int32)">
-            <summary>
-            api/a_usergroup/{id} 根据id查询数据
-            </summary>
+             <summary>
+            根据id查询数据
+             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.a_usergroupController.Post(Tuby.Api.Model.a_usergroup)">
             <summary>
-            api/a_usergroup post添加数据
+            使用post方法添加数据
             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.a_usergroupController.Update(Tuby.Api.Model.a_usergroup)">
-            <summary>
-            api/a_usergroup put更新数据
-            </summary>
+             <summary>
+            更新数据
+             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.a_usergroupController.Delete(System.Int32)">
             <summary>
-            api/a_usergroup/delete get删除数据
+            根据id使用get方法删除数据
             </summary>
+        </member>
+        <member name="M:Tuby.Api.Controllers.a_usergroupController.DeleteMuch(System.Object[])">
+            <summary>
+            批量删除
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
         </member>
         <member name="T:Tuby.Api.Controllers.b_administrative_divisionController">
             <summary>
@@ -464,29 +691,43 @@
             <returns></returns>
         </member>
         <member name="M:Tuby.Api.Controllers.b_administrative_divisionController.Get">
+             <summary>
+            查询所有数据
+             </summary>	
+        </member>
+        <member name="M:Tuby.Api.Controllers.b_administrative_divisionController.GetPage(System.Int32)">
             <summary>
-            api/b_administrative_division 查询所有数据
-            </summary>	
+            分页查询
+            </summary>
+            <param name="page"></param>
+            <returns></returns>
         </member>
         <member name="M:Tuby.Api.Controllers.b_administrative_divisionController.Get(System.Int32)">
-            <summary>
-            api/b_administrative_division/{id} 根据id查询数据
-            </summary>
+             <summary>
+            根据id查询数据
+             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.b_administrative_divisionController.Post(Tuby.Api.Model.b_administrative_division)">
             <summary>
-            api/b_administrative_division post添加数据
+            使用post方法添加数据
             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.b_administrative_divisionController.Update(Tuby.Api.Model.b_administrative_division)">
-            <summary>
-            api/b_administrative_division put更新数据
-            </summary>
+             <summary>
+            更新数据
+             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.b_administrative_divisionController.Delete(System.Int32)">
             <summary>
-            api/b_administrative_division/delete get删除数据
+            根据id使用get方法删除数据
             </summary>
+        </member>
+        <member name="M:Tuby.Api.Controllers.b_administrative_divisionController.DeleteMuch(System.Object[])">
+            <summary>
+            批量删除
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
         </member>
         <member name="T:Tuby.Api.Controllers.b_alarm_device_typeController">
             <summary>
@@ -500,29 +741,43 @@
             <returns></returns>
         </member>
         <member name="M:Tuby.Api.Controllers.b_alarm_device_typeController.Get">
+             <summary>
+            查询所有数据
+             </summary>	
+        </member>
+        <member name="M:Tuby.Api.Controllers.b_alarm_device_typeController.GetPage(System.Int32)">
             <summary>
-            api/b_alarm_device_type 查询所有数据
-            </summary>	
+            分页查询
+            </summary>
+            <param name="page"></param>
+            <returns></returns>
         </member>
         <member name="M:Tuby.Api.Controllers.b_alarm_device_typeController.Get(System.Int32)">
-            <summary>
-            api/b_alarm_device_type/{id} 根据id查询数据
-            </summary>
+             <summary>
+            根据id查询数据
+             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.b_alarm_device_typeController.Post(Tuby.Api.Model.b_alarm_device_type)">
             <summary>
-            api/b_alarm_device_type post添加数据
+            使用post方法添加数据
             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.b_alarm_device_typeController.Update(Tuby.Api.Model.b_alarm_device_type)">
-            <summary>
-            api/b_alarm_device_type put更新数据
-            </summary>
+             <summary>
+            更新数据
+             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.b_alarm_device_typeController.Delete(System.Int32)">
             <summary>
-            api/b_alarm_device_type/delete get删除数据
+            根据id使用get方法删除数据
             </summary>
+        </member>
+        <member name="M:Tuby.Api.Controllers.b_alarm_device_typeController.DeleteMuch(System.Object[])">
+            <summary>
+            批量删除
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
         </member>
         <member name="T:Tuby.Api.Controllers.b_alarm_levelController">
             <summary>
@@ -536,29 +791,43 @@
             <returns></returns>
         </member>
         <member name="M:Tuby.Api.Controllers.b_alarm_levelController.Get">
+             <summary>
+            查询所有数据
+             </summary>	
+        </member>
+        <member name="M:Tuby.Api.Controllers.b_alarm_levelController.GetPage(System.Int32)">
             <summary>
-            api/b_alarm_level 查询所有数据
-            </summary>	
+            分页查询
+            </summary>
+            <param name="page"></param>
+            <returns></returns>
         </member>
         <member name="M:Tuby.Api.Controllers.b_alarm_levelController.Get(System.Int32)">
-            <summary>
-            api/b_alarm_level/{id} 根据id查询数据
-            </summary>
+             <summary>
+            根据id查询数据
+             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.b_alarm_levelController.Post(Tuby.Api.Model.b_alarm_level)">
             <summary>
-            api/b_alarm_level post添加数据
+            使用post方法添加数据
             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.b_alarm_levelController.Update(Tuby.Api.Model.b_alarm_level)">
-            <summary>
-            api/b_alarm_level put更新数据
-            </summary>
+             <summary>
+            更新数据
+             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.b_alarm_levelController.Delete(System.Int32)">
             <summary>
-            api/b_alarm_level/delete get删除数据
+            根据id使用get方法删除数据
             </summary>
+        </member>
+        <member name="M:Tuby.Api.Controllers.b_alarm_levelController.DeleteMuch(System.Object[])">
+            <summary>
+            批量删除
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
         </member>
         <member name="T:Tuby.Api.Controllers.b_alarm_typeController">
             <summary>
@@ -572,29 +841,43 @@
             <returns></returns>
         </member>
         <member name="M:Tuby.Api.Controllers.b_alarm_typeController.Get">
+             <summary>
+            查询所有数据
+             </summary>	
+        </member>
+        <member name="M:Tuby.Api.Controllers.b_alarm_typeController.GetPage(System.Int32)">
             <summary>
-            api/b_alarm_type 查询所有数据
-            </summary>	
+            分页查询
+            </summary>
+            <param name="page"></param>
+            <returns></returns>
         </member>
         <member name="M:Tuby.Api.Controllers.b_alarm_typeController.Get(System.Int32)">
-            <summary>
-            api/b_alarm_type/{id} 根据id查询数据
-            </summary>
+             <summary>
+            根据id查询数据
+             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.b_alarm_typeController.Post(Tuby.Api.Model.b_alarm_type)">
             <summary>
-            api/b_alarm_type post添加数据
+            使用post方法添加数据
             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.b_alarm_typeController.Update(Tuby.Api.Model.b_alarm_type)">
-            <summary>
-            api/b_alarm_type put更新数据
-            </summary>
+             <summary>
+            更新数据
+             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.b_alarm_typeController.Delete(System.Int32)">
             <summary>
-            api/b_alarm_type/delete get删除数据
+            根据id使用get方法删除数据
             </summary>
+        </member>
+        <member name="M:Tuby.Api.Controllers.b_alarm_typeController.DeleteMuch(System.Object[])">
+            <summary>
+            批量删除
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
         </member>
         <member name="T:Tuby.Api.Controllers.b_camera_typeController">
             <summary>
@@ -608,29 +891,43 @@
             <returns></returns>
         </member>
         <member name="M:Tuby.Api.Controllers.b_camera_typeController.Get">
+             <summary>
+            查询所有数据
+             </summary>	
+        </member>
+        <member name="M:Tuby.Api.Controllers.b_camera_typeController.GetPage(System.Int32)">
             <summary>
-            api/b_camera_type 查询所有数据
-            </summary>	
+            分页查询
+            </summary>
+            <param name="page"></param>
+            <returns></returns>
         </member>
         <member name="M:Tuby.Api.Controllers.b_camera_typeController.Get(System.Int32)">
-            <summary>
-            api/b_camera_type/{id} 根据id查询数据
-            </summary>
+             <summary>
+            根据id查询数据
+             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.b_camera_typeController.Post(Tuby.Api.Model.b_camera_type)">
             <summary>
-            api/b_camera_type post添加数据
+            使用post方法添加数据
             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.b_camera_typeController.Update(Tuby.Api.Model.b_camera_type)">
-            <summary>
-            api/b_camera_type put更新数据
-            </summary>
+             <summary>
+            更新数据
+             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.b_camera_typeController.Delete(System.Int32)">
             <summary>
-            api/b_camera_type/delete get删除数据
+            根据id使用get方法删除数据
             </summary>
+        </member>
+        <member name="M:Tuby.Api.Controllers.b_camera_typeController.DeleteMuch(System.Object[])">
+            <summary>
+            批量删除
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
         </member>
         <member name="T:Tuby.Api.Controllers.b_camera_usage_groupController">
             <summary>
@@ -644,29 +941,43 @@
             <returns></returns>
         </member>
         <member name="M:Tuby.Api.Controllers.b_camera_usage_groupController.Get">
+             <summary>
+            查询所有数据
+             </summary>	
+        </member>
+        <member name="M:Tuby.Api.Controllers.b_camera_usage_groupController.GetPage(System.Int32)">
             <summary>
-            api/b_camera_usage_group 查询所有数据
-            </summary>	
+            分页查询
+            </summary>
+            <param name="page"></param>
+            <returns></returns>
         </member>
         <member name="M:Tuby.Api.Controllers.b_camera_usage_groupController.Get(System.Int32)">
-            <summary>
-            api/b_camera_usage_group/{id} 根据id查询数据
-            </summary>
+             <summary>
+            根据id查询数据
+             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.b_camera_usage_groupController.Post(Tuby.Api.Model.b_camera_usage_group)">
             <summary>
-            api/b_camera_usage_group post添加数据
+            使用post方法添加数据
             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.b_camera_usage_groupController.Update(Tuby.Api.Model.b_camera_usage_group)">
-            <summary>
-            api/b_camera_usage_group put更新数据
-            </summary>
+             <summary>
+            更新数据
+             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.b_camera_usage_groupController.Delete(System.Int32)">
             <summary>
-            api/b_camera_usage_group/delete get删除数据
+            根据id使用get方法删除数据
             </summary>
+        </member>
+        <member name="M:Tuby.Api.Controllers.b_camera_usage_groupController.DeleteMuch(System.Object[])">
+            <summary>
+            批量删除
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
         </member>
         <member name="T:Tuby.Api.Controllers.b_car_statusController">
             <summary>
@@ -680,29 +991,43 @@
             <returns></returns>
         </member>
         <member name="M:Tuby.Api.Controllers.b_car_statusController.Get">
+             <summary>
+            查询所有数据
+             </summary>	
+        </member>
+        <member name="M:Tuby.Api.Controllers.b_car_statusController.GetPage(System.Int32)">
             <summary>
-            api/b_car_status 查询所有数据
-            </summary>	
+            分页查询
+            </summary>
+            <param name="page"></param>
+            <returns></returns>
         </member>
         <member name="M:Tuby.Api.Controllers.b_car_statusController.Get(System.Int32)">
-            <summary>
-            api/b_car_status/{id} 根据id查询数据
-            </summary>
+             <summary>
+            根据id查询数据
+             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.b_car_statusController.Post(Tuby.Api.Model.b_car_status)">
             <summary>
-            api/b_car_status post添加数据
+            使用post方法添加数据
             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.b_car_statusController.Update(Tuby.Api.Model.b_car_status)">
-            <summary>
-            api/b_car_status put更新数据
-            </summary>
+             <summary>
+            更新数据
+             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.b_car_statusController.Delete(System.Int32)">
             <summary>
-            api/b_car_status/delete get删除数据
+            根据id使用get方法删除数据
             </summary>
+        </member>
+        <member name="M:Tuby.Api.Controllers.b_car_statusController.DeleteMuch(System.Object[])">
+            <summary>
+            批量删除
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
         </member>
         <member name="T:Tuby.Api.Controllers.b_car_typeController">
             <summary>
@@ -716,29 +1041,43 @@
             <returns></returns>
         </member>
         <member name="M:Tuby.Api.Controllers.b_car_typeController.Get">
+             <summary>
+            查询所有数据
+             </summary>	
+        </member>
+        <member name="M:Tuby.Api.Controllers.b_car_typeController.GetPage(System.Int32)">
             <summary>
-            api/b_car_type 查询所有数据
-            </summary>	
+            分页查询
+            </summary>
+            <param name="page"></param>
+            <returns></returns>
         </member>
         <member name="M:Tuby.Api.Controllers.b_car_typeController.Get(System.Int32)">
-            <summary>
-            api/b_car_type/{id} 根据id查询数据
-            </summary>
+             <summary>
+            根据id查询数据
+             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.b_car_typeController.Post(Tuby.Api.Model.b_car_type)">
             <summary>
-            api/b_car_type post添加数据
+            使用post方法添加数据
             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.b_car_typeController.Update(Tuby.Api.Model.b_car_type)">
-            <summary>
-            api/b_car_type put更新数据
-            </summary>
+             <summary>
+            更新数据
+             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.b_car_typeController.Delete(System.Int32)">
             <summary>
-            api/b_car_type/delete get删除数据
+            根据id使用get方法删除数据
             </summary>
+        </member>
+        <member name="M:Tuby.Api.Controllers.b_car_typeController.DeleteMuch(System.Object[])">
+            <summary>
+            批量删除
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
         </member>
         <member name="T:Tuby.Api.Controllers.b_department_typeController">
             <summary>
@@ -752,29 +1091,43 @@
             <returns></returns>
         </member>
         <member name="M:Tuby.Api.Controllers.b_department_typeController.Get">
+             <summary>
+            查询所有数据
+             </summary>	
+        </member>
+        <member name="M:Tuby.Api.Controllers.b_department_typeController.GetPage(System.Int32)">
             <summary>
-            api/b_department_type 查询所有数据
-            </summary>	
+            分页查询
+            </summary>
+            <param name="page"></param>
+            <returns></returns>
         </member>
         <member name="M:Tuby.Api.Controllers.b_department_typeController.Get(System.Int32)">
-            <summary>
-            api/b_department_type/{id} 根据id查询数据
-            </summary>
+             <summary>
+            根据id查询数据
+             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.b_department_typeController.Post(Tuby.Api.Model.b_department_type)">
             <summary>
-            api/b_department_type post添加数据
+            使用post方法添加数据
             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.b_department_typeController.Update(Tuby.Api.Model.b_department_type)">
-            <summary>
-            api/b_department_type put更新数据
-            </summary>
+             <summary>
+            更新数据
+             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.b_department_typeController.Delete(System.Int32)">
             <summary>
-            api/b_department_type/delete get删除数据
+            根据id使用get方法删除数据
             </summary>
+        </member>
+        <member name="M:Tuby.Api.Controllers.b_department_typeController.DeleteMuch(System.Object[])">
+            <summary>
+            批量删除
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
         </member>
         <member name="T:Tuby.Api.Controllers.b_device_groupController">
             <summary>
@@ -788,29 +1141,43 @@
             <returns></returns>
         </member>
         <member name="M:Tuby.Api.Controllers.b_device_groupController.Get">
+             <summary>
+            查询所有数据
+             </summary>	
+        </member>
+        <member name="M:Tuby.Api.Controllers.b_device_groupController.GetPage(System.Int32)">
             <summary>
-            api/b_device_group 查询所有数据
-            </summary>	
+            分页查询
+            </summary>
+            <param name="page"></param>
+            <returns></returns>
         </member>
         <member name="M:Tuby.Api.Controllers.b_device_groupController.Get(System.Int32)">
-            <summary>
-            api/b_device_group/{id} 根据id查询数据
-            </summary>
+             <summary>
+            根据id查询数据
+             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.b_device_groupController.Post(Tuby.Api.Model.b_device_group)">
             <summary>
-            api/b_device_group post添加数据
+            使用post方法添加数据
             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.b_device_groupController.Update(Tuby.Api.Model.b_device_group)">
-            <summary>
-            api/b_device_group put更新数据
-            </summary>
+             <summary>
+            更新数据
+             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.b_device_groupController.Delete(System.Int32)">
             <summary>
-            api/b_device_group/delete get删除数据
+            根据id使用get方法删除数据
             </summary>
+        </member>
+        <member name="M:Tuby.Api.Controllers.b_device_groupController.DeleteMuch(System.Object[])">
+            <summary>
+            批量删除
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
         </member>
         <member name="T:Tuby.Api.Controllers.b_device_statusController">
             <summary>
@@ -824,29 +1191,43 @@
             <returns></returns>
         </member>
         <member name="M:Tuby.Api.Controllers.b_device_statusController.Get">
+             <summary>
+            查询所有数据
+             </summary>	
+        </member>
+        <member name="M:Tuby.Api.Controllers.b_device_statusController.GetPage(System.Int32)">
             <summary>
-            api/b_device_status 查询所有数据
-            </summary>	
+            分页查询
+            </summary>
+            <param name="page"></param>
+            <returns></returns>
         </member>
         <member name="M:Tuby.Api.Controllers.b_device_statusController.Get(System.Int32)">
-            <summary>
-            api/b_device_status/{id} 根据id查询数据
-            </summary>
+             <summary>
+            根据id查询数据
+             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.b_device_statusController.Post(Tuby.Api.Model.b_device_status)">
             <summary>
-            api/b_device_status post添加数据
+            使用post方法添加数据
             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.b_device_statusController.Update(Tuby.Api.Model.b_device_status)">
-            <summary>
-            api/b_device_status put更新数据
-            </summary>
+             <summary>
+            更新数据
+             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.b_device_statusController.Delete(System.Int32)">
             <summary>
-            api/b_device_status/delete get删除数据
+            根据id使用get方法删除数据
             </summary>
+        </member>
+        <member name="M:Tuby.Api.Controllers.b_device_statusController.DeleteMuch(System.Object[])">
+            <summary>
+            批量删除
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
         </member>
         <member name="T:Tuby.Api.Controllers.b_device_typeController">
             <summary>
@@ -860,29 +1241,43 @@
             <returns></returns>
         </member>
         <member name="M:Tuby.Api.Controllers.b_device_typeController.Get">
+             <summary>
+            查询所有数据
+             </summary>	
+        </member>
+        <member name="M:Tuby.Api.Controllers.b_device_typeController.GetPage(System.Int32)">
             <summary>
-            api/b_device_type 查询所有数据
-            </summary>	
+            分页查询
+            </summary>
+            <param name="page"></param>
+            <returns></returns>
         </member>
         <member name="M:Tuby.Api.Controllers.b_device_typeController.Get(System.Int32)">
-            <summary>
-            api/b_device_type/{id} 根据id查询数据
-            </summary>
+             <summary>
+            根据id查询数据
+             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.b_device_typeController.Post(Tuby.Api.Model.b_device_type)">
             <summary>
-            api/b_device_type post添加数据
+            使用post方法添加数据
             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.b_device_typeController.Update(Tuby.Api.Model.b_device_type)">
-            <summary>
-            api/b_device_type put更新数据
-            </summary>
+             <summary>
+            更新数据
+             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.b_device_typeController.Delete(System.Int32)">
             <summary>
-            api/b_device_type/delete get删除数据
+            根据id使用get方法删除数据
             </summary>
+        </member>
+        <member name="M:Tuby.Api.Controllers.b_device_typeController.DeleteMuch(System.Object[])">
+            <summary>
+            批量删除
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
         </member>
         <member name="T:Tuby.Api.Controllers.b_device_usageController">
             <summary>
@@ -896,29 +1291,43 @@
             <returns></returns>
         </member>
         <member name="M:Tuby.Api.Controllers.b_device_usageController.Get">
+             <summary>
+            查询所有数据
+             </summary>	
+        </member>
+        <member name="M:Tuby.Api.Controllers.b_device_usageController.GetPage(System.Int32)">
             <summary>
-            api/b_device_usage 查询所有数据
-            </summary>	
+            分页查询
+            </summary>
+            <param name="page"></param>
+            <returns></returns>
         </member>
         <member name="M:Tuby.Api.Controllers.b_device_usageController.Get(System.Int32)">
-            <summary>
-            api/b_device_usage/{id} 根据id查询数据
-            </summary>
+             <summary>
+            根据id查询数据
+             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.b_device_usageController.Post(Tuby.Api.Model.b_device_usage)">
             <summary>
-            api/b_device_usage post添加数据
+            使用post方法添加数据
             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.b_device_usageController.Update(Tuby.Api.Model.b_device_usage)">
-            <summary>
-            api/b_device_usage put更新数据
-            </summary>
+             <summary>
+            更新数据
+             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.b_device_usageController.Delete(System.Int32)">
             <summary>
-            api/b_device_usage/delete get删除数据
+            根据id使用get方法删除数据
             </summary>
+        </member>
+        <member name="M:Tuby.Api.Controllers.b_device_usageController.DeleteMuch(System.Object[])">
+            <summary>
+            批量删除
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
         </member>
         <member name="T:Tuby.Api.Controllers.b_education_levelController">
             <summary>
@@ -932,29 +1341,43 @@
             <returns></returns>
         </member>
         <member name="M:Tuby.Api.Controllers.b_education_levelController.Get">
+             <summary>
+            查询所有数据
+             </summary>	
+        </member>
+        <member name="M:Tuby.Api.Controllers.b_education_levelController.GetPage(System.Int32)">
             <summary>
-            api/b_education_level 查询所有数据
-            </summary>	
+            分页查询
+            </summary>
+            <param name="page"></param>
+            <returns></returns>
         </member>
         <member name="M:Tuby.Api.Controllers.b_education_levelController.Get(System.Int32)">
-            <summary>
-            api/b_education_level/{id} 根据id查询数据
-            </summary>
+             <summary>
+            根据id查询数据
+             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.b_education_levelController.Post(Tuby.Api.Model.b_education_level)">
             <summary>
-            api/b_education_level post添加数据
+            使用post方法添加数据
             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.b_education_levelController.Update(Tuby.Api.Model.b_education_level)">
-            <summary>
-            api/b_education_level put更新数据
-            </summary>
+             <summary>
+            更新数据
+             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.b_education_levelController.Delete(System.Int32)">
             <summary>
-            api/b_education_level/delete get删除数据
+            根据id使用get方法删除数据
             </summary>
+        </member>
+        <member name="M:Tuby.Api.Controllers.b_education_levelController.DeleteMuch(System.Object[])">
+            <summary>
+            批量删除
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
         </member>
         <member name="T:Tuby.Api.Controllers.b_equipment_statusController">
             <summary>
@@ -968,29 +1391,43 @@
             <returns></returns>
         </member>
         <member name="M:Tuby.Api.Controllers.b_equipment_statusController.Get">
+             <summary>
+            查询所有数据
+             </summary>	
+        </member>
+        <member name="M:Tuby.Api.Controllers.b_equipment_statusController.GetPage(System.Int32)">
             <summary>
-            api/b_equipment_status 查询所有数据
-            </summary>	
+            分页查询
+            </summary>
+            <param name="page"></param>
+            <returns></returns>
         </member>
         <member name="M:Tuby.Api.Controllers.b_equipment_statusController.Get(System.Int32)">
-            <summary>
-            api/b_equipment_status/{id} 根据id查询数据
-            </summary>
+             <summary>
+            根据id查询数据
+             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.b_equipment_statusController.Post(Tuby.Api.Model.b_equipment_status)">
             <summary>
-            api/b_equipment_status post添加数据
+            使用post方法添加数据
             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.b_equipment_statusController.Update(Tuby.Api.Model.b_equipment_status)">
-            <summary>
-            api/b_equipment_status put更新数据
-            </summary>
+             <summary>
+            更新数据
+             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.b_equipment_statusController.Delete(System.Int32)">
             <summary>
-            api/b_equipment_status/delete get删除数据
+            根据id使用get方法删除数据
             </summary>
+        </member>
+        <member name="M:Tuby.Api.Controllers.b_equipment_statusController.DeleteMuch(System.Object[])">
+            <summary>
+            批量删除
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
         </member>
         <member name="T:Tuby.Api.Controllers.b_equipment_typeController">
             <summary>
@@ -1004,29 +1441,43 @@
             <returns></returns>
         </member>
         <member name="M:Tuby.Api.Controllers.b_equipment_typeController.Get">
+             <summary>
+            查询所有数据
+             </summary>	
+        </member>
+        <member name="M:Tuby.Api.Controllers.b_equipment_typeController.GetPage(System.Int32)">
             <summary>
-            api/b_equipment_type 查询所有数据
-            </summary>	
+            分页查询
+            </summary>
+            <param name="page"></param>
+            <returns></returns>
         </member>
         <member name="M:Tuby.Api.Controllers.b_equipment_typeController.Get(System.Int32)">
-            <summary>
-            api/b_equipment_type/{id} 根据id查询数据
-            </summary>
+             <summary>
+            根据id查询数据
+             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.b_equipment_typeController.Post(Tuby.Api.Model.b_equipment_type)">
             <summary>
-            api/b_equipment_type post添加数据
+            使用post方法添加数据
             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.b_equipment_typeController.Update(Tuby.Api.Model.b_equipment_type)">
-            <summary>
-            api/b_equipment_type put更新数据
-            </summary>
+             <summary>
+            更新数据
+             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.b_equipment_typeController.Delete(System.Int32)">
             <summary>
-            api/b_equipment_type/delete get删除数据
+            根据id使用get方法删除数据
             </summary>
+        </member>
+        <member name="M:Tuby.Api.Controllers.b_equipment_typeController.DeleteMuch(System.Object[])">
+            <summary>
+            批量删除
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
         </member>
         <member name="T:Tuby.Api.Controllers.b_gun_typeController">
             <summary>
@@ -1040,29 +1491,43 @@
             <returns></returns>
         </member>
         <member name="M:Tuby.Api.Controllers.b_gun_typeController.Get">
+             <summary>
+            查询所有数据
+             </summary>	
+        </member>
+        <member name="M:Tuby.Api.Controllers.b_gun_typeController.GetPage(System.Int32)">
             <summary>
-            api/b_gun_type 查询所有数据
-            </summary>	
+            分页查询
+            </summary>
+            <param name="page"></param>
+            <returns></returns>
         </member>
         <member name="M:Tuby.Api.Controllers.b_gun_typeController.Get(System.Int32)">
-            <summary>
-            api/b_gun_type/{id} 根据id查询数据
-            </summary>
+             <summary>
+            根据id查询数据
+             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.b_gun_typeController.Post(Tuby.Api.Model.b_gun_type)">
             <summary>
-            api/b_gun_type post添加数据
+            使用post方法添加数据
             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.b_gun_typeController.Update(Tuby.Api.Model.b_gun_type)">
-            <summary>
-            api/b_gun_type put更新数据
-            </summary>
+             <summary>
+            更新数据
+             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.b_gun_typeController.Delete(System.Int32)">
             <summary>
-            api/b_gun_type/delete get删除数据
+            根据id使用get方法删除数据
             </summary>
+        </member>
+        <member name="M:Tuby.Api.Controllers.b_gun_typeController.DeleteMuch(System.Object[])">
+            <summary>
+            批量删除
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
         </member>
         <member name="T:Tuby.Api.Controllers.b_healthController">
             <summary>
@@ -1076,29 +1541,43 @@
             <returns></returns>
         </member>
         <member name="M:Tuby.Api.Controllers.b_healthController.Get">
+             <summary>
+            查询所有数据
+             </summary>	
+        </member>
+        <member name="M:Tuby.Api.Controllers.b_healthController.GetPage(System.Int32)">
             <summary>
-            api/b_health 查询所有数据
-            </summary>	
+            分页查询
+            </summary>
+            <param name="page"></param>
+            <returns></returns>
         </member>
         <member name="M:Tuby.Api.Controllers.b_healthController.Get(System.Int32)">
-            <summary>
-            api/b_health/{id} 根据id查询数据
-            </summary>
+             <summary>
+            根据id查询数据
+             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.b_healthController.Post(Tuby.Api.Model.b_health)">
             <summary>
-            api/b_health post添加数据
+            使用post方法添加数据
             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.b_healthController.Update(Tuby.Api.Model.b_health)">
-            <summary>
-            api/b_health put更新数据
-            </summary>
+             <summary>
+            更新数据
+             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.b_healthController.Delete(System.Int32)">
             <summary>
-            api/b_health/delete get删除数据
+            根据id使用get方法删除数据
             </summary>
+        </member>
+        <member name="M:Tuby.Api.Controllers.b_healthController.DeleteMuch(System.Object[])">
+            <summary>
+            批量删除
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
         </member>
         <member name="T:Tuby.Api.Controllers.b_leave_reasonController">
             <summary>
@@ -1112,29 +1591,43 @@
             <returns></returns>
         </member>
         <member name="M:Tuby.Api.Controllers.b_leave_reasonController.Get">
+             <summary>
+            查询所有数据
+             </summary>	
+        </member>
+        <member name="M:Tuby.Api.Controllers.b_leave_reasonController.GetPage(System.Int32)">
             <summary>
-            api/b_leave_reason 查询所有数据
-            </summary>	
+            分页查询
+            </summary>
+            <param name="page"></param>
+            <returns></returns>
         </member>
         <member name="M:Tuby.Api.Controllers.b_leave_reasonController.Get(System.Int32)">
-            <summary>
-            api/b_leave_reason/{id} 根据id查询数据
-            </summary>
+             <summary>
+            根据id查询数据
+             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.b_leave_reasonController.Post(Tuby.Api.Model.b_leave_reason)">
             <summary>
-            api/b_leave_reason post添加数据
+            使用post方法添加数据
             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.b_leave_reasonController.Update(Tuby.Api.Model.b_leave_reason)">
-            <summary>
-            api/b_leave_reason put更新数据
-            </summary>
+             <summary>
+            更新数据
+             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.b_leave_reasonController.Delete(System.Int32)">
             <summary>
-            api/b_leave_reason/delete get删除数据
+            根据id使用get方法删除数据
             </summary>
+        </member>
+        <member name="M:Tuby.Api.Controllers.b_leave_reasonController.DeleteMuch(System.Object[])">
+            <summary>
+            批量删除
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
         </member>
         <member name="T:Tuby.Api.Controllers.b_marial_statusController">
             <summary>
@@ -1148,29 +1641,43 @@
             <returns></returns>
         </member>
         <member name="M:Tuby.Api.Controllers.b_marial_statusController.Get">
+             <summary>
+            查询所有数据
+             </summary>	
+        </member>
+        <member name="M:Tuby.Api.Controllers.b_marial_statusController.GetPage(System.Int32)">
             <summary>
-            api/b_marial_status 查询所有数据
-            </summary>	
+            分页查询
+            </summary>
+            <param name="page"></param>
+            <returns></returns>
         </member>
         <member name="M:Tuby.Api.Controllers.b_marial_statusController.Get(System.Int32)">
-            <summary>
-            api/b_marial_status/{id} 根据id查询数据
-            </summary>
+             <summary>
+            根据id查询数据
+             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.b_marial_statusController.Post(Tuby.Api.Model.b_marial_status)">
             <summary>
-            api/b_marial_status post添加数据
+            使用post方法添加数据
             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.b_marial_statusController.Update(Tuby.Api.Model.b_marial_status)">
-            <summary>
-            api/b_marial_status put更新数据
-            </summary>
+             <summary>
+            更新数据
+             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.b_marial_statusController.Delete(System.Int32)">
             <summary>
-            api/b_marial_status/delete get删除数据
+            根据id使用get方法删除数据
             </summary>
+        </member>
+        <member name="M:Tuby.Api.Controllers.b_marial_statusController.DeleteMuch(System.Object[])">
+            <summary>
+            批量删除
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
         </member>
         <member name="T:Tuby.Api.Controllers.b_nationController">
             <summary>
@@ -1184,29 +1691,43 @@
             <returns></returns>
         </member>
         <member name="M:Tuby.Api.Controllers.b_nationController.Get">
+             <summary>
+            查询所有数据
+             </summary>	
+        </member>
+        <member name="M:Tuby.Api.Controllers.b_nationController.GetPage(System.Int32)">
             <summary>
-            api/b_nation 查询所有数据
-            </summary>	
+            分页查询
+            </summary>
+            <param name="page"></param>
+            <returns></returns>
         </member>
         <member name="M:Tuby.Api.Controllers.b_nationController.Get(System.Int32)">
-            <summary>
-            api/b_nation/{id} 根据id查询数据
-            </summary>
+             <summary>
+            根据id查询数据
+             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.b_nationController.Post(Tuby.Api.Model.b_nation)">
             <summary>
-            api/b_nation post添加数据
+            使用post方法添加数据
             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.b_nationController.Update(Tuby.Api.Model.b_nation)">
-            <summary>
-            api/b_nation put更新数据
-            </summary>
+             <summary>
+            更新数据
+             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.b_nationController.Delete(System.Int32)">
             <summary>
-            api/b_nation/delete get删除数据
+            根据id使用get方法删除数据
             </summary>
+        </member>
+        <member name="M:Tuby.Api.Controllers.b_nationController.DeleteMuch(System.Object[])">
+            <summary>
+            批量删除
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
         </member>
         <member name="T:Tuby.Api.Controllers.b_pap_postController">
             <summary>
@@ -1220,29 +1741,43 @@
             <returns></returns>
         </member>
         <member name="M:Tuby.Api.Controllers.b_pap_postController.Get">
+             <summary>
+            查询所有数据
+             </summary>	
+        </member>
+        <member name="M:Tuby.Api.Controllers.b_pap_postController.GetPage(System.Int32)">
             <summary>
-            api/b_pap_post 查询所有数据
-            </summary>	
+            分页查询
+            </summary>
+            <param name="page"></param>
+            <returns></returns>
         </member>
         <member name="M:Tuby.Api.Controllers.b_pap_postController.Get(System.Int32)">
-            <summary>
-            api/b_pap_post/{id} 根据id查询数据
-            </summary>
+             <summary>
+            根据id查询数据
+             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.b_pap_postController.Post(Tuby.Api.Model.b_pap_post)">
             <summary>
-            api/b_pap_post post添加数据
+            使用post方法添加数据
             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.b_pap_postController.Update(Tuby.Api.Model.b_pap_post)">
-            <summary>
-            api/b_pap_post put更新数据
-            </summary>
+             <summary>
+            更新数据
+             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.b_pap_postController.Delete(System.Int32)">
             <summary>
-            api/b_pap_post/delete get删除数据
+            根据id使用get方法删除数据
             </summary>
+        </member>
+        <member name="M:Tuby.Api.Controllers.b_pap_postController.DeleteMuch(System.Object[])">
+            <summary>
+            批量删除
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
         </member>
         <member name="T:Tuby.Api.Controllers.b_pap_rankController">
             <summary>
@@ -1256,29 +1791,43 @@
             <returns></returns>
         </member>
         <member name="M:Tuby.Api.Controllers.b_pap_rankController.Get">
+             <summary>
+            查询所有数据
+             </summary>	
+        </member>
+        <member name="M:Tuby.Api.Controllers.b_pap_rankController.GetPage(System.Int32)">
             <summary>
-            api/b_pap_rank 查询所有数据
-            </summary>	
+            分页查询
+            </summary>
+            <param name="page"></param>
+            <returns></returns>
         </member>
         <member name="M:Tuby.Api.Controllers.b_pap_rankController.Get(System.Int32)">
-            <summary>
-            api/b_pap_rank/{id} 根据id查询数据
-            </summary>
+             <summary>
+            根据id查询数据
+             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.b_pap_rankController.Post(Tuby.Api.Model.b_pap_rank)">
             <summary>
-            api/b_pap_rank post添加数据
+            使用post方法添加数据
             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.b_pap_rankController.Update(Tuby.Api.Model.b_pap_rank)">
-            <summary>
-            api/b_pap_rank put更新数据
-            </summary>
+             <summary>
+            更新数据
+             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.b_pap_rankController.Delete(System.Int32)">
             <summary>
-            api/b_pap_rank/delete get删除数据
+            根据id使用get方法删除数据
             </summary>
+        </member>
+        <member name="M:Tuby.Api.Controllers.b_pap_rankController.DeleteMuch(System.Object[])">
+            <summary>
+            批量删除
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
         </member>
         <member name="T:Tuby.Api.Controllers.b_phone_table_typeController">
             <summary>
@@ -1292,29 +1841,43 @@
             <returns></returns>
         </member>
         <member name="M:Tuby.Api.Controllers.b_phone_table_typeController.Get">
+             <summary>
+            查询所有数据
+             </summary>	
+        </member>
+        <member name="M:Tuby.Api.Controllers.b_phone_table_typeController.GetPage(System.Int32)">
             <summary>
-            api/b_phone_table_type 查询所有数据
-            </summary>	
+            分页查询
+            </summary>
+            <param name="page"></param>
+            <returns></returns>
         </member>
         <member name="M:Tuby.Api.Controllers.b_phone_table_typeController.Get(System.Int32)">
-            <summary>
-            api/b_phone_table_type/{id} 根据id查询数据
-            </summary>
+             <summary>
+            根据id查询数据
+             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.b_phone_table_typeController.Post(Tuby.Api.Model.b_phone_table_type)">
             <summary>
-            api/b_phone_table_type post添加数据
+            使用post方法添加数据
             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.b_phone_table_typeController.Update(Tuby.Api.Model.b_phone_table_type)">
-            <summary>
-            api/b_phone_table_type put更新数据
-            </summary>
+             <summary>
+            更新数据
+             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.b_phone_table_typeController.Delete(System.Int32)">
             <summary>
-            api/b_phone_table_type/delete get删除数据
+            根据id使用get方法删除数据
             </summary>
+        </member>
+        <member name="M:Tuby.Api.Controllers.b_phone_table_typeController.DeleteMuch(System.Object[])">
+            <summary>
+            批量删除
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
         </member>
         <member name="T:Tuby.Api.Controllers.b_politic_roleController">
             <summary>
@@ -1328,29 +1891,43 @@
             <returns></returns>
         </member>
         <member name="M:Tuby.Api.Controllers.b_politic_roleController.Get">
+             <summary>
+            查询所有数据
+             </summary>	
+        </member>
+        <member name="M:Tuby.Api.Controllers.b_politic_roleController.GetPage(System.Int32)">
             <summary>
-            api/b_politic_role 查询所有数据
-            </summary>	
+            分页查询
+            </summary>
+            <param name="page"></param>
+            <returns></returns>
         </member>
         <member name="M:Tuby.Api.Controllers.b_politic_roleController.Get(System.Int32)">
-            <summary>
-            api/b_politic_role/{id} 根据id查询数据
-            </summary>
+             <summary>
+            根据id查询数据
+             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.b_politic_roleController.Post(Tuby.Api.Model.b_politic_role)">
             <summary>
-            api/b_politic_role post添加数据
+            使用post方法添加数据
             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.b_politic_roleController.Update(Tuby.Api.Model.b_politic_role)">
-            <summary>
-            api/b_politic_role put更新数据
-            </summary>
+             <summary>
+            更新数据
+             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.b_politic_roleController.Delete(System.Int32)">
             <summary>
-            api/b_politic_role/delete get删除数据
+            根据id使用get方法删除数据
             </summary>
+        </member>
+        <member name="M:Tuby.Api.Controllers.b_politic_roleController.DeleteMuch(System.Object[])">
+            <summary>
+            批量删除
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
         </member>
         <member name="T:Tuby.Api.Controllers.b_shaowei_typeController">
             <summary>
@@ -1364,29 +1941,43 @@
             <returns></returns>
         </member>
         <member name="M:Tuby.Api.Controllers.b_shaowei_typeController.Get">
+             <summary>
+            查询所有数据
+             </summary>	
+        </member>
+        <member name="M:Tuby.Api.Controllers.b_shaowei_typeController.GetPage(System.Int32)">
             <summary>
-            api/b_shaowei_type 查询所有数据
-            </summary>	
+            分页查询
+            </summary>
+            <param name="page"></param>
+            <returns></returns>
         </member>
         <member name="M:Tuby.Api.Controllers.b_shaowei_typeController.Get(System.Int32)">
-            <summary>
-            api/b_shaowei_type/{id} 根据id查询数据
-            </summary>
+             <summary>
+            根据id查询数据
+             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.b_shaowei_typeController.Post(Tuby.Api.Model.b_shaowei_type)">
             <summary>
-            api/b_shaowei_type post添加数据
+            使用post方法添加数据
             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.b_shaowei_typeController.Update(Tuby.Api.Model.b_shaowei_type)">
-            <summary>
-            api/b_shaowei_type put更新数据
-            </summary>
+             <summary>
+            更新数据
+             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.b_shaowei_typeController.Delete(System.Int32)">
             <summary>
-            api/b_shaowei_type/delete get删除数据
+            根据id使用get方法删除数据
             </summary>
+        </member>
+        <member name="M:Tuby.Api.Controllers.b_shaowei_typeController.DeleteMuch(System.Object[])">
+            <summary>
+            批量删除
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
         </member>
         <member name="T:Tuby.Api.Controllers.b_soldier_stateController">
             <summary>
@@ -1400,29 +1991,43 @@
             <returns></returns>
         </member>
         <member name="M:Tuby.Api.Controllers.b_soldier_stateController.Get">
+             <summary>
+            查询所有数据
+             </summary>	
+        </member>
+        <member name="M:Tuby.Api.Controllers.b_soldier_stateController.GetPage(System.Int32)">
             <summary>
-            api/b_soldier_state 查询所有数据
-            </summary>	
+            分页查询
+            </summary>
+            <param name="page"></param>
+            <returns></returns>
         </member>
         <member name="M:Tuby.Api.Controllers.b_soldier_stateController.Get(System.Int32)">
-            <summary>
-            api/b_soldier_state/{id} 根据id查询数据
-            </summary>
+             <summary>
+            根据id查询数据
+             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.b_soldier_stateController.Post(Tuby.Api.Model.b_soldier_state)">
             <summary>
-            api/b_soldier_state post添加数据
+            使用post方法添加数据
             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.b_soldier_stateController.Update(Tuby.Api.Model.b_soldier_state)">
-            <summary>
-            api/b_soldier_state put更新数据
-            </summary>
+             <summary>
+            更新数据
+             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.b_soldier_stateController.Delete(System.Int32)">
             <summary>
-            api/b_soldier_state/delete get删除数据
+            根据id使用get方法删除数据
             </summary>
+        </member>
+        <member name="M:Tuby.Api.Controllers.b_soldier_stateController.DeleteMuch(System.Object[])">
+            <summary>
+            批量删除
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
         </member>
         <member name="T:Tuby.Api.Controllers.b_target_car_security_levelController">
             <summary>
@@ -1436,29 +2041,43 @@
             <returns></returns>
         </member>
         <member name="M:Tuby.Api.Controllers.b_target_car_security_levelController.Get">
+             <summary>
+            查询所有数据
+             </summary>	
+        </member>
+        <member name="M:Tuby.Api.Controllers.b_target_car_security_levelController.GetPage(System.Int32)">
             <summary>
-            api/b_target_car_security_level 查询所有数据
-            </summary>	
+            分页查询
+            </summary>
+            <param name="page"></param>
+            <returns></returns>
         </member>
         <member name="M:Tuby.Api.Controllers.b_target_car_security_levelController.Get(System.Int32)">
-            <summary>
-            api/b_target_car_security_level/{id} 根据id查询数据
-            </summary>
+             <summary>
+            根据id查询数据
+             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.b_target_car_security_levelController.Post(Tuby.Api.Model.b_target_car_security_level)">
             <summary>
-            api/b_target_car_security_level post添加数据
+            使用post方法添加数据
             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.b_target_car_security_levelController.Update(Tuby.Api.Model.b_target_car_security_level)">
-            <summary>
-            api/b_target_car_security_level put更新数据
-            </summary>
+             <summary>
+            更新数据
+             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.b_target_car_security_levelController.Delete(System.Int32)">
             <summary>
-            api/b_target_car_security_level/delete get删除数据
+            根据id使用get方法删除数据
             </summary>
+        </member>
+        <member name="M:Tuby.Api.Controllers.b_target_car_security_levelController.DeleteMuch(System.Object[])">
+            <summary>
+            批量删除
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
         </member>
         <member name="T:Tuby.Api.Controllers.b_target_car_typeController">
             <summary>
@@ -1472,29 +2091,43 @@
             <returns></returns>
         </member>
         <member name="M:Tuby.Api.Controllers.b_target_car_typeController.Get">
+             <summary>
+            查询所有数据
+             </summary>	
+        </member>
+        <member name="M:Tuby.Api.Controllers.b_target_car_typeController.GetPage(System.Int32)">
             <summary>
-            api/b_target_car_type 查询所有数据
-            </summary>	
+            分页查询
+            </summary>
+            <param name="page"></param>
+            <returns></returns>
         </member>
         <member name="M:Tuby.Api.Controllers.b_target_car_typeController.Get(System.Int32)">
-            <summary>
-            api/b_target_car_type/{id} 根据id查询数据
-            </summary>
+             <summary>
+            根据id查询数据
+             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.b_target_car_typeController.Post(Tuby.Api.Model.b_target_car_type)">
             <summary>
-            api/b_target_car_type post添加数据
+            使用post方法添加数据
             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.b_target_car_typeController.Update(Tuby.Api.Model.b_target_car_type)">
-            <summary>
-            api/b_target_car_type put更新数据
-            </summary>
+             <summary>
+            更新数据
+             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.b_target_car_typeController.Delete(System.Int32)">
             <summary>
-            api/b_target_car_type/delete get删除数据
+            根据id使用get方法删除数据
             </summary>
+        </member>
+        <member name="M:Tuby.Api.Controllers.b_target_car_typeController.DeleteMuch(System.Object[])">
+            <summary>
+            批量删除
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
         </member>
         <member name="T:Tuby.Api.Controllers.b_target_people_security_levelController">
             <summary>
@@ -1508,29 +2141,43 @@
             <returns></returns>
         </member>
         <member name="M:Tuby.Api.Controllers.b_target_people_security_levelController.Get">
+             <summary>
+            查询所有数据
+             </summary>	
+        </member>
+        <member name="M:Tuby.Api.Controllers.b_target_people_security_levelController.GetPage(System.Int32)">
             <summary>
-            api/b_target_people_security_level 查询所有数据
-            </summary>	
+            分页查询
+            </summary>
+            <param name="page"></param>
+            <returns></returns>
         </member>
         <member name="M:Tuby.Api.Controllers.b_target_people_security_levelController.Get(System.Int32)">
-            <summary>
-            api/b_target_people_security_level/{id} 根据id查询数据
-            </summary>
+             <summary>
+            根据id查询数据
+             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.b_target_people_security_levelController.Post(Tuby.Api.Model.b_target_people_security_level)">
             <summary>
-            api/b_target_people_security_level post添加数据
+            使用post方法添加数据
             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.b_target_people_security_levelController.Update(Tuby.Api.Model.b_target_people_security_level)">
-            <summary>
-            api/b_target_people_security_level put更新数据
-            </summary>
+             <summary>
+            更新数据
+             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.b_target_people_security_levelController.Delete(System.Int32)">
             <summary>
-            api/b_target_people_security_level/delete get删除数据
+            根据id使用get方法删除数据
             </summary>
+        </member>
+        <member name="M:Tuby.Api.Controllers.b_target_people_security_levelController.DeleteMuch(System.Object[])">
+            <summary>
+            批量删除
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
         </member>
         <member name="T:Tuby.Api.Controllers.b_target_people_typeController">
             <summary>
@@ -1544,29 +2191,43 @@
             <returns></returns>
         </member>
         <member name="M:Tuby.Api.Controllers.b_target_people_typeController.Get">
+             <summary>
+            查询所有数据
+             </summary>	
+        </member>
+        <member name="M:Tuby.Api.Controllers.b_target_people_typeController.GetPage(System.Int32)">
             <summary>
-            api/b_target_people_type 查询所有数据
-            </summary>	
+            分页查询
+            </summary>
+            <param name="page"></param>
+            <returns></returns>
         </member>
         <member name="M:Tuby.Api.Controllers.b_target_people_typeController.Get(System.Int32)">
-            <summary>
-            api/b_target_people_type/{id} 根据id查询数据
-            </summary>
+             <summary>
+            根据id查询数据
+             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.b_target_people_typeController.Post(Tuby.Api.Model.b_target_people_type)">
             <summary>
-            api/b_target_people_type post添加数据
+            使用post方法添加数据
             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.b_target_people_typeController.Update(Tuby.Api.Model.b_target_people_type)">
-            <summary>
-            api/b_target_people_type put更新数据
-            </summary>
+             <summary>
+            更新数据
+             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.b_target_people_typeController.Delete(System.Int32)">
             <summary>
-            api/b_target_people_type/delete get删除数据
+            根据id使用get方法删除数据
             </summary>
+        </member>
+        <member name="M:Tuby.Api.Controllers.b_target_people_typeController.DeleteMuch(System.Object[])">
+            <summary>
+            批量删除
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
         </member>
         <member name="T:Tuby.Api.Controllers.b_zhd_architectureController">
             <summary>
@@ -1580,29 +2241,43 @@
             <returns></returns>
         </member>
         <member name="M:Tuby.Api.Controllers.b_zhd_architectureController.Get">
+             <summary>
+            查询所有数据
+             </summary>	
+        </member>
+        <member name="M:Tuby.Api.Controllers.b_zhd_architectureController.GetPage(System.Int32)">
             <summary>
-            api/b_zhd_architecture 查询所有数据
-            </summary>	
+            分页查询
+            </summary>
+            <param name="page"></param>
+            <returns></returns>
         </member>
         <member name="M:Tuby.Api.Controllers.b_zhd_architectureController.Get(System.Int32)">
-            <summary>
-            api/b_zhd_architecture/{id} 根据id查询数据
-            </summary>
+             <summary>
+            根据id查询数据
+             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.b_zhd_architectureController.Post(Tuby.Api.Model.b_zhd_architecture)">
             <summary>
-            api/b_zhd_architecture post添加数据
+            使用post方法添加数据
             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.b_zhd_architectureController.Update(Tuby.Api.Model.b_zhd_architecture)">
-            <summary>
-            api/b_zhd_architecture put更新数据
-            </summary>
+             <summary>
+            更新数据
+             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.b_zhd_architectureController.Delete(System.Int32)">
             <summary>
-            api/b_zhd_architecture/delete get删除数据
+            根据id使用get方法删除数据
             </summary>
+        </member>
+        <member name="M:Tuby.Api.Controllers.b_zhd_architectureController.DeleteMuch(System.Object[])">
+            <summary>
+            批量删除
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
         </member>
         <member name="T:Tuby.Api.Controllers.dr_arsenal_equipmentController">
             <summary>
@@ -1616,29 +2291,43 @@
             <returns></returns>
         </member>
         <member name="M:Tuby.Api.Controllers.dr_arsenal_equipmentController.Get">
+             <summary>
+            查询所有数据
+             </summary>	
+        </member>
+        <member name="M:Tuby.Api.Controllers.dr_arsenal_equipmentController.GetPage(System.Int32)">
             <summary>
-            api/dr_arsenal_equipment 查询所有数据
-            </summary>	
+            分页查询
+            </summary>
+            <param name="page"></param>
+            <returns></returns>
         </member>
         <member name="M:Tuby.Api.Controllers.dr_arsenal_equipmentController.Get(System.Int32)">
-            <summary>
-            api/dr_arsenal_equipment/{id} 根据id查询数据
-            </summary>
+             <summary>
+            根据id查询数据
+             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.dr_arsenal_equipmentController.Post(Tuby.Api.Model.dr_arsenal_equipment)">
             <summary>
-            api/dr_arsenal_equipment post添加数据
+            使用post方法添加数据
             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.dr_arsenal_equipmentController.Update(Tuby.Api.Model.dr_arsenal_equipment)">
-            <summary>
-            api/dr_arsenal_equipment put更新数据
-            </summary>
+             <summary>
+            更新数据
+             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.dr_arsenal_equipmentController.Delete(System.Int32)">
             <summary>
-            api/dr_arsenal_equipment/delete get删除数据
+            根据id使用get方法删除数据
             </summary>
+        </member>
+        <member name="M:Tuby.Api.Controllers.dr_arsenal_equipmentController.DeleteMuch(System.Object[])">
+            <summary>
+            批量删除
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
         </member>
         <member name="T:Tuby.Api.Controllers.dr_cameragroup_cameraController">
             <summary>
@@ -1652,29 +2341,43 @@
             <returns></returns>
         </member>
         <member name="M:Tuby.Api.Controllers.dr_cameragroup_cameraController.Get">
+             <summary>
+            查询所有数据
+             </summary>	
+        </member>
+        <member name="M:Tuby.Api.Controllers.dr_cameragroup_cameraController.GetPage(System.Int32)">
             <summary>
-            api/dr_cameragroup_camera 查询所有数据
-            </summary>	
+            分页查询
+            </summary>
+            <param name="page"></param>
+            <returns></returns>
         </member>
         <member name="M:Tuby.Api.Controllers.dr_cameragroup_cameraController.Get(System.Int32)">
-            <summary>
-            api/dr_cameragroup_camera/{id} 根据id查询数据
-            </summary>
+             <summary>
+            根据id查询数据
+             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.dr_cameragroup_cameraController.Post(Tuby.Api.Model.dr_cameragroup_camera)">
             <summary>
-            api/dr_cameragroup_camera post添加数据
+            使用post方法添加数据
             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.dr_cameragroup_cameraController.Update(Tuby.Api.Model.dr_cameragroup_camera)">
-            <summary>
-            api/dr_cameragroup_camera put更新数据
-            </summary>
+             <summary>
+            更新数据
+             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.dr_cameragroup_cameraController.Delete(System.Int32)">
             <summary>
-            api/dr_cameragroup_camera/delete get删除数据
+            根据id使用get方法删除数据
             </summary>
+        </member>
+        <member name="M:Tuby.Api.Controllers.dr_cameragroup_cameraController.DeleteMuch(System.Object[])">
+            <summary>
+            批量删除
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
         </member>
         <member name="T:Tuby.Api.Controllers.dr_department_soldierController">
             <summary>
@@ -1688,29 +2391,43 @@
             <returns></returns>
         </member>
         <member name="M:Tuby.Api.Controllers.dr_department_soldierController.Get">
+             <summary>
+            查询所有数据
+             </summary>	
+        </member>
+        <member name="M:Tuby.Api.Controllers.dr_department_soldierController.GetPage(System.Int32)">
             <summary>
-            api/dr_department_soldier 查询所有数据
-            </summary>	
+            分页查询
+            </summary>
+            <param name="page"></param>
+            <returns></returns>
         </member>
         <member name="M:Tuby.Api.Controllers.dr_department_soldierController.Get(System.Int32)">
-            <summary>
-            api/dr_department_soldier/{id} 根据id查询数据
-            </summary>
+             <summary>
+            根据id查询数据
+             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.dr_department_soldierController.Post(Tuby.Api.Model.dr_department_soldier)">
             <summary>
-            api/dr_department_soldier post添加数据
+            使用post方法添加数据
             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.dr_department_soldierController.Update(Tuby.Api.Model.dr_department_soldier)">
-            <summary>
-            api/dr_department_soldier put更新数据
-            </summary>
+             <summary>
+            更新数据
+             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.dr_department_soldierController.Delete(System.Int32)">
             <summary>
-            api/dr_department_soldier/delete get删除数据
+            根据id使用get方法删除数据
             </summary>
+        </member>
+        <member name="M:Tuby.Api.Controllers.dr_department_soldierController.DeleteMuch(System.Object[])">
+            <summary>
+            批量删除
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
         </member>
         <member name="T:Tuby.Api.Controllers.d_alarm_deviceController">
             <summary>
@@ -1724,29 +2441,43 @@
             <returns></returns>
         </member>
         <member name="M:Tuby.Api.Controllers.d_alarm_deviceController.Get">
+             <summary>
+            查询所有数据
+             </summary>	
+        </member>
+        <member name="M:Tuby.Api.Controllers.d_alarm_deviceController.GetPage(System.Int32)">
             <summary>
-            api/d_alarm_device 查询所有数据
-            </summary>	
+            分页查询
+            </summary>
+            <param name="page"></param>
+            <returns></returns>
         </member>
         <member name="M:Tuby.Api.Controllers.d_alarm_deviceController.Get(System.Int32)">
-            <summary>
-            api/d_alarm_device/{id} 根据id查询数据
-            </summary>
+             <summary>
+            根据id查询数据
+             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.d_alarm_deviceController.Post(Tuby.Api.Model.d_alarm_device)">
             <summary>
-            api/d_alarm_device post添加数据
+            使用post方法添加数据
             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.d_alarm_deviceController.Update(Tuby.Api.Model.d_alarm_device)">
-            <summary>
-            api/d_alarm_device put更新数据
-            </summary>
+             <summary>
+            更新数据
+             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.d_alarm_deviceController.Delete(System.Int32)">
             <summary>
-            api/d_alarm_device/delete get删除数据
+            根据id使用get方法删除数据
             </summary>
+        </member>
+        <member name="M:Tuby.Api.Controllers.d_alarm_deviceController.DeleteMuch(System.Object[])">
+            <summary>
+            批量删除
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
         </member>
         <member name="T:Tuby.Api.Controllers.d_alarm_infoController">
             <summary>
@@ -1760,29 +2491,43 @@
             <returns></returns>
         </member>
         <member name="M:Tuby.Api.Controllers.d_alarm_infoController.Get">
+             <summary>
+            查询所有数据
+             </summary>	
+        </member>
+        <member name="M:Tuby.Api.Controllers.d_alarm_infoController.GetPage(System.Int32)">
             <summary>
-            api/d_alarm_info 查询所有数据
-            </summary>	
+            分页查询
+            </summary>
+            <param name="page"></param>
+            <returns></returns>
         </member>
         <member name="M:Tuby.Api.Controllers.d_alarm_infoController.Get(System.Int32)">
-            <summary>
-            api/d_alarm_info/{id} 根据id查询数据
-            </summary>
+             <summary>
+            根据id查询数据
+             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.d_alarm_infoController.Post(Tuby.Api.Model.d_alarm_info)">
             <summary>
-            api/d_alarm_info post添加数据
+            使用post方法添加数据
             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.d_alarm_infoController.Update(Tuby.Api.Model.d_alarm_info)">
-            <summary>
-            api/d_alarm_info put更新数据
-            </summary>
+             <summary>
+            更新数据
+             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.d_alarm_infoController.Delete(System.Int32)">
             <summary>
-            api/d_alarm_info/delete get删除数据
+            根据id使用get方法删除数据
             </summary>
+        </member>
+        <member name="M:Tuby.Api.Controllers.d_alarm_infoController.DeleteMuch(System.Object[])">
+            <summary>
+            批量删除
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
         </member>
         <member name="T:Tuby.Api.Controllers.d_cameraController">
             <summary>
@@ -1796,29 +2541,43 @@
             <returns></returns>
         </member>
         <member name="M:Tuby.Api.Controllers.d_cameraController.Get">
+             <summary>
+            查询所有数据
+             </summary>	
+        </member>
+        <member name="M:Tuby.Api.Controllers.d_cameraController.GetPage(System.Int32)">
             <summary>
-            api/d_camera 查询所有数据
-            </summary>	
+            分页查询
+            </summary>
+            <param name="page"></param>
+            <returns></returns>
         </member>
         <member name="M:Tuby.Api.Controllers.d_cameraController.Get(System.Int32)">
-            <summary>
-            api/d_camera/{id} 根据id查询数据
-            </summary>
+             <summary>
+            根据id查询数据
+             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.d_cameraController.Post(Tuby.Api.Model.d_camera)">
             <summary>
-            api/d_camera post添加数据
+            使用post方法添加数据
             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.d_cameraController.Update(Tuby.Api.Model.d_camera)">
-            <summary>
-            api/d_camera put更新数据
-            </summary>
+             <summary>
+            更新数据
+             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.d_cameraController.Delete(System.Int32)">
             <summary>
-            api/d_camera/delete get删除数据
+            根据id使用get方法删除数据
             </summary>
+        </member>
+        <member name="M:Tuby.Api.Controllers.d_cameraController.DeleteMuch(System.Object[])">
+            <summary>
+            批量删除
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
         </member>
         <member name="T:Tuby.Api.Controllers.d_camera_groupController">
             <summary>
@@ -1832,29 +2591,43 @@
             <returns></returns>
         </member>
         <member name="M:Tuby.Api.Controllers.d_camera_groupController.Get">
+             <summary>
+            查询所有数据
+             </summary>	
+        </member>
+        <member name="M:Tuby.Api.Controllers.d_camera_groupController.GetPage(System.Int32)">
             <summary>
-            api/d_camera_group 查询所有数据
-            </summary>	
+            分页查询
+            </summary>
+            <param name="page"></param>
+            <returns></returns>
         </member>
         <member name="M:Tuby.Api.Controllers.d_camera_groupController.Get(System.Int32)">
-            <summary>
-            api/d_camera_group/{id} 根据id查询数据
-            </summary>
+             <summary>
+            根据id查询数据
+             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.d_camera_groupController.Post(Tuby.Api.Model.d_camera_group)">
             <summary>
-            api/d_camera_group post添加数据
+            使用post方法添加数据
             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.d_camera_groupController.Update(Tuby.Api.Model.d_camera_group)">
-            <summary>
-            api/d_camera_group put更新数据
-            </summary>
+             <summary>
+            更新数据
+             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.d_camera_groupController.Delete(System.Int32)">
             <summary>
-            api/d_camera_group/delete get删除数据
+            根据id使用get方法删除数据
             </summary>
+        </member>
+        <member name="M:Tuby.Api.Controllers.d_camera_groupController.DeleteMuch(System.Object[])">
+            <summary>
+            批量删除
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
         </member>
         <member name="T:Tuby.Api.Controllers.d_pap_arsenalController">
             <summary>
@@ -1868,29 +2641,43 @@
             <returns></returns>
         </member>
         <member name="M:Tuby.Api.Controllers.d_pap_arsenalController.Get">
+             <summary>
+            查询所有数据
+             </summary>	
+        </member>
+        <member name="M:Tuby.Api.Controllers.d_pap_arsenalController.GetPage(System.Int32)">
             <summary>
-            api/d_pap_arsenal 查询所有数据
-            </summary>	
+            分页查询
+            </summary>
+            <param name="page"></param>
+            <returns></returns>
         </member>
         <member name="M:Tuby.Api.Controllers.d_pap_arsenalController.Get(System.Int32)">
-            <summary>
-            api/d_pap_arsenal/{id} 根据id查询数据
-            </summary>
+             <summary>
+            根据id查询数据
+             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.d_pap_arsenalController.Post(Tuby.Api.Model.d_pap_arsenal)">
             <summary>
-            api/d_pap_arsenal post添加数据
+            使用post方法添加数据
             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.d_pap_arsenalController.Update(Tuby.Api.Model.d_pap_arsenal)">
-            <summary>
-            api/d_pap_arsenal put更新数据
-            </summary>
+             <summary>
+            更新数据
+             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.d_pap_arsenalController.Delete(System.Int32)">
             <summary>
-            api/d_pap_arsenal/delete get删除数据
+            根据id使用get方法删除数据
             </summary>
+        </member>
+        <member name="M:Tuby.Api.Controllers.d_pap_arsenalController.DeleteMuch(System.Object[])">
+            <summary>
+            批量删除
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
         </member>
         <member name="T:Tuby.Api.Controllers.d_pap_camera_record_carController">
             <summary>
@@ -1904,29 +2691,43 @@
             <returns></returns>
         </member>
         <member name="M:Tuby.Api.Controllers.d_pap_camera_record_carController.Get">
+             <summary>
+            查询所有数据
+             </summary>	
+        </member>
+        <member name="M:Tuby.Api.Controllers.d_pap_camera_record_carController.GetPage(System.Int32)">
             <summary>
-            api/d_pap_camera_record_car 查询所有数据
-            </summary>	
+            分页查询
+            </summary>
+            <param name="page"></param>
+            <returns></returns>
         </member>
         <member name="M:Tuby.Api.Controllers.d_pap_camera_record_carController.Get(System.Int32)">
-            <summary>
-            api/d_pap_camera_record_car/{id} 根据id查询数据
-            </summary>
+             <summary>
+            根据id查询数据
+             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.d_pap_camera_record_carController.Post(Tuby.Api.Model.d_pap_camera_record_car)">
             <summary>
-            api/d_pap_camera_record_car post添加数据
+            使用post方法添加数据
             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.d_pap_camera_record_carController.Update(Tuby.Api.Model.d_pap_camera_record_car)">
-            <summary>
-            api/d_pap_camera_record_car put更新数据
-            </summary>
+             <summary>
+            更新数据
+             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.d_pap_camera_record_carController.Delete(System.Int32)">
             <summary>
-            api/d_pap_camera_record_car/delete get删除数据
+            根据id使用get方法删除数据
             </summary>
+        </member>
+        <member name="M:Tuby.Api.Controllers.d_pap_camera_record_carController.DeleteMuch(System.Object[])">
+            <summary>
+            批量删除
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
         </member>
         <member name="T:Tuby.Api.Controllers.d_pap_camera_record_peopleController">
             <summary>
@@ -1940,29 +2741,43 @@
             <returns></returns>
         </member>
         <member name="M:Tuby.Api.Controllers.d_pap_camera_record_peopleController.Get">
+             <summary>
+            查询所有数据
+             </summary>	
+        </member>
+        <member name="M:Tuby.Api.Controllers.d_pap_camera_record_peopleController.GetPage(System.Int32)">
             <summary>
-            api/d_pap_camera_record_people 查询所有数据
-            </summary>	
+            分页查询
+            </summary>
+            <param name="page"></param>
+            <returns></returns>
         </member>
         <member name="M:Tuby.Api.Controllers.d_pap_camera_record_peopleController.Get(System.Int32)">
-            <summary>
-            api/d_pap_camera_record_people/{id} 根据id查询数据
-            </summary>
+             <summary>
+            根据id查询数据
+             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.d_pap_camera_record_peopleController.Post(Tuby.Api.Model.d_pap_camera_record_people)">
             <summary>
-            api/d_pap_camera_record_people post添加数据
+            使用post方法添加数据
             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.d_pap_camera_record_peopleController.Update(Tuby.Api.Model.d_pap_camera_record_people)">
-            <summary>
-            api/d_pap_camera_record_people put更新数据
-            </summary>
+             <summary>
+            更新数据
+             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.d_pap_camera_record_peopleController.Delete(System.Int32)">
             <summary>
-            api/d_pap_camera_record_people/delete get删除数据
+            根据id使用get方法删除数据
             </summary>
+        </member>
+        <member name="M:Tuby.Api.Controllers.d_pap_camera_record_peopleController.DeleteMuch(System.Object[])">
+            <summary>
+            批量删除
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
         </member>
         <member name="T:Tuby.Api.Controllers.d_pap_carController">
             <summary>
@@ -1976,29 +2791,43 @@
             <returns></returns>
         </member>
         <member name="M:Tuby.Api.Controllers.d_pap_carController.Get">
+             <summary>
+            查询所有数据
+             </summary>	
+        </member>
+        <member name="M:Tuby.Api.Controllers.d_pap_carController.GetPage(System.Int32)">
             <summary>
-            api/d_pap_car 查询所有数据
-            </summary>	
+            分页查询
+            </summary>
+            <param name="page"></param>
+            <returns></returns>
         </member>
         <member name="M:Tuby.Api.Controllers.d_pap_carController.Get(System.Int32)">
-            <summary>
-            api/d_pap_car/{id} 根据id查询数据
-            </summary>
+             <summary>
+            根据id查询数据
+             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.d_pap_carController.Post(Tuby.Api.Model.d_pap_car)">
             <summary>
-            api/d_pap_car post添加数据
+            使用post方法添加数据
             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.d_pap_carController.Update(Tuby.Api.Model.d_pap_car)">
-            <summary>
-            api/d_pap_car put更新数据
-            </summary>
+             <summary>
+            更新数据
+             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.d_pap_carController.Delete(System.Int32)">
             <summary>
-            api/d_pap_car/delete get删除数据
+            根据id使用get方法删除数据
             </summary>
+        </member>
+        <member name="M:Tuby.Api.Controllers.d_pap_carController.DeleteMuch(System.Object[])">
+            <summary>
+            批量删除
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
         </member>
         <member name="T:Tuby.Api.Controllers.d_pap_car_leaveController">
             <summary>
@@ -2012,29 +2841,43 @@
             <returns></returns>
         </member>
         <member name="M:Tuby.Api.Controllers.d_pap_car_leaveController.Get">
+             <summary>
+            查询所有数据
+             </summary>	
+        </member>
+        <member name="M:Tuby.Api.Controllers.d_pap_car_leaveController.GetPage(System.Int32)">
             <summary>
-            api/d_pap_car_leave 查询所有数据
-            </summary>	
+            分页查询
+            </summary>
+            <param name="page"></param>
+            <returns></returns>
         </member>
         <member name="M:Tuby.Api.Controllers.d_pap_car_leaveController.Get(System.Int32)">
-            <summary>
-            api/d_pap_car_leave/{id} 根据id查询数据
-            </summary>
+             <summary>
+            根据id查询数据
+             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.d_pap_car_leaveController.Post(Tuby.Api.Model.d_pap_car_leave)">
             <summary>
-            api/d_pap_car_leave post添加数据
+            使用post方法添加数据
             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.d_pap_car_leaveController.Update(Tuby.Api.Model.d_pap_car_leave)">
-            <summary>
-            api/d_pap_car_leave put更新数据
-            </summary>
+             <summary>
+            更新数据
+             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.d_pap_car_leaveController.Delete(System.Int32)">
             <summary>
-            api/d_pap_car_leave/delete get删除数据
+            根据id使用get方法删除数据
             </summary>
+        </member>
+        <member name="M:Tuby.Api.Controllers.d_pap_car_leaveController.DeleteMuch(System.Object[])">
+            <summary>
+            批量删除
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
         </member>
         <member name="T:Tuby.Api.Controllers.d_pap_car_maintainController">
             <summary>
@@ -2048,29 +2891,43 @@
             <returns></returns>
         </member>
         <member name="M:Tuby.Api.Controllers.d_pap_car_maintainController.Get">
+             <summary>
+            查询所有数据
+             </summary>	
+        </member>
+        <member name="M:Tuby.Api.Controllers.d_pap_car_maintainController.GetPage(System.Int32)">
             <summary>
-            api/d_pap_car_maintain 查询所有数据
-            </summary>	
+            分页查询
+            </summary>
+            <param name="page"></param>
+            <returns></returns>
         </member>
         <member name="M:Tuby.Api.Controllers.d_pap_car_maintainController.Get(System.Int32)">
-            <summary>
-            api/d_pap_car_maintain/{id} 根据id查询数据
-            </summary>
+             <summary>
+            根据id查询数据
+             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.d_pap_car_maintainController.Post(Tuby.Api.Model.d_pap_car_maintain)">
             <summary>
-            api/d_pap_car_maintain post添加数据
+            使用post方法添加数据
             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.d_pap_car_maintainController.Update(Tuby.Api.Model.d_pap_car_maintain)">
-            <summary>
-            api/d_pap_car_maintain put更新数据
-            </summary>
+             <summary>
+            更新数据
+             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.d_pap_car_maintainController.Delete(System.Int32)">
             <summary>
-            api/d_pap_car_maintain/delete get删除数据
+            根据id使用get方法删除数据
             </summary>
+        </member>
+        <member name="M:Tuby.Api.Controllers.d_pap_car_maintainController.DeleteMuch(System.Object[])">
+            <summary>
+            批量删除
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
         </member>
         <member name="T:Tuby.Api.Controllers.d_pap_equipmentController">
             <summary>
@@ -2084,29 +2941,43 @@
             <returns></returns>
         </member>
         <member name="M:Tuby.Api.Controllers.d_pap_equipmentController.Get">
+             <summary>
+            查询所有数据
+             </summary>	
+        </member>
+        <member name="M:Tuby.Api.Controllers.d_pap_equipmentController.GetPage(System.Int32)">
             <summary>
-            api/d_pap_equipment 查询所有数据
-            </summary>	
+            分页查询
+            </summary>
+            <param name="page"></param>
+            <returns></returns>
         </member>
         <member name="M:Tuby.Api.Controllers.d_pap_equipmentController.Get(System.Int32)">
-            <summary>
-            api/d_pap_equipment/{id} 根据id查询数据
-            </summary>
+             <summary>
+            根据id查询数据
+             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.d_pap_equipmentController.Post(Tuby.Api.Model.d_pap_equipment)">
             <summary>
-            api/d_pap_equipment post添加数据
+            使用post方法添加数据
             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.d_pap_equipmentController.Update(Tuby.Api.Model.d_pap_equipment)">
-            <summary>
-            api/d_pap_equipment put更新数据
-            </summary>
+             <summary>
+            更新数据
+             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.d_pap_equipmentController.Delete(System.Int32)">
             <summary>
-            api/d_pap_equipment/delete get删除数据
+            根据id使用get方法删除数据
             </summary>
+        </member>
+        <member name="M:Tuby.Api.Controllers.d_pap_equipmentController.DeleteMuch(System.Object[])">
+            <summary>
+            批量删除
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
         </member>
         <member name="T:Tuby.Api.Controllers.d_pap_gunController">
             <summary>
@@ -2120,29 +2991,43 @@
             <returns></returns>
         </member>
         <member name="M:Tuby.Api.Controllers.d_pap_gunController.Get">
+             <summary>
+            查询所有数据
+             </summary>	
+        </member>
+        <member name="M:Tuby.Api.Controllers.d_pap_gunController.GetPage(System.Int32)">
             <summary>
-            api/d_pap_gun 查询所有数据
-            </summary>	
+            分页查询
+            </summary>
+            <param name="page"></param>
+            <returns></returns>
         </member>
         <member name="M:Tuby.Api.Controllers.d_pap_gunController.Get(System.Int32)">
-            <summary>
-            api/d_pap_gun/{id} 根据id查询数据
-            </summary>
+             <summary>
+            根据id查询数据
+             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.d_pap_gunController.Post(Tuby.Api.Model.d_pap_gun)">
             <summary>
-            api/d_pap_gun post添加数据
+            使用post方法添加数据
             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.d_pap_gunController.Update(Tuby.Api.Model.d_pap_gun)">
-            <summary>
-            api/d_pap_gun put更新数据
-            </summary>
+             <summary>
+            更新数据
+             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.d_pap_gunController.Delete(System.Int32)">
             <summary>
-            api/d_pap_gun/delete get删除数据
+            根据id使用get方法删除数据
             </summary>
+        </member>
+        <member name="M:Tuby.Api.Controllers.d_pap_gunController.DeleteMuch(System.Object[])">
+            <summary>
+            批量删除
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
         </member>
         <member name="T:Tuby.Api.Controllers.d_pap_matterController">
             <summary>
@@ -2156,29 +3041,43 @@
             <returns></returns>
         </member>
         <member name="M:Tuby.Api.Controllers.d_pap_matterController.Get">
+             <summary>
+            查询所有数据
+             </summary>	
+        </member>
+        <member name="M:Tuby.Api.Controllers.d_pap_matterController.GetPage(System.Int32)">
             <summary>
-            api/d_pap_matter 查询所有数据
-            </summary>	
+            分页查询
+            </summary>
+            <param name="page"></param>
+            <returns></returns>
         </member>
         <member name="M:Tuby.Api.Controllers.d_pap_matterController.Get(System.Int32)">
-            <summary>
-            api/d_pap_matter/{id} 根据id查询数据
-            </summary>
+             <summary>
+            根据id查询数据
+             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.d_pap_matterController.Post(Tuby.Api.Model.d_pap_matter)">
             <summary>
-            api/d_pap_matter post添加数据
+            使用post方法添加数据
             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.d_pap_matterController.Update(Tuby.Api.Model.d_pap_matter)">
-            <summary>
-            api/d_pap_matter put更新数据
-            </summary>
+             <summary>
+            更新数据
+             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.d_pap_matterController.Delete(System.Int32)">
             <summary>
-            api/d_pap_matter/delete get删除数据
+            根据id使用get方法删除数据
             </summary>
+        </member>
+        <member name="M:Tuby.Api.Controllers.d_pap_matterController.DeleteMuch(System.Object[])">
+            <summary>
+            批量删除
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
         </member>
         <member name="T:Tuby.Api.Controllers.d_phone_tableController">
             <summary>
@@ -2192,29 +3091,43 @@
             <returns></returns>
         </member>
         <member name="M:Tuby.Api.Controllers.d_phone_tableController.Get">
+             <summary>
+            查询所有数据
+             </summary>	
+        </member>
+        <member name="M:Tuby.Api.Controllers.d_phone_tableController.GetPage(System.Int32)">
             <summary>
-            api/d_phone_table 查询所有数据
-            </summary>	
+            分页查询
+            </summary>
+            <param name="page"></param>
+            <returns></returns>
         </member>
         <member name="M:Tuby.Api.Controllers.d_phone_tableController.Get(System.Int32)">
-            <summary>
-            api/d_phone_table/{id} 根据id查询数据
-            </summary>
+             <summary>
+            根据id查询数据
+             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.d_phone_tableController.Post(Tuby.Api.Model.d_phone_table)">
             <summary>
-            api/d_phone_table post添加数据
+            使用post方法添加数据
             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.d_phone_tableController.Update(Tuby.Api.Model.d_phone_table)">
-            <summary>
-            api/d_phone_table put更新数据
-            </summary>
+             <summary>
+            更新数据
+             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.d_phone_tableController.Delete(System.Int32)">
             <summary>
-            api/d_phone_table/delete get删除数据
+            根据id使用get方法删除数据
             </summary>
+        </member>
+        <member name="M:Tuby.Api.Controllers.d_phone_tableController.DeleteMuch(System.Object[])">
+            <summary>
+            批量删除
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
         </member>
         <member name="T:Tuby.Api.Controllers.d_shaoweiController">
             <summary>
@@ -2228,29 +3141,43 @@
             <returns></returns>
         </member>
         <member name="M:Tuby.Api.Controllers.d_shaoweiController.Get">
+             <summary>
+            查询所有数据
+             </summary>	
+        </member>
+        <member name="M:Tuby.Api.Controllers.d_shaoweiController.GetPage(System.Int32)">
             <summary>
-            api/d_shaowei 查询所有数据
-            </summary>	
+            分页查询
+            </summary>
+            <param name="page"></param>
+            <returns></returns>
         </member>
         <member name="M:Tuby.Api.Controllers.d_shaoweiController.Get(System.Int32)">
-            <summary>
-            api/d_shaowei/{id} 根据id查询数据
-            </summary>
+             <summary>
+            根据id查询数据
+             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.d_shaoweiController.Post(Tuby.Api.Model.d_shaowei)">
             <summary>
-            api/d_shaowei post添加数据
+            使用post方法添加数据
             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.d_shaoweiController.Update(Tuby.Api.Model.d_shaowei)">
-            <summary>
-            api/d_shaowei put更新数据
-            </summary>
+             <summary>
+            更新数据
+             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.d_shaoweiController.Delete(System.Int32)">
             <summary>
-            api/d_shaowei/delete get删除数据
+            根据id使用get方法删除数据
             </summary>
+        </member>
+        <member name="M:Tuby.Api.Controllers.d_shaoweiController.DeleteMuch(System.Object[])">
+            <summary>
+            批量删除
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
         </member>
         <member name="T:Tuby.Api.Controllers.d_shaowei_arrangeController">
             <summary>
@@ -2264,29 +3191,43 @@
             <returns></returns>
         </member>
         <member name="M:Tuby.Api.Controllers.d_shaowei_arrangeController.Get">
+             <summary>
+            查询所有数据
+             </summary>	
+        </member>
+        <member name="M:Tuby.Api.Controllers.d_shaowei_arrangeController.GetPage(System.Int32)">
             <summary>
-            api/d_shaowei_arrange 查询所有数据
-            </summary>	
+            分页查询
+            </summary>
+            <param name="page"></param>
+            <returns></returns>
         </member>
         <member name="M:Tuby.Api.Controllers.d_shaowei_arrangeController.Get(System.Int32)">
-            <summary>
-            api/d_shaowei_arrange/{id} 根据id查询数据
-            </summary>
+             <summary>
+            根据id查询数据
+             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.d_shaowei_arrangeController.Post(Tuby.Api.Model.d_shaowei_arrange)">
             <summary>
-            api/d_shaowei_arrange post添加数据
+            使用post方法添加数据
             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.d_shaowei_arrangeController.Update(Tuby.Api.Model.d_shaowei_arrange)">
-            <summary>
-            api/d_shaowei_arrange put更新数据
-            </summary>
+             <summary>
+            更新数据
+             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.d_shaowei_arrangeController.Delete(System.Int32)">
             <summary>
-            api/d_shaowei_arrange/delete get删除数据
+            根据id使用get方法删除数据
             </summary>
+        </member>
+        <member name="M:Tuby.Api.Controllers.d_shaowei_arrangeController.DeleteMuch(System.Object[])">
+            <summary>
+            批量删除
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
         </member>
         <member name="T:Tuby.Api.Controllers.d_shaowei_checkController">
             <summary>
@@ -2300,29 +3241,43 @@
             <returns></returns>
         </member>
         <member name="M:Tuby.Api.Controllers.d_shaowei_checkController.Get">
+             <summary>
+            查询所有数据
+             </summary>	
+        </member>
+        <member name="M:Tuby.Api.Controllers.d_shaowei_checkController.GetPage(System.Int32)">
             <summary>
-            api/d_shaowei_check 查询所有数据
-            </summary>	
+            分页查询
+            </summary>
+            <param name="page"></param>
+            <returns></returns>
         </member>
         <member name="M:Tuby.Api.Controllers.d_shaowei_checkController.Get(System.Int32)">
-            <summary>
-            api/d_shaowei_check/{id} 根据id查询数据
-            </summary>
+             <summary>
+            根据id查询数据
+             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.d_shaowei_checkController.Post(Tuby.Api.Model.d_shaowei_check)">
             <summary>
-            api/d_shaowei_check post添加数据
+            使用post方法添加数据
             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.d_shaowei_checkController.Update(Tuby.Api.Model.d_shaowei_check)">
-            <summary>
-            api/d_shaowei_check put更新数据
-            </summary>
+             <summary>
+            更新数据
+             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.d_shaowei_checkController.Delete(System.Int32)">
             <summary>
-            api/d_shaowei_check/delete get删除数据
+            根据id使用get方法删除数据
             </summary>
+        </member>
+        <member name="M:Tuby.Api.Controllers.d_shaowei_checkController.DeleteMuch(System.Object[])">
+            <summary>
+            批量删除
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
         </member>
         <member name="T:Tuby.Api.Controllers.d_shaowei_preplanController">
             <summary>
@@ -2336,29 +3291,43 @@
             <returns></returns>
         </member>
         <member name="M:Tuby.Api.Controllers.d_shaowei_preplanController.Get">
+             <summary>
+            查询所有数据
+             </summary>	
+        </member>
+        <member name="M:Tuby.Api.Controllers.d_shaowei_preplanController.GetPage(System.Int32)">
             <summary>
-            api/d_shaowei_preplan 查询所有数据
-            </summary>	
+            分页查询
+            </summary>
+            <param name="page"></param>
+            <returns></returns>
         </member>
         <member name="M:Tuby.Api.Controllers.d_shaowei_preplanController.Get(System.Int32)">
-            <summary>
-            api/d_shaowei_preplan/{id} 根据id查询数据
-            </summary>
+             <summary>
+            根据id查询数据
+             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.d_shaowei_preplanController.Post(Tuby.Api.Model.d_shaowei_preplan)">
             <summary>
-            api/d_shaowei_preplan post添加数据
+            使用post方法添加数据
             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.d_shaowei_preplanController.Update(Tuby.Api.Model.d_shaowei_preplan)">
-            <summary>
-            api/d_shaowei_preplan put更新数据
-            </summary>
+             <summary>
+            更新数据
+             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.d_shaowei_preplanController.Delete(System.Int32)">
             <summary>
-            api/d_shaowei_preplan/delete get删除数据
+            根据id使用get方法删除数据
             </summary>
+        </member>
+        <member name="M:Tuby.Api.Controllers.d_shaowei_preplanController.DeleteMuch(System.Object[])">
+            <summary>
+            批量删除
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
         </member>
         <member name="T:Tuby.Api.Controllers.d_shaowei_turnController">
             <summary>
@@ -2372,29 +3341,43 @@
             <returns></returns>
         </member>
         <member name="M:Tuby.Api.Controllers.d_shaowei_turnController.Get">
+             <summary>
+            查询所有数据
+             </summary>	
+        </member>
+        <member name="M:Tuby.Api.Controllers.d_shaowei_turnController.GetPage(System.Int32)">
             <summary>
-            api/d_shaowei_turn 查询所有数据
-            </summary>	
+            分页查询
+            </summary>
+            <param name="page"></param>
+            <returns></returns>
         </member>
         <member name="M:Tuby.Api.Controllers.d_shaowei_turnController.Get(System.Int32)">
-            <summary>
-            api/d_shaowei_turn/{id} 根据id查询数据
-            </summary>
+             <summary>
+            根据id查询数据
+             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.d_shaowei_turnController.Post(Tuby.Api.Model.d_shaowei_turn)">
             <summary>
-            api/d_shaowei_turn post添加数据
+            使用post方法添加数据
             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.d_shaowei_turnController.Update(Tuby.Api.Model.d_shaowei_turn)">
-            <summary>
-            api/d_shaowei_turn put更新数据
-            </summary>
+             <summary>
+            更新数据
+             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.d_shaowei_turnController.Delete(System.Int32)">
             <summary>
-            api/d_shaowei_turn/delete get删除数据
+            根据id使用get方法删除数据
             </summary>
+        </member>
+        <member name="M:Tuby.Api.Controllers.d_shaowei_turnController.DeleteMuch(System.Object[])">
+            <summary>
+            批量删除
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
         </member>
         <member name="T:Tuby.Api.Controllers.d_soldierController">
             <summary>
@@ -2408,29 +3391,43 @@
             <returns></returns>
         </member>
         <member name="M:Tuby.Api.Controllers.d_soldierController.Get">
+             <summary>
+            查询所有数据
+             </summary>	
+        </member>
+        <member name="M:Tuby.Api.Controllers.d_soldierController.GetPage(System.Int32)">
             <summary>
-            api/d_soldier 查询所有数据
-            </summary>	
+            分页查询
+            </summary>
+            <param name="page"></param>
+            <returns></returns>
         </member>
         <member name="M:Tuby.Api.Controllers.d_soldierController.Get(System.Int32)">
-            <summary>
-            api/d_soldier/{id} 根据id查询数据
-            </summary>
+             <summary>
+            根据id查询数据
+             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.d_soldierController.Post(Tuby.Api.Model.d_soldier)">
             <summary>
-            api/d_soldier post添加数据
+            使用post方法添加数据
             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.d_soldierController.Update(Tuby.Api.Model.d_soldier)">
-            <summary>
-            api/d_soldier put更新数据
-            </summary>
+             <summary>
+            更新数据
+             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.d_soldierController.Delete(System.Int32)">
             <summary>
-            api/d_soldier/delete get删除数据
+            根据id使用get方法删除数据
             </summary>
+        </member>
+        <member name="M:Tuby.Api.Controllers.d_soldierController.DeleteMuch(System.Object[])">
+            <summary>
+            批量删除
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
         </member>
         <member name="T:Tuby.Api.Controllers.d_soldier_leaveController">
             <summary>
@@ -2444,29 +3441,43 @@
             <returns></returns>
         </member>
         <member name="M:Tuby.Api.Controllers.d_soldier_leaveController.Get">
+             <summary>
+            查询所有数据
+             </summary>	
+        </member>
+        <member name="M:Tuby.Api.Controllers.d_soldier_leaveController.GetPage(System.Int32)">
             <summary>
-            api/d_soldier_leave 查询所有数据
-            </summary>	
+            分页查询
+            </summary>
+            <param name="page"></param>
+            <returns></returns>
         </member>
         <member name="M:Tuby.Api.Controllers.d_soldier_leaveController.Get(System.Int32)">
-            <summary>
-            api/d_soldier_leave/{id} 根据id查询数据
-            </summary>
+             <summary>
+            根据id查询数据
+             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.d_soldier_leaveController.Post(Tuby.Api.Model.d_soldier_leave)">
             <summary>
-            api/d_soldier_leave post添加数据
+            使用post方法添加数据
             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.d_soldier_leaveController.Update(Tuby.Api.Model.d_soldier_leave)">
-            <summary>
-            api/d_soldier_leave put更新数据
-            </summary>
+             <summary>
+            更新数据
+             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.d_soldier_leaveController.Delete(System.Int32)">
             <summary>
-            api/d_soldier_leave/delete get删除数据
+            根据id使用get方法删除数据
             </summary>
+        </member>
+        <member name="M:Tuby.Api.Controllers.d_soldier_leaveController.DeleteMuch(System.Object[])">
+            <summary>
+            批量删除
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
         </member>
         <member name="T:Tuby.Api.Controllers.d_soldier_trainController">
             <summary>
@@ -2480,29 +3491,43 @@
             <returns></returns>
         </member>
         <member name="M:Tuby.Api.Controllers.d_soldier_trainController.Get">
+             <summary>
+            查询所有数据
+             </summary>	
+        </member>
+        <member name="M:Tuby.Api.Controllers.d_soldier_trainController.GetPage(System.Int32)">
             <summary>
-            api/d_soldier_train 查询所有数据
-            </summary>	
+            分页查询
+            </summary>
+            <param name="page"></param>
+            <returns></returns>
         </member>
         <member name="M:Tuby.Api.Controllers.d_soldier_trainController.Get(System.Int32)">
-            <summary>
-            api/d_soldier_train/{id} 根据id查询数据
-            </summary>
+             <summary>
+            根据id查询数据
+             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.d_soldier_trainController.Post(Tuby.Api.Model.d_soldier_train)">
             <summary>
-            api/d_soldier_train post添加数据
+            使用post方法添加数据
             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.d_soldier_trainController.Update(Tuby.Api.Model.d_soldier_train)">
-            <summary>
-            api/d_soldier_train put更新数据
-            </summary>
+             <summary>
+            更新数据
+             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.d_soldier_trainController.Delete(System.Int32)">
             <summary>
-            api/d_soldier_train/delete get删除数据
+            根据id使用get方法删除数据
             </summary>
+        </member>
+        <member name="M:Tuby.Api.Controllers.d_soldier_trainController.DeleteMuch(System.Object[])">
+            <summary>
+            批量删除
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
         </member>
         <member name="T:Tuby.Api.Controllers.d_soldier_treatmentController">
             <summary>
@@ -2516,29 +3541,43 @@
             <returns></returns>
         </member>
         <member name="M:Tuby.Api.Controllers.d_soldier_treatmentController.Get">
+             <summary>
+            查询所有数据
+             </summary>	
+        </member>
+        <member name="M:Tuby.Api.Controllers.d_soldier_treatmentController.GetPage(System.Int32)">
             <summary>
-            api/d_soldier_treatment 查询所有数据
-            </summary>	
+            分页查询
+            </summary>
+            <param name="page"></param>
+            <returns></returns>
         </member>
         <member name="M:Tuby.Api.Controllers.d_soldier_treatmentController.Get(System.Int32)">
-            <summary>
-            api/d_soldier_treatment/{id} 根据id查询数据
-            </summary>
+             <summary>
+            根据id查询数据
+             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.d_soldier_treatmentController.Post(Tuby.Api.Model.d_soldier_treatment)">
             <summary>
-            api/d_soldier_treatment post添加数据
+            使用post方法添加数据
             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.d_soldier_treatmentController.Update(Tuby.Api.Model.d_soldier_treatment)">
-            <summary>
-            api/d_soldier_treatment put更新数据
-            </summary>
+             <summary>
+            更新数据
+             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.d_soldier_treatmentController.Delete(System.Int32)">
             <summary>
-            api/d_soldier_treatment/delete get删除数据
+            根据id使用get方法删除数据
             </summary>
+        </member>
+        <member name="M:Tuby.Api.Controllers.d_soldier_treatmentController.DeleteMuch(System.Object[])">
+            <summary>
+            批量删除
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
         </member>
         <member name="T:Tuby.Api.Controllers.d_target_camera_record_carController">
             <summary>
@@ -2552,29 +3591,43 @@
             <returns></returns>
         </member>
         <member name="M:Tuby.Api.Controllers.d_target_camera_record_carController.Get">
+             <summary>
+            查询所有数据
+             </summary>	
+        </member>
+        <member name="M:Tuby.Api.Controllers.d_target_camera_record_carController.GetPage(System.Int32)">
             <summary>
-            api/d_target_camera_record_car 查询所有数据
-            </summary>	
+            分页查询
+            </summary>
+            <param name="page"></param>
+            <returns></returns>
         </member>
         <member name="M:Tuby.Api.Controllers.d_target_camera_record_carController.Get(System.Int32)">
-            <summary>
-            api/d_target_camera_record_car/{id} 根据id查询数据
-            </summary>
+             <summary>
+            根据id查询数据
+             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.d_target_camera_record_carController.Post(Tuby.Api.Model.d_target_camera_record_car)">
             <summary>
-            api/d_target_camera_record_car post添加数据
+            使用post方法添加数据
             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.d_target_camera_record_carController.Update(Tuby.Api.Model.d_target_camera_record_car)">
-            <summary>
-            api/d_target_camera_record_car put更新数据
-            </summary>
+             <summary>
+            更新数据
+             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.d_target_camera_record_carController.Delete(System.Int32)">
             <summary>
-            api/d_target_camera_record_car/delete get删除数据
+            根据id使用get方法删除数据
             </summary>
+        </member>
+        <member name="M:Tuby.Api.Controllers.d_target_camera_record_carController.DeleteMuch(System.Object[])">
+            <summary>
+            批量删除
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
         </member>
         <member name="T:Tuby.Api.Controllers.d_target_camera_record_peopleController">
             <summary>
@@ -2588,29 +3641,43 @@
             <returns></returns>
         </member>
         <member name="M:Tuby.Api.Controllers.d_target_camera_record_peopleController.Get">
+             <summary>
+            查询所有数据
+             </summary>	
+        </member>
+        <member name="M:Tuby.Api.Controllers.d_target_camera_record_peopleController.GetPage(System.Int32)">
             <summary>
-            api/d_target_camera_record_people 查询所有数据
-            </summary>	
+            分页查询
+            </summary>
+            <param name="page"></param>
+            <returns></returns>
         </member>
         <member name="M:Tuby.Api.Controllers.d_target_camera_record_peopleController.Get(System.Int32)">
-            <summary>
-            api/d_target_camera_record_people/{id} 根据id查询数据
-            </summary>
+             <summary>
+            根据id查询数据
+             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.d_target_camera_record_peopleController.Post(Tuby.Api.Model.d_target_camera_record_people)">
             <summary>
-            api/d_target_camera_record_people post添加数据
+            使用post方法添加数据
             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.d_target_camera_record_peopleController.Update(Tuby.Api.Model.d_target_camera_record_people)">
-            <summary>
-            api/d_target_camera_record_people put更新数据
-            </summary>
+             <summary>
+            更新数据
+             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.d_target_camera_record_peopleController.Delete(System.Int32)">
             <summary>
-            api/d_target_camera_record_people/delete get删除数据
+            根据id使用get方法删除数据
             </summary>
+        </member>
+        <member name="M:Tuby.Api.Controllers.d_target_camera_record_peopleController.DeleteMuch(System.Object[])">
+            <summary>
+            批量删除
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
         </member>
         <member name="T:Tuby.Api.Controllers.d_target_carController">
             <summary>
@@ -2624,29 +3691,43 @@
             <returns></returns>
         </member>
         <member name="M:Tuby.Api.Controllers.d_target_carController.Get">
+             <summary>
+            查询所有数据
+             </summary>	
+        </member>
+        <member name="M:Tuby.Api.Controllers.d_target_carController.GetPage(System.Int32)">
             <summary>
-            api/d_target_car 查询所有数据
-            </summary>	
+            分页查询
+            </summary>
+            <param name="page"></param>
+            <returns></returns>
         </member>
         <member name="M:Tuby.Api.Controllers.d_target_carController.Get(System.Int32)">
-            <summary>
-            api/d_target_car/{id} 根据id查询数据
-            </summary>
+             <summary>
+            根据id查询数据
+             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.d_target_carController.Post(Tuby.Api.Model.d_target_car)">
             <summary>
-            api/d_target_car post添加数据
+            使用post方法添加数据
             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.d_target_carController.Update(Tuby.Api.Model.d_target_car)">
-            <summary>
-            api/d_target_car put更新数据
-            </summary>
+             <summary>
+            更新数据
+             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.d_target_carController.Delete(System.Int32)">
             <summary>
-            api/d_target_car/delete get删除数据
+            根据id使用get方法删除数据
             </summary>
+        </member>
+        <member name="M:Tuby.Api.Controllers.d_target_carController.DeleteMuch(System.Object[])">
+            <summary>
+            批量删除
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
         </member>
         <member name="T:Tuby.Api.Controllers.d_target_car_blacklistController">
             <summary>
@@ -2660,29 +3741,43 @@
             <returns></returns>
         </member>
         <member name="M:Tuby.Api.Controllers.d_target_car_blacklistController.Get">
+             <summary>
+            查询所有数据
+             </summary>	
+        </member>
+        <member name="M:Tuby.Api.Controllers.d_target_car_blacklistController.GetPage(System.Int32)">
             <summary>
-            api/d_target_car_blacklist 查询所有数据
-            </summary>	
+            分页查询
+            </summary>
+            <param name="page"></param>
+            <returns></returns>
         </member>
         <member name="M:Tuby.Api.Controllers.d_target_car_blacklistController.Get(System.Int32)">
-            <summary>
-            api/d_target_car_blacklist/{id} 根据id查询数据
-            </summary>
+             <summary>
+            根据id查询数据
+             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.d_target_car_blacklistController.Post(Tuby.Api.Model.d_target_car_blacklist)">
             <summary>
-            api/d_target_car_blacklist post添加数据
+            使用post方法添加数据
             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.d_target_car_blacklistController.Update(Tuby.Api.Model.d_target_car_blacklist)">
-            <summary>
-            api/d_target_car_blacklist put更新数据
-            </summary>
+             <summary>
+            更新数据
+             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.d_target_car_blacklistController.Delete(System.Int32)">
             <summary>
-            api/d_target_car_blacklist/delete get删除数据
+            根据id使用get方法删除数据
             </summary>
+        </member>
+        <member name="M:Tuby.Api.Controllers.d_target_car_blacklistController.DeleteMuch(System.Object[])">
+            <summary>
+            批量删除
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
         </member>
         <member name="T:Tuby.Api.Controllers.d_target_car_controlController">
             <summary>
@@ -2696,29 +3791,43 @@
             <returns></returns>
         </member>
         <member name="M:Tuby.Api.Controllers.d_target_car_controlController.Get">
+             <summary>
+            查询所有数据
+             </summary>	
+        </member>
+        <member name="M:Tuby.Api.Controllers.d_target_car_controlController.GetPage(System.Int32)">
             <summary>
-            api/d_target_car_control 查询所有数据
-            </summary>	
+            分页查询
+            </summary>
+            <param name="page"></param>
+            <returns></returns>
         </member>
         <member name="M:Tuby.Api.Controllers.d_target_car_controlController.Get(System.Int32)">
-            <summary>
-            api/d_target_car_control/{id} 根据id查询数据
-            </summary>
+             <summary>
+            根据id查询数据
+             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.d_target_car_controlController.Post(Tuby.Api.Model.d_target_car_control)">
             <summary>
-            api/d_target_car_control post添加数据
+            使用post方法添加数据
             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.d_target_car_controlController.Update(Tuby.Api.Model.d_target_car_control)">
-            <summary>
-            api/d_target_car_control put更新数据
-            </summary>
+             <summary>
+            更新数据
+             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.d_target_car_controlController.Delete(System.Int32)">
             <summary>
-            api/d_target_car_control/delete get删除数据
+            根据id使用get方法删除数据
             </summary>
+        </member>
+        <member name="M:Tuby.Api.Controllers.d_target_car_controlController.DeleteMuch(System.Object[])">
+            <summary>
+            批量删除
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
         </member>
         <member name="T:Tuby.Api.Controllers.d_target_car_whitelistController">
             <summary>
@@ -2732,29 +3841,43 @@
             <returns></returns>
         </member>
         <member name="M:Tuby.Api.Controllers.d_target_car_whitelistController.Get">
+             <summary>
+            查询所有数据
+             </summary>	
+        </member>
+        <member name="M:Tuby.Api.Controllers.d_target_car_whitelistController.GetPage(System.Int32)">
             <summary>
-            api/d_target_car_whitelist 查询所有数据
-            </summary>	
+            分页查询
+            </summary>
+            <param name="page"></param>
+            <returns></returns>
         </member>
         <member name="M:Tuby.Api.Controllers.d_target_car_whitelistController.Get(System.Int32)">
-            <summary>
-            api/d_target_car_whitelist/{id} 根据id查询数据
-            </summary>
+             <summary>
+            根据id查询数据
+             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.d_target_car_whitelistController.Post(Tuby.Api.Model.d_target_car_whitelist)">
             <summary>
-            api/d_target_car_whitelist post添加数据
+            使用post方法添加数据
             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.d_target_car_whitelistController.Update(Tuby.Api.Model.d_target_car_whitelist)">
-            <summary>
-            api/d_target_car_whitelist put更新数据
-            </summary>
+             <summary>
+            更新数据
+             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.d_target_car_whitelistController.Delete(System.Int32)">
             <summary>
-            api/d_target_car_whitelist/delete get删除数据
+            根据id使用get方法删除数据
             </summary>
+        </member>
+        <member name="M:Tuby.Api.Controllers.d_target_car_whitelistController.DeleteMuch(System.Object[])">
+            <summary>
+            批量删除
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
         </member>
         <member name="T:Tuby.Api.Controllers.d_target_peopleController">
             <summary>
@@ -2768,29 +3891,43 @@
             <returns></returns>
         </member>
         <member name="M:Tuby.Api.Controllers.d_target_peopleController.Get">
+             <summary>
+            查询所有数据
+             </summary>	
+        </member>
+        <member name="M:Tuby.Api.Controllers.d_target_peopleController.GetPage(System.Int32)">
             <summary>
-            api/d_target_people 查询所有数据
-            </summary>	
+            分页查询
+            </summary>
+            <param name="page"></param>
+            <returns></returns>
         </member>
         <member name="M:Tuby.Api.Controllers.d_target_peopleController.Get(System.Int32)">
-            <summary>
-            api/d_target_people/{id} 根据id查询数据
-            </summary>
+             <summary>
+            根据id查询数据
+             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.d_target_peopleController.Post(Tuby.Api.Model.d_target_people)">
             <summary>
-            api/d_target_people post添加数据
+            使用post方法添加数据
             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.d_target_peopleController.Update(Tuby.Api.Model.d_target_people)">
-            <summary>
-            api/d_target_people put更新数据
-            </summary>
+             <summary>
+            更新数据
+             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.d_target_peopleController.Delete(System.Int32)">
             <summary>
-            api/d_target_people/delete get删除数据
+            根据id使用get方法删除数据
             </summary>
+        </member>
+        <member name="M:Tuby.Api.Controllers.d_target_peopleController.DeleteMuch(System.Object[])">
+            <summary>
+            批量删除
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
         </member>
         <member name="T:Tuby.Api.Controllers.d_target_people_blacklistController">
             <summary>
@@ -2804,29 +3941,43 @@
             <returns></returns>
         </member>
         <member name="M:Tuby.Api.Controllers.d_target_people_blacklistController.Get">
+             <summary>
+            查询所有数据
+             </summary>	
+        </member>
+        <member name="M:Tuby.Api.Controllers.d_target_people_blacklistController.GetPage(System.Int32)">
             <summary>
-            api/d_target_people_blacklist 查询所有数据
-            </summary>	
+            分页查询
+            </summary>
+            <param name="page"></param>
+            <returns></returns>
         </member>
         <member name="M:Tuby.Api.Controllers.d_target_people_blacklistController.Get(System.Int32)">
-            <summary>
-            api/d_target_people_blacklist/{id} 根据id查询数据
-            </summary>
+             <summary>
+            根据id查询数据
+             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.d_target_people_blacklistController.Post(Tuby.Api.Model.d_target_people_blacklist)">
             <summary>
-            api/d_target_people_blacklist post添加数据
+            使用post方法添加数据
             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.d_target_people_blacklistController.Update(Tuby.Api.Model.d_target_people_blacklist)">
-            <summary>
-            api/d_target_people_blacklist put更新数据
-            </summary>
+             <summary>
+            更新数据
+             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.d_target_people_blacklistController.Delete(System.Int32)">
             <summary>
-            api/d_target_people_blacklist/delete get删除数据
+            根据id使用get方法删除数据
             </summary>
+        </member>
+        <member name="M:Tuby.Api.Controllers.d_target_people_blacklistController.DeleteMuch(System.Object[])">
+            <summary>
+            批量删除
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
         </member>
         <member name="T:Tuby.Api.Controllers.d_target_people_controlController">
             <summary>
@@ -2840,29 +3991,43 @@
             <returns></returns>
         </member>
         <member name="M:Tuby.Api.Controllers.d_target_people_controlController.Get">
+             <summary>
+            查询所有数据
+             </summary>	
+        </member>
+        <member name="M:Tuby.Api.Controllers.d_target_people_controlController.GetPage(System.Int32)">
             <summary>
-            api/d_target_people_control 查询所有数据
-            </summary>	
+            分页查询
+            </summary>
+            <param name="page"></param>
+            <returns></returns>
         </member>
         <member name="M:Tuby.Api.Controllers.d_target_people_controlController.Get(System.Int32)">
-            <summary>
-            api/d_target_people_control/{id} 根据id查询数据
-            </summary>
+             <summary>
+            根据id查询数据
+             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.d_target_people_controlController.Post(Tuby.Api.Model.d_target_people_control)">
             <summary>
-            api/d_target_people_control post添加数据
+            使用post方法添加数据
             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.d_target_people_controlController.Update(Tuby.Api.Model.d_target_people_control)">
-            <summary>
-            api/d_target_people_control put更新数据
-            </summary>
+             <summary>
+            更新数据
+             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.d_target_people_controlController.Delete(System.Int32)">
             <summary>
-            api/d_target_people_control/delete get删除数据
+            根据id使用get方法删除数据
             </summary>
+        </member>
+        <member name="M:Tuby.Api.Controllers.d_target_people_controlController.DeleteMuch(System.Object[])">
+            <summary>
+            批量删除
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
         </member>
         <member name="T:Tuby.Api.Controllers.d_target_people_whitelistController">
             <summary>
@@ -2876,29 +4041,43 @@
             <returns></returns>
         </member>
         <member name="M:Tuby.Api.Controllers.d_target_people_whitelistController.Get">
+             <summary>
+            查询所有数据
+             </summary>	
+        </member>
+        <member name="M:Tuby.Api.Controllers.d_target_people_whitelistController.GetPage(System.Int32)">
             <summary>
-            api/d_target_people_whitelist 查询所有数据
-            </summary>	
+            分页查询
+            </summary>
+            <param name="page"></param>
+            <returns></returns>
         </member>
         <member name="M:Tuby.Api.Controllers.d_target_people_whitelistController.Get(System.Int32)">
-            <summary>
-            api/d_target_people_whitelist/{id} 根据id查询数据
-            </summary>
+             <summary>
+            根据id查询数据
+             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.d_target_people_whitelistController.Post(Tuby.Api.Model.d_target_people_whitelist)">
             <summary>
-            api/d_target_people_whitelist post添加数据
+            使用post方法添加数据
             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.d_target_people_whitelistController.Update(Tuby.Api.Model.d_target_people_whitelist)">
-            <summary>
-            api/d_target_people_whitelist put更新数据
-            </summary>
+             <summary>
+            更新数据
+             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.d_target_people_whitelistController.Delete(System.Int32)">
             <summary>
-            api/d_target_people_whitelist/delete get删除数据
+            根据id使用get方法删除数据
             </summary>
+        </member>
+        <member name="M:Tuby.Api.Controllers.d_target_people_whitelistController.DeleteMuch(System.Object[])">
+            <summary>
+            批量删除
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
         </member>
         <member name="T:Tuby.Api.Filter.GlobalExceptionsFilter">
             <summary>

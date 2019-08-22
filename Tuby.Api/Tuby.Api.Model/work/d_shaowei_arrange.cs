@@ -75,7 +75,7 @@ namespace Tuby.Api.Model
         /// <summary>
         /// 当班士兵
         /// </summary>
-        public string Name { get; set; }
+        public string DutySoildier { get; set; }
    
         /// <summary>
         /// 值班时间

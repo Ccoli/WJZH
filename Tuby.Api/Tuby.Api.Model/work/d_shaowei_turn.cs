@@ -30,7 +30,7 @@ namespace Tuby.Api.Model
         /// <summary>
         /// 哨位
         /// </summary>
-        public int ShaoweiArrangeID { get; set; }
+        public int ShaoWeiID { get; set; }
    
         /// <summary>
         /// 描述

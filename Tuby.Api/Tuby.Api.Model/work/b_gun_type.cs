@@ -31,5 +31,10 @@ namespace Tuby.Api.Model
         /// 
         /// </summary>
         public string Description { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public string ImagePath { get; set; }
     }
 }

@@ -203,11 +203,6 @@
             表格数据，支持分页
             </summary>
         </member>
-        <member name="P:Tuby.Api.Model.TableModel`1.Code">
-            <summary>
-            返回编码
-            </summary>
-        </member>
         <member name="P:Tuby.Api.Model.TableModel`1.Msg">
             <summary>
             返回信息
@@ -218,7 +213,7 @@
             记录总数
             </summary>
         </member>
-        <member name="P:Tuby.Api.Model.TableModel`1.Data">
+        <member name="P:Tuby.Api.Model.TableModel`1.data">
             <summary>
             返回数据集
             </summary>
@@ -261,6 +256,216 @@
         <member name="P:Tuby.Api.Model.viewmodels.AlarmInfoView.Entrytime">
             <summary>
             输入时间
+            </summary>
+        </member>
+        <member name="T:Tuby.Api.Model.viewmodels.DeviceListView">
+            <summary>
+            设备管理列表
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.DeviceListView.id">
+            <summary>
+            id
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.DeviceListView.pid">
+            <summary>
+            父id
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.DeviceListView.channel">
+            <summary>
+            通道
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.DeviceListView.timeLine">
+            <summary>
+            时间长度
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.DeviceListView.comment">
+            <summary>
+            内容
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.DeviceListView.ip">
+            <summary>
+            设备ip
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.DeviceListView.isParent">
+            <summary>
+            是否父节点
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.ShaoWeiArrangeView.ShaoWeiName">
+            <summary>
+            哨位名
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.ShaoWeiArrangeView.Name">
+            <summary>
+            哨兵姓名
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.ShaoWeiCheckView.ShaoWeiName">
+            <summary>
+            哨位名
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.ShaoWeiCheckView.Name">
+            <summary>
+            哨兵姓名
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.ShaoWeiListView.ShaoWeiTypeName">
+            <summary>
+            哨位类型
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.ShaoWeiListView.DepartmentName">
+            <summary>
+            执勤单位
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.ShaoWeiTurnView.ShaoWeiName">
+            <summary>
+            哨位名
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.ShaoWeiTurnView.Name">
+            <summary>
+            哨兵姓名
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.SoldierInfoView.ID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.SoldierInfoView.Name">
+            <summary>
+            姓名
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.SoldierInfoView.ImagePath">
+            <summary>
+            照片
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.SoldierInfoView.SoldierID">
+            <summary>
+            军人证号
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.SoldierInfoView.InductedDay">
+            <summary>
+            入伍日期
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.SoldierInfoView.LeaveDay">
+            <summary>
+            退伍日期
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.SoldierInfoView.Birthday">
+            <summary>
+            出生日期
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.SoldierInfoView.Nation">
+            <summary>
+            民族
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.SoldierInfoView.NativePlace">
+            <summary>
+            籍贯
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.SoldierInfoView.PoliceRankID">
+            <summary>
+            警衔
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.SoldierInfoView.RankName">
+            <summary>
+            警衔
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.SoldierInfoView.PostID">
+            <summary>
+            职务
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.SoldierInfoView.PostName">
+            <summary>
+            职务
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.SoldierInfoView.Gender">
+            <summary>
+            性别
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.SoldierInfoView.HealthID">
+            <summary>
+            健康状况
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.SoldierInfoView.HealthName">
+            <summary>
+            健康状况
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.SoldierInfoView.SoilderStateID">
+            <summary>
+            在位状态
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.SoldierInfoView.StateName">
+            <summary>
+            在位状态
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.SoldierInfoView.StateDescription">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.SoldierInfoView.UpdateTime">
+            <summary>
+            修改时间
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.SoldierInfoView.RecStatus">
+            <summary>
+            记录状态
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.SoldierInfoView.MarialName">
+            <summary>
+            婚姻状态
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.SoldierInfoView.EducationName">
+            <summary>
+            教育程度
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.SoldierInfoView.PoloticName">
+            <summary>
+            政治面貌
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.SoldierInfoView.Address">
+            <summary>
+            地址
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.SoldierInfoView.Contact">
+            <summary>
+            联系人
             </summary>
         </member>
         <member name="P:Tuby.Api.Model.viewmodels.TargetCarInfoView.ID">
@@ -763,7 +968,7 @@
             
             </summary>
         </member>
-        <member name="P:Tuby.Api.Model.b_department_type.Name">
+        <member name="P:Tuby.Api.Model.b_department_type.DepartmentName">
             <summary>
             
             </summary>
@@ -858,7 +1063,7 @@
             
             </summary>
         </member>
-        <member name="P:Tuby.Api.Model.b_education_level.Name">
+        <member name="P:Tuby.Api.Model.b_education_level.EducationName">
             <summary>
             
             </summary>
@@ -923,6 +1128,11 @@
             
             </summary>
         </member>
+        <member name="P:Tuby.Api.Model.b_gun_type.ImagePath">
+            <summary>
+            
+            </summary>
+        </member>
         <member name="T:Tuby.Api.Model.b_health">
             <summary>
             b_health Entity Model
@@ -933,7 +1143,7 @@
             
             </summary>
         </member>
-        <member name="P:Tuby.Api.Model.b_health.Name">
+        <member name="P:Tuby.Api.Model.b_health.HealthName">
             <summary>
             
             </summary>
@@ -968,7 +1178,7 @@
             
             </summary>
         </member>
-        <member name="P:Tuby.Api.Model.b_marial_status.Name">
+        <member name="P:Tuby.Api.Model.b_marial_status.MarialName">
             <summary>
             
             </summary>
@@ -998,7 +1208,7 @@
             
             </summary>
         </member>
-        <member name="P:Tuby.Api.Model.b_pap_post.Name">
+        <member name="P:Tuby.Api.Model.b_pap_post.PostName">
             <summary>
             
             </summary>
@@ -1013,7 +1223,7 @@
             
             </summary>
         </member>
-        <member name="P:Tuby.Api.Model.b_pap_rank.Name">
+        <member name="P:Tuby.Api.Model.b_pap_rank.RankName">
             <summary>
             
             </summary>
@@ -1043,7 +1253,7 @@
             
             </summary>
         </member>
-        <member name="P:Tuby.Api.Model.b_politic_role.Name">
+        <member name="P:Tuby.Api.Model.b_politic_role.PoloticName">
             <summary>
             
             </summary>
@@ -1058,7 +1268,7 @@
             
             </summary>
         </member>
-        <member name="P:Tuby.Api.Model.b_shaowei_type.Name">
+        <member name="P:Tuby.Api.Model.b_shaowei_type.ShaoWeiTypeName">
             <summary>
             
             </summary>
@@ -1073,12 +1283,12 @@
             
             </summary>
         </member>
-        <member name="P:Tuby.Api.Model.b_soldier_state.Name">
+        <member name="P:Tuby.Api.Model.b_soldier_state.StateName">
             <summary>
             
             </summary>
         </member>
-        <member name="P:Tuby.Api.Model.b_soldier_state.Description">
+        <member name="P:Tuby.Api.Model.b_soldier_state.StateDescription">
             <summary>
             
             </summary>
@@ -1838,7 +2048,7 @@
             
             </summary>
         </member>
-        <member name="P:Tuby.Api.Model.d_shaowei.Name">
+        <member name="P:Tuby.Api.Model.d_shaowei.ShaoWeiName">
             <summary>
             哨位名
             </summary>
@@ -1938,7 +2148,7 @@
             排班表名
             </summary>
         </member>
-        <member name="P:Tuby.Api.Model.d_shaowei_arrange.Name">
+        <member name="P:Tuby.Api.Model.d_shaowei_arrange.DutySoildier">
             <summary>
             当班士兵
             </summary>
@@ -1963,7 +2173,7 @@
             查哨人
             </summary>
         </member>
-        <member name="P:Tuby.Api.Model.d_shaowei_check.ShaowenPlanID">
+        <member name="P:Tuby.Api.Model.d_shaowei_check.ShaoweiID">
             <summary>
             哨位
             </summary>
@@ -2033,7 +2243,7 @@
             接哨人
             </summary>
         </member>
-        <member name="P:Tuby.Api.Model.d_shaowei_turn.ShaoweiArrangeID">
+        <member name="P:Tuby.Api.Model.d_shaowei_turn.ShaoWeiID">
             <summary>
             哨位
             </summary>
@@ -2136,6 +2346,31 @@
         <member name="P:Tuby.Api.Model.d_soldier.RecStatus">
             <summary>
             记录状态
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_soldier.IsMarriageID">
+            <summary>
+            婚姻状态
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_soldier.EducationID">
+            <summary>
+            教育程度
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_soldier.PoliticalRoleID">
+            <summary>
+            政治面貌
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_soldier.Address">
+            <summary>
+            地址
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_soldier.Contact">
+            <summary>
+            联系人
             </summary>
         </member>
         <member name="T:Tuby.Api.Model.d_soldier_leave">
@@ -2697,2068 +2932,6 @@
             <summary>
             
             </summary>
-        </member>
-        <member name="T:XN.Common.BaseDbContext">
-            <summary>
-            数据库操作类
-            </summary>
-        </member>
-        <member name="P:XN.Common.BaseDbContext.Db">
-            <summary>
-            注意当前方法的类不能是静态的 public static class这么写是错误的
-            </summary>
-        </member>
-        <member name="M:XN.Common.BaseDbContext.GetIntance(System.String,System.String,System.String,System.String)">
-            <summary>
-             获得SqlSugarClient
-            </summary>
-            <param name="serverIp">服务器IP或文件路径</param>
-            <param name="user">用户名</param>
-            <param name="pass">密码</param>
-            <param name="dataBase">数据库</param>
-        </member>
-        <member name="M:XN.Common.BaseDbContext.InitDataBase(System.Collections.Generic.List{System.String})">
-            <summary>
-            初始化数据库连接
-            </summary>
-            <param name="listConn">连接字符串</param>
-        </member>
-        <member name="M:XN.Common.BaseDbContext.GetParams(SqlSugar.SugarParameter[])">
-            <summary>
-            获取参数信息
-            </summary>
-            <param name="pars"></param>
-            <returns></returns>
-        </member>
-        <member name="T:XN.Common.OrderByClause">
-            <summary>
-            排序实体
-            </summary>
-        </member>
-        <member name="P:XN.Common.OrderByClause.Sort">
-            <summary>
-            排序字段
-            </summary>
-        </member>
-        <member name="P:XN.Common.OrderByClause.Order">
-            <summary>
-            排序类型
-            </summary>
-        </member>
-        <member name="T:XN.Common.OrderSequence">
-            <summary>
-            排序枚举
-            </summary>
-        </member>
-        <member name="F:XN.Common.OrderSequence.Asc">
-            <summary>
-            正序
-            </summary>
-        </member>
-        <member name="F:XN.Common.OrderSequence.Desc">
-            <summary>
-            倒序
-            </summary>
-        </member>
-        <member name="T:XN.Common.QueryCondition">
-            <summary>
-            查询
-            </summary>
-        </member>
-        <member name="P:XN.Common.QueryCondition.Key">
-            <summary>
-            字段名称
-            </summary>
-        </member>
-        <member name="P:XN.Common.QueryCondition.Operator">
-            <summary>
-            查询操作
-            </summary>
-        </member>
-        <member name="P:XN.Common.QueryCondition.Value">
-            <summary>
-            值
-            </summary>
-        </member>
-        <member name="T:XN.Common.QueryDescriptor">
-            <summary>
-            查询集合
-            </summary>
-        </member>
-        <member name="P:XN.Common.QueryDescriptor.PageSize">
-            <summary>
-            行数
-            </summary>
-        </member>
-        <member name="P:XN.Common.QueryDescriptor.PageIndex">
-            <summary>
-            页码
-            </summary>
-        </member>
-        <member name="P:XN.Common.QueryDescriptor.OrderBys">
-            <summary>
-            排序
-            </summary>
-        </member>
-        <member name="P:XN.Common.QueryDescriptor.Conditions">
-            <summary>
-            条件
-            </summary>
-        </member>
-        <member name="T:XN.Common.QueryOperator">
-            <summary>
-            查询条件枚举
-            </summary>
-        </member>
-        <member name="F:XN.Common.QueryOperator.Equal">
-            <summary>
-            相等
-            </summary>
-        </member>
-        <member name="F:XN.Common.QueryOperator.Like">
-            <summary>
-            匹配
-            </summary>
-        </member>
-        <member name="F:XN.Common.QueryOperator.GreaterThan">
-            <summary>
-            大于
-            </summary>
-        </member>
-        <member name="F:XN.Common.QueryOperator.GreaterThanOrEqual">
-            <summary>
-            大于或等于
-            </summary>
-        </member>
-        <member name="F:XN.Common.QueryOperator.LessThan">
-            <summary>
-            小于
-            </summary>
-        </member>
-        <member name="F:XN.Common.QueryOperator.LessThanOrEqual">
-            <summary>
-            小于或等于
-            </summary>
-        </member>
-        <member name="F:XN.Common.QueryOperator.In">
-            <summary>
-            等于集合
-            </summary>
-        </member>
-        <member name="F:XN.Common.QueryOperator.NotIn">
-            <summary>
-            不等于集合
-            </summary>
-        </member>
-        <member name="F:XN.Common.QueryOperator.LikeLeft">
-            <summary>
-            左边匹配
-            </summary>
-        </member>
-        <member name="F:XN.Common.QueryOperator.LikeRight">
-            <summary>
-            右边匹配
-            </summary>
-        </member>
-        <member name="F:XN.Common.QueryOperator.NoEqual">
-            <summary>
-            不相等
-            </summary>
-        </member>
-        <member name="F:XN.Common.QueryOperator.IsNullOrEmpty">
-            <summary>
-            为空或空
-            </summary>
-        </member>
-        <member name="F:XN.Common.QueryOperator.IsNot">
-            <summary>
-            不为空
-            </summary>
-        </member>
-        <member name="F:XN.Common.QueryOperator.NoLike">
-            <summary>
-            不匹配
-            </summary>
-        </member>
-        <member name="F:XN.Common.QueryOperator.DateRange">
-            <summary>
-            时间段 值用 "|" 隔开
-            </summary>
-        </member>
-        <member name="T:XN.Common.SugerHandler">
-            <summary>
-            SqlSugar调用类
-            </summary>
-        </member>
-        <member name="M:XN.Common.SugerHandler.Instance">
-            <summary>
-            初始化
-            </summary>
-            <returns>值</returns>
-        </member>
-        <member name="M:XN.Common.SugerHandler.Instance(System.String,System.String,System.String,System.String)">
-            <summary>
-            初始化
-            </summary>
-            <param name="serverIp">服务器IP</param>
-            <param name="user">用户名</param>
-            <param name="pass">密码</param>
-            <param name="dataBase">数据库</param>
-            <returns>值</returns>
-        </member>
-        <member name="T:XN.Common.SugerRepository">
-            <summary>
-            SqlSugar操作类型
-            </summary>
-        </member>
-        <member name="P:XN.Common.SugerRepository.DbContext">
-            <summary>
-            数据库连接对象
-            </summary> 
-        </member>
-        <member name="M:XN.Common.SugerRepository.Instance(System.String,System.String,System.String,System.String)">
-            <summary>
-            初始化
-            </summary>
-            <param name="serverIp">服务器IP</param>
-            <param name="user">用户名</param>
-            <param name="pass">密码</param>
-            <param name="dataBase">数据库</param>
-            <returns>值</returns>
-        </member>
-        <member name="M:XN.Common.SugerRepository.InvokeTransactionScope(System.Action,System.Data.IsolationLevel)">
-            <summary>
-            事务操作
-            注意:代码段里面如果调用本身类其它方法或其它类方法必须带着var db = SugerHandler.Instance()这个db走，不带着走事务回滚会不成功
-            </summary> 
-            <param name="serviceAction">代码段</param> 
-            <param name="level">事务级别</param>
-        </member>
-        <member name="M:XN.Common.SugerRepository.AddColumn(System.String,SqlSugar.DbColumnInfo)">
-            <summary>
-            添加列
-            </summary>
-            <param name="tableName">表名</param>
-            <param name="column">列信息</param>
-            <returns>值</returns>
-        </member>
-        <member name="M:XN.Common.SugerRepository.AddPrimaryKey(System.String,System.String)">
-            <summary>
-            添加主键
-            </summary>
-            <param name="tableName">表名</param>
-            <param name="columnName">列名</param>
-            <returns>值</returns>
-        </member>
-        <member name="M:XN.Common.SugerRepository.BackupDataBase(System.String,System.String)">
-            <summary>
-            备份数据库
-            </summary>
-            <param name="databaseName">数据库名</param>
-            <param name="fullFileName">文件名</param>
-            <returns>值</returns>
-        </member>
-        <member name="M:XN.Common.SugerRepository.BackupTable(System.String,System.String,System.Int32)">
-            <summary>
-            备份表
-            </summary>
-            <param name="oldTableName">旧表名</param>
-            <param name="newTableName">行表名</param>
-            <param name="maxBackupDataRows">行数</param>
-            <returns>值</returns>
-        </member>
-        <member name="M:XN.Common.SugerRepository.CreateTable(System.String,System.Collections.Generic.List{SqlSugar.DbColumnInfo},System.Boolean)">
-            <summary>
-            创建表
-            </summary>
-            <param name="tableName">表名</param>
-            <param name="columns">列集合</param>
-            <param name="isCreatePrimaryKey">是否创建主键</param>
-            <returns>值</returns>
-        </member>
-        <member name="M:XN.Common.SugerRepository.DropColumn(System.String,System.String)">
-            <summary>
-            删除列
-            </summary>
-            <param name="tableName">表名</param>
-            <param name="columnName">列名</param>
-            <returns>值</returns>
-        </member>
-        <member name="M:XN.Common.SugerRepository.DropConstraint(System.String,System.String)">
-            <summary>
-            删除约束
-            </summary>
-            <param name="tableName">表名</param>
-            <param name="constraintName">约束名</param>
-            <returns>值</returns>
-        </member>
-        <member name="M:XN.Common.SugerRepository.DropTable(System.String)">
-            <summary>
-            删除表
-            </summary>
-            <param name="tableName"></param>
-            <returns>值</returns>
-        </member>
-        <member name="M:XN.Common.SugerRepository.GetColumnInfosByTableName(System.String,System.Boolean)">
-            <summary>
-            获取列信息
-            </summary>
-            <param name="tableName">表名</param>
-            <param name="isCache">是否缓存</param>
-            <returns>值</returns>
-        </member>
-        <member name="M:XN.Common.SugerRepository.GetIsIdentities(System.String)">
-            <summary>
-            获取自增列
-            </summary>
-            <param name="tableName">表名</param>
-            <returns>值</returns>
-        </member>
-        <member name="M:XN.Common.SugerRepository.GetPrimaries(System.String)">
-            <summary>
-            获取主键
-            </summary>
-            <param name="tableName">表名</param>
-            <returns>值</returns>
-        </member>
-        <member name="M:XN.Common.SugerRepository.GetTableInfoList(System.Boolean)">
-            <summary>
-            获取表集合
-            </summary>
-            <param name="isCache">是否缓存</param>
-            <returns>值</returns>
-        </member>
-        <member name="M:XN.Common.SugerRepository.GetViewInfoList(System.Boolean)">
-            <summary>
-            获取视图集合
-            </summary>
-            <param name="isCache">是否缓存</param>
-            <returns>值</returns>
-        </member>
-        <member name="M:XN.Common.SugerRepository.IsAnyColumn(System.String,System.String)">
-            <summary>
-            检测列是否存在
-            </summary>
-            <param name="tableName">表名</param>
-            <param name="column">列名</param>
-            <returns>值</returns>
-        </member>
-        <member name="M:XN.Common.SugerRepository.IsAnyConstraint(System.String)">
-            <summary>
-            检测约束
-            </summary>
-            <param name="constraintName">约束名称</param>
-            <returns>值</returns>
-        </member>
-        <member name="M:XN.Common.SugerRepository.IsAnySystemTablePermissions">
-            <summary>
-            检测是否有任何系统表权限 
-            </summary>
-            <returns>值</returns>
-        </member>
-        <member name="M:XN.Common.SugerRepository.IsAnyTable(System.String,System.Boolean)">
-            <summary>
-            检测表是否存在
-            </summary>
-            <param name="tableName">表名</param>
-            <param name="isCache">是否缓存</param>
-            <returns>值</returns>
-        </member>
-        <member name="M:XN.Common.SugerRepository.IsIdentity(System.String,System.String)">
-            <summary>
-            检测列是否自增列
-            </summary>
-            <param name="tableName">表名</param>
-            <param name="column">列名</param>
-            <returns>值</returns>
-        </member>
-        <member name="M:XN.Common.SugerRepository.IsPrimaryKey(System.String,System.String)">
-            <summary>
-            检测列是否主键
-            </summary>
-            <param name="tableName">表名</param>
-            <param name="column">列名</param>
-            <returns>值</returns>
-        </member>
-        <member name="M:XN.Common.SugerRepository.RenameColumn(System.String,System.String,System.String)">
-            <summary>
-            重置列名
-            </summary>
-            <param name="tableName">表名</param>
-            <param name="oldColumnName">旧列名</param>
-            <param name="newColumnName">新列名</param>
-            <returns>值</returns>
-        </member>
-        <member name="M:XN.Common.SugerRepository.TruncateTable(System.String)">
-            <summary>
-            重置表数据
-            </summary>
-            <param name="tableName">表名</param>
-            <returns>值</returns>
-        </member>
-        <member name="M:XN.Common.SugerRepository.UpdateColumn(System.String,SqlSugar.DbColumnInfo)">
-            <summary>
-            修改列信息
-            </summary>
-            <param name="tableName">表名</param>
-            <param name="column">列信息</param>
-            <returns>值</returns>
-        </member>
-        <member name="M:XN.Common.SugerRepository.GetDataBaseTime">
-            <summary>
-            获取数据库时间
-            </summary>
-            <returns>返回值</returns>
-        </member>
-        <member name="M:XN.Common.SugerRepository.Add``1(``0)">
-            <summary>
-            新增
-            </summary>
-            <typeparam name="T">泛型参数(集合成员的类型)</typeparam>
-            <param name="entity"> 实体对象 </param>  
-            <returns>操作影响的行数</returns>
-        </member>
-        <member name="M:XN.Common.SugerRepository.Add``1(System.Collections.Generic.List{``0})">
-            <summary>
-            新增
-            </summary>
-            <typeparam name="T">泛型参数(集合成员的类型)</typeparam>
-            <param name="entitys">泛型集合</param> 
-            <returns>操作影响的行数</returns>
-        </member>
-        <member name="M:XN.Common.SugerRepository.Add``1(System.Collections.Generic.Dictionary{System.String,System.Object})">
-            <summary>
-            新增
-            </summary>
-            <typeparam name="T">泛型参数(集合成员的类型)</typeparam>
-            <param name="keyValues">字典集合（Key:列名 Value:值）</param> 
-            <returns>操作影响的行数</returns>
-        </member>
-        <member name="M:XN.Common.SugerRepository.AddReturnEntity``1(``0)">
-            <summary>
-            新增
-            </summary>
-            <typeparam name="T">泛型参数(集合成员的类型)</typeparam>
-            <param name="entity"> 实体对象 </param>  
-            <returns>返回实体</returns>
-        </member>
-        <member name="M:XN.Common.SugerRepository.AddReturnIdentity``1(``0)">
-            <summary>
-            新增
-            </summary>
-            <typeparam name="T">泛型参数(集合成员的类型)</typeparam>
-            <param name="entity"> 实体对象 </param>  
-            <returns>返回自增列</returns>
-        </member>
-        <member name="M:XN.Common.SugerRepository.AddReturnBool``1(``0)">
-            <summary>
-            新增
-            </summary> 
-            <typeparam name="T">泛型参数(集合成员的类型)</typeparam>
-            <param name="entity"> 实体对象 </param>  
-            <returns>返回bool</returns>
-        </member>
-        <member name="M:XN.Common.SugerRepository.AddReturnBool``1(System.Collections.Generic.List{``0})">
-            <summary>
-            新增
-            </summary>
-            <typeparam name="T">泛型参数(集合成员的类型)</typeparam>
-            <param name="entitys">泛型集合</param> 
-            <returns>返回bool</returns>
-        </member>
-        <member name="M:XN.Common.SugerRepository.Update``1(``0,System.Collections.Generic.List{System.String},System.Boolean)">
-            <summary>
-            修改（主键是更新条件）
-            </summary>
-            <typeparam name="T">泛型参数(集合成员的类型)</typeparam>
-            <param name="entity"> 实体对象（必须指定主键特性 [SugarColumn(IsPrimaryKey=true)]），如果是联合主键，请使用Where条件 </param> 
-            <param name="lstIgnoreColumns">不更新的列</param>
-            <param name="isLock"> 是否加锁 </param> 
-            <returns>操作影响的行数</returns>
-        </member>
-        <member name="M:XN.Common.SugerRepository.Update``1(System.Collections.Generic.List{``0},System.Collections.Generic.List{System.String},System.Boolean)">
-            <summary>
-            修改（主键是更新条件）
-            </summary>
-            <typeparam name="T">泛型参数(集合成员的类型)</typeparam>
-            <param name="entitys"> 实体对象集合（必须指定主键特性 [SugarColumn(IsPrimaryKey=true)]），如果是联合主键，请使用Where条件 </param> 
-            <param name="lstIgnoreColumns">不更新的列</param>
-            <param name="isLock"> 是否加锁 </param> 
-            <returns>操作影响的行数</returns>
-        </member>
-        <member name="M:XN.Common.SugerRepository.Update``1(``0,System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}},System.Collections.Generic.List{System.String},System.Boolean)">
-            <summary>
-            修改
-            </summary>
-            <typeparam name="T">泛型参数(集合成员的类型)</typeparam>
-            <param name="entity"> 实体对象 </param> 
-            <param name="where"> 条件 </param>  
-            <param name="lstIgnoreColumns">不更新的列</param>
-            <param name="isLock"> 是否加锁 </param> 
-            <returns>操作影响的行数</returns>
-        </member>
-        <member name="M:XN.Common.SugerRepository.Update``1(System.Linq.Expressions.Expression{System.Func{``0,``0}},System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}},System.Boolean)">
-            <summary>
-            修改
-            </summary>
-            <typeparam name="T">泛型参数(集合成员的类型)</typeparam>
-            <param name="update"> 实体对象 </param> 
-            <param name="where"> 条件 </param>  
-            <param name="isLock"> 是否加锁 </param> 
-            <returns>操作影响的行数</returns>
-        </member>
-        <member name="M:XN.Common.SugerRepository.Update``1(System.Collections.Generic.Dictionary{System.String,System.Object},System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}},System.Boolean)">
-            <summary>
-            修改
-            </summary>
-            <typeparam name="T">泛型参数(集合成员的类型)</typeparam>
-            <param name="keyValues">字典集合（Key:列名 Value:值）</param> 
-            <param name="where"> 条件 </param>  
-            <param name="isLock"> 是否加锁 </param> 
-            <returns>操作影响的行数</returns>
-        </member>
-        <member name="M:XN.Common.SugerRepository.UpdateColumns``1(System.Collections.Generic.List{``0},System.Linq.Expressions.Expression{System.Func{``0,System.Object}},System.Linq.Expressions.Expression{System.Func{``0,System.Object}},System.Boolean)">
-            <summary>
-            批量修改需要更新的列
-            </summary>
-            <typeparam name="T">泛型参数(集合成员的类型)</typeparam>
-            <param name="entitys"> 实体对象（必须指定主键特性 [SugarColumn(IsPrimaryKey=true)]），如果是联合主键，请使用Where条件 </param> 
-            <param name="updateColumns">更新指定列</param>
-            <param name="wherecolumns">条件(为空则以主键更新,反之需要把wherecolumns中的列加到UpdateColumns中)</param>
-            <param name="isLock"> 是否加锁 </param> 
-            <returns>操作影响的行数</returns>
-        </member>
-        <member name="M:XN.Common.SugerRepository.UpdateRowVer``1(``0,System.Collections.Generic.List{System.String},System.Boolean)">
-            <summary>
-            修改 通过RowVer及主键Code 更新
-            </summary>
-            <typeparam name="T">泛型参数(集合成员的类型)</typeparam>
-            <param name="entity"> 实体对象 </param> 
-            <param name="lstIgnoreColumns">不更新的列</param>
-            <param name="isLock"> 是否加锁 </param> 
-            <returns>操作影响的行数</returns>
-        </member>
-        <member name="M:XN.Common.SugerRepository.UpdateRowVer``1(System.Linq.Expressions.Expression{System.Func{``0,``0}},System.Collections.Generic.Dictionary{System.String,System.Object},System.Boolean)">
-            <summary>
-            修改 
-            </summary>
-            <typeparam name="T">泛型参数(集合成员的类型)</typeparam>
-            <param name="update"> 实体对象 </param>  
-            <param name="where"> 更新条件 </param>  
-            <param name="isLock"> 是否加锁 </param> 
-            <returns>操作影响的行数</returns>
-        </member>
-        <member name="M:XN.Common.SugerRepository.DeleteByPrimary``1(System.Collections.Generic.List{System.Object},System.Boolean)">
-            <summary>
-            删除
-            </summary>
-            <typeparam name="T">泛型参数(集合成员的类型)</typeparam>
-            <param name="primaryKeyValues">主键值</param> 
-            <param name="isLock"> 是否加锁 </param> 
-            <returns>操作影响的行数</returns>
-        </member>
-        <member name="M:XN.Common.SugerRepository.Delete``1(``0,System.Boolean)">
-            <summary>
-            删除
-            </summary>
-            <typeparam name="T">泛型参数(集合成员的类型)</typeparam>
-            <param name="entity"> 实体对象 （必须指定主键特性 [SugarColumn(IsPrimaryKey=true)]），如果是联合主键，请使用Where条件</param> 
-            <param name="isLock"> 是否加锁 </param> 
-            <returns>操作影响的行数</returns>
-        </member>
-        <member name="M:XN.Common.SugerRepository.Delete``1(System.Collections.Generic.List{``0},System.Boolean)">
-            <summary>
-            删除
-            </summary>
-            <typeparam name="T">泛型参数(集合成员的类型)</typeparam>
-            <param name="entity"> 实体对象 （必须指定主键特性 [SugarColumn(IsPrimaryKey=true)]），如果是联合主键，请使用Where条件</param> 
-            <param name="isLock"> 是否加锁 </param> 
-            <returns>操作影响的行数</returns>
-        </member>
-        <member name="M:XN.Common.SugerRepository.Delete``1(System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}},System.Boolean)">
-            <summary>
-            删除
-            </summary>
-            <typeparam name="T">泛型参数(集合成员的类型)</typeparam>
-            <param name="where"> 条件 </param> 
-            <param name="isLock"> 是否加锁 </param> 
-            <returns>操作影响的行数</returns>
-        </member>
-        <member name="M:XN.Common.SugerRepository.DeleteIn``1(System.Collections.Generic.List{System.Object})">
-            <summary>
-            通过多值(主键)删除数据集
-            </summary>
-            <typeparam name="T">泛型参数(集合成员的类型)</typeparam> 
-            <param name="inValues">数据集合</param>
-            <returns>值</returns>
-        </member>
-        <member name="M:XN.Common.SugerRepository.QueryMuch``3(System.Linq.Expressions.Expression{System.Func{``0,``1,System.Object[]}},System.Linq.Expressions.Expression{System.Func{``0,``1,``2}},System.Linq.Expressions.Expression{System.Func{``0,``1,System.Boolean}})">
-             <summary>
-            查询-多表查询 
-             </summary>
-             <typeparam name="T">实体1</typeparam>
-             <typeparam name="T2">实体2</typeparam>
-             <typeparam name="TResult">返回对象</typeparam>
-             <param name="joinExpression">关联表达式 (t1,t2) => new object[] {JoinType.Left,t1.UserNo==t2.UserNo}</param>
-             <param name="selectExpression">返回表达式 (t1, t2) => new { Id =t1.UserNo, Id1 = t2.UserNo}</param>
-             <param name="whereLambda">查询表达式 (t1, t2) =>t1.UserNo == "")</param>  
-             <returns>值</returns>
-        </member>
-        <member name="M:XN.Common.SugerRepository.QueryMuch``4(System.Linq.Expressions.Expression{System.Func{``0,``1,``2,System.Object[]}},System.Linq.Expressions.Expression{System.Func{``0,``1,``2,``3}},System.Linq.Expressions.Expression{System.Func{``0,``1,``2,System.Boolean}})">
-             <summary>
-            查询-多表查询 
-             </summary>
-             <typeparam name="T">实体1</typeparam>
-             <typeparam name="T2">实体2</typeparam>
-             <typeparam name="T3">实体3</typeparam>
-             <typeparam name="TResult">返回对象</typeparam>
-             <param name="joinExpression">关联表达式 (join1,join2) => new object[] {JoinType.Left,join1.UserNo==join2.UserNo}</param>
-             <param name="selectExpression">返回表达式 (s1, s2) => new { Id =s1.UserNo, Id1 = s2.UserNo}</param>
-             <param name="whereLambda">查询表达式 (w1, w2) =>w1.UserNo == "")</param>  
-             <returns>值</returns>
-        </member>
-        <member name="M:XN.Common.SugerRepository.QueryMuch``5(System.Linq.Expressions.Expression{System.Func{``0,``1,``2,``3,System.Object[]}},System.Linq.Expressions.Expression{System.Func{``0,``1,``2,``3,``4}},System.Linq.Expressions.Expression{System.Func{``0,``1,``2,``3,System.Boolean}})">
-             <summary>
-            查询-多表查询 
-             </summary>
-             <typeparam name="T">实体1</typeparam>
-             <typeparam name="T2">实体2</typeparam>
-             <typeparam name="T3">实体3</typeparam>
-             <typeparam name="T4">实体4</typeparam>
-             <typeparam name="TResult">返回对象</typeparam>
-             <param name="joinExpression">关联表达式 (join1,join2) => new object[] {JoinType.Left,join1.UserNo==join2.UserNo}</param>
-             <param name="selectExpression">返回表达式 (s1, s2) => new { Id =s1.UserNo, Id1 = s2.UserNo}</param>
-             <param name="whereLambda">查询表达式 (w1, w2) =>w1.UserNo == "")</param>  
-             <returns>值</returns>
-        </member>
-        <member name="M:XN.Common.SugerRepository.QueryMuch``6(System.Linq.Expressions.Expression{System.Func{``0,``1,``2,``3,``4,System.Object[]}},System.Linq.Expressions.Expression{System.Func{``0,``1,``2,``3,``4,``5}},System.Linq.Expressions.Expression{System.Func{``0,``1,``2,``3,``4,System.Boolean}})">
-             <summary>
-            查询-多表查询 
-             </summary>
-             <typeparam name="T">实体1</typeparam>
-             <typeparam name="T2">实体2</typeparam>
-             <typeparam name="T3">实体3</typeparam>
-             <typeparam name="T4">实体4</typeparam>
-             <typeparam name="T5">实体5</typeparam>
-             <typeparam name="TResult">返回对象</typeparam>
-             <param name="joinExpression">关联表达式 (join1,join2) => new object[] {JoinType.Left,join1.UserNo==join2.UserNo}</param>
-             <param name="selectExpression">返回表达式 (s1, s2) => new { Id =s1.UserNo, Id1 = s2.UserNo}</param>
-             <param name="whereLambda">查询表达式 (w1, w2) =>w1.UserNo == "")</param>  
-             <returns>值</returns>
-        </member>
-        <member name="M:XN.Common.SugerRepository.QueryMuch``7(System.Linq.Expressions.Expression{System.Func{``0,``1,``2,``3,``4,``5,System.Object[]}},System.Linq.Expressions.Expression{System.Func{``0,``1,``2,``3,``4,``5,``6}},System.Linq.Expressions.Expression{System.Func{``0,``1,``2,``3,``4,``5,System.Boolean}})">
-             <summary>
-            查询-多表查询 
-             </summary>
-             <typeparam name="T">实体1</typeparam>
-             <typeparam name="T2">实体2</typeparam>
-             <typeparam name="T3">实体3</typeparam>
-             <typeparam name="T4">实体4</typeparam>
-             <typeparam name="T5">实体5</typeparam>
-             <typeparam name="T6">实体6</typeparam>
-             <typeparam name="TResult">返回对象</typeparam>
-             <param name="joinExpression">关联表达式 (join1,join2) => new object[] {JoinType.Left,join1.UserNo==join2.UserNo}</param>
-             <param name="selectExpression">返回表达式 (s1, s2) => new { Id =s1.UserNo, Id1 = s2.UserNo}</param>
-             <param name="whereLambda">查询表达式 (w1, w2) =>w1.UserNo == "")</param>  
-             <returns>值</returns>
-        </member>
-        <member name="M:XN.Common.SugerRepository.QueryMuch``8(System.Linq.Expressions.Expression{System.Func{``0,``1,``2,``3,``4,``5,``6,System.Object[]}},System.Linq.Expressions.Expression{System.Func{``0,``1,``2,``3,``4,``5,``6,``7}},System.Linq.Expressions.Expression{System.Func{``0,``1,``2,``3,``4,``5,``6,System.Boolean}})">
-             <summary>
-            查询-多表查询 
-             </summary>
-             <typeparam name="T">实体1</typeparam>
-             <typeparam name="T2">实体2</typeparam>
-             <typeparam name="T3">实体3</typeparam>
-             <typeparam name="T4">实体4</typeparam>
-             <typeparam name="T5">实体5</typeparam>
-             <typeparam name="T6">实体6</typeparam>
-             <typeparam name="T7">实体7</typeparam>
-             <typeparam name="TResult">返回对象</typeparam>
-             <param name="joinExpression">关联表达式 (join1,join2) => new object[] {JoinType.Left,join1.UserNo==join2.UserNo}</param>
-             <param name="selectExpression">返回表达式 (s1, s2) => new { Id =s1.UserNo, Id1 = s2.UserNo}</param>
-             <param name="whereLambda">查询表达式 (w1, w2) =>w1.UserNo == "")</param>  
-             <returns>值</returns>
-        </member>
-        <member name="M:XN.Common.SugerRepository.QueryMuch``9(System.Linq.Expressions.Expression{System.Func{``0,``1,``2,``3,``4,``5,``6,``7,System.Object[]}},System.Linq.Expressions.Expression{System.Func{``0,``1,``2,``3,``4,``5,``6,``7,``8}},System.Linq.Expressions.Expression{System.Func{``0,``1,``2,``3,``4,``5,``6,``7,System.Boolean}})">
-             <summary>
-            查询-多表查询 
-             </summary>
-             <typeparam name="T">实体1</typeparam>
-             <typeparam name="T2">实体2</typeparam>
-             <typeparam name="T3">实体3</typeparam>
-             <typeparam name="T4">实体4</typeparam>
-             <typeparam name="T5">实体5</typeparam>
-             <typeparam name="T6">实体6</typeparam>
-             <typeparam name="T7">实体7</typeparam>
-             <typeparam name="T8">实体8</typeparam>
-             <typeparam name="TResult">返回对象</typeparam>
-             <param name="joinExpression">关联表达式 (join1,join2) => new object[] {JoinType.Left,join1.UserNo==join2.UserNo}</param>
-             <param name="selectExpression">返回表达式 (s1, s2) => new { Id =s1.UserNo, Id1 = s2.UserNo}</param>
-             <param name="whereLambda">查询表达式 (w1, w2) =>w1.UserNo == "")</param>  
-             <returns>值</returns>
-        </member>
-        <member name="M:XN.Common.SugerRepository.QueryMuch``10(System.Linq.Expressions.Expression{System.Func{``0,``1,``2,``3,``4,``5,``6,``7,``8,System.Object[]}},System.Linq.Expressions.Expression{System.Func{``0,``1,``2,``3,``4,``5,``6,``7,``8,``9}},System.Linq.Expressions.Expression{System.Func{``0,``1,``2,``3,``4,``5,``6,``7,``8,System.Boolean}})">
-             <summary>
-            查询-多表查询 
-             </summary>
-             <typeparam name="T">实体1</typeparam>
-             <typeparam name="T2">实体2</typeparam>
-             <typeparam name="T3">实体3</typeparam>
-             <typeparam name="T4">实体4</typeparam>
-             <typeparam name="T5">实体5</typeparam>
-             <typeparam name="T6">实体6</typeparam>
-             <typeparam name="T7">实体7</typeparam>
-             <typeparam name="T8">实体8</typeparam>
-             <typeparam name="T9">实体9</typeparam>
-             <typeparam name="TResult">返回对象</typeparam>
-             <param name="joinExpression">关联表达式 (join1,join2) => new object[] {JoinType.Left,join1.UserNo==join2.UserNo}</param>
-             <param name="selectExpression">返回表达式 (s1, s2) => new { Id =s1.UserNo, Id1 = s2.UserNo}</param>
-             <param name="whereLambda">查询表达式 (w1, w2) =>w1.UserNo == "")</param>  
-             <returns>值</returns>
-        </member>
-        <member name="M:XN.Common.SugerRepository.QueryMuchDescriptor``3(System.Linq.Expressions.Expression{System.Func{``0,``1,System.Object[]}},System.Linq.Expressions.Expression{System.Func{``0,``1,``2}},XN.Common.QueryDescriptor,System.Int32@)">
-             <summary>
-            查询-多表查询 
-             </summary>
-             <typeparam name="T">实体1</typeparam>
-             <typeparam name="T2">实体2</typeparam>
-             <typeparam name="TResult">返回对象</typeparam>
-             <param name="joinExpression">关联表达式 (t1,t2) => new object[] {JoinType.Left,t1.UserNo==t2.UserNo}</param>
-             <param name="selectExpression">返回表达式 (t1, t2) => new { Id =t1.UserNo, Id1 = t2.UserNo}</param>
-             <param name="query">查询条件</param>  
-             <param name="totalCount">总行数</param>  
-             <returns>值</returns>
-        </member>
-        <member name="M:XN.Common.SugerRepository.QueryMuchDescriptor``4(System.Linq.Expressions.Expression{System.Func{``0,``1,``2,System.Object[]}},System.Linq.Expressions.Expression{System.Func{``0,``1,``2,``3}},XN.Common.QueryDescriptor,System.Int32@)">
-             <summary>
-            查询-多表查询 
-             </summary>
-             <typeparam name="T">实体1</typeparam>
-             <typeparam name="T2">实体2</typeparam>
-             <typeparam name="T3">实体3</typeparam>
-             <typeparam name="TResult">返回对象</typeparam>
-             <param name="joinExpression">关联表达式 (join1,join2) => new object[] {JoinType.Left,join1.UserNo==join2.UserNo}</param>
-             <param name="selectExpression">返回表达式 (s1, s2) => new { Id =s1.UserNo, Id1 = s2.UserNo}</param>
-             <param name="query">查询条件</param>  
-             <param name="totalCount">总行数</param>  
-             <returns>值</returns>
-        </member>
-        <member name="M:XN.Common.SugerRepository.QueryMuchDescriptor``5(System.Linq.Expressions.Expression{System.Func{``0,``1,``2,``3,System.Object[]}},System.Linq.Expressions.Expression{System.Func{``0,``1,``2,``3,``4}},XN.Common.QueryDescriptor,System.Int32@)">
-             <summary>
-            查询-多表查询 
-             </summary>
-             <typeparam name="T">实体1</typeparam>
-             <typeparam name="T2">实体2</typeparam>
-             <typeparam name="T3">实体3</typeparam>
-             <typeparam name="T4">实体4</typeparam>
-             <typeparam name="TResult">返回对象</typeparam>
-             <param name="joinExpression">关联表达式 (join1,join2) => new object[] {JoinType.Left,join1.UserNo==join2.UserNo}</param>
-             <param name="selectExpression">返回表达式 (s1, s2) => new { Id =s1.UserNo, Id1 = s2.UserNo}</param>
-             <param name="query">查询条件</param>  
-             <param name="totalCount">总行数</param>  
-             <returns>值</returns>
-        </member>
-        <member name="M:XN.Common.SugerRepository.QueryMuchDescriptor``6(System.Linq.Expressions.Expression{System.Func{``0,``1,``2,``3,``4,System.Object[]}},System.Linq.Expressions.Expression{System.Func{``0,``1,``2,``3,``4,``5}},XN.Common.QueryDescriptor,System.Int32@)">
-             <summary>
-            查询-多表查询 
-             </summary>
-             <typeparam name="T">实体1</typeparam>
-             <typeparam name="T2">实体2</typeparam>
-             <typeparam name="T3">实体3</typeparam>
-             <typeparam name="T4">实体4</typeparam>
-             <typeparam name="T5">实体5</typeparam>
-             <typeparam name="TResult">返回对象</typeparam>
-             <param name="joinExpression">关联表达式 (join1,join2) => new object[] {JoinType.Left,join1.UserNo==join2.UserNo}</param>
-             <param name="selectExpression">返回表达式 (s1, s2) => new { Id =s1.UserNo, Id1 = s2.UserNo}</param>
-             <param name="query">查询条件</param>  
-             <param name="totalCount">总行数</param>  
-             <returns>值</returns>
-        </member>
-        <member name="M:XN.Common.SugerRepository.QueryMuchDescriptor``7(System.Linq.Expressions.Expression{System.Func{``0,``1,``2,``3,``4,``5,System.Object[]}},System.Linq.Expressions.Expression{System.Func{``0,``1,``2,``3,``4,``5,``6}},XN.Common.QueryDescriptor,System.Int32@)">
-             <summary>
-            查询-多表查询 
-             </summary>
-             <typeparam name="T">实体1</typeparam>
-             <typeparam name="T2">实体2</typeparam>
-             <typeparam name="T3">实体3</typeparam>
-             <typeparam name="T4">实体4</typeparam>
-             <typeparam name="T5">实体5</typeparam>
-             <typeparam name="T6">实体6</typeparam>
-             <typeparam name="TResult">返回对象</typeparam>
-             <param name="joinExpression">关联表达式 (join1,join2) => new object[] {JoinType.Left,join1.UserNo==join2.UserNo}</param>
-             <param name="selectExpression">返回表达式 (s1, s2) => new { Id =s1.UserNo, Id1 = s2.UserNo}</param>
-             <param name="query">查询条件</param>  
-             <param name="totalCount">总行数</param>  
-             <returns>值</returns>
-        </member>
-        <member name="M:XN.Common.SugerRepository.QueryMuchDescriptor``8(System.Linq.Expressions.Expression{System.Func{``0,``1,``2,``3,``4,``5,``6,System.Object[]}},System.Linq.Expressions.Expression{System.Func{``0,``1,``2,``3,``4,``5,``6,``7}},XN.Common.QueryDescriptor,System.Int32@)">
-             <summary>
-            查询-多表查询 
-             </summary>
-             <typeparam name="T">实体1</typeparam>
-             <typeparam name="T2">实体2</typeparam>
-             <typeparam name="T3">实体3</typeparam>
-             <typeparam name="T4">实体4</typeparam>
-             <typeparam name="T5">实体5</typeparam>
-             <typeparam name="T6">实体6</typeparam>
-             <typeparam name="T7">实体7</typeparam>
-             <typeparam name="TResult">返回对象</typeparam>
-             <param name="joinExpression">关联表达式 (join1,join2) => new object[] {JoinType.Left,join1.UserNo==join2.UserNo}</param>
-             <param name="selectExpression">返回表达式 (s1, s2) => new { Id =s1.UserNo, Id1 = s2.UserNo}</param>
-             <param name="query">查询条件</param>  
-             <param name="totalCount">总行数</param>  
-             <returns>值</returns>
-        </member>
-        <member name="M:XN.Common.SugerRepository.QueryMuchDescriptor``9(System.Linq.Expressions.Expression{System.Func{``0,``1,``2,``3,``4,``5,``6,``7,System.Object[]}},System.Linq.Expressions.Expression{System.Func{``0,``1,``2,``3,``4,``5,``6,``7,``8}},XN.Common.QueryDescriptor,System.Int32@)">
-             <summary>
-            查询-多表查询 
-             </summary>
-             <typeparam name="T">实体1</typeparam>
-             <typeparam name="T2">实体2</typeparam>
-             <typeparam name="T3">实体3</typeparam>
-             <typeparam name="T4">实体4</typeparam>
-             <typeparam name="T5">实体5</typeparam>
-             <typeparam name="T6">实体6</typeparam>
-             <typeparam name="T7">实体7</typeparam>
-             <typeparam name="T8">实体8</typeparam>
-             <typeparam name="TResult">返回对象</typeparam>
-             <param name="joinExpression">关联表达式 (join1,join2) => new object[] {JoinType.Left,join1.UserNo==join2.UserNo}</param>
-             <param name="selectExpression">返回表达式 (s1, s2) => new { Id =s1.UserNo, Id1 = s2.UserNo}</param>
-             <param name="query">查询条件</param>  
-             <param name="totalCount">总行数</param>  
-             <returns>值</returns>
-        </member>
-        <member name="M:XN.Common.SugerRepository.QueryMuchDescriptor``10(System.Linq.Expressions.Expression{System.Func{``0,``1,``2,``3,``4,``5,``6,``7,``8,System.Object[]}},System.Linq.Expressions.Expression{System.Func{``0,``1,``2,``3,``4,``5,``6,``7,``8,``9}},XN.Common.QueryDescriptor,System.Int32@)">
-             <summary>
-            查询-多表查询 
-             </summary>
-             <typeparam name="T">实体1</typeparam>
-             <typeparam name="T2">实体2</typeparam>
-             <typeparam name="T3">实体3</typeparam>
-             <typeparam name="T4">实体4</typeparam>
-             <typeparam name="T5">实体5</typeparam>
-             <typeparam name="T6">实体6</typeparam>
-             <typeparam name="T7">实体7</typeparam>
-             <typeparam name="T8">实体8</typeparam>
-             <typeparam name="T9">实体9</typeparam>
-             <typeparam name="TResult">返回对象</typeparam>
-             <param name="joinExpression">关联表达式 (join1,join2) => new object[] {JoinType.Left,join1.UserNo==join2.UserNo}</param>
-             <param name="selectExpression">返回表达式 (s1, s2) => new { Id =s1.UserNo, Id1 = s2.UserNo}</param>
-             <param name="query">查询条件</param>  
-             <param name="totalCount">总行数</param>  
-             <returns>值</returns>
-        </member>
-        <member name="M:XN.Common.SugerRepository.QuerySelect``2(System.Linq.Expressions.Expression{System.Func{``0,``1}},System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}})">
-            <summary>
-            查询-返回自定义数据
-            </summary>
-            <typeparam name="T">泛型参数(集合成员的类型)</typeparam>
-            <typeparam name="TResult">返回值类型</typeparam>
-            <param name="expression">返回值表达式</param> 
-            <param name="whereLambda">查询表达式</param> 
-            <returns>值</returns>
-        </member>
-        <member name="M:XN.Common.SugerRepository.QuerySelectList``2(System.Linq.Expressions.Expression{System.Func{``0,``1}},System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}})">
-            <summary>
-            查询-返回自定义数据
-            </summary>
-            <typeparam name="T">泛型参数(集合成员的类型)</typeparam>
-            <typeparam name="TResult">返回值类型</typeparam>
-            <param name="expression">返回值表达式</param> 
-            <param name="whereLambda">查询表达式</param> 
-            <returns>值</returns>
-        </member>
-        <member name="M:XN.Common.SugerRepository.Query``1(System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}})">
-            <summary>
-            查询
-            </summary>
-            <typeparam name="T">泛型参数(集合成员的类型)</typeparam>
-            <param name="whereLambda">查询表达式</param> 
-            <returns>值</returns>
-        </member>
-        <member name="M:XN.Common.SugerRepository.QueryWhereList``1(System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}})">
-            <summary>
-            查询集合
-            </summary>
-            <typeparam name="T">泛型参数(集合成员的类型)</typeparam>
-            <param name="whereLambda">过滤条件</param> 
-            <returns>实体</returns>
-        </member>
-        <member name="M:XN.Common.SugerRepository.QueryList``1(XN.Common.QueryDescriptor)">
-            <summary>
-            查询集合
-            </summary>
-            <typeparam name="T">泛型参数(集合成员的类型)</typeparam>
-            <param name="query">过滤条件</param> 
-            <returns>实体</returns>
-        </member>
-        <member name="M:XN.Common.SugerRepository.QuerySqlList``1(System.String)">
-            <summary>
-            查询集合
-            </summary>
-            <typeparam name="T">泛型参数(集合成员的类型)</typeparam>
-            <param name="sql">sql</param>  
-            <returns>实体</returns>
-        </member>
-        <member name="M:XN.Common.SugerRepository.QueryPageList``1(XN.Common.QueryDescriptor,System.Int32@)">
-            <summary>
-            分页查询
-            </summary>
-            <typeparam name="T">泛型参数(集合成员的类型)</typeparam>
-            <param name="query">过滤条件</param>
-            <param name="totalCount">总行数</param>
-            <returns>实体</returns>
-        </member>
-        <member name="M:XN.Common.SugerRepository.In``1(System.String,System.Collections.Generic.List{System.Object})">
-            <summary>
-            查询集合-多值
-            </summary>
-            <typeparam name="T">泛型参数(集合成员的类型)</typeparam>
-            <param name="inFieldName">字段名</param>
-            <param name="inValues">数据集合</param>
-            <returns>值</returns>
-        </member>
-        <member name="M:XN.Common.SugerRepository.In``1(System.Collections.Generic.List{System.Object})">
-            <summary>
-            查询集合-通过多值(主键)
-            </summary>
-            <typeparam name="T">泛型参数(集合成员的类型)</typeparam>
-            <param name="values">主键数据集合</param>
-            <returns>值</returns>
-        </member>
-        <member name="M:XN.Common.SugerRepository.QueryDataTable``1(System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}})">
-            <summary>
-            查询集合
-            </summary>
-            <typeparam name="T">泛型参数(集合成员的类型)</typeparam>
-            <param name="whereLambda">查询表达式</param>  
-            <returns>实体</returns>
-        </member>
-        <member name="M:XN.Common.SugerRepository.QueryDataTable(System.String)">
-            <summary>
-            查询集合
-            </summary> 
-            <param name="sql">sql</param> 
-            <returns>实体</returns>
-        </member>
-        <member name="M:XN.Common.SugerRepository.QuerySqlScalar(System.String)">
-            <summary>
-            查询单个值
-            </summary> 
-            <param name="sql">sql</param> 
-            <returns>单个值</returns>
-        </member>
-        <member name="M:XN.Common.SugerRepository.QueryDataTablePageList``1(XN.Common.QueryDescriptor,System.Int32@)">
-            <summary>
-            分页查询
-            </summary>
-            <typeparam name="T">泛型参数(集合成员的类型)</typeparam>
-            <param name="query">过滤条件</param>
-            <param name="totalCount">总行数</param>
-            <returns>DataTable</returns>
-        </member>
-        <member name="M:XN.Common.SugerRepository.QueryMapper``1(System.Action{``0},XN.Common.QueryDescriptor)">
-            <summary>
-            Mapper查询 一对多和一对一
-            </summary>
-            <typeparam name="T">泛型参数(集合成员的类型)</typeparam>
-            <param name="mapperAction">操作(it, cache) =>
-            { 
-                var all = cache.GetListByPrimaryKeys(vmodel => vmodel.Id);  //一次性查询出所要的外键引用数据 
-                it.School = all.FirstOrDefault(i => i.Id == it.Id); //一对一 
-                it.Schools = all.Where(i => i.Id == it.Id).ToList(); //一对多
-                /*用C#处理你想要的结果*/
-                it.Name = it.Name == null ? "null" : it.Name;
-             }
-            </param>
-            <param name="query">过滤条件</param>
-            <returns></returns>
-        </member>
-        <member name="M:XN.Common.SugerRepository.QueryMapper``1(System.Action{``0},System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}})">
-            <summary>
-            Mapper查询 一对多和一对一
-            </summary>
-            <typeparam name="T">泛型参数(集合成员的类型)</typeparam>
-            <param name="mapperAction">操作(it, cache) =>
-            { 
-                var all = cache.GetListByPrimaryKeys(vmodel => vmodel.Id);  //一次性查询出所要的外键引用数据 
-                it.School = all.FirstOrDefault(i => i.Id == it.Id); //一对一 
-                it.Schools = all.Where(i => i.Id == it.Id).ToList(); //一对多
-                /*用C#处理你想要的结果*/
-                it.Name = it.Name == null ? "null" : it.Name;
-             }
-            </param>
-            <param name="whereLambda">过滤条件</param>
-            <returns></returns>
-        </member>
-        <member name="M:XN.Common.SugerRepository.GroupBy``1(System.Linq.Expressions.Expression{System.Func{``0,System.Object}},System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}})">
-            <summary>
-            分组
-            </summary>
-            <typeparam name="T">泛型参数(集合成员的类型)</typeparam> 
-            <param name="groupByLambda">分组表达式</param> 
-            <param name="whereLambda">查询表达式</param> 
-            <returns>值</returns>
-        </member>
-        <member name="M:XN.Common.SugerRepository.GroupBy``2(System.Linq.Expressions.Expression{System.Func{``0,``1}},System.Linq.Expressions.Expression{System.Func{``0,System.Object}},System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}})">
-            <summary>
-            分组-返回自定义数据
-            </summary>
-            <typeparam name="T">泛型参数(集合成员的类型)</typeparam>
-            <typeparam name="TResult">返回值类型</typeparam>
-            <param name="expression">返回值表达式</param> 
-            <param name="groupByLambda">分组表达式</param> 
-            <param name="whereLambda">查询表达式</param> 
-            <returns>值</returns>
-        </member>
-        <member name="M:XN.Common.SugerRepository.QueryProcedureDataSet(System.String,System.Collections.Generic.List{System.Data.SqlClient.SqlParameter})">
-            <summary>
-            查询存储过程
-            </summary> 
-            <param name="procedureName">存储过程名称</param>
-            <param name="parameters">参数</param>
-            <returns>DataSet</returns>
-        </member>
-        <member name="M:XN.Common.SugerRepository.QueryProcedure(System.String,System.Collections.Generic.List{System.Data.SqlClient.SqlParameter})">
-            <summary>
-            查询存储过程
-            </summary> 
-            <param name="procedureName">存储过程名称</param>
-            <param name="parameters">参数</param>
-            <returns>DataTable</returns>
-        </member>
-        <member name="M:XN.Common.SugerRepository.QueryProcedureScalar(System.String,System.Collections.Generic.List{System.Data.SqlClient.SqlParameter})">
-            <summary>
-            查询存储过程
-            </summary> 
-            <param name="procedureName">存储过程名称</param>
-            <param name="parameters">参数</param>
-            <returns>单个值</returns>
-        </member>
-        <member name="M:XN.Common.SugerRepository.QueryJson``1(System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}})">
-            <summary>
-            查询集合
-            </summary>
-            <typeparam name="T">泛型参数(集合成员的类型)</typeparam>
-            <param name="whereLambda">查询表达式</param>  
-            <returns>Json</returns>
-        </member>
-        <member name="M:XN.Common.SugerRepository.Take``1(System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}},System.Int32)">
-            <summary>
-            查询前多少条数据
-            </summary>
-            <typeparam name="T">泛型参数(集合成员的类型</typeparam>
-            <param name="whereLambda">查询表达式</param>
-            <param name="num">数量</param>
-            <returns>值</returns>
-        </member>
-        <member name="M:XN.Common.SugerRepository.First``1(System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}})">
-            <summary>
-            查询单条数据
-            </summary>
-            <typeparam name="T">泛型参数(集合成员的类型</typeparam>
-            <param name="whereLambda">查询表达式</param> 
-            <returns>值</returns>
-        </member>
-        <member name="M:XN.Common.SugerRepository.IsExist``1(System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}})">
-            <summary>
-            是否存在
-            </summary>
-            <typeparam name="T">泛型参数(集合成员的类型</typeparam>
-            <param name="whereLambda">查询表达式</param> 
-            <returns>值</returns>
-        </member>
-        <member name="M:XN.Common.SugerRepository.Sum``1(System.String)">
-            <summary>
-            合计
-            </summary>
-            <typeparam name="T">泛型参数(集合成员的类型</typeparam>
-            <param name="field">字段</param> 
-            <returns>值</returns>
-        </member>
-        <member name="M:XN.Common.SugerRepository.Max``2(System.String)">
-            <summary>
-            最大值
-            </summary>
-            <typeparam name="T">泛型参数(集合成员的类型</typeparam>
-            <typeparam name="TResult">返回类型</typeparam>
-            <param name="field">字段</param> 
-            <returns>值</returns>
-        </member>
-        <member name="M:XN.Common.SugerRepository.Min``2(System.String)">
-            <summary>
-            最小值
-            </summary>
-            <typeparam name="T">泛型参数(集合成员的类型</typeparam>
-            <typeparam name="TResult">返回类型</typeparam>
-            <param name="field">字段</param> 
-            <returns>值</returns>
-        </member>
-        <member name="M:XN.Common.SugerRepository.Avg``1(System.String)">
-            <summary>
-            平均值
-            </summary>
-            <typeparam name="T">泛型参数(集合成员的类型</typeparam>
-            <param name="field">字段</param> 
-            <returns>值</returns>
-        </member>
-        <member name="M:XN.Common.SugerRepository.CustomNumber``1(System.String,System.String,System.Int32,System.String)">
-            <summary>
-            生成流水号
-            </summary>
-            <param name="key">列名</param>
-            <param name="prefix">前缀</param>
-            <param name="fixedLength">流水号长度</param>
-            <param name="dateFomart">日期格式(yyyyMMdd) 为空前缀后不加日期,反之加</param>
-            <returns></returns>
-        </member>
-        <member name="M:XN.Common.SugerRepository.CustomNumber``1(System.String,System.Int32,System.String,System.Int32,System.String)">
-            <summary>
-            生成流水号
-            </summary>
-            <param name="key">列名</param>
-            <param name="prefix">前缀</param>
-            <param name="fixedLength">流水号长度</param>
-            <param name="dateFomart">日期格式(yyyyMMdd) 为空前缀后不加日期,反之加</param>
-            <param name="num">数量</param>
-            <returns></returns>
-        </member>
-        <member name="M:XN.Common.SugerRepository.ParseCondition(System.Collections.Generic.List{XN.Common.QueryCondition})">
-            <summary>
-            过滤条件转换
-            </summary>
-            <param name="contitons">过滤条件</param>
-            <returns>值</returns>
-        </member>
-        <member name="M:XN.Common.SugerRepository.ParseKeyOr(XN.Common.QueryCondition)">
-            <summary>
-            转换Or条件
-            </summary>
-            <param name="condition">过滤条件</param>
-            <returns>值</returns>
-        </member>
-        <member name="M:XN.Common.SugerRepository.ParseRange(XN.Common.QueryCondition,XN.Common.QueryOperator)">
-            <summary>
-            转换区域
-            </summary>
-            <param name="condition">过滤条件</param>
-            <param name="queryOperator">条件类型</param>
-            <returns>值</returns>
-        </member>
-        <member name="M:XN.Common.SugerRepository.ParseOrderBy(System.Collections.Generic.List{XN.Common.OrderByClause})">
-            <summary>
-            排序转换
-            </summary>
-            <param name="orderBys">排序</param>
-            <returns>值</returns>
-        </member>
-        <member name="M:XN.Common.SugerRepository.Dispose">
-            <inheritdoc />
-            <summary>
-            释放
-            </summary>
-        </member>
-        <member name="T:OPPO.DBUtility.ISugerHandler">
-            <summary>
-            SqlSugar操作接口类
-            </summary>
-        </member>
-        <member name="M:OPPO.DBUtility.ISugerHandler.InvokeTransactionScope(System.Action,System.Data.IsolationLevel)">
-            <summary>
-            事务操作
-            注意:代码段里面如果调用本身类其它方法或其它类方法必须带着var db = SugerHandler.Instance()这个db走，不带着走事务回滚会不成功
-            </summary> 
-            <param name="serviceAction">代码段</param> 
-            <param name="level">事务级别</param>
-        </member>
-        <member name="M:OPPO.DBUtility.ISugerHandler.AddColumn(System.String,SqlSugar.DbColumnInfo)">
-            <summary>
-            添加列
-            </summary>
-            <param name="tableName">表名</param>
-            <param name="column">列信息</param>
-            <returns></returns>
-        </member>
-        <member name="M:OPPO.DBUtility.ISugerHandler.AddPrimaryKey(System.String,System.String)">
-            <summary>
-            添加主键
-            </summary>
-            <param name="tableName">表名</param>
-            <param name="columnName">列名</param>
-            <returns></returns>
-        </member>
-        <member name="M:OPPO.DBUtility.ISugerHandler.BackupDataBase(System.String,System.String)">
-            <summary>
-            备份数据库
-            </summary>
-            <param name="databaseName">数据库名</param>
-            <param name="fullFileName">文件名</param>
-            <returns></returns>
-        </member>
-        <member name="M:OPPO.DBUtility.ISugerHandler.BackupTable(System.String,System.String,System.Int32)">
-            <summary>
-            备份表
-            </summary>
-            <param name="oldTableName">旧表名</param>
-            <param name="newTableName">行表名</param>
-            <param name="maxBackupDataRows">行数</param>
-            <returns></returns>
-        </member>
-        <member name="M:OPPO.DBUtility.ISugerHandler.CreateTable(System.String,System.Collections.Generic.List{SqlSugar.DbColumnInfo},System.Boolean)">
-            <summary>
-            创建表
-            </summary>
-            <param name="tableName">表名</param>
-            <param name="columns">列集合</param>
-            <param name="isCreatePrimaryKey">是否创建主键</param>
-            <returns></returns>
-        </member>
-        <member name="M:OPPO.DBUtility.ISugerHandler.DropColumn(System.String,System.String)">
-            <summary>
-            删除列
-            </summary>
-            <param name="tableName">表名</param>
-            <param name="columnName">列名</param>
-            <returns></returns>
-        </member>
-        <member name="M:OPPO.DBUtility.ISugerHandler.DropConstraint(System.String,System.String)">
-            <summary>
-            删除约束
-            </summary>
-            <param name="tableName">表名</param>
-            <param name="constraintName">约束名</param>
-            <returns></returns>
-        </member>
-        <member name="M:OPPO.DBUtility.ISugerHandler.DropTable(System.String)">
-            <summary>
-            删除表
-            </summary>
-            <param name="tableName"></param>
-            <returns></returns>
-        </member>
-        <member name="M:OPPO.DBUtility.ISugerHandler.GetColumnInfosByTableName(System.String,System.Boolean)">
-            <summary>
-            获取列信息
-            </summary>
-            <param name="tableName">表名</param>
-            <param name="isCache">是否缓存</param>
-            <returns></returns>
-        </member>
-        <member name="M:OPPO.DBUtility.ISugerHandler.GetIsIdentities(System.String)">
-            <summary>
-            获取自增列
-            </summary>
-            <param name="tableName">表名</param>
-            <returns></returns>
-        </member>
-        <member name="M:OPPO.DBUtility.ISugerHandler.GetPrimaries(System.String)">
-            <summary>
-            获取主键
-            </summary>
-            <param name="tableName">表名</param>
-            <returns></returns>
-        </member>
-        <member name="M:OPPO.DBUtility.ISugerHandler.GetTableInfoList(System.Boolean)">
-            <summary>
-            获取表集合
-            </summary>
-            <param name="isCache">是否缓存</param>
-            <returns></returns>
-        </member>
-        <member name="M:OPPO.DBUtility.ISugerHandler.GetViewInfoList(System.Boolean)">
-            <summary>
-            获取视图集合
-            </summary>
-            <param name="isCache">是否缓存</param>
-            <returns></returns>
-        </member>
-        <member name="M:OPPO.DBUtility.ISugerHandler.IsAnyColumn(System.String,System.String)">
-            <summary>
-            检测列是否存在
-            </summary>
-            <param name="tableName">表名</param>
-            <param name="column">列名</param>
-            <returns></returns>
-        </member>
-        <member name="M:OPPO.DBUtility.ISugerHandler.IsAnyConstraint(System.String)">
-            <summary>
-            检测约束
-            </summary>
-            <param name="constraintName">约束名称</param>
-            <returns></returns>
-        </member>
-        <member name="M:OPPO.DBUtility.ISugerHandler.IsAnySystemTablePermissions">
-            <summary>
-            检测是否有任何系统表权限 
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:OPPO.DBUtility.ISugerHandler.IsAnyTable(System.String,System.Boolean)">
-            <summary>
-            检测表是否存在
-            </summary>
-            <param name="tableName">表名</param>
-            <param name="isCache">是否缓存</param>
-            <returns></returns>
-        </member>
-        <member name="M:OPPO.DBUtility.ISugerHandler.IsIdentity(System.String,System.String)">
-            <summary>
-            检测列是否自增列
-            </summary>
-            <param name="tableName">表名</param>
-            <param name="column">列名</param>
-            <returns></returns>
-        </member>
-        <member name="M:OPPO.DBUtility.ISugerHandler.IsPrimaryKey(System.String,System.String)">
-            <summary>
-            检测列是否主键
-            </summary>
-            <param name="tableName">表名</param>
-            <param name="column">列名</param>
-            <returns></returns>
-        </member>
-        <member name="M:OPPO.DBUtility.ISugerHandler.RenameColumn(System.String,System.String,System.String)">
-            <summary>
-            重置列名
-            </summary>
-            <param name="tableName">表名</param>
-            <param name="oldColumnName">旧列名</param>
-            <param name="newColumnName">新列名</param>
-            <returns></returns>
-        </member>
-        <member name="M:OPPO.DBUtility.ISugerHandler.TruncateTable(System.String)">
-            <summary>
-            重置表数据
-            </summary>
-            <param name="tableName">表名</param>
-            <returns></returns>
-        </member>
-        <member name="M:OPPO.DBUtility.ISugerHandler.UpdateColumn(System.String,SqlSugar.DbColumnInfo)">
-            <summary>
-            修改列信息
-            </summary>
-            <param name="tableName">表名</param>
-            <param name="column">列信息</param>
-            <returns></returns>
-        </member>
-        <member name="M:OPPO.DBUtility.ISugerHandler.GetDataBaseTime">
-            <summary>
-            获取数据库时间
-            </summary>
-            <returns>返回值</returns>
-        </member>
-        <member name="M:OPPO.DBUtility.ISugerHandler.Add``1(``0)">
-            <summary>
-            新增
-            </summary>
-            <typeparam name="T">泛型参数(集合成员的类型)</typeparam>
-            <param name="entity"> 实体对象 </param>  
-            <returns>操作影响的行数</returns>
-        </member>
-        <member name="M:OPPO.DBUtility.ISugerHandler.Add``1(System.Collections.Generic.List{``0})">
-            <summary>
-            新增
-            </summary>
-            <typeparam name="T">泛型参数(集合成员的类型)</typeparam>
-            <param name="entitys">泛型集合</param>
-            <returns>操作影响的行数</returns>
-        </member>
-        <member name="M:OPPO.DBUtility.ISugerHandler.Add``1(System.Collections.Generic.Dictionary{System.String,System.Object})">
-            <summary>
-            新增
-            </summary>
-            <typeparam name="T">泛型参数(集合成员的类型)</typeparam>
-            <param name="keyValues">字典集合（Key:列名 Value:值）</param> 
-            <returns>操作影响的行数</returns>
-        </member>
-        <member name="M:OPPO.DBUtility.ISugerHandler.AddReturnEntity``1(``0)">
-            <summary>
-            新增
-            </summary>
-            <typeparam name="T">泛型参数(集合成员的类型)</typeparam>
-            <param name="entity"> 实体对象 </param> 
-            <returns>返回实体</returns>
-        </member>
-        <member name="M:OPPO.DBUtility.ISugerHandler.AddReturnIdentity``1(``0)">
-            <summary>
-            新增
-            </summary>
-            <typeparam name="T">泛型参数(集合成员的类型)</typeparam>
-            <param name="entity"> 实体对象 </param> 
-            <returns>返回自增列</returns>
-        </member>
-        <member name="M:OPPO.DBUtility.ISugerHandler.AddReturnBool``1(``0)">
-            <summary>
-            新增
-            </summary> 
-            <typeparam name="T">泛型参数(集合成员的类型)</typeparam>
-            <param name="entity"> 实体对象 </param> 
-            <returns>返回bool</returns>
-        </member>
-        <member name="M:OPPO.DBUtility.ISugerHandler.AddReturnBool``1(System.Collections.Generic.List{``0})">
-            <summary>
-            新增
-            </summary>
-            <typeparam name="T">泛型参数(集合成员的类型)</typeparam>
-            <param name="entitys">泛型集合</param>
-            <returns>返回bool</returns>
-        </member>
-        <member name="M:OPPO.DBUtility.ISugerHandler.Update``1(``0,System.Collections.Generic.List{System.String},System.Boolean)">
-            <summary>
-            修改（主键是更新条件）
-            </summary>
-            <typeparam name="T">泛型参数(集合成员的类型)</typeparam>
-            <param name="entity"> 实体对象（必须指定主键特性 [SugarColumn(IsPrimaryKey=true)]），如果是联合主键，请使用Where条件 </param> 
-            <param name="lstIgnoreColumns">不更新的列</param>
-            <param name="isLock"> 是否加锁 </param> 
-            <returns>操作影响的行数</returns>
-        </member>
-        <member name="M:OPPO.DBUtility.ISugerHandler.Update``1(System.Collections.Generic.List{``0},System.Collections.Generic.List{System.String},System.Boolean)">
-            <summary>
-            修改（主键是更新条件）
-            </summary>
-            <typeparam name="T">泛型参数(集合成员的类型)</typeparam>
-            <param name="entitys"> 实体对象集合（必须指定主键特性 [SugarColumn(IsPrimaryKey=true)]），如果是联合主键，请使用Where条件 </param> 
-            <param name="lstIgnoreColumns">不更新的列</param>
-            <param name="isLock"> 是否加锁 </param> 
-            <returns>操作影响的行数</returns>
-        </member>
-        <member name="M:OPPO.DBUtility.ISugerHandler.Update``1(``0,System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}},System.Collections.Generic.List{System.String},System.Boolean)">
-            <summary>
-            修改
-            </summary>
-            <typeparam name="T">泛型参数(集合成员的类型)</typeparam>
-            <param name="entity"> 实体对象 </param> 
-            <param name="where"> 条件 </param>  
-            <param name="lstIgnoreColumns">不更新的列</param>
-            <param name="isLock"> 是否加锁 </param> 
-            <returns>操作影响的行数</returns>
-        </member>
-        <member name="M:OPPO.DBUtility.ISugerHandler.Update``1(System.Linq.Expressions.Expression{System.Func{``0,``0}},System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}},System.Boolean)">
-            <summary>
-            修改
-            </summary>
-            <typeparam name="T">泛型参数(集合成员的类型)</typeparam>
-            <param name="update"> 实体对象 </param> 
-            <param name="where"> 条件 </param>  
-            <param name="isLock"> 是否加锁 </param> 
-            <returns>操作影响的行数</returns>
-        </member>
-        <member name="M:OPPO.DBUtility.ISugerHandler.Update``1(System.Collections.Generic.Dictionary{System.String,System.Object},System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}},System.Boolean)">
-            <summary>
-            修改
-            </summary>
-            <typeparam name="T">泛型参数(集合成员的类型)</typeparam>
-            <param name="keyValues">字典集合（Key:列名 Value:值）</param> 
-            <param name="where"> 条件 </param>  
-            <param name="isLock"> 是否加锁 </param> 
-            <returns>操作影响的行数</returns>
-        </member>
-        <member name="M:OPPO.DBUtility.ISugerHandler.UpdateColumns``1(System.Collections.Generic.List{``0},System.Linq.Expressions.Expression{System.Func{``0,System.Object}},System.Linq.Expressions.Expression{System.Func{``0,System.Object}},System.Boolean)">
-            <summary>
-            批量修改需要更新的列
-            </summary>
-            <typeparam name="T">泛型参数(集合成员的类型)</typeparam>
-            <param name="entitys"> 实体对象（必须指定主键特性 [SugarColumn(IsPrimaryKey=true)]），如果是联合主键，请使用Where条件 </param> 
-            <param name="updateColumns">更新指定列</param>
-            <param name="wherecolumns">条件(为空则以主键更新,反之需要把wherecolumns中的列加到UpdateColumns中)</param>
-            <param name="isLock"> 是否加锁 </param> 
-            <returns>操作影响的行数</returns>
-        </member>
-        <member name="M:OPPO.DBUtility.ISugerHandler.UpdateRowVer``1(``0,System.Collections.Generic.List{System.String},System.Boolean)">
-            <summary>
-            修改 通过RowVer及主键Code 更新
-            </summary>
-            <typeparam name="T">泛型参数(集合成员的类型)</typeparam>
-            <param name="entity"> 实体对象 </param> 
-            <param name="lstIgnoreColumns">不更新的列</param>
-            <param name="isLock"> 是否加锁 </param> 
-            <returns>操作影响的行数</returns>
-        </member>
-        <member name="M:OPPO.DBUtility.ISugerHandler.UpdateRowVer``1(System.Linq.Expressions.Expression{System.Func{``0,``0}},System.Collections.Generic.Dictionary{System.String,System.Object},System.Boolean)">
-            <summary>
-            修改 通过RowVer及主键Code 更新
-            </summary>
-            <typeparam name="T">泛型参数(集合成员的类型)</typeparam>
-            <param name="update"> 实体对象 </param>  
-            <param name="where"> 更新条件 </param>  
-            <param name="isLock"> 是否加锁 </param> 
-            <returns>操作影响的行数</returns>
-        </member>
-        <member name="M:OPPO.DBUtility.ISugerHandler.DeleteByPrimary``1(System.Collections.Generic.List{System.Object},System.Boolean)">
-            <summary>
-            删除 通过主键数据
-            </summary>
-            <typeparam name="T">泛型参数(集合成员的类型)</typeparam>
-            <param name="primaryKeyValues">主键值</param> 
-            <param name="isLock"> 是否加锁 </param> 
-            <returns>操作影响的行数</returns>
-        </member>
-        <member name="M:OPPO.DBUtility.ISugerHandler.Delete``1(``0,System.Boolean)">
-            <summary>
-            删除
-            </summary>
-            <typeparam name="T">泛型参数(集合成员的类型)</typeparam>
-            <param name="entity"> 实体对象（必须指定主键特性 [SugarColumn(IsPrimaryKey=true)]），如果是联合主键，请使用Where条件 </param> 
-            <param name="isLock"> 是否加锁 </param> 
-            <returns>操作影响的行数</returns>
-        </member>
-        <member name="M:OPPO.DBUtility.ISugerHandler.Delete``1(System.Collections.Generic.List{``0},System.Boolean)">
-            <summary>
-            删除
-            </summary>
-            <typeparam name="T">泛型参数(集合成员的类型)</typeparam>
-            <param name="entity"> 实体对象 （必须指定主键特性 [SugarColumn(IsPrimaryKey=true)]），如果是联合主键，请使用Where条件</param> 
-            <param name="isLock"> 是否加锁 </param> 
-            <returns>操作影响的行数</returns>
-        </member>
-        <member name="M:OPPO.DBUtility.ISugerHandler.Delete``1(System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}},System.Boolean)">
-            <summary>
-            删除
-            </summary>
-            <typeparam name="T">泛型参数(集合成员的类型)</typeparam>
-            <param name="where"> 条件 </param> 
-            <param name="isLock"> 是否加锁 </param> 
-            <returns>操作影响的行数</returns>
-        </member>
-        <member name="M:OPPO.DBUtility.ISugerHandler.DeleteIn``1(System.Collections.Generic.List{System.Object})">
-            <summary>
-            通过多值(主键)删除数据集
-            </summary>
-            <typeparam name="T">泛型参数(集合成员的类型)</typeparam> 
-            <param name="inValues">数据集合</param>
-            <returns></returns>
-        </member>
-        <member name="M:OPPO.DBUtility.ISugerHandler.QueryMuch``3(System.Linq.Expressions.Expression{System.Func{``0,``1,System.Object[]}},System.Linq.Expressions.Expression{System.Func{``0,``1,``2}},System.Linq.Expressions.Expression{System.Func{``0,``1,System.Boolean}})">
-             <summary>
-            查询-多表查询 
-             </summary>
-             <typeparam name="T">实体1</typeparam>
-             <typeparam name="T2">实体2</typeparam>
-             <typeparam name="TResult">返回对象</typeparam>
-             <param name="joinExpression">关联表达式 (t1,t2) => new object[] {JoinType.Left,t1.UserNo==t2.UserNo}</param>
-             <param name="selectExpression">返回表达式 (t1, t2) => new { Id =t1.UserNo, Id1 = t2.UserNo}</param>
-             <param name="whereLambda">查询表达式 (t1, t2) =>t1.UserNo == "")</param>   
-             <returns></returns>
-        </member>
-        <member name="M:OPPO.DBUtility.ISugerHandler.QueryMuch``4(System.Linq.Expressions.Expression{System.Func{``0,``1,``2,System.Object[]}},System.Linq.Expressions.Expression{System.Func{``0,``1,``2,``3}},System.Linq.Expressions.Expression{System.Func{``0,``1,``2,System.Boolean}})">
-             <summary>
-            查询-多表查询 
-             </summary>
-             <typeparam name="T">实体1</typeparam>
-             <typeparam name="T2">实体2</typeparam>
-             <typeparam name="T3">实体3</typeparam>
-             <typeparam name="TResult">返回对象</typeparam>
-             <param name="joinExpression">关联表达式</param>
-             <param name="selectExpression">返回表达式</param>
-             <param name="whereLambda">查询表达式</param>  
-             <returns></returns>
-        </member>
-        <member name="M:OPPO.DBUtility.ISugerHandler.QueryMuch``5(System.Linq.Expressions.Expression{System.Func{``0,``1,``2,``3,System.Object[]}},System.Linq.Expressions.Expression{System.Func{``0,``1,``2,``3,``4}},System.Linq.Expressions.Expression{System.Func{``0,``1,``2,``3,System.Boolean}})">
-             <summary>
-            查询-多表查询 
-             </summary>
-             <typeparam name="T">实体1</typeparam>
-             <typeparam name="T2">实体2</typeparam>
-             <typeparam name="T3">实体3</typeparam>
-             <typeparam name="T4">实体4</typeparam>
-             <typeparam name="TResult">返回对象</typeparam>
-             <param name="joinExpression">关联表达式</param>
-             <param name="selectExpression">返回表达式</param>
-             <param name="whereLambda">查询表达式</param>  
-             <returns></returns>
-        </member>
-        <member name="M:OPPO.DBUtility.ISugerHandler.QueryMuch``6(System.Linq.Expressions.Expression{System.Func{``0,``1,``2,``3,``4,System.Object[]}},System.Linq.Expressions.Expression{System.Func{``0,``1,``2,``3,``4,``5}},System.Linq.Expressions.Expression{System.Func{``0,``1,``2,``3,``4,System.Boolean}})">
-             <summary>
-            查询-多表查询 
-             </summary>
-             <typeparam name="T">实体1</typeparam>
-             <typeparam name="T2">实体2</typeparam>
-             <typeparam name="T3">实体3</typeparam>
-             <typeparam name="T4">实体4</typeparam>
-             <typeparam name="T5">实体5</typeparam>
-             <typeparam name="TResult">返回对象</typeparam>
-             <param name="joinExpression">关联表达式</param>
-             <param name="selectExpression">返回表达式</param>
-             <param name="whereLambda">查询表达式</param>  
-             <returns></returns>
-        </member>
-        <member name="M:OPPO.DBUtility.ISugerHandler.QueryMuch``7(System.Linq.Expressions.Expression{System.Func{``0,``1,``2,``3,``4,``5,System.Object[]}},System.Linq.Expressions.Expression{System.Func{``0,``1,``2,``3,``4,``5,``6}},System.Linq.Expressions.Expression{System.Func{``0,``1,``2,``3,``4,``5,System.Boolean}})">
-             <summary>
-            查询-多表查询 
-             </summary>
-             <typeparam name="T">实体1</typeparam>
-             <typeparam name="T2">实体2</typeparam>
-             <typeparam name="T3">实体3</typeparam>
-             <typeparam name="T4">实体4</typeparam>
-             <typeparam name="T5">实体5</typeparam>
-             <typeparam name="T6">实体6</typeparam>
-             <typeparam name="TResult">返回对象</typeparam>
-             <param name="joinExpression">关联表达式 (join1,join2) => new object[] {JoinType.Left,join1.UserNo==join2.UserNo}</param>
-             <param name="selectExpression">返回表达式 (s1, s2) => new { Id =s1.UserNo, Id1 = s2.UserNo}</param>
-             <param name="whereLambda">查询表达式 (w1, w2) =>w1.UserNo == "")</param>  
-             <returns>值</returns>
-        </member>
-        <member name="M:OPPO.DBUtility.ISugerHandler.QueryMuch``8(System.Linq.Expressions.Expression{System.Func{``0,``1,``2,``3,``4,``5,``6,System.Object[]}},System.Linq.Expressions.Expression{System.Func{``0,``1,``2,``3,``4,``5,``6,``7}},System.Linq.Expressions.Expression{System.Func{``0,``1,``2,``3,``4,``5,``6,System.Boolean}})">
-             <summary>
-            查询-多表查询 
-             </summary>
-             <typeparam name="T">实体1</typeparam>
-             <typeparam name="T2">实体2</typeparam>
-             <typeparam name="T3">实体3</typeparam>
-             <typeparam name="T4">实体4</typeparam>
-             <typeparam name="T5">实体5</typeparam>
-             <typeparam name="T6">实体6</typeparam>
-             <typeparam name="T7">实体7</typeparam>
-             <typeparam name="TResult">返回对象</typeparam>
-             <param name="joinExpression">关联表达式 (join1,join2) => new object[] {JoinType.Left,join1.UserNo==join2.UserNo}</param>
-             <param name="selectExpression">返回表达式 (s1, s2) => new { Id =s1.UserNo, Id1 = s2.UserNo}</param>
-             <param name="whereLambda">查询表达式 (w1, w2) =>w1.UserNo == "")</param>  
-             <returns>值</returns>
-        </member>
-        <member name="M:OPPO.DBUtility.ISugerHandler.QueryMuch``9(System.Linq.Expressions.Expression{System.Func{``0,``1,``2,``3,``4,``5,``6,``7,System.Object[]}},System.Linq.Expressions.Expression{System.Func{``0,``1,``2,``3,``4,``5,``6,``7,``8}},System.Linq.Expressions.Expression{System.Func{``0,``1,``2,``3,``4,``5,``6,``7,System.Boolean}})">
-             <summary>
-            查询-多表查询 
-             </summary>
-             <typeparam name="T">实体1</typeparam>
-             <typeparam name="T2">实体2</typeparam>
-             <typeparam name="T3">实体3</typeparam>
-             <typeparam name="T4">实体4</typeparam>
-             <typeparam name="T5">实体5</typeparam>
-             <typeparam name="T6">实体6</typeparam>
-             <typeparam name="T7">实体7</typeparam>
-             <typeparam name="T8">实体8</typeparam>
-             <typeparam name="TResult">返回对象</typeparam>
-             <param name="joinExpression">关联表达式 (join1,join2) => new object[] {JoinType.Left,join1.UserNo==join2.UserNo}</param>
-             <param name="selectExpression">返回表达式 (s1, s2) => new { Id =s1.UserNo, Id1 = s2.UserNo}</param>
-             <param name="whereLambda">查询表达式 (w1, w2) =>w1.UserNo == "")</param>  
-             <returns>值</returns>
-        </member>
-        <member name="M:OPPO.DBUtility.ISugerHandler.QueryMuch``10(System.Linq.Expressions.Expression{System.Func{``0,``1,``2,``3,``4,``5,``6,``7,``8,System.Object[]}},System.Linq.Expressions.Expression{System.Func{``0,``1,``2,``3,``4,``5,``6,``7,``8,``9}},System.Linq.Expressions.Expression{System.Func{``0,``1,``2,``3,``4,``5,``6,``7,``8,System.Boolean}})">
-             <summary>
-            查询-多表查询 
-             </summary>
-             <typeparam name="T">实体1</typeparam>
-             <typeparam name="T2">实体2</typeparam>
-             <typeparam name="T3">实体3</typeparam>
-             <typeparam name="T4">实体4</typeparam>
-             <typeparam name="T5">实体5</typeparam>
-             <typeparam name="T6">实体6</typeparam>
-             <typeparam name="T7">实体7</typeparam>
-             <typeparam name="T8">实体8</typeparam>
-             <typeparam name="T9">实体9</typeparam>
-             <typeparam name="TResult">返回对象</typeparam>
-             <param name="joinExpression">关联表达式 (join1,join2) => new object[] {JoinType.Left,join1.UserNo==join2.UserNo}</param>
-             <param name="selectExpression">返回表达式 (s1, s2) => new { Id =s1.UserNo, Id1 = s2.UserNo}</param>
-             <param name="whereLambda">查询表达式 (w1, w2) =>w1.UserNo == "")</param>  
-             <returns>值</returns>
-        </member>
-        <member name="M:OPPO.DBUtility.ISugerHandler.QueryMuchDescriptor``3(System.Linq.Expressions.Expression{System.Func{``0,``1,System.Object[]}},System.Linq.Expressions.Expression{System.Func{``0,``1,``2}},XN.Common.QueryDescriptor,System.Int32@)">
-             <summary>
-            查询-多表查询 
-             </summary>
-             <typeparam name="T">实体1</typeparam>
-             <typeparam name="T2">实体2</typeparam>
-             <typeparam name="TResult">返回对象</typeparam>
-             <param name="joinExpression">关联表达式 (t1,t2) => new object[] {JoinType.Left,t1.UserNo==t2.UserNo}</param>
-             <param name="selectExpression">返回表达式 (t1, t2) => new { Id =t1.UserNo, Id1 = t2.UserNo}</param>
-             <param name="query">查询条件</param>  
-             <param name="totalCount">总行数</param>  
-             <returns>值</returns>
-        </member>
-        <member name="M:OPPO.DBUtility.ISugerHandler.QueryMuchDescriptor``4(System.Linq.Expressions.Expression{System.Func{``0,``1,``2,System.Object[]}},System.Linq.Expressions.Expression{System.Func{``0,``1,``2,``3}},XN.Common.QueryDescriptor,System.Int32@)">
-             <summary>
-            查询-多表查询 
-             </summary>
-             <typeparam name="T">实体1</typeparam>
-             <typeparam name="T2">实体2</typeparam>
-             <typeparam name="T3">实体3</typeparam>
-             <typeparam name="TResult">返回对象</typeparam>
-             <param name="joinExpression">关联表达式 (join1,join2) => new object[] {JoinType.Left,join1.UserNo==join2.UserNo}</param>
-             <param name="selectExpression">返回表达式 (s1, s2) => new { Id =s1.UserNo, Id1 = s2.UserNo}</param>
-             <param name="query">查询条件</param>  
-             <param name="totalCount">总行数</param>  
-             <returns>值</returns>
-        </member>
-        <member name="M:OPPO.DBUtility.ISugerHandler.QueryMuchDescriptor``5(System.Linq.Expressions.Expression{System.Func{``0,``1,``2,``3,System.Object[]}},System.Linq.Expressions.Expression{System.Func{``0,``1,``2,``3,``4}},XN.Common.QueryDescriptor,System.Int32@)">
-             <summary>
-            查询-多表查询 
-             </summary>
-             <typeparam name="T">实体1</typeparam>
-             <typeparam name="T2">实体2</typeparam>
-             <typeparam name="T3">实体3</typeparam>
-             <typeparam name="T4">实体4</typeparam>
-             <typeparam name="TResult">返回对象</typeparam>
-             <param name="joinExpression">关联表达式 (join1,join2) => new object[] {JoinType.Left,join1.UserNo==join2.UserNo}</param>
-             <param name="selectExpression">返回表达式 (s1, s2) => new { Id =s1.UserNo, Id1 = s2.UserNo}</param>
-             <param name="query">查询条件</param>  
-             <param name="totalCount">总行数</param>  
-             <returns>值</returns>
-        </member>
-        <member name="M:OPPO.DBUtility.ISugerHandler.QueryMuchDescriptor``6(System.Linq.Expressions.Expression{System.Func{``0,``1,``2,``3,``4,System.Object[]}},System.Linq.Expressions.Expression{System.Func{``0,``1,``2,``3,``4,``5}},XN.Common.QueryDescriptor,System.Int32@)">
-             <summary>
-            查询-多表查询 
-             </summary>
-             <typeparam name="T">实体1</typeparam>
-             <typeparam name="T2">实体2</typeparam>
-             <typeparam name="T3">实体3</typeparam>
-             <typeparam name="T4">实体4</typeparam>
-             <typeparam name="T5">实体5</typeparam>
-             <typeparam name="TResult">返回对象</typeparam>
-             <param name="joinExpression">关联表达式 (join1,join2) => new object[] {JoinType.Left,join1.UserNo==join2.UserNo}</param>
-             <param name="selectExpression">返回表达式 (s1, s2) => new { Id =s1.UserNo, Id1 = s2.UserNo}</param>
-             <param name="query">查询条件</param>  
-             <param name="totalCount">总行数</param>  
-             <returns>值</returns>
-        </member>
-        <member name="M:OPPO.DBUtility.ISugerHandler.QueryMuchDescriptor``7(System.Linq.Expressions.Expression{System.Func{``0,``1,``2,``3,``4,``5,System.Object[]}},System.Linq.Expressions.Expression{System.Func{``0,``1,``2,``3,``4,``5,``6}},XN.Common.QueryDescriptor,System.Int32@)">
-             <summary>
-            查询-多表查询 
-             </summary>
-             <typeparam name="T">实体1</typeparam>
-             <typeparam name="T2">实体2</typeparam>
-             <typeparam name="T3">实体3</typeparam>
-             <typeparam name="T4">实体4</typeparam>
-             <typeparam name="T5">实体5</typeparam>
-             <typeparam name="T6">实体6</typeparam>
-             <typeparam name="TResult">返回对象</typeparam>
-             <param name="joinExpression">关联表达式 (join1,join2) => new object[] {JoinType.Left,join1.UserNo==join2.UserNo}</param>
-             <param name="selectExpression">返回表达式 (s1, s2) => new { Id =s1.UserNo, Id1 = s2.UserNo}</param>
-             <param name="query">查询条件</param>  
-             <param name="totalCount">总行数</param>  
-             <returns>值</returns>
-        </member>
-        <member name="M:OPPO.DBUtility.ISugerHandler.QueryMuchDescriptor``8(System.Linq.Expressions.Expression{System.Func{``0,``1,``2,``3,``4,``5,``6,System.Object[]}},System.Linq.Expressions.Expression{System.Func{``0,``1,``2,``3,``4,``5,``6,``7}},XN.Common.QueryDescriptor,System.Int32@)">
-             <summary>
-            查询-多表查询 
-             </summary>
-             <typeparam name="T">实体1</typeparam>
-             <typeparam name="T2">实体2</typeparam>
-             <typeparam name="T3">实体3</typeparam>
-             <typeparam name="T4">实体4</typeparam>
-             <typeparam name="T5">实体5</typeparam>
-             <typeparam name="T6">实体6</typeparam>
-             <typeparam name="T7">实体7</typeparam>
-             <typeparam name="TResult">返回对象</typeparam>
-             <param name="joinExpression">关联表达式 (join1,join2) => new object[] {JoinType.Left,join1.UserNo==join2.UserNo}</param>
-             <param name="selectExpression">返回表达式 (s1, s2) => new { Id =s1.UserNo, Id1 = s2.UserNo}</param>
-             <param name="query">查询条件</param>  
-             <param name="totalCount">总行数</param>  
-             <returns>值</returns>
-        </member>
-        <member name="M:OPPO.DBUtility.ISugerHandler.QueryMuchDescriptor``9(System.Linq.Expressions.Expression{System.Func{``0,``1,``2,``3,``4,``5,``6,``7,System.Object[]}},System.Linq.Expressions.Expression{System.Func{``0,``1,``2,``3,``4,``5,``6,``7,``8}},XN.Common.QueryDescriptor,System.Int32@)">
-             <summary>
-            查询-多表查询 
-             </summary>
-             <typeparam name="T">实体1</typeparam>
-             <typeparam name="T2">实体2</typeparam>
-             <typeparam name="T3">实体3</typeparam>
-             <typeparam name="T4">实体4</typeparam>
-             <typeparam name="T5">实体5</typeparam>
-             <typeparam name="T6">实体6</typeparam>
-             <typeparam name="T7">实体7</typeparam>
-             <typeparam name="T8">实体8</typeparam>
-             <typeparam name="TResult">返回对象</typeparam>
-             <param name="joinExpression">关联表达式 (join1,join2) => new object[] {JoinType.Left,join1.UserNo==join2.UserNo}</param>
-             <param name="selectExpression">返回表达式 (s1, s2) => new { Id =s1.UserNo, Id1 = s2.UserNo}</param>
-             <param name="query">查询条件</param>  
-             <param name="totalCount">总行数</param>  
-             <returns>值</returns>
-        </member>
-        <member name="M:OPPO.DBUtility.ISugerHandler.QueryMuchDescriptor``10(System.Linq.Expressions.Expression{System.Func{``0,``1,``2,``3,``4,``5,``6,``7,``8,System.Object[]}},System.Linq.Expressions.Expression{System.Func{``0,``1,``2,``3,``4,``5,``6,``7,``8,``9}},XN.Common.QueryDescriptor,System.Int32@)">
-             <summary>
-            查询-多表查询 
-             </summary>
-             <typeparam name="T">实体1</typeparam>
-             <typeparam name="T2">实体2</typeparam>
-             <typeparam name="T3">实体3</typeparam>
-             <typeparam name="T4">实体4</typeparam>
-             <typeparam name="T5">实体5</typeparam>
-             <typeparam name="T6">实体6</typeparam>
-             <typeparam name="T7">实体7</typeparam>
-             <typeparam name="T8">实体8</typeparam>
-             <typeparam name="T9">实体9</typeparam>
-             <typeparam name="TResult">返回对象</typeparam>
-             <param name="joinExpression">关联表达式 (join1,join2) => new object[] {JoinType.Left,join1.UserNo==join2.UserNo}</param>
-             <param name="selectExpression">返回表达式 (s1, s2) => new { Id =s1.UserNo, Id1 = s2.UserNo}</param>
-             <param name="query">查询条件</param>  
-             <param name="totalCount">总行数</param>  
-             <returns>值</returns>
-        </member>
-        <member name="M:OPPO.DBUtility.ISugerHandler.QuerySelect``2(System.Linq.Expressions.Expression{System.Func{``0,``1}},System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}})">
-            <summary>
-            查询-返回自定义数据
-            </summary>
-            <typeparam name="T">泛型参数(集合成员的类型)</typeparam>
-            <typeparam name="TResult">返回值类型</typeparam>
-            <param name="expression">返回值表达式</param> 
-            <param name="whereLambda">查询表达式</param> 
-            <returns>值</returns>
-        </member>
-        <member name="M:OPPO.DBUtility.ISugerHandler.QuerySelectList``2(System.Linq.Expressions.Expression{System.Func{``0,``1}},System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}})">
-            <summary>
-            查询-返回自定义数据
-            </summary>
-            <typeparam name="T">泛型参数(集合成员的类型)</typeparam>
-            <typeparam name="TResult">返回值类型</typeparam>
-            <param name="expression">返回值表达式</param> 
-            <param name="whereLambda">查询表达式</param> 
-            <returns>值</returns>
-        </member>
-        <member name="M:OPPO.DBUtility.ISugerHandler.Query``1(System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}})">
-            <summary>
-            查询
-            </summary>
-            <typeparam name="T">泛型参数(集合成员的类型)</typeparam>
-            <param name="whereLambda">查询表达式</param> 
-            <returns></returns>
-        </member>
-        <member name="M:OPPO.DBUtility.ISugerHandler.QueryWhereList``1(System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}})">
-            <summary>
-            查询集合
-            </summary>
-            <typeparam name="T">泛型参数(集合成员的类型)</typeparam>
-            <param name="whereLambda">过滤条件</param> 
-            <returns>实体</returns>
-        </member>
-        <member name="M:OPPO.DBUtility.ISugerHandler.QueryList``1(XN.Common.QueryDescriptor)">
-            <summary>
-            查询集合
-            </summary>
-            <typeparam name="T">泛型参数(集合成员的类型)</typeparam>
-            <param name="query">过滤条件</param> 
-            <returns>实体</returns>
-        </member>
-        <member name="M:OPPO.DBUtility.ISugerHandler.QuerySqlList``1(System.String)">
-            <summary>
-            查询集合
-            </summary>
-            <typeparam name="T">泛型参数(集合成员的类型)</typeparam>
-            <param name="sql">sql</param> 
-            <returns>实体</returns>
-        </member>
-        <member name="M:OPPO.DBUtility.ISugerHandler.QueryPageList``1(XN.Common.QueryDescriptor,System.Int32@)">
-            <summary>
-            分页查询
-            </summary>
-            <typeparam name="T">泛型参数(集合成员的类型)</typeparam>
-            <param name="query">过滤条件</param>
-            <param name="totalCount">总行数</param>
-            <returns>实体</returns>
-        </member>
-        <member name="M:OPPO.DBUtility.ISugerHandler.In``1(System.String,System.Collections.Generic.List{System.Object})">
-            <summary>
-            通过多值查询数据集
-            </summary>
-            <typeparam name="T">泛型参数(集合成员的类型)</typeparam>
-            <param name="inFieldName">字段名</param>
-            <param name="inValues">数据集合</param>
-            <returns></returns>
-        </member>
-        <member name="M:OPPO.DBUtility.ISugerHandler.In``1(System.Collections.Generic.List{System.Object})">
-            <summary>
-            通过多值(主键)查询数据集
-            </summary>
-            <typeparam name="T">泛型参数(集合成员的类型)</typeparam>
-            <param name="values">主键数据集合</param>
-            <returns></returns>
-        </member>
-        <member name="M:OPPO.DBUtility.ISugerHandler.QueryDataTable``1(System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}})">
-            <summary>
-            查询集合
-            </summary>
-            <typeparam name="T">泛型参数(集合成员的类型)</typeparam>
-            <param name="whereLambda">查询表达式</param> 
-            <returns>实体</returns>
-        </member>
-        <member name="M:OPPO.DBUtility.ISugerHandler.QueryDataTable(System.String)">
-            <summary>
-            查询集合
-            </summary> 
-            <param name="sql">sql</param> 
-            <returns>实体</returns>
-        </member>
-        <member name="M:OPPO.DBUtility.ISugerHandler.QuerySqlScalar(System.String)">
-            <summary>
-            查询单个值
-            </summary> 
-            <param name="sql">sql</param> 
-            <returns>单个值</returns>
-        </member>
-        <member name="M:OPPO.DBUtility.ISugerHandler.QueryDataTablePageList``1(XN.Common.QueryDescriptor,System.Int32@)">
-            <summary>
-            分页查询
-            </summary>
-            <typeparam name="T">泛型参数(集合成员的类型)</typeparam>
-            <param name="query">过滤条件</param>
-            <param name="totalCount">总行数</param>
-            <returns>DataTable</returns>
-        </member>
-        <member name="M:OPPO.DBUtility.ISugerHandler.QueryMapper``1(System.Action{``0},XN.Common.QueryDescriptor)">
-            <summary>
-            Mapper查询
-            </summary>
-            <typeparam name="T">泛型参数(集合成员的类型)</typeparam>
-            <param name="mapperAction">操作(it, cache) =>
-            { 
-                var all = cache.GetListByPrimaryKeys(vmodel => vmodel.Id);  //一次性查询出所要的外键引用数据 
-                it.School = all.FirstOrDefault(i => i.Id == it.Id); //一对一 
-                it.Schools = all.Where(i => i.Id == it.Id).ToList(); //一对多
-                /*用C#处理你想要的结果*/
-                it.Name = it.Name == null ? "null" : it.Name;
-             }
-            </param>
-            <param name="query">过滤条件</param>
-            <returns></returns>
-        </member>
-        <member name="M:OPPO.DBUtility.ISugerHandler.QueryMapper``1(System.Action{``0},System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}})">
-            <summary>
-            Mapper查询
-            </summary>
-            <typeparam name="T">泛型参数(集合成员的类型)</typeparam>
-            <param name="mapperAction">操作(it, cache) =>
-            { 
-                var all = cache.GetListByPrimaryKeys(vmodel => vmodel.Id);  //一次性查询出所要的外键引用数据 
-                it.School = all.FirstOrDefault(i => i.Id == it.Id); //一对一 
-                it.Schools = all.Where(i => i.Id == it.Id).ToList(); //一对多
-                /*用C#处理你想要的结果*/
-                it.Name = it.Name == null ? "null" : it.Name;
-             }
-            </param>
-            <param name="whereLambda">过滤条件</param>
-            <returns></returns>
-        </member>
-        <member name="M:OPPO.DBUtility.ISugerHandler.QueryProcedureDataSet(System.String,System.Collections.Generic.List{System.Data.SqlClient.SqlParameter})">
-            <summary>
-            查询存储过程
-            </summary> 
-            <param name="procedureName">存储过程名称</param>
-            <param name="parameters">参数</param>
-            <returns>DataSet</returns>
-        </member>
-        <member name="M:OPPO.DBUtility.ISugerHandler.QueryProcedure(System.String,System.Collections.Generic.List{System.Data.SqlClient.SqlParameter})">
-            <summary>
-            查询存储过程
-            </summary> 
-            <param name="procedureName">存储过程名称</param>
-            <param name="parameters">参数</param>
-            <returns>DataTable</returns>
-        </member>
-        <member name="M:OPPO.DBUtility.ISugerHandler.QueryProcedureScalar(System.String,System.Collections.Generic.List{System.Data.SqlClient.SqlParameter})">
-            <summary>
-            查询存储过程
-            </summary> 
-            <param name="procedureName">存储过程名称</param>
-            <param name="parameters">参数</param>
-            <returns>单个值</returns>
-        </member>
-        <member name="M:OPPO.DBUtility.ISugerHandler.GroupBy``1(System.Linq.Expressions.Expression{System.Func{``0,System.Object}},System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}})">
-            <summary>
-            分组
-            </summary>
-            <typeparam name="T">泛型参数(集合成员的类型)</typeparam> 
-            <param name="groupByLambda">分组表达式</param> 
-            <param name="whereLambda">查询表达式</param> 
-            <returns>值</returns>
-        </member>
-        <member name="M:OPPO.DBUtility.ISugerHandler.GroupBy``2(System.Linq.Expressions.Expression{System.Func{``0,``1}},System.Linq.Expressions.Expression{System.Func{``0,System.Object}},System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}})">
-            <summary>
-            分组-返回自定义数据
-            </summary>
-            <typeparam name="T">泛型参数(集合成员的类型)</typeparam>
-            <typeparam name="TResult">返回值类型</typeparam>
-            <param name="expression">返回值表达式</param> 
-            <param name="groupByLambda">分组表达式</param> 
-            <param name="whereLambda">查询表达式</param> 
-            <returns>值</returns>
-        </member>
-        <member name="M:OPPO.DBUtility.ISugerHandler.QueryJson``1(System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}})">
-            <summary>
-            查询集合
-            </summary>
-            <typeparam name="T">泛型参数(集合成员的类型)</typeparam>
-            <param name="whereLambda">查询表达式</param> 
-            <returns>Json</returns>
-        </member>
-        <member name="M:OPPO.DBUtility.ISugerHandler.Take``1(System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}},System.Int32)">
-            <summary>
-            查询前多少条数据
-            </summary>
-            <typeparam name="T">泛型参数(集合成员的类型</typeparam>
-            <param name="whereLambda">查询表达式</param>
-            <param name="num">数量</param>
-            <returns></returns>
-        </member>
-        <member name="M:OPPO.DBUtility.ISugerHandler.First``1(System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}})">
-            <summary>
-            查询单条数据
-            </summary>
-            <typeparam name="T">泛型参数(集合成员的类型</typeparam>
-            <param name="whereLambda">查询表达式</param> 
-            <returns></returns>
-        </member>
-        <member name="M:OPPO.DBUtility.ISugerHandler.IsExist``1(System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}})">
-            <summary>
-            是否存在
-            </summary>
-            <typeparam name="T">泛型参数(集合成员的类型</typeparam>
-            <param name="whereLambda">查询表达式</param> 
-            <returns></returns>
-        </member>
-        <member name="M:OPPO.DBUtility.ISugerHandler.Sum``1(System.String)">
-            <summary>
-            合计
-            </summary>
-            <typeparam name="T">泛型参数(集合成员的类型</typeparam>
-            <param name="field">字段</param> 
-            <returns></returns>
-        </member>
-        <member name="M:OPPO.DBUtility.ISugerHandler.Max``2(System.String)">
-            <summary>
-            最大值
-            </summary>
-            <typeparam name="T">泛型参数(集合成员的类型</typeparam>
-            <typeparam name="TResult">返回类型</typeparam>
-            <param name="field">字段</param> 
-            <returns></returns>
-        </member>
-        <member name="M:OPPO.DBUtility.ISugerHandler.Min``2(System.String)">
-            <summary>
-            最小值
-            </summary>
-            <typeparam name="T">泛型参数(集合成员的类型</typeparam>
-            <typeparam name="TResult">返回类型</typeparam>
-            <param name="field">字段</param> 
-            <returns></returns>
-        </member>
-        <member name="M:OPPO.DBUtility.ISugerHandler.Avg``1(System.String)">
-            <summary>
-            平均值
-            </summary>
-            <typeparam name="T">泛型参数(集合成员的类型</typeparam>
-            <param name="field">字段</param> 
-            <returns></returns>
-        </member>
-        <member name="M:OPPO.DBUtility.ISugerHandler.CustomNumber``1(System.String,System.String,System.Int32,System.String)">
-            <summary>
-            生成流水号
-            </summary>
-            <param name="key">列名</param>
-            <param name="prefix">前缀</param>
-            <param name="fixedLength">流水号长度</param>
-            <param name="dateFomart">日期格式(yyyyMMdd) 为空前缀后不加日期,反之加</param>
-            <returns></returns>
-        </member>
-        <member name="M:OPPO.DBUtility.ISugerHandler.CustomNumber``1(System.String,System.Int32,System.String,System.Int32,System.String)">
-            <summary>
-            生成流水号
-            </summary>
-            <param name="key">列名</param>
-            <param name="num">数量</param>
-            <param name="prefix">前缀</param>
-            <param name="fixedLength">流水号长度</param>
-            <param name="dateFomart">日期格式(yyyyMMdd) 为空前缀后不加日期,反之加</param>
-            <returns></returns>
         </member>
     </members>
 </doc>

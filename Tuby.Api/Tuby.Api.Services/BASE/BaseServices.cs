@@ -208,7 +208,7 @@ namespace Tuby.Api.Services.BASE
         /// <param name="intTotalCount">数据总量</param>
         /// <param name="strOrderByFileds">排序字段，如name asc,age desc</param>
         /// <returns>数据列表</returns>
-        public async Task<List<TEntity>> Query(
+        public async Task<PageModel<TEntity>> Query(
             Expression<Func<TEntity, bool>> whereExpression,
             int intPageIndex,
             int intPageSize,
@@ -231,7 +231,7 @@ namespace Tuby.Api.Services.BASE
         /// <param name="intTotalCount">数据总量</param>
         /// <param name="strOrderByFileds">排序字段，如name asc,age desc</param>
         /// <returns>数据列表</returns>
-        public async Task<List<TEntity>> Query(
+        public async Task<PageModel<TEntity>> Query(
           string strWhere,
           int intPageIndex,
           int intPageSize,
@@ -255,15 +255,23 @@ namespace Tuby.Api.Services.BASE
         /// </summary> 
         /// <typeparam name="T">实体1</typeparam> 
         /// <typeparam name="T2">实体2</typeparam> 
-        /// <typeparam name="T3">实体3</typeparam>
         /// <typeparam name="TResult">返回对象</typeparam>
         /// <param name="joinExpression">关联表达式 (join1,join2) => new object[] {JoinType.Left,join1.UserNo==join2.UserNo}</param> 
         /// <param name="selectExpression">返回表达式 (s1, s2) => new { Id =s1.UserNo, Id1 = s2.UserNo}</param>
         /// <param name="whereLambda">查询表达式 (w1, w2) =>w1.UserNo == "")</param> 
         /// <returns>值</returns>
-        public List<TResult> QueryMuch<T, T2, TResult>(Expression<Func<T, T2,object[]>> joinExpression) where T : class, new()
+        public async Task<List<TResult>> QueryMuch<T, T2, TResult>(Expression<Func<T, T2,object[]>> joinExpression,
+            Expression<Func<T, T2, TResult>> selectExpression) where T : class, new()
         {
-            return baseDal.QueryMuch<T, T2, TResult>(joinExpression);
+            return await baseDal.QueryMuch<T, T2, TResult>(joinExpression, selectExpression);
+        }
+
+        public async Task<PageModel<TResult>> QueryMuch<T, T2, TResult>(
+   Expression<Func<T, T2, object[]>> joinExpression,
+    Expression<Func<T, T2, TResult>> selectExpression, int intPageIndex = 0, int intPageSize = 20,
+    Expression<Func<T, T2, bool>> whereLambda = null) where T : class, new()
+        {
+            return await baseDal.QueryMuch<T, T2,  TResult>(joinExpression, selectExpression, intPageIndex, intPageSize, whereLambda);
         }
 
         /// <summary> 
@@ -282,6 +290,12 @@ namespace Tuby.Api.Services.BASE
             return baseDal.QueryMuch<T, T2, T3, TResult>(joinExpression, intPageIndex, intPageSize);
         }
 
+        public async Task<PageModel<TResult>> QueryMuch<T, T2, T3, TResult>(
+   Expression<Func<T, T2, T3, object[]>> joinExpression, int intPageIndex = 0, int intPageSize = 20,
+    Expression<Func<T, T2, T3, bool>> whereLambda = null) where T : class, new()
+        {
+            return await baseDal.QueryMuch<T, T2, T3, TResult>(joinExpression, intPageIndex, intPageSize, whereLambda);
+        }
         /// <summary> 
         ///查询-多表查询
         /// </summary> 
@@ -311,9 +325,26 @@ namespace Tuby.Api.Services.BASE
         /// <param name="selectExpression">返回表达式 (s1, s2) => new { Id =s1.UserNo, Id1 = s2.UserNo}</param>
         /// <param name="whereLambda">查询表达式 (w1, w2) =>w1.UserNo == "")</param> 
         /// <returns>值</returns>
-        public List<TResult> QueryMuch<T, T2, T3, T4, T5, TResult>(Expression<Func<T, T2, T3, T4, T5, object[]>> joinExpression, Expression<Func<T, T2, T3, T4, T5, TResult>> selectExpression, Expression<Func<T, T2, T3, T4, T5, bool>> whereLambda = null) where T : class, new()
+        //  public List<TResult> QueryMuch<T, T2, T3, T4, T5, TResult>(Expression<Func<T, T2, T3, T4, T5, object[]>> joinExpression, Expression<Func<T, T2, T3, T4, T5, TResult>> selectExpression, Expression<Func<T, T2, T3, T4, T5, bool>> whereLambda = null) where T : class, new()
+        //{
+        //    return baseDal.QueryMuch<T, T2, T3, T4, T5, TResult>(joinExpression, selectExpression, whereLambda);
+        //}
+        public async Task<PageModel<TResult>> QueryMuch<T, T2, T3, T4, T5, TResult>(Expression<Func<T, T2, T3, T4, T5, object[]>> joinExpression, int intPageIndex = 0, int intPageSize = 20) where T : class, new()
         {
-            return baseDal.QueryMuch<T, T2, T3, T4, T5, TResult>(joinExpression, selectExpression, whereLambda);
+            return await baseDal.QueryMuch<T, T2, T3, T4, T5, TResult>(joinExpression, intPageIndex, intPageSize);
+        }
+
+        public async Task<PageModel<TResult>> QueryMuch<T, T2, T3, T4, T5, T6, T7, T8, TResult>(
+            Expression<Func<T, T2, T3, T4, T5, T6, T7, T8, object[]>> joinExpression, int intPageIndex = 0, int intPageSize = 20,
+            Expression<Func<T, T2, T3, T4, T5, T6, T7, T8, bool>> whereLambda = null) where T : class, new()
+        {
+            return await baseDal.QueryMuch<T, T2, T3, T4, T5, T6, T7, T8, TResult>(joinExpression, intPageIndex, intPageSize, whereLambda);
+        }
+        public async Task<List<TResult>> QueryMuch<T, T2, T3, T4, T5, T6, T7, T8, TResult>(
+            Expression<Func<T, T2, T3, T4, T5, T6, T7, T8, object[]>> joinExpression,
+            Expression<Func<T, T2, T3, T4, T5, T6, T7, T8, bool>> whereLambda = null) where T : class, new()
+        {
+            return await baseDal.QueryMuch<T, T2, T3, T4, T5, T6, T7, T8, TResult>(joinExpression, whereLambda);
         }
     }
 }

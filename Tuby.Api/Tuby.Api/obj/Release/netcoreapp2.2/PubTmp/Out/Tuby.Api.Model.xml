@@ -203,11 +203,6 @@
             表格数据，支持分页
             </summary>
         </member>
-        <member name="P:Tuby.Api.Model.TableModel`1.Code">
-            <summary>
-            返回编码
-            </summary>
-        </member>
         <member name="P:Tuby.Api.Model.TableModel`1.Msg">
             <summary>
             返回信息
@@ -218,7 +213,7 @@
             记录总数
             </summary>
         </member>
-        <member name="P:Tuby.Api.Model.TableModel`1.Data">
+        <member name="P:Tuby.Api.Model.TableModel`1.data">
             <summary>
             返回数据集
             </summary>
@@ -261,6 +256,221 @@
         <member name="P:Tuby.Api.Model.viewmodels.AlarmInfoView.Entrytime">
             <summary>
             输入时间
+            </summary>
+        </member>
+        <member name="T:Tuby.Api.Model.viewmodels.DeviceListView">
+            <summary>
+            设备管理列表
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.DeviceListView.id">
+            <summary>
+            id
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.DeviceListView.pid">
+            <summary>
+            父id
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.DeviceListView.channel">
+            <summary>
+            通道
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.DeviceListView.timeLine">
+            <summary>
+            时间长度
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.DeviceListView.comment">
+            <summary>
+            内容
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.DeviceListView.ip">
+            <summary>
+            设备ip
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.DeviceListView.isParent">
+            <summary>
+            是否父节点
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.SoldierInfoView.ID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.SoldierInfoView.Name">
+            <summary>
+            姓名
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.SoldierInfoView.ImagePath">
+            <summary>
+            照片
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.SoldierInfoView.SoldierID">
+            <summary>
+            军人证号
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.SoldierInfoView.InductedDay">
+            <summary>
+            入伍日期
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.SoldierInfoView.LeaveDay">
+            <summary>
+            退伍日期
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.SoldierInfoView.Birthday">
+            <summary>
+            出生日期
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.SoldierInfoView.Nation">
+            <summary>
+            民族
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.SoldierInfoView.NativePlace">
+            <summary>
+            籍贯
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.SoldierInfoView.PoliceRankID">
+            <summary>
+            警衔
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.SoldierInfoView.RankName">
+            <summary>
+            警衔
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.SoldierInfoView.PostID">
+            <summary>
+            职务
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.SoldierInfoView.PostName">
+            <summary>
+            职务
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.SoldierInfoView.Gender">
+            <summary>
+            性别
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.SoldierInfoView.HealthID">
+            <summary>
+            健康状况
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.SoldierInfoView.HealthName">
+            <summary>
+            健康状况
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.SoldierInfoView.SoilderStateID">
+            <summary>
+            在位状态
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.SoldierInfoView.StateName">
+            <summary>
+            在位状态
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.SoldierInfoView.StateDescription">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.SoldierInfoView.UpdateTime">
+            <summary>
+            修改时间
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.SoldierInfoView.RecStatus">
+            <summary>
+            记录状态
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.SoldierInfoView.MarialName">
+            <summary>
+            婚姻状态
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.SoldierInfoView.EducationName">
+            <summary>
+            教育程度
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.SoldierInfoView.PoloticName">
+            <summary>
+            政治面貌
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.SoldierInfoView.Address">
+            <summary>
+            地址
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.SoldierInfoView.Contact">
+            <summary>
+            联系人
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.TargetCarInfoView.ID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.TargetCarInfoView.Name">
+            <summary>
+            车名
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.TargetCarInfoView.ImagePath">
+            <summary>
+            照片
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.TargetCarInfoView.CarID">
+            <summary>
+            车牌号
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.TargetCarInfoView.SecurityLevelID">
+            <summary>
+            安全级别
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.TargetCarInfoView.UpdateTime">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.TargetCarInfoView.RecStatus">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.TargetCarInfoView.IsBlack">
+            <summary>
+            是否黑名单
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.TargetCarInfoView.IsWhite">
+            <summary>
+            是否白名单
             </summary>
         </member>
         <member name="T:Tuby.Api.Model.ar_usergroup_data_access">
@@ -813,7 +1023,7 @@
             
             </summary>
         </member>
-        <member name="P:Tuby.Api.Model.b_education_level.Name">
+        <member name="P:Tuby.Api.Model.b_education_level.EducationName">
             <summary>
             
             </summary>
@@ -878,6 +1088,11 @@
             
             </summary>
         </member>
+        <member name="P:Tuby.Api.Model.b_gun_type.ImagePath">
+            <summary>
+            
+            </summary>
+        </member>
         <member name="T:Tuby.Api.Model.b_health">
             <summary>
             b_health Entity Model
@@ -888,7 +1103,7 @@
             
             </summary>
         </member>
-        <member name="P:Tuby.Api.Model.b_health.Name">
+        <member name="P:Tuby.Api.Model.b_health.HealthName">
             <summary>
             
             </summary>
@@ -923,7 +1138,7 @@
             
             </summary>
         </member>
-        <member name="P:Tuby.Api.Model.b_marial_status.Name">
+        <member name="P:Tuby.Api.Model.b_marial_status.MarialName">
             <summary>
             
             </summary>
@@ -953,7 +1168,7 @@
             
             </summary>
         </member>
-        <member name="P:Tuby.Api.Model.b_pap_post.Name">
+        <member name="P:Tuby.Api.Model.b_pap_post.PostName">
             <summary>
             
             </summary>
@@ -968,7 +1183,7 @@
             
             </summary>
         </member>
-        <member name="P:Tuby.Api.Model.b_pap_rank.Name">
+        <member name="P:Tuby.Api.Model.b_pap_rank.RankName">
             <summary>
             
             </summary>
@@ -998,7 +1213,7 @@
             
             </summary>
         </member>
-        <member name="P:Tuby.Api.Model.b_politic_role.Name">
+        <member name="P:Tuby.Api.Model.b_politic_role.PoloticName">
             <summary>
             
             </summary>
@@ -1028,12 +1243,12 @@
             
             </summary>
         </member>
-        <member name="P:Tuby.Api.Model.b_soldier_state.Name">
+        <member name="P:Tuby.Api.Model.b_soldier_state.StateName">
             <summary>
             
             </summary>
         </member>
-        <member name="P:Tuby.Api.Model.b_soldier_state.Description">
+        <member name="P:Tuby.Api.Model.b_soldier_state.StateDescription">
             <summary>
             
             </summary>
@@ -2091,6 +2306,31 @@
         <member name="P:Tuby.Api.Model.d_soldier.RecStatus">
             <summary>
             记录状态
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_soldier.IsMarriageID">
+            <summary>
+            婚姻状态
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_soldier.EducationID">
+            <summary>
+            教育程度
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_soldier.PoliticalRoleID">
+            <summary>
+            政治面貌
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_soldier.Address">
+            <summary>
+            地址
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_soldier.Contact">
+            <summary>
+            联系人
             </summary>
         </member>
         <member name="T:Tuby.Api.Model.d_soldier_leave">

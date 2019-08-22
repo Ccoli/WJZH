@@ -10,10 +10,6 @@ namespace Tuby.Api.Model
     public class TableModel<T>
     {
         /// <summary>
-        /// 返回编码
-        /// </summary>
-        public int Code { get; set; }
-        /// <summary>
         /// 返回信息
         /// </summary>
         public string Msg { get; set; }
@@ -24,6 +20,6 @@ namespace Tuby.Api.Model
         /// <summary>
         /// 返回数据集
         /// </summary>
-        public List<T> Data { get; set; }
+        public List<T> data { get; set; }
     }
 }

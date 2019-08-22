@@ -25,11 +25,11 @@ namespace Tuby.Api.Model
         /// <summary>
         /// 
         /// </summary>
-        public string Name { get; set; }
+        public string StateName { get; set; }
    
         /// <summary>
         /// 
         /// </summary>
-        public string Description { get; set; }
+        public string StateDescription { get; set; }
     }
 }

@@ -5535,6 +5535,38 @@
         "runtime": {
           "bin/placeholder/Tuby.Api.Model.dll": {}
         }
+      },
+      "Tuby.Api.Repository/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.2",
+        "dependencies": {
+          "Tuby.Api.Common": "1.0.0",
+          "Tuby.Api.IRepositoty": "1.0.0",
+          "sqlSugarCore": "5.0.0.8"
+        },
+        "compile": {
+          "bin/placeholder/Tuby.Api.Repository.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Tuby.Api.Repository.dll": {}
+        }
+      },
+      "Tuby.Api.Services/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.2",
+        "dependencies": {
+          "AutoMapper": "8.1.1",
+          "AutoMapper.Extensions.Microsoft.DependencyInjection": "6.1.1",
+          "Tuby.Api.IRepositoty": "1.0.0",
+          "Tuby.Api.IServices": "1.0.0",
+          "Tuby.Api.Repository": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Tuby.Api.Services.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Tuby.Api.Services.dll": {}
+        }
       }
     }
   },
@@ -14973,6 +15005,16 @@
       "type": "project",
       "path": "../Tuby.Api.Model/Tuby.Api.Model.csproj",
       "msbuildProject": "../Tuby.Api.Model/Tuby.Api.Model.csproj"
+    },
+    "Tuby.Api.Repository/1.0.0": {
+      "type": "project",
+      "path": "../Tuby.Api.Repository/Tuby.Api.Repository.csproj",
+      "msbuildProject": "../Tuby.Api.Repository/Tuby.Api.Repository.csproj"
+    },
+    "Tuby.Api.Services/1.0.0": {
+      "type": "project",
+      "path": "../Tuby.Api.Services/Tuby.Api.Services.csproj",
+      "msbuildProject": "../Tuby.Api.Services/Tuby.Api.Services.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -14988,7 +15030,8 @@
       "Swashbuckle.AspNetCore >= 4.0.1",
       "Tuby.Api.IRepositoty >= 1.0.0",
       "Tuby.Api.IServices >= 1.0.0",
-      "Tuby.Api.Model >= 1.0.0"
+      "Tuby.Api.Model >= 1.0.0",
+      "Tuby.Api.Services >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -15029,6 +15072,9 @@
             },
             "H:\\MyProjects\\Tuby.Api\\Tuby.Api.Model\\Tuby.Api.Model.csproj": {
               "projectPath": "H:\\MyProjects\\Tuby.Api\\Tuby.Api.Model\\Tuby.Api.Model.csproj"
+            },
+            "H:\\MyProjects\\Tuby.Api\\Tuby.Api.Services\\Tuby.Api.Services.csproj": {
+              "projectPath": "H:\\MyProjects\\Tuby.Api\\Tuby.Api.Services\\Tuby.Api.Services.csproj"
             }
           }
         }

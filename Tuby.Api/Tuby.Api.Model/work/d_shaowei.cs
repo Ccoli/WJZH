@@ -25,7 +25,7 @@ namespace Tuby.Api.Model
         /// <summary>
         /// 哨位名
         /// </summary>
-        public string Name { get; set; }
+        public string ShaoWeiName { get; set; }
    
         /// <summary>
         /// 执勤单位

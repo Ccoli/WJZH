@@ -29,6 +29,7 @@
     <ProjectReference Include="..\Tuby.Api.IRepositoty\Tuby.Api.IRepositoty.csproj" />
     <ProjectReference Include="..\Tuby.Api.IServices\Tuby.Api.IServices.csproj" />
     <ProjectReference Include="..\Tuby.Api.Model\Tuby.Api.Model.csproj" />
+    <ProjectReference Include="..\Tuby.Api.Services\Tuby.Api.Services.csproj" />
   </ItemGroup>
 
   <ItemGroup>
@@ -39,6 +40,7 @@
 
   <ItemGroup>
     <Folder Include="Log\" />
+    <Folder Include="wwwroot\" />
   </ItemGroup>
 
 </Project>

@@ -274,13 +274,19 @@ namespace Tuby.Api.Repository.Base
         /// <param name="intTotalCount">数据总量</param>
         /// <param name="strOrderByFileds">排序字段，如name asc,age desc</param>
         /// <returns>数据列表</returns>
-        public async Task<List<TEntity>> Query(
+        public async Task<PageModel<TEntity>> Query(
             Expression<Func<TEntity, bool>> whereExpression,
             int intPageIndex,
             int intPageSize,
             string strOrderByFileds)
         {
-            return await Task.Run(() => db.Queryable<TEntity>().OrderByIF(!string.IsNullOrEmpty(strOrderByFileds), strOrderByFileds).WhereIF(whereExpression != null, whereExpression).ToPageList(intPageIndex, intPageSize));
+            RefAsync<int> totalCount = 0;
+            var list= await Task.Run(() => db.Queryable<TEntity>()
+            .OrderByIF(!string.IsNullOrEmpty(strOrderByFileds), strOrderByFileds)
+            .WhereIF(whereExpression != null, whereExpression)
+            .ToPageListAsync(intPageIndex, intPageSize, totalCount));
+            int pageCount = (Math.Ceiling(totalCount.ObjToDecimal() / intPageSize.ObjToDecimal())).ObjToInt();
+            return new PageModel<TEntity>() { dataCount = totalCount, pageCount = pageCount, page = intPageIndex, PageSize = intPageSize, data = list };
         }
 
         /// <summary>
@@ -293,14 +299,20 @@ namespace Tuby.Api.Repository.Base
         /// <param name="intTotalCount">数据总量</param>
         /// <param name="strOrderByFileds">排序字段，如name asc,age desc</param>
         /// <returns>数据列表</returns>
-        public async Task<List<TEntity>> Query(
+        public async Task<PageModel<TEntity>> Query(
           string strWhere,
           int intPageIndex,
           int intPageSize,
 
           string strOrderByFileds)
         {
-            return await Task.Run(() => db.Queryable<TEntity>().OrderByIF(!string.IsNullOrEmpty(strOrderByFileds), strOrderByFileds).WhereIF(!string.IsNullOrEmpty(strWhere), strWhere).ToPageList(intPageIndex, intPageSize));
+            RefAsync<int> totalCount = 0;
+            var list = await Task.Run(() => db.Queryable<TEntity>()
+            .OrderByIF(!string.IsNullOrEmpty(strOrderByFileds), strOrderByFileds)
+            .WhereIF(!string.IsNullOrEmpty(strWhere), strWhere)
+           .ToPageListAsync(intPageIndex, intPageSize, totalCount));
+            int pageCount = (Math.Ceiling(totalCount.ObjToDecimal() / intPageSize.ObjToDecimal())).ObjToInt();
+            return new PageModel<TEntity>() { dataCount = totalCount, pageCount = pageCount, page = intPageIndex, PageSize = intPageSize, data = list };
         }
 
 
@@ -325,11 +337,30 @@ namespace Tuby.Api.Repository.Base
         /// <param name="selectExpression">返回表达式 (s1, s2) => new { Id =s1.UserNo, Id1 = s2.UserNo}</param>
         /// <param name="whereLambda">查询表达式 (w1, w2) =>w1.UserNo == "")</param> 
         /// <returns>值</returns>
-        public List<TResult> QueryMuch<T, T2,  TResult>(
-            Expression<Func<T, T2, object[]>> joinExpression) where T : class, new()
+        public async Task<List<TResult>> QueryMuch<T, T2,  TResult>(
+            Expression<Func<T, T2, object[]>> joinExpression,
+            Expression<Func<T, T2, TResult>> selectExpression) where T : class, new()
         {
-            return db.Queryable(joinExpression).Select<TResult>().ToList();
+            return await Task.Run(() => db.Queryable(joinExpression).Select(selectExpression).ToList());
                 
+        }
+        public async Task<PageModel<TResult>> QueryMuch<T, T2, TResult>(
+           Expression<Func<T, T2,  object[]>> joinExpression,
+            Expression<Func<T, T2, TResult>> selectExpression, int intPageIndex = 0, int intPageSize = 20,
+            Expression<Func<T, T2, bool>> whereLambda = null) where T : class, new()
+        {
+            RefAsync<int> totalCount = 0;
+            var list = await db.Queryable(joinExpression).Select(selectExpression)
+                .Select<TResult>()
+                .ToPageListAsync(intPageIndex, intPageSize, totalCount);
+            if (whereLambda != null)
+            {
+                list = await db.Queryable(joinExpression).Where(whereLambda).Select(selectExpression)
+                .Select<TResult>()
+                .ToPageListAsync(intPageIndex, intPageSize, totalCount);
+            }
+            int pageCount = (Math.Ceiling(totalCount.ObjToDecimal() / intPageSize.ObjToDecimal())).ObjToInt();
+            return new PageModel<TResult>() { dataCount = totalCount, pageCount = pageCount, page = intPageIndex, PageSize = intPageSize, data = list };
         }
 
         /// <summary> 
@@ -351,6 +382,23 @@ namespace Tuby.Api.Repository.Base
             return db.Queryable(joinExpression)
                 .Select<TResult>()
                 .ToPageList(intPageIndex, intPageSize);
+        }
+        public async Task<PageModel<TResult>> QueryMuch<T, T2, T3, TResult>(
+           Expression<Func<T, T2, T3, object[]>> joinExpression, int intPageIndex = 0, int intPageSize = 20,
+            Expression<Func<T, T2, T3, bool>> whereLambda = null) where T : class, new()
+        {
+            RefAsync<int> totalCount = 0;
+            var list = await db.Queryable(joinExpression).Select<TResult>()
+                .Select<TResult>()
+                .ToPageListAsync(intPageIndex, intPageSize, totalCount);
+            if (whereLambda != null)
+            {
+                list = await db.Queryable(joinExpression).Where(whereLambda).Select<TResult>()
+                .Select<TResult>()
+                .ToPageListAsync(intPageIndex, intPageSize, totalCount);
+            }
+            int pageCount = (Math.Ceiling(totalCount.ObjToDecimal() / intPageSize.ObjToDecimal())).ObjToInt();
+            return new PageModel<TResult>() { dataCount = totalCount, pageCount = pageCount, page = intPageIndex, PageSize = intPageSize, data = list };
         }
         public async Task<PageModel<TResult>> QueryMuch<T, T2, T3, T4, TResult>(
             Expression<Func<T, T2, T3, T4, object[]>> joinExpression, int intPageIndex = 0, int intPageSize = 20) where T : class, new()
@@ -376,16 +424,77 @@ namespace Tuby.Api.Repository.Base
         /// <param name="selectExpression">返回表达式 (s1, s2) => new { Id =s1.UserNo, Id1 = s2.UserNo}</param>
         /// <param name="whereLambda">查询表达式 (w1, w2) =>w1.UserNo == "")</param> 
         /// <returns>值</returns>
-        public List<TResult> QueryMuch<T, T2, T3, T4, T5, TResult>(
-            Expression<Func<T, T2, T3, T4, T5, object[]>> joinExpression,
-            Expression<Func<T, T2, T3, T4, T5, TResult>> selectExpression,
-            Expression<Func<T, T2, T3, T4, T5, bool>> whereLambda = null) where T : class, new()
+        //public List<TResult> QueryMuch<T, T2, T3, T4, T5, TResult>(
+        //    Expression<Func<T, T2, T3, T4, T5, object[]>> joinExpression,
+        //    Expression<Func<T, T2, T3, T4, T5, TResult>> selectExpression,
+        //    Expression<Func<T, T2, T3, T4, T5, bool>> whereLambda = null) where T : class, new()
+        //{
+        //    if (whereLambda == null)
+        //    {
+        //        return db.Queryable(joinExpression).Select(selectExpression).ToList();
+        //    }
+        //    return db.Queryable(joinExpression).Where(whereLambda).Select(selectExpression).ToList();
+        //}
+
+        /// <summary> 
+        ///查询-多表查询
+        /// </summary> 
+        /// <typeparam name="T">实体1</typeparam> 
+        /// <typeparam name="T2">实体2</typeparam> 
+        /// <typeparam name="T3">实体3</typeparam>
+        /// <typeparam name="T4">实体4</typeparam>
+        /// <typeparam name="T5">实体5</typeparam> 
+        /// <typeparam name="TResult">返回对象</typeparam>
+        /// <param name="joinExpression">关联表达式 (join1,join2) => new object[] {JoinType.Left,join1.UserNo==join2.UserNo}</param> 
+        /// <param name="selectExpression">返回表达式 (s1, s2) => new { Id =s1.UserNo, Id1 = s2.UserNo}</param>
+        /// <param name="whereLambda">查询表达式 (w1, w2) =>w1.UserNo == "")</param> 
+        /// <returns>值</returns>
+        public async Task<PageModel<TResult>> QueryMuch<T, T2, T3, T4, T5, TResult>(
+            Expression<Func<T, T2, T3, T4, T5, object[]>> joinExpression, int intPageIndex = 0, int intPageSize = 20) where T : class, new()
         {
-            if (whereLambda == null)
+            RefAsync<int> totalCount = 0;
+            var list = await db.Queryable(joinExpression).Select<TResult>()
+                .Select<TResult>()
+                .ToPageListAsync(intPageIndex, intPageSize, totalCount);
+            int pageCount = (Math.Ceiling(totalCount.ObjToDecimal() / intPageSize.ObjToDecimal())).ObjToInt();
+            return new PageModel<TResult>() { dataCount = totalCount, pageCount = pageCount, page = intPageIndex, PageSize = intPageSize, data = list };
+        }
+
+        public async Task<PageModel<TResult>> QueryMuch<T, T2, T3, T4, T5, T6, T7, T8, TResult>(
+            Expression<Func<T, T2, T3, T4, T5, T6, T7, T8, object[]>> joinExpression, int intPageIndex = 0, int intPageSize = 20,
+            Expression<Func<T, T2, T3, T4, T5, T6, T7, T8, bool>> whereLambda = null) where T : class, new()
+        {
+            RefAsync<int> totalCount = 0;
+            var list = await db.Queryable(joinExpression).Select<TResult>()
+                .Select<TResult>()
+                .ToPageListAsync(intPageIndex, intPageSize, totalCount);
+            if (whereLambda != null)
             {
-                return db.Queryable(joinExpression).Select(selectExpression).ToList();
+                list = await db.Queryable(joinExpression).Where(whereLambda).Select<TResult>()
+                .Select<TResult>()
+                .ToPageListAsync(intPageIndex, intPageSize, totalCount);
             }
-            return db.Queryable(joinExpression).Where(whereLambda).Select(selectExpression).ToList();
+            int pageCount = (Math.Ceiling(totalCount.ObjToDecimal() / intPageSize.ObjToDecimal())).ObjToInt();
+            return new PageModel<TResult>() { dataCount = totalCount, pageCount = pageCount, page = intPageIndex, PageSize = intPageSize, data = list };
+        }
+
+        public async Task<List<TResult>> QueryMuch<T, T2, T3, T4, T5, T6, T7, T8, TResult>(
+            Expression<Func<T, T2, T3, T4, T5, T6, T7, T8, object[]>> joinExpression,
+            Expression<Func<T, T2, T3, T4, T5, T6, T7, T8, bool>> whereLambda = null) where T : class, new()
+        {
+            RefAsync<int> totalCount = 0;
+            //return await Task.Run(() => db.Queryable(joinExpression).Select(selectExpression).ToList());
+            var list = await Task.Run(() => db.Queryable(joinExpression).Select<TResult>()
+                .Select<TResult>()
+                .ToList());
+            if (whereLambda != null)
+            {
+                list = await Task.Run(() => db.Queryable(joinExpression).Where(whereLambda).Select<TResult>()
+                .Select<TResult>()
+                .ToList());
+            }
+
+            return list;
         }
     }
 

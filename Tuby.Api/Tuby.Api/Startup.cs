@@ -169,7 +169,7 @@ namespace Tuby.Api
                       .EnableInterfaceInterceptors()//引用Autofac.Extras.DynamicProxy;
                                                     // 如果你想注入两个，就这么写  InterceptedBy(typeof(ApiCacheAOP), typeof(ApiLogAOP));
                                                     // 如果想使用Redis缓存，请必须开启 redis 服务，端口号我的是6319，如果不一样还是无效，否则请使用memory缓存 ApiCacheAOP
-                      .InterceptedBy(typeof(ApiCacheAOP));//允许将拦截器服务的列表分配给注册。 
+                      .InterceptedBy(cacheType.ToArray());//允许将拦截器服务的列表分配给注册。 
             #endregion
 
             #region Repository.dll 注入，有对应接口
