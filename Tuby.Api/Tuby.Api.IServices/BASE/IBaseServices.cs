@@ -37,9 +37,9 @@ namespace Tuby.Api.IServices.BASE
         Task<List<TEntity>> Query(Expression<Func<TEntity, bool>> whereExpression, int intTop, string strOrderByFileds);
         Task<List<TEntity>> Query(string strWhere, int intTop, string strOrderByFileds);
 
-        Task<List<TEntity>> Query(
+        Task<PageModel<TEntity>> Query(
             Expression<Func<TEntity, bool>> whereExpression, int intPageIndex, int intPageSize, string strOrderByFileds);
-        Task<List<TEntity>> Query(string strWhere, int intPageIndex, int intPageSize, string strOrderByFileds);
+        Task<PageModel<TEntity>> Query(string strWhere, int intPageIndex, int intPageSize, string strOrderByFileds);
 
 
         Task<List<TEntity>> QueryPage(Expression<Func<TEntity, bool>> whereExpression, int intPageIndex = 0, int intPageSize = 20, string strOrderByFileds = null);
@@ -51,9 +51,7 @@ namespace Tuby.Api.IServices.BASE
          Expression<Func<T, T2, T3, T4, object[]>> joinExpression, int intPageIndex = 0, int intPageSize = 20) where T : class, new();
 
 
-        List<TResult> QueryMuch<T, T2, T3, T4, T5, TResult>(
-          Expression<Func<T, T2, T3, T4, T5, object[]>> joinExpression,
-          Expression<Func<T, T2, T3, T4, T5, TResult>> selectExpression,
-          Expression<Func<T, T2, T3, T4, T5, bool>> whereLambda = null) where T : class, new();
+        Task<PageModel<TResult>> QueryMuch<T, T2, T3, T4, T5, TResult>(
+          Expression<Func<T, T2, T3, T4, T5, object[]>> joinExpression, int intPageIndex = 0, int intPageSize = 20) where T : class, new();
     }
 }

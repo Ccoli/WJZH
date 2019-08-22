@@ -28,7 +28,7 @@ namespace Tuby.Api.Controllers
             _d_shaowei_checkServices = d_shaowei_checkServices;
         }
 		/// <summary>
-		/// api/d_shaowei_check 查询所有数据
+		///查询所有数据
 		/// </summary>	
 		 [HttpGet]
         public async Task<List<d_shaowei_check>> Get()
@@ -36,8 +36,20 @@ namespace Tuby.Api.Controllers
             return await _d_shaowei_checkServices.Query();
         }
 
+		/// <summary>
+        /// 分页查询
+        /// </summary>
+        /// <param name="page"></param>
+        /// <returns></returns>
+        [HttpGet]
+        [Route("getpage")]
+        public async Task<PageModel<d_shaowei_check>> GetPage(int page)
+        {
+            return await _d_shaowei_checkServices.Query("", page, 10, "");
+        }
+
         /// <summary>
-		/// api/d_shaowei_check/{id} 根据id查询数据
+		///根据id查询数据
 		/// </summary>
         [HttpGet("{id}")]
         public async Task<List<d_shaowei_check>> Get(int id)
@@ -46,7 +58,7 @@ namespace Tuby.Api.Controllers
         }
 
         /// <summary>
-		/// api/d_shaowei_check post添加数据
+		/// 使用post方法添加数据
 		/// </summary>
         [HttpPost]
        public async Task<MessageModel<string>> Post([FromBody] d_shaowei_check d_shaowei_check)
@@ -65,9 +77,10 @@ namespace Tuby.Api.Controllers
         }
 
          /// <summary>
-		/// api/d_shaowei_check put更新数据
+		///更新数据
 		/// </summary>
-        [HttpPut]
+        [HttpPost]
+        [Route("update")]
         public async Task<MessageModel<string>> Update([FromBody] d_shaowei_check d_shaowei_check)
         {
 			var data = new MessageModel<string>();
@@ -90,7 +103,7 @@ namespace Tuby.Api.Controllers
         }
 
         /// <summary>
-		/// api/d_shaowei_check/delete get删除数据
+		/// 根据id使用get方法删除数据
 		/// </summary>
         [HttpGet]
         [Route("delete")]
@@ -107,6 +120,32 @@ namespace Tuby.Api.Controllers
             else
             {
                 data.response ="id为"+ id.ToString() + "的数据找不到";
+                data.msg = "删除失败";
+            }
+
+            return data;
+        }
+
+		/// <summary>
+        /// 批量删除
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        [HttpPost]
+        [Route("deletemuch")]
+        public async Task<MessageModel<string>> DeleteMuch([FromBody] object[] id)
+        {
+            var flag = (await _d_shaowei_checkServices.DeleteByIds(id));
+            var data = new MessageModel<string>();
+            data.success = flag;
+            if (flag)
+            {
+                data.response = string.Join(",", id) + "数据删除";
+                data.msg = "删除成功";
+            }
+            else
+            {
+                data.response = "id为" + id.ToString() + "的数据找不到";
                 data.msg = "删除失败";
             }
 

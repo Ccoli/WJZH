@@ -28,7 +28,7 @@ namespace Tuby.Api.Controllers
             _ar_usergroup_userServices = ar_usergroup_userServices;
         }
 		/// <summary>
-		/// api/ar_usergroup_user 查询所有数据
+		///查询所有数据
 		/// </summary>	
 		 [HttpGet]
         public async Task<List<ar_usergroup_user>> Get()
@@ -36,8 +36,20 @@ namespace Tuby.Api.Controllers
             return await _ar_usergroup_userServices.Query();
         }
 
+		/// <summary>
+        /// 分页查询
+        /// </summary>
+        /// <param name="page"></param>
+        /// <returns></returns>
+        [HttpGet]
+        [Route("getpage")]
+        public async Task<PageModel<ar_usergroup_user>> GetPage(int page)
+        {
+            return await _ar_usergroup_userServices.Query("", page, 10, "");
+        }
+
         /// <summary>
-		/// api/ar_usergroup_user/{id} 根据id查询数据
+		///根据id查询数据
 		/// </summary>
         [HttpGet("{id}")]
         public async Task<List<ar_usergroup_user>> Get(int id)
@@ -46,7 +58,7 @@ namespace Tuby.Api.Controllers
         }
 
         /// <summary>
-		/// api/ar_usergroup_user post添加数据
+		/// 使用post方法添加数据
 		/// </summary>
         [HttpPost]
        public async Task<MessageModel<string>> Post([FromBody] ar_usergroup_user ar_usergroup_user)
@@ -65,9 +77,10 @@ namespace Tuby.Api.Controllers
         }
 
          /// <summary>
-		/// api/ar_usergroup_user put更新数据
+		///更新数据
 		/// </summary>
-        [HttpPut]
+        [HttpPost]
+        [Route("update")]
         public async Task<MessageModel<string>> Update([FromBody] ar_usergroup_user ar_usergroup_user)
         {
 			var data = new MessageModel<string>();
@@ -90,7 +103,7 @@ namespace Tuby.Api.Controllers
         }
 
         /// <summary>
-		/// api/ar_usergroup_user/delete get删除数据
+		/// 根据id使用get方法删除数据
 		/// </summary>
         [HttpGet]
         [Route("delete")]
@@ -107,6 +120,32 @@ namespace Tuby.Api.Controllers
             else
             {
                 data.response ="id为"+ id.ToString() + "的数据找不到";
+                data.msg = "删除失败";
+            }
+
+            return data;
+        }
+
+		/// <summary>
+        /// 批量删除
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        [HttpPost]
+        [Route("deletemuch")]
+        public async Task<MessageModel<string>> DeleteMuch([FromBody] object[] id)
+        {
+            var flag = (await _ar_usergroup_userServices.DeleteByIds(id));
+            var data = new MessageModel<string>();
+            data.success = flag;
+            if (flag)
+            {
+                data.response = string.Join(",", id) + "数据删除";
+                data.msg = "删除成功";
+            }
+            else
+            {
+                data.response = "id为" + id.ToString() + "的数据找不到";
                 data.msg = "删除失败";
             }
 
