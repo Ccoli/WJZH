@@ -48,11 +48,14 @@ namespace Tuby.Api.IRepository.Base
            Expression<Func<T, T2, bool>> whereLambda = null) where T : class, new();
         List<TResult> QueryMuch<T, T2, T3, TResult>(
            Expression<Func<T, T2, T3, object[]>> joinExpression, int intPageIndex = 0, int intPageSize = 20) where T : class, new();
+        Task<List<TResult>> QueryMuch<T, T2, T3, TResult>(
+            Expression<Func<T, T2, T3, object[]>> joinExpression) where T : class, new();
         Task<PageModel<TResult>> QueryMuch<T, T2, T3, TResult>(
            Expression<Func<T, T2, T3, object[]>> joinExpression, int intPageIndex = 0, int intPageSize = 20,
             Expression<Func<T, T2, T3, bool>> whereLambda = null) where T : class, new();
         Task<PageModel<TResult>> QueryMuch<T, T2, T3, T4, TResult>(
-           Expression<Func<T, T2, T3, T4, object[]>> joinExpression, int intPageIndex = 0, int intPageSize = 20) where T : class, new();
+           Expression<Func<T, T2, T3, T4, object[]>> joinExpression, int intPageIndex = 0, int intPageSize = 20,
+            Expression<Func<T, T2, T3, T4, bool>> whereLambda = null) where T : class, new();
 
         //List<TResult> QueryMuch<T, T2, T3, T4, T5, TResult>(
         //   Expression<Func<T, T2, T3, T4, T5, object[]>> joinExpression,

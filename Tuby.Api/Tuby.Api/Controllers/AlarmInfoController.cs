@@ -33,16 +33,39 @@ namespace Tuby.Api.Controllers
         /// 分页查询报警信息
         /// </summary>
         /// <param name="page">页码</param>
+        /// <param name="pagesize">页大小</param>
         /// <returns></returns>
         [HttpGet]
-        public async Task<PageModel<AlarmInfoView>> GetPage(int page)
+        public async Task<PageModel<AlarmInfoView>> GetPage(int page,int pagesize)
         {
             //    var list = db.Queryable<d_alarm_info, b_alarm_type, d_alarm_device>(
             //        (dinfo, btype, ddevice) => new object[] {
             //    JoinType.Left,dinfo.AlarmTypeID==btype.ID,
             //    JoinType.Left,dinfo.AlarmDeviceID==ddevice.ID})
             //    .Select<AlarmInfoView>().ToList();
-            var list =await _AlarmInfoServices.QueryMuchTable(page);
+            var list =await _AlarmInfoServices.QueryMuchTable(page,pagesize);
+            return list;
+        }
+        /// <summary>
+        /// 根据报警类型获取报警信息
+        /// </summary>
+        /// <param name="page">页码</param>
+        /// <param name="pagesize">页大小</param>
+        /// <param name="id">报警类型</param>
+        /// <returns></returns>
+        [HttpGet]
+        [Route("gettype")]
+        public async Task<PageModel<AlarmInfoView>> GetTypePage(int page, int pagesize,int id)
+        {
+            var list = await _AlarmInfoServices.QueryMuchTable(page, pagesize,id);
+            return list;
+        }
+
+        [HttpGet]
+        [Route("gettime")]
+        public async Task<PageModel<AlarmInfoView>> GetTimePage(int page, int pagesize, int id, DateTime dt1, DateTime dt2)
+        {
+            var list = await _AlarmInfoServices.QueryMuchTable(page, pagesize, id, dt1,dt2);
             return list;
         }
     }

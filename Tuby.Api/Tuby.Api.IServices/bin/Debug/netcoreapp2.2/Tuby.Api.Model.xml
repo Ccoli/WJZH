@@ -298,6 +298,16 @@
             是否父节点
             </summary>
         </member>
+        <member name="P:Tuby.Api.Model.viewmodels.PhoneTableView.TypeName">
+            <summary>
+            电话本类型
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.PhoneTableView.DepartmentName">
+            <summary>
+            单位名称
+            </summary>
+        </member>
         <member name="P:Tuby.Api.Model.viewmodels.ShaoWeiArrangeView.ShaoWeiName">
             <summary>
             哨位名
@@ -658,7 +668,7 @@
             
             </summary>
         </member>
-        <member name="P:Tuby.Api.Model.a_department.Name">
+        <member name="P:Tuby.Api.Model.a_department.DepartmentName">
             <summary>
             
             </summary>
@@ -1238,7 +1248,7 @@
             
             </summary>
         </member>
-        <member name="P:Tuby.Api.Model.b_phone_table_type.Name">
+        <member name="P:Tuby.Api.Model.b_phone_table_type.TypeName">
             <summary>
             
             </summary>
@@ -1596,6 +1606,36 @@
         <member name="P:Tuby.Api.Model.d_camera_group.ParentID">
             <summary>
             父节点ID
+            </summary>
+        </member>
+        <member name="T:Tuby.Api.Model.d_medical">
+             <summary>
+            d_medical Entity Model
+             </summary>   
+        </member>
+        <member name="P:Tuby.Api.Model.d_medical.ID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_medical.SoldierID">
+            <summary>
+            士兵id
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_medical.Content">
+            <summary>
+            就诊内容
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_medical.Address">
+            <summary>
+            就诊地址
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_medical.Time">
+            <summary>
+            就诊时间
             </summary>
         </member>
         <member name="T:Tuby.Api.Model.d_pap_arsenal">
@@ -2566,6 +2606,36 @@
         <member name="P:Tuby.Api.Model.d_soldier_treatment.RecStatus">
             <summary>
             
+            </summary>
+        </member>
+        <member name="T:Tuby.Api.Model.d_study_record">
+             <summary>
+            d_medical Entity Model
+             </summary>   
+        </member>
+        <member name="P:Tuby.Api.Model.d_study_record.ID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_study_record.SoldierID">
+            <summary>
+            士兵id
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_study_record.Topic">
+             <summary>
+            学习主题
+             </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_study_record.Address">
+            <summary>
+            就诊地址
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_study_record.Time">
+            <summary>
+            就诊时间
             </summary>
         </member>
         <member name="T:Tuby.Api.Model.d_target_camera_record_car">

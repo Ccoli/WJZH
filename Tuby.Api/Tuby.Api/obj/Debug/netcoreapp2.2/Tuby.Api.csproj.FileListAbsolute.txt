@@ -24,5 +24,3 @@ H:\MyProjects\Tuby.Api\Tuby.Api\bin\Debug\netcoreapp2.2\Tuby.Api.Common.dll
 H:\MyProjects\Tuby.Api\Tuby.Api\bin\Debug\netcoreapp2.2\Tuby.Api.Common.pdb
 H:\MyProjects\Tuby.Api\Tuby.Api\bin\Debug\netcoreapp2.2\appsettings.json
 H:\MyProjects\Tuby.Api\Tuby.Api\obj\Debug\netcoreapp2.2\Tuby.Api.csprojAssemblyReference.cache
-H:\MyProjects\Tuby.Api\Tuby.Api\bin\Debug\netcoreapp2.2\Tuby.Api.Services.pdb
-H:\MyProjects\Tuby.Api\Tuby.Api\bin\Debug\netcoreapp2.2\Tuby.Api.Repository.pdb

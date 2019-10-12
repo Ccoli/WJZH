@@ -383,6 +383,14 @@ namespace Tuby.Api.Repository.Base
                 .Select<TResult>()
                 .ToPageList(intPageIndex, intPageSize);
         }
+        public async Task<List<TResult>> QueryMuch<T, T2, T3, TResult>(
+            Expression<Func<T, T2, T3, object[]>> joinExpression) where T : class, new()
+        {
+            var list = await Task.Run(() => db.Queryable(joinExpression).Select<TResult>()
+               .Select<TResult>()
+               .ToList());
+            return list;
+        }
         public async Task<PageModel<TResult>> QueryMuch<T, T2, T3, TResult>(
            Expression<Func<T, T2, T3, object[]>> joinExpression, int intPageIndex = 0, int intPageSize = 20,
             Expression<Func<T, T2, T3, bool>> whereLambda = null) where T : class, new()
@@ -401,12 +409,19 @@ namespace Tuby.Api.Repository.Base
             return new PageModel<TResult>() { dataCount = totalCount, pageCount = pageCount, page = intPageIndex, PageSize = intPageSize, data = list };
         }
         public async Task<PageModel<TResult>> QueryMuch<T, T2, T3, T4, TResult>(
-            Expression<Func<T, T2, T3, T4, object[]>> joinExpression, int intPageIndex = 0, int intPageSize = 20) where T : class, new()
+            Expression<Func<T, T2, T3, T4, object[]>> joinExpression, int intPageIndex = 0, int intPageSize = 20,
+            Expression<Func<T, T2, T3, T4, bool>> whereLambda = null) where T : class, new()
         {
              RefAsync<int> totalCount = 0;
             var list= await db.Queryable(joinExpression).Select<TResult>()
                 .Select<TResult>()
                 .ToPageListAsync(intPageIndex, intPageSize, totalCount);
+            if (whereLambda != null)
+            {
+                list = await db.Queryable(joinExpression).Where(whereLambda).Select<TResult>()
+                .Select<TResult>()
+                .ToPageListAsync(intPageIndex, intPageSize, totalCount);
+            }
             int pageCount = (Math.Ceiling(totalCount.ObjToDecimal() / intPageSize.ObjToDecimal())).ObjToInt();
             return new PageModel<TResult>() { dataCount = totalCount, pageCount = pageCount, page = intPageIndex, PageSize = intPageSize, data = list };
         }

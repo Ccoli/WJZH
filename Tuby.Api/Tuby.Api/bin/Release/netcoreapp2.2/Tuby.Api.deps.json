@@ -35,7 +35,8 @@
           "Swashbuckle.AspNetCore": "4.0.1",
           "Tuby.Api.IRepositoty": "1.0.0",
           "Tuby.Api.IServices": "1.0.0",
-          "Tuby.Api.Model": "1.0.0"
+          "Tuby.Api.Model": "1.0.0",
+          "Tuby.Api.Services": "1.0.0"
         },
         "runtime": {
           "Tuby.Api.dll": {}
@@ -1099,6 +1100,34 @@
         },
         "compile": {
           "Tuby.Api.Model.dll": {}
+        }
+      },
+      "Tuby.Api.Repository/1.0.0": {
+        "dependencies": {
+          "Tuby.Api.Common": "1.0.0",
+          "Tuby.Api.IRepositoty": "1.0.0",
+          "sqlSugarCore": "5.0.0.8"
+        },
+        "runtime": {
+          "Tuby.Api.Repository.dll": {}
+        },
+        "compile": {
+          "Tuby.Api.Repository.dll": {}
+        }
+      },
+      "Tuby.Api.Services/1.0.0": {
+        "dependencies": {
+          "AutoMapper": "8.1.1",
+          "AutoMapper.Extensions.Microsoft.DependencyInjection": "6.1.1",
+          "Tuby.Api.IRepositoty": "1.0.0",
+          "Tuby.Api.IServices": "1.0.0",
+          "Tuby.Api.Repository": "1.0.0"
+        },
+        "runtime": {
+          "Tuby.Api.Services.dll": {}
+        },
+        "compile": {
+          "Tuby.Api.Services.dll": {}
         }
       },
       "Microsoft.AspNet.WebApi.Client/5.2.6": {
@@ -4742,6 +4771,16 @@
       "sha512": ""
     },
     "Tuby.Api.Model/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Tuby.Api.Repository/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Tuby.Api.Services/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

@@ -30,14 +30,46 @@ namespace Tuby.Api.Repository
 
         //    return list;
         //}
-        public async Task<PageModel<AlarmInfoView>> QueryMuchTable(int page)
+        public async Task<PageModel<AlarmInfoView>> QueryMuchTable(int page,int pagesize)
         {
             return await QueryMuch<d_alarm_info, b_alarm_type, d_alarm_device, b_alarm_level, AlarmInfoView>(
                     (dinfo, btype, ddevice, blevel) => new object[] {
                 JoinType.Left,dinfo.AlarmTypeID==btype.ID,
                JoinType.Left,dinfo.AlarmDeviceID==ddevice.ID,
                JoinType.Left,btype.AlarmLevelID==blevel.ID
-                    }, page, 10
+                    }, page, pagesize
+                    );
+        }
+
+        public async Task<PageModel<AlarmInfoView>> QueryMuchTable(int page, int pagesize,int id)
+        {
+            return await QueryMuch<d_alarm_info, b_alarm_type, d_alarm_device, b_alarm_level, AlarmInfoView>(
+                    (dinfo, btype, ddevice, blevel) => new object[] {
+                JoinType.Left,dinfo.AlarmTypeID==btype.ID,
+               JoinType.Left,dinfo.AlarmDeviceID==ddevice.ID,
+               JoinType.Left,btype.AlarmLevelID==blevel.ID
+                    }, page, pagesize,(dinfo, btype, ddevice, blevel)=> dinfo.AlarmTypeID==id
+                    );
+        }
+
+        public async Task<PageModel<AlarmInfoView>> QueryMuchTable(int page, int pagesize, DateTime dt1, DateTime dt2, int id = 0)
+        {
+            if (id == 0)
+            {
+                return await QueryMuch<d_alarm_info, b_alarm_type, d_alarm_device, b_alarm_level, AlarmInfoView>(
+                   (dinfo, btype, ddevice, blevel) => new object[] {
+                JoinType.Left,dinfo.AlarmTypeID==btype.ID,
+               JoinType.Left,dinfo.AlarmDeviceID==ddevice.ID,
+               JoinType.Left,btype.AlarmLevelID==blevel.ID
+                   }, page, pagesize, (dinfo, btype, ddevice, blevel) => dinfo.AlarmTime > dt1 && dinfo.AlarmTime < dt2
+                   );
+            }
+            return await QueryMuch<d_alarm_info, b_alarm_type, d_alarm_device, b_alarm_level, AlarmInfoView>(
+                    (dinfo, btype, ddevice, blevel) => new object[] {
+                JoinType.Left,dinfo.AlarmTypeID==btype.ID,
+               JoinType.Left,dinfo.AlarmDeviceID==ddevice.ID,
+               JoinType.Left,btype.AlarmLevelID==blevel.ID
+                    }, page, pagesize, (dinfo, btype, ddevice, blevel) => dinfo.AlarmTypeID == id && dinfo.AlarmTime > dt1 && dinfo.AlarmTime < dt2
                     );
         }
     }

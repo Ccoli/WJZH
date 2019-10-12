@@ -20,9 +20,19 @@ namespace Tuby.Api.Services
             this._dal = dal;
         }
 
-        public async Task<PageModel<AlarmInfoView>> QueryMuchTable(int page)
+        public async Task<PageModel<AlarmInfoView>> QueryMuchTable(int page,int pagesize)
         {
-            return await _dal.QueryMuchTable(page);
+            return await _dal.QueryMuchTable(page, pagesize);
+        }
+
+        public async Task<PageModel<AlarmInfoView>> QueryMuchTable(int page, int pagesize,int id)
+        {
+            return await _dal.QueryMuchTable(page, pagesize,id);
+        }
+
+        public async Task<PageModel<AlarmInfoView>> QueryMuchTable(int page, int pagesize, int id, DateTime dt1, DateTime dt2)
+        {
+            return await _dal.QueryMuchTable(page, pagesize,dt1,dt2, id);
         }
 
         //public List<AlarmInfoView> Query()

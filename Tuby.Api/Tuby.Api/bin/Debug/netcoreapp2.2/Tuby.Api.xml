@@ -25,11 +25,21 @@
             </summary>
             <returns></returns>
         </member>
-        <member name="M:Tuby.Api.Controllers.AlarmInfoController.GetPage(System.Int32)">
+        <member name="M:Tuby.Api.Controllers.AlarmInfoController.GetPage(System.Int32,System.Int32)">
             <summary>
             分页查询报警信息
             </summary>
             <param name="page">页码</param>
+            <param name="pagesize">页大小</param>
+            <returns></returns>
+        </member>
+        <member name="M:Tuby.Api.Controllers.AlarmInfoController.GetTypePage(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            根据报警类型获取报警信息
+            </summary>
+            <param name="page">页码</param>
+            <param name="pagesize">页大小</param>
+            <param name="id">报警类型</param>
             <returns></returns>
         </member>
         <member name="M:Tuby.Api.Controllers.DeviceListController.#ctor(Tuby.Api.IServices.IDeviceListServices)">
@@ -2635,6 +2645,56 @@
             <param name="id"></param>
             <returns></returns>
         </member>
+        <member name="T:Tuby.Api.Controllers.d_medicalController">
+            <summary>
+            d_medicalControllers
+            </summary>	
+        </member>
+        <member name="M:Tuby.Api.Controllers.d_medicalController.#ctor(Tuby.Api.IServices.Id_medicalServices)">
+            <summary>
+            构造函数
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Tuby.Api.Controllers.d_medicalController.Get">
+             <summary>
+            查询所有数据
+             </summary>	
+        </member>
+        <member name="M:Tuby.Api.Controllers.d_medicalController.GetPage(System.Int32)">
+            <summary>
+            分页查询
+            </summary>
+            <param name="page"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tuby.Api.Controllers.d_medicalController.Get(System.Int32)">
+             <summary>
+            根据id查询数据
+             </summary>
+        </member>
+        <member name="M:Tuby.Api.Controllers.d_medicalController.Post(Tuby.Api.Model.d_medical)">
+            <summary>
+            使用post方法添加数据
+            </summary>
+        </member>
+        <member name="M:Tuby.Api.Controllers.d_medicalController.Update(Tuby.Api.Model.d_medical)">
+             <summary>
+            更新数据
+             </summary>
+        </member>
+        <member name="M:Tuby.Api.Controllers.d_medicalController.Delete(System.Int32)">
+            <summary>
+            根据id使用get方法删除数据
+            </summary>
+        </member>
+        <member name="M:Tuby.Api.Controllers.d_medicalController.DeleteMuch(System.Object[])">
+            <summary>
+            批量删除
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
         <member name="T:Tuby.Api.Controllers.d_pap_arsenalController">
             <summary>
             d_pap_arsenalControllers
@@ -3579,6 +3639,56 @@
             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.d_soldier_treatmentController.DeleteMuch(System.Object[])">
+            <summary>
+            批量删除
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Tuby.Api.Controllers.d_study_recordController">
+            <summary>
+            d_study_recordControllers
+            </summary>	
+        </member>
+        <member name="M:Tuby.Api.Controllers.d_study_recordController.#ctor(Tuby.Api.IServices.Id_study_recordServices)">
+            <summary>
+            构造函数
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Tuby.Api.Controllers.d_study_recordController.Get">
+             <summary>
+            查询所有数据
+             </summary>	
+        </member>
+        <member name="M:Tuby.Api.Controllers.d_study_recordController.GetPage(System.Int32)">
+            <summary>
+            分页查询
+            </summary>
+            <param name="page"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tuby.Api.Controllers.d_study_recordController.Get(System.Int32)">
+             <summary>
+            根据id查询数据
+             </summary>
+        </member>
+        <member name="M:Tuby.Api.Controllers.d_study_recordController.Post(Tuby.Api.Model.d_study_record)">
+            <summary>
+            使用post方法添加数据
+            </summary>
+        </member>
+        <member name="M:Tuby.Api.Controllers.d_study_recordController.Update(Tuby.Api.Model.d_study_record)">
+             <summary>
+            更新数据
+             </summary>
+        </member>
+        <member name="M:Tuby.Api.Controllers.d_study_recordController.Delete(System.Int32)">
+            <summary>
+            根据id使用get方法删除数据
+            </summary>
+        </member>
+        <member name="M:Tuby.Api.Controllers.d_study_recordController.DeleteMuch(System.Object[])">
             <summary>
             批量删除
             </summary>
