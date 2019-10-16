@@ -1057,6 +1057,7 @@
       },
       "Tuby.Api.Common/1.0.0": {
         "dependencies": {
+          "Microsoft.AspNetCore.SignalR": "1.1.0",
           "Microsoft.Extensions.Caching.Memory": "2.2.0",
           "Microsoft.Extensions.Configuration.Json": "2.2.0",
           "log4net": "2.0.8"

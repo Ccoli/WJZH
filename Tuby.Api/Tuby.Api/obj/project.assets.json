@@ -5485,6 +5485,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.2",
         "dependencies": {
+          "Microsoft.AspNetCore.SignalR": "1.1.0",
           "Microsoft.Extensions.Caching.Memory": "2.2.0",
           "Microsoft.Extensions.Configuration.Json": "2.2.0",
           "log4net": "2.0.8"
@@ -15041,11 +15042,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "H:\\MyProjects\\Tuby.Api\\Tuby.Api\\Tuby.Api.csproj",
+      "projectUniqueName": "H:\\MyProjects\\Tuby.Api - 副本\\Tuby.Api\\Tuby.Api.csproj",
       "projectName": "Tuby.Api",
-      "projectPath": "H:\\MyProjects\\Tuby.Api\\Tuby.Api\\Tuby.Api.csproj",
+      "projectPath": "H:\\MyProjects\\Tuby.Api - 副本\\Tuby.Api\\Tuby.Api.csproj",
       "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-      "outputPath": "H:\\MyProjects\\Tuby.Api\\Tuby.Api\\obj\\",
+      "outputPath": "H:\\MyProjects\\Tuby.Api - 副本\\Tuby.Api\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -15064,17 +15065,17 @@
       "frameworks": {
         "netcoreapp2.2": {
           "projectReferences": {
-            "H:\\MyProjects\\Tuby.Api\\Tuby.Api.IRepositoty\\Tuby.Api.IRepositoty.csproj": {
-              "projectPath": "H:\\MyProjects\\Tuby.Api\\Tuby.Api.IRepositoty\\Tuby.Api.IRepositoty.csproj"
+            "H:\\MyProjects\\Tuby.Api - 副本\\Tuby.Api.IRepositoty\\Tuby.Api.IRepositoty.csproj": {
+              "projectPath": "H:\\MyProjects\\Tuby.Api - 副本\\Tuby.Api.IRepositoty\\Tuby.Api.IRepositoty.csproj"
             },
-            "H:\\MyProjects\\Tuby.Api\\Tuby.Api.IServices\\Tuby.Api.IServices.csproj": {
-              "projectPath": "H:\\MyProjects\\Tuby.Api\\Tuby.Api.IServices\\Tuby.Api.IServices.csproj"
+            "H:\\MyProjects\\Tuby.Api - 副本\\Tuby.Api.IServices\\Tuby.Api.IServices.csproj": {
+              "projectPath": "H:\\MyProjects\\Tuby.Api - 副本\\Tuby.Api.IServices\\Tuby.Api.IServices.csproj"
             },
-            "H:\\MyProjects\\Tuby.Api\\Tuby.Api.Model\\Tuby.Api.Model.csproj": {
-              "projectPath": "H:\\MyProjects\\Tuby.Api\\Tuby.Api.Model\\Tuby.Api.Model.csproj"
+            "H:\\MyProjects\\Tuby.Api - 副本\\Tuby.Api.Model\\Tuby.Api.Model.csproj": {
+              "projectPath": "H:\\MyProjects\\Tuby.Api - 副本\\Tuby.Api.Model\\Tuby.Api.Model.csproj"
             },
-            "H:\\MyProjects\\Tuby.Api\\Tuby.Api.Services\\Tuby.Api.Services.csproj": {
-              "projectPath": "H:\\MyProjects\\Tuby.Api\\Tuby.Api.Services\\Tuby.Api.Services.csproj"
+            "H:\\MyProjects\\Tuby.Api - 副本\\Tuby.Api.Services\\Tuby.Api.Services.csproj": {
+              "projectPath": "H:\\MyProjects\\Tuby.Api - 副本\\Tuby.Api.Services\\Tuby.Api.Services.csproj"
             }
           }
         }

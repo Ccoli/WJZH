@@ -38,7 +38,7 @@ namespace Tuby.Api.IRepository.Base
         Task<PageModel<TEntity>> Query(
             Expression<Func<TEntity, bool>> whereExpression, int intPageIndex, int intPageSize, string strOrderByFileds);
         Task<PageModel<TEntity>> Query(string strWhere, int intPageIndex, int intPageSize, string strOrderByFileds);
-        Task<List<TEntity>> QueryPage(Expression<Func<TEntity, bool>> whereExpression, int intPageIndex = 0, int intPageSize = 20, string strOrderByFileds = null);
+        Task<PageModel<TEntity>> QueryPage(Expression<Func<TEntity, bool>> whereExpression, int intPageIndex = 0, int intPageSize = 20, string strOrderByFileds = null);
         Task<List<TResult>> QueryMuch<T, T2, TResult>(
           Expression<Func<T, T2,object[]>> joinExpression,
             Expression<Func<T, T2,TResult>> selectExpression) where T : class, new();

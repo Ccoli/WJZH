@@ -8,4 +8,8 @@
     <ProjectReference Include="..\Tuby.Api.Model\Tuby.Api.Model.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Authorize\" />
+  </ItemGroup>
+
 </Project>

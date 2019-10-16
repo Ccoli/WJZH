@@ -244,7 +244,7 @@ namespace Tuby.Api.Services.BASE
             strOrderByFileds);
         }
 
-        public async Task<List<TEntity>> QueryPage(Expression<Func<TEntity, bool>> whereExpression,
+        public async Task<PageModel<TEntity>> QueryPage(Expression<Func<TEntity, bool>> whereExpression,
         int intPageIndex = 0, int intPageSize = 20, string strOrderByFileds = null)
         {
             return await baseDal.QueryPage(whereExpression,

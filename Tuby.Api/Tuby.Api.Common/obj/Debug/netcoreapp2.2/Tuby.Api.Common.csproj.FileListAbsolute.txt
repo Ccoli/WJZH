@@ -7,3 +7,11 @@ H:\MyProjects\Tuby.Api\Tuby.Api.Common\obj\Debug\netcoreapp2.2\Tuby.Api.Common.A
 H:\MyProjects\Tuby.Api\Tuby.Api.Common\obj\Debug\netcoreapp2.2\Tuby.Api.Common.dll
 H:\MyProjects\Tuby.Api\Tuby.Api.Common\obj\Debug\netcoreapp2.2\Tuby.Api.Common.pdb
 H:\MyProjects\Tuby.Api\Tuby.Api.Common\obj\Debug\netcoreapp2.2\Tuby.Api.Common.csprojAssemblyReference.cache
+H:\MyProjects\Tuby.Api - 副本\Tuby.Api.Common\bin\Debug\netcoreapp2.2\Tuby.Api.Common.deps.json
+H:\MyProjects\Tuby.Api - 副本\Tuby.Api.Common\bin\Debug\netcoreapp2.2\Tuby.Api.Common.dll
+H:\MyProjects\Tuby.Api - 副本\Tuby.Api.Common\bin\Debug\netcoreapp2.2\Tuby.Api.Common.pdb
+H:\MyProjects\Tuby.Api - 副本\Tuby.Api.Common\obj\Debug\netcoreapp2.2\Tuby.Api.Common.csproj.CoreCompileInputs.cache
+H:\MyProjects\Tuby.Api - 副本\Tuby.Api.Common\obj\Debug\netcoreapp2.2\Tuby.Api.Common.AssemblyInfoInputs.cache
+H:\MyProjects\Tuby.Api - 副本\Tuby.Api.Common\obj\Debug\netcoreapp2.2\Tuby.Api.Common.AssemblyInfo.cs
+H:\MyProjects\Tuby.Api - 副本\Tuby.Api.Common\obj\Debug\netcoreapp2.2\Tuby.Api.Common.dll
+H:\MyProjects\Tuby.Api - 副本\Tuby.Api.Common\obj\Debug\netcoreapp2.2\Tuby.Api.Common.pdb

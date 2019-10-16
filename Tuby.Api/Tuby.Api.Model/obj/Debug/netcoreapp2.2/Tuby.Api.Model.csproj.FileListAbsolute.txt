@@ -11,3 +11,16 @@ H:\MyProjects\Tuby.Api\Tuby.Api.Model\obj\Debug\netcoreapp2.2\Tuby.Api.Model.csp
 H:\MyProjects\Tuby.Api\Tuby.Api.Model\bin\Debug\netcoreapp2.2\Tuby.Api.Common.dll
 H:\MyProjects\Tuby.Api\Tuby.Api.Model\bin\Debug\netcoreapp2.2\Tuby.Api.Common.pdb
 H:\MyProjects\Tuby.Api\Tuby.Api.Model\obj\Debug\netcoreapp2.2\Tuby.Api.Model.csproj.CopyComplete
+H:\MyProjects\Tuby.Api - 副本\Tuby.Api.Model\obj\Debug\netcoreapp2.2\Tuby.Api.Model.csprojAssemblyReference.cache
+H:\MyProjects\Tuby.Api - 副本\Tuby.Api.Model\obj\Debug\netcoreapp2.2\Tuby.Api.Model.csproj.CoreCompileInputs.cache
+H:\MyProjects\Tuby.Api - 副本\Tuby.Api.Model\obj\Debug\netcoreapp2.2\Tuby.Api.Model.AssemblyInfoInputs.cache
+H:\MyProjects\Tuby.Api - 副本\Tuby.Api.Model\obj\Debug\netcoreapp2.2\Tuby.Api.Model.AssemblyInfo.cs
+H:\MyProjects\Tuby.Api - 副本\Tuby.Api.Model\obj\Debug\netcoreapp2.2\Tuby.Api.Model.dll
+H:\MyProjects\Tuby.Api - 副本\Tuby.Api.Model\obj\Debug\netcoreapp2.2\Tuby.Api.Model.pdb
+H:\MyProjects\Tuby.Api - 副本\Tuby.Api.Model\bin\Debug\netcoreapp2.2\Tuby.Api.Model.deps.json
+H:\MyProjects\Tuby.Api - 副本\Tuby.Api.Model\bin\Debug\netcoreapp2.2\Tuby.Api.Model.dll
+H:\MyProjects\Tuby.Api - 副本\Tuby.Api.Model\bin\Debug\netcoreapp2.2\Tuby.Api.Model.pdb
+H:\MyProjects\Tuby.Api - 副本\Tuby.Api.Model\bin\Debug\netcoreapp2.2\Tuby.Api.Model.xml
+H:\MyProjects\Tuby.Api - 副本\Tuby.Api.Model\bin\Debug\netcoreapp2.2\Tuby.Api.Common.dll
+H:\MyProjects\Tuby.Api - 副本\Tuby.Api.Model\bin\Debug\netcoreapp2.2\Tuby.Api.Common.pdb
+H:\MyProjects\Tuby.Api - 副本\Tuby.Api.Model\obj\Debug\netcoreapp2.2\Tuby.Api.Model.csproj.CopyComplete

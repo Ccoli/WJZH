@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
+using System.Security.Claims;
+using System.Text;
+using System.Threading.Tasks;
 using Autofac;
 using Autofac.Extensions.DependencyInjection;
 using Autofac.Extras.DynamicProxy;
@@ -9,17 +12,25 @@ using AutoMapper;
 using log4net;
 using log4net.Config;
 using log4net.Repository;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.IdentityModel.Tokens;
 using Swashbuckle.AspNetCore.Swagger;
 using Tuby.Api.AOP;
+using Tuby.Api.AuthHelper;
 using Tuby.Api.Common;
+using Tuby.Api.Common.HttpContextUser;
 using Tuby.Api.Common.LogHelper;
 using Tuby.Api.Common.MemoryCache;
 using Tuby.Api.Filter;
+using Tuby.Api.Hubs;
+using Tuby.Api.Middlewares;
 
 namespace Tuby.Api
 {
@@ -54,6 +65,11 @@ namespace Tuby.Api
             services.AddSingleton<ILoggerHelper, LogHelper>();
             #endregion
 
+            #region 初始化DB
+            services.AddScoped<Tuby.Api.Model.Seed.DBSeed>();
+            services.AddScoped< Tuby.Api.Model.Seed.MyContext>();
+            #endregion
+
             #region Swagger
             var basePath = Microsoft.DotNet.PlatformAbstractions.ApplicationEnvironment.ApplicationBasePath;
             services.AddSwaggerGen(c =>
@@ -73,6 +89,26 @@ namespace Tuby.Api
                 var xmlModelPath = Path.Combine(basePath, "Tuby.Api.Model.xml");//这个就是Model层的xml文件名
 
                 c.IncludeXmlComments(xmlModelPath);
+
+                #region Token绑定到ConfigureServices
+
+                //添加header验证信息
+                //c.OperationFilter<SwaggerHeader>();
+
+                // 发行人
+                var IssuerName = (Configuration.GetSection("Audience"))["Issuer"];
+                var security = new Dictionary<string, IEnumerable<string>> { { IssuerName, new string[] { } }, };
+                c.AddSecurityRequirement(security);
+
+                //方案名称“Tuby.Api”可自定义，上下一致即可
+                c.AddSecurityDefinition(IssuerName, new ApiKeyScheme
+                {
+                    Description = "JWT授权(数据将在请求头中进行传输) 直接在下框中输入Bearer {token}（注意两者之间是一个空格）\"",
+                    Name = "Authorization",//jwt默认的参数名称
+                    In = "header",//jwt默认存放Authorization信息的位置(请求头中)
+                    Type = "apiKey"
+                });
+                #endregion
             });
 
             #endregion
@@ -124,6 +160,151 @@ namespace Tuby.Api
                 o.Filters.Add(typeof(GlobalExceptionsFilter));
             })
             .SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            #endregion
+
+            #region Httpcontext
+
+            // Httpcontext 注入
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+            services.AddScoped<IUser, AspNetUser>();
+
+            #endregion
+
+            #region SignalR 通讯
+            services.AddSignalR();
+            #endregion
+
+            #region Authorize 权限认证三步走
+
+            //使用说明：
+
+            //1、如果你只是简单的基于角色授权的，仅仅在 api 上配置，第一步：【1/2 简单角色授权】，第二步：配置【统一认证服务】，第三步：开启中间件
+
+            //2、如果你是用的复杂的基于策略授权，配置权限在数据库，第一步：【3复杂策略授权】，第二步：配置【统一认证服务】，第三步：开启中间件app.UseAuthentication();
+
+            //3、综上所述，设置权限，必须要三步走，授权 + 配置认证服务 + 开启授权中间件，只不过自定义的中间件不能验证过期时间，所以我都是用官方的。
+
+            #region 【第一步：授权】
+
+            #region 1、基于角色的API授权 
+
+            // 1【授权】、这个很简单，其他什么都不用做， 只需要在API层的controller上边，增加特性即可，注意，只能是角色的:
+            // [Authorize(Roles = "Admin,System")]
+
+
+            #endregion
+
+            #region 2、基于策略的授权（简单版）
+
+            // 1【授权】、这个和上边的异曲同工，好处就是不用在controller中，写多个 roles 。
+            // 然后这么写 [Authorize(Policy = "Admin")]
+            services.AddAuthorization(options =>
+            {
+                options.AddPolicy("Client", policy => policy.RequireRole("Client").Build());
+                options.AddPolicy("Admin", policy => policy.RequireRole("Admin").Build());
+                options.AddPolicy("SystemOrAdmin", policy => policy.RequireRole("Admin", "System"));
+            });
+
+
+            #endregion
+
+            #region 【3、复杂策略授权】
+
+            #region 参数
+            //读取配置文件
+            var audienceConfig = Configuration.GetSection("Audience");
+            var symmetricKeyAsBase64 = audienceConfig["Secret"];
+            var keyByteArray = Encoding.ASCII.GetBytes(symmetricKeyAsBase64);
+            var signingKey = new SymmetricSecurityKey(keyByteArray);
+
+
+            var signingCredentials = new SigningCredentials(signingKey, SecurityAlgorithms.HmacSha256);
+
+            // 如果要数据库动态绑定，这里先留个空，后边处理器里动态赋值
+            var permission = new List<PermissionItem>();
+
+            // 角色与接口的权限要求参数
+            var permissionRequirement = new PermissionRequirement(
+                "/api/denied",// 拒绝授权的跳转地址（目前无用）
+                permission,
+                ClaimTypes.Role,//基于角色的授权
+                audienceConfig["Issuer"],//发行人
+                audienceConfig["Audience"],//听众
+                signingCredentials,//签名凭据
+                expiration: TimeSpan.FromSeconds(60 * 60)//接口的过期时间
+                );
+            #endregion
+
+            //【授权】
+            services.AddAuthorization(options =>
+            {
+                options.AddPolicy(Permissions.Name,
+                         policy => policy.Requirements.Add(permissionRequirement));
+            });
+
+
+            #endregion
+
+
+            #endregion
+
+
+
+
+
+            #region 【第二步：配置认证服务】
+            // 令牌验证参数
+            var tokenValidationParameters = new TokenValidationParameters
+            {
+                ValidateIssuerSigningKey = true,
+                IssuerSigningKey = signingKey,
+                ValidateIssuer = true,
+                ValidIssuer = audienceConfig["Issuer"],//发行人
+                ValidateAudience = true,
+                ValidAudience = audienceConfig["Audience"],//订阅人
+                ValidateLifetime = true,
+                ClockSkew = TimeSpan.FromSeconds(30),
+                RequireExpirationTime = true,
+            };
+
+            //2.1【认证】、core自带官方JWT认证
+            services.AddAuthentication(x =>
+            {
+                x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            })
+             .AddJwtBearer(o =>
+             {
+                 o.TokenValidationParameters = tokenValidationParameters;
+                 o.Events = new JwtBearerEvents
+                 {
+                     OnAuthenticationFailed = context =>
+                     {
+                         // 如果过期，则把<是否过期>添加到，返回头信息中
+                         if (context.Exception.GetType() == typeof(SecurityTokenExpiredException))
+                         {
+                             context.Response.Headers.Add("Token-Expired", "true");
+                         }
+                         return Task.CompletedTask;
+                     }
+                 };
+             });
+
+
+            //2.2【认证】、IdentityServer4 认证 (暂时忽略)
+            //services.AddAuthentication("Bearer")
+            //  .AddIdentityServerAuthentication(options =>
+            //  {
+            //      options.Authority = "http://localhost:5002";
+            //      options.RequireHttpsMetadata = false;
+            //      options.ApiName = "blog.core.api";
+            //  });
+            // 注入权限处理器
+
+            services.AddSingleton<IAuthorizationHandler, PermissionHandler>();
+            services.AddSingleton(permissionRequirement);
+            #endregion
+
             #endregion
 
             #region AutoFac
@@ -211,6 +392,14 @@ namespace Tuby.Api
             });
             #endregion
 
+            #region 第三步：开启认证中间件
+
+            //此授权认证方法已经放弃，请使用下边的官方验证方法。但是如果你还想传User的全局变量，还是可以继续使用中间件，第二种写法//app.UseMiddleware<JwtTokenAuth>(); 
+            app.UseJwtTokenAuth();
+
+            //如果你想使用官方认证，必须在上边ConfigureService 中，配置JWT的认证服务 (.AddAuthentication 和 .AddJwtBearer 二者缺一不可)
+            app.UseAuthentication();
+            #endregion
 
             #region CORS
             //跨域第二种方法，使用策略，详细策略信息在ConfigureService中
@@ -235,6 +424,13 @@ namespace Tuby.Api
             app.UseStatusCodePages();//把错误码返回前台，比如是404
 
             app.UseMvc();
+
+            app.UseSignalR(routes =>
+            {
+                //这里要说下，为啥地址要写 /api/xxx 
+                //因为我前后端分离了，而且使用的是代理模式，所以如果你不用/api/xxx的这个规则的话，会出现跨域问题，毕竟这个不是我的controller的路由，而且自己定义的路由
+                routes.MapHub<ChatHub>("/api2/chatHub");
+            });
         }
     }
 }
