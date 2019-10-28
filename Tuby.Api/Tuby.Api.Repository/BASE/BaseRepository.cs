@@ -83,6 +83,18 @@ namespace Tuby.Api.Repository.Base
         }
 
         /// <summary>
+        /// 批量插入实体模型
+        /// </summary>
+        /// <param name="entity">博文实体类</param>
+        /// <returns></returns>
+        public async Task<int> AddList(List<TEntity> list)
+        {
+            var i = await Task.Run(() => db.Insertable(list.ToArray()).ExecuteCommand());
+            //返回的i是long类型,这里你可以根据你的业务需要进行处理
+            return (int)i;
+        }
+
+        /// <summary>
         /// 更新实体数据
         /// </summary>
         /// <param name="entity">博文实体类</param>
@@ -111,20 +123,34 @@ namespace Tuby.Api.Repository.Base
           string strWhere = ""
             )
         {
-            IUpdateable<TEntity> up = await Task.Run(() => db.Updateable(entity));
+            //IUpdateable<TEntity> up = await Task.Run(() => db.Updateable(entity));
+            //if (lstIgnoreColumns != null && lstIgnoreColumns.Count > 0)
+            //{
+            //    up = await Task.Run(() => up.IgnoreColumns(it => lstIgnoreColumns.Contains(it)));
+            //}
+            //if (lstColumns != null && lstColumns.Count > 0)
+            //{
+            //    up = await Task.Run(() => up.UpdateColumns(it => lstColumns.Contains(it)));
+            //}
+            //if (!string.IsNullOrEmpty(strWhere))
+            //{
+            //    up = await Task.Run(() => up.Where(strWhere));
+            //}
+            //return await Task.Run(() => up.ExecuteCommand()) > 0;
+            IUpdateable<TEntity> up = db.Updateable(entity);
             if (lstIgnoreColumns != null && lstIgnoreColumns.Count > 0)
             {
-                up = await Task.Run(() => up.IgnoreColumns(it => lstIgnoreColumns.Contains(it)));
+                up = up.IgnoreColumns(lstIgnoreColumns.ToArray());
             }
             if (lstColumns != null && lstColumns.Count > 0)
             {
-                up = await Task.Run(() => up.UpdateColumns(it => lstColumns.Contains(it)));
+                up = up.UpdateColumns(lstColumns.ToArray());
             }
             if (!string.IsNullOrEmpty(strWhere))
             {
-                up = await Task.Run(() => up.Where(strWhere));
+                up = up.Where(strWhere);
             }
-            return await Task.Run(() => up.ExecuteCommand()) > 0;
+            return await up.ExecuteCommandHasChangeAsync();
         }
 
         /// <summary>
@@ -146,6 +172,17 @@ namespace Tuby.Api.Repository.Base
         public async Task<bool> DeleteById(object id)
         {
             var i = await Task.Run(() => db.Deleteable<TEntity>(id).ExecuteCommand());
+            return i > 0;
+        }
+
+        /// <summary>
+        /// 删除指定条件
+        /// </summary>
+        /// <param name="value">主键ID</param>
+        /// <returns></returns>
+        public async Task<bool> DeleteValue(Expression<Func<TEntity, bool>> whereExpression)
+        {
+            var i = await Task.Run(() => db.Deleteable<TEntity>().Where(whereExpression).ExecuteCommand());
             return i > 0;
         }
 
@@ -182,6 +219,15 @@ namespace Tuby.Api.Repository.Base
         {
             return await Task.Run(() => db.Queryable<TEntity>().WhereIF(!string.IsNullOrEmpty(strWhere), strWhere).ToList());
         }
+        public async Task<List<string>> QueryField(Expression<Func<TEntity, string>> selectExpression)
+        {
+            return await Task.Run(() => db.Queryable<TEntity>().Select(selectExpression).ToList());
+        }
+        public async Task<List<object>> QueryField(Expression<Func<TEntity, object>> selectExpression)
+        {
+            return await Task.Run(() => db.Queryable<TEntity>().Select(selectExpression).ToList());
+        }
+
 
         /// <summary>
         /// 功能描述:查询数据列表
@@ -515,6 +561,43 @@ namespace Tuby.Api.Repository.Base
 
             return list;
         }
+        public async Task<PageModel<TResult>> QueryMuch<T, T2, T3, T4, T5, T6, T7, T8, T9, TResult>(
+    Expression<Func<T, T2, T3, T4, T5, T6, T7, T8, T9, object[]>> joinExpression, int intPageIndex = 0, int intPageSize = 20,
+    Expression<Func<T, T2, T3, T4, T5, T6, T7, T8, T9, bool>> whereLambda = null) where T : class, new()
+        {
+            RefAsync<int> totalCount = 0;
+            var list = await db.Queryable(joinExpression).Select<TResult>()
+                .Select<TResult>()
+                .ToPageListAsync(intPageIndex, intPageSize, totalCount);
+            if (whereLambda != null)
+            {
+                list = await db.Queryable(joinExpression).Where(whereLambda).Select<TResult>()
+                .Select<TResult>()
+                .ToPageListAsync(intPageIndex, intPageSize, totalCount);
+            }
+            int pageCount = (Math.Ceiling(totalCount.ObjToDecimal() / intPageSize.ObjToDecimal())).ObjToInt();
+            return new PageModel<TResult>() { dataCount = totalCount, pageCount = pageCount, page = intPageIndex, PageSize = intPageSize, data = list };
+        }
+
+        public async Task<List<TResult>> QueryMuch<T, T2, T3, T4, T5, T6, T7, T8, T9, TResult>(
+            Expression<Func<T, T2, T3, T4, T5, T6, T7, T8, T9, object[]>> joinExpression,
+            Expression<Func<T, T2, T3, T4, T5, T6, T7, T8, T9, bool>> whereLambda = null) where T : class, new()
+        {
+            RefAsync<int> totalCount = 0;
+            //return await Task.Run(() => db.Queryable(joinExpression).Select(selectExpression).ToList());
+            var list = await Task.Run(() => db.Queryable(joinExpression).Select<TResult>()
+                .Select<TResult>()
+                .ToList());
+            if (whereLambda != null)
+            {
+                list = await Task.Run(() => db.Queryable(joinExpression).Where(whereLambda).Select<TResult>()
+                .Select<TResult>()
+                .ToList());
+            }
+
+            return list;
+        }
+
     }
 
 }

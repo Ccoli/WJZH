@@ -51,11 +51,11 @@ namespace Tuby.Api.Model
         /// 出生日期
         /// </summary>
         public string Birthday { get; set; }
-   
+
         /// <summary>
-        /// 民族
+        /// 民族ID
         /// </summary>
-        public string Nation { get; set; }
+        public int Nation { get; set; }
    
         /// <summary>
         /// 籍贯
@@ -119,5 +119,7 @@ namespace Tuby.Api.Model
         /// 联系人
         /// </summary>
         public string Contact { get; set; }
+
+        //public string Unit { get; set; }
     }
 }

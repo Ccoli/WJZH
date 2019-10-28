@@ -24,3 +24,16 @@ H:\MyProjects\Tuby.Api - 副本\Tuby.Api.Model\bin\Debug\netcoreapp2.2\Tuby.Api.
 H:\MyProjects\Tuby.Api - 副本\Tuby.Api.Model\bin\Debug\netcoreapp2.2\Tuby.Api.Common.dll
 H:\MyProjects\Tuby.Api - 副本\Tuby.Api.Model\bin\Debug\netcoreapp2.2\Tuby.Api.Common.pdb
 H:\MyProjects\Tuby.Api - 副本\Tuby.Api.Model\obj\Debug\netcoreapp2.2\Tuby.Api.Model.csproj.CopyComplete
+F:\Myproject\WJZH\Tuby.Api\Tuby.Api.Model\obj\Debug\netcoreapp2.2\Tuby.Api.Model.csprojAssemblyReference.cache
+F:\Myproject\WJZH\Tuby.Api\Tuby.Api.Model\obj\Debug\netcoreapp2.2\Tuby.Api.Model.csproj.CoreCompileInputs.cache
+F:\Myproject\WJZH\Tuby.Api\Tuby.Api.Model\obj\Debug\netcoreapp2.2\Tuby.Api.Model.AssemblyInfoInputs.cache
+F:\Myproject\WJZH\Tuby.Api\Tuby.Api.Model\obj\Debug\netcoreapp2.2\Tuby.Api.Model.AssemblyInfo.cs
+F:\Myproject\WJZH\Tuby.Api\Tuby.Api.Model\obj\Debug\netcoreapp2.2\Tuby.Api.Model.dll
+F:\Myproject\WJZH\Tuby.Api\Tuby.Api.Model\obj\Debug\netcoreapp2.2\Tuby.Api.Model.pdb
+F:\Myproject\WJZH\Tuby.Api\Tuby.Api.Model\bin\Debug\netcoreapp2.2\Tuby.Api.Model.deps.json
+F:\Myproject\WJZH\Tuby.Api\Tuby.Api.Model\bin\Debug\netcoreapp2.2\Tuby.Api.Model.dll
+F:\Myproject\WJZH\Tuby.Api\Tuby.Api.Model\bin\Debug\netcoreapp2.2\Tuby.Api.Model.pdb
+F:\Myproject\WJZH\Tuby.Api\Tuby.Api.Model\bin\Debug\netcoreapp2.2\Tuby.Api.Model.xml
+F:\Myproject\WJZH\Tuby.Api\Tuby.Api.Model\bin\Debug\netcoreapp2.2\Tuby.Api.Common.dll
+F:\Myproject\WJZH\Tuby.Api\Tuby.Api.Model\bin\Debug\netcoreapp2.2\Tuby.Api.Common.pdb
+F:\Myproject\WJZH\Tuby.Api\Tuby.Api.Model\obj\Debug\netcoreapp2.2\Tuby.Api.Model.csproj.CopyComplete

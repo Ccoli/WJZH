@@ -31,3 +31,13 @@ H:\MyProjects\Tuby.Api - 副本\Tuby.Api.Repository\obj\Release\netcoreapp2.2\Tu
 H:\MyProjects\Tuby.Api - 副本\Tuby.Api.Repository\obj\Release\netcoreapp2.2\Tuby.Api.Repository.csproj.CopyComplete
 H:\MyProjects\Tuby.Api - 副本\Tuby.Api.Repository\obj\Release\netcoreapp2.2\Tuby.Api.Repository.dll
 H:\MyProjects\Tuby.Api - 副本\Tuby.Api.Repository\obj\Release\netcoreapp2.2\Tuby.Api.Repository.pdb
+F:\Myproject\WJZH\Tuby.Api\Tuby.Api\bin\Release\netcoreapp2.2\Tuby.Api.Repository.deps.json
+F:\Myproject\WJZH\Tuby.Api\Tuby.Api\bin\Release\netcoreapp2.2\Tuby.Api.Repository.dll
+F:\Myproject\WJZH\Tuby.Api\Tuby.Api\bin\Release\netcoreapp2.2\Tuby.Api.Repository.pdb
+F:\Myproject\WJZH\Tuby.Api\Tuby.Api.Repository\obj\Release\netcoreapp2.2\Tuby.Api.Repository.csprojAssemblyReference.cache
+F:\Myproject\WJZH\Tuby.Api\Tuby.Api.Repository\obj\Release\netcoreapp2.2\Tuby.Api.Repository.csproj.CoreCompileInputs.cache
+F:\Myproject\WJZH\Tuby.Api\Tuby.Api.Repository\obj\Release\netcoreapp2.2\Tuby.Api.Repository.AssemblyInfoInputs.cache
+F:\Myproject\WJZH\Tuby.Api\Tuby.Api.Repository\obj\Release\netcoreapp2.2\Tuby.Api.Repository.AssemblyInfo.cs
+F:\Myproject\WJZH\Tuby.Api\Tuby.Api.Repository\obj\Release\netcoreapp2.2\Tuby.Api.Repository.csproj.CopyComplete
+F:\Myproject\WJZH\Tuby.Api\Tuby.Api.Repository\obj\Release\netcoreapp2.2\Tuby.Api.Repository.dll
+F:\Myproject\WJZH\Tuby.Api\Tuby.Api.Repository\obj\Release\netcoreapp2.2\Tuby.Api.Repository.pdb

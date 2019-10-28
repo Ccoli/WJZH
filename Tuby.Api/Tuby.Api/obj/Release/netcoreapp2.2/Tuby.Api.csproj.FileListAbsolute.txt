@@ -54,3 +54,31 @@ H:\MyProjects\Tuby.Api - 副本\Tuby.Api\obj\Release\netcoreapp2.2\Tuby.Api.Razo
 H:\MyProjects\Tuby.Api - 副本\Tuby.Api\obj\Release\netcoreapp2.2\Tuby.Api.csproj.CopyComplete
 H:\MyProjects\Tuby.Api - 副本\Tuby.Api\obj\Release\netcoreapp2.2\Tuby.Api.dll
 H:\MyProjects\Tuby.Api - 副本\Tuby.Api\obj\Release\netcoreapp2.2\Tuby.Api.pdb
+F:\Myproject\WJZH\Tuby.Api\Tuby.Api\bin\Release\netcoreapp2.2\appsettings.json
+F:\Myproject\WJZH\Tuby.Api\Tuby.Api\bin\Release\netcoreapp2.2\Tuby.Api.deps.json
+F:\Myproject\WJZH\Tuby.Api\Tuby.Api\bin\Release\netcoreapp2.2\Tuby.Api.runtimeconfig.json
+F:\Myproject\WJZH\Tuby.Api\Tuby.Api\bin\Release\netcoreapp2.2\Tuby.Api.runtimeconfig.dev.json
+F:\Myproject\WJZH\Tuby.Api\Tuby.Api\bin\Release\netcoreapp2.2\Tuby.Api.dll
+F:\Myproject\WJZH\Tuby.Api\Tuby.Api\bin\Release\netcoreapp2.2\Tuby.Api.pdb
+F:\Myproject\WJZH\Tuby.Api\Tuby.Api\bin\Release\netcoreapp2.2\Tuby.Api.xml
+F:\Myproject\WJZH\Tuby.Api\Tuby.Api\bin\Release\netcoreapp2.2\Tuby.Api.Common.dll
+F:\Myproject\WJZH\Tuby.Api\Tuby.Api\bin\Release\netcoreapp2.2\Tuby.Api.IRepositoty.dll
+F:\Myproject\WJZH\Tuby.Api\Tuby.Api\bin\Release\netcoreapp2.2\Tuby.Api.IServices.dll
+F:\Myproject\WJZH\Tuby.Api\Tuby.Api\bin\Release\netcoreapp2.2\Tuby.Api.Model.dll
+F:\Myproject\WJZH\Tuby.Api\Tuby.Api\bin\Release\netcoreapp2.2\Tuby.Api.IRepositoty.pdb
+F:\Myproject\WJZH\Tuby.Api\Tuby.Api\bin\Release\netcoreapp2.2\Tuby.Api.IServices.pdb
+F:\Myproject\WJZH\Tuby.Api\Tuby.Api\bin\Release\netcoreapp2.2\Tuby.Api.Model.pdb
+F:\Myproject\WJZH\Tuby.Api\Tuby.Api\bin\Release\netcoreapp2.2\Tuby.Api.Model.xml
+F:\Myproject\WJZH\Tuby.Api\Tuby.Api\bin\Release\netcoreapp2.2\Tuby.Api.Services.pdb
+F:\Myproject\WJZH\Tuby.Api\Tuby.Api\bin\Release\netcoreapp2.2\Tuby.Api.Common.pdb
+F:\Myproject\WJZH\Tuby.Api\Tuby.Api\bin\Release\netcoreapp2.2\Tuby.Api.Repository.pdb
+F:\Myproject\WJZH\Tuby.Api\Tuby.Api\obj\Release\netcoreapp2.2\Tuby.Api.csprojAssemblyReference.cache
+F:\Myproject\WJZH\Tuby.Api\Tuby.Api\obj\Release\netcoreapp2.2\Tuby.Api.csproj.CoreCompileInputs.cache
+F:\Myproject\WJZH\Tuby.Api\Tuby.Api\obj\Release\netcoreapp2.2\Tuby.Api.RazorAssemblyInfo.cache
+F:\Myproject\WJZH\Tuby.Api\Tuby.Api\obj\Release\netcoreapp2.2\Tuby.Api.RazorAssemblyInfo.cs
+F:\Myproject\WJZH\Tuby.Api\Tuby.Api\obj\Release\netcoreapp2.2\Tuby.Api.AssemblyInfoInputs.cache
+F:\Myproject\WJZH\Tuby.Api\Tuby.Api\obj\Release\netcoreapp2.2\Tuby.Api.AssemblyInfo.cs
+F:\Myproject\WJZH\Tuby.Api\Tuby.Api\obj\Release\netcoreapp2.2\Tuby.Api.RazorTargetAssemblyInfo.cache
+F:\Myproject\WJZH\Tuby.Api\Tuby.Api\obj\Release\netcoreapp2.2\Tuby.Api.csproj.CopyComplete
+F:\Myproject\WJZH\Tuby.Api\Tuby.Api\obj\Release\netcoreapp2.2\Tuby.Api.dll
+F:\Myproject\WJZH\Tuby.Api\Tuby.Api\obj\Release\netcoreapp2.2\Tuby.Api.pdb

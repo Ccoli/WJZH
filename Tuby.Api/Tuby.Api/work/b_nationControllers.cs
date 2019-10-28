@@ -54,7 +54,7 @@ namespace Tuby.Api.Controllers
         [HttpGet("{id}")]
         public async Task<List<b_nation>> Get(int id)
         {
-            return await _b_nationServices.Query(c => c.ID == id);
+            return await _b_nationServices.Query(c => c.NationID == id);
         }
 
         /// <summary>
@@ -84,18 +84,18 @@ namespace Tuby.Api.Controllers
         public async Task<MessageModel<string>> Update([FromBody] b_nation b_nation)
         {
 			var data = new MessageModel<string>();
-            if (b_nation != null && b_nation.ID > 0)
+            if (b_nation != null && b_nation.NationID > 0)
             {
                 var id = (await _b_nationServices.Update(b_nation));
                 data.success = id;
                 if (data.success)
                 {
-                    data.response = "id为" +b_nation.ID.ToString() + "的数据更新成功";
+                    data.response = "id为" +b_nation.NationID.ToString() + "的数据更新成功";
                     data.msg = "更新成功";
                 }
                 else
                 {
-                    data.response = "id为" +b_nation.ID.ToString() + "的数据不存在";
+                    data.response = "id为" +b_nation.NationID.ToString() + "的数据不存在";
                 }
             }
 

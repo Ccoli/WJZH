@@ -36,3 +36,22 @@ H:\MyProjects\Tuby.Api - 副本\Tuby.Api.FrameWork\obj\Debug\netcoreapp2.2\Tuby.
 H:\MyProjects\Tuby.Api - 副本\Tuby.Api.FrameWork\obj\Debug\netcoreapp2.2\Tuby.Api.FrameWork.csproj.CopyComplete
 H:\MyProjects\Tuby.Api - 副本\Tuby.Api.FrameWork\obj\Debug\netcoreapp2.2\Tuby.Api.FrameWork.dll
 H:\MyProjects\Tuby.Api - 副本\Tuby.Api.FrameWork\obj\Debug\netcoreapp2.2\Tuby.Api.FrameWork.pdb
+F:\Myproject\WJZH\Tuby.Api\Tuby.Api.FrameWork\obj\Debug\netcoreapp2.2\Tuby.Api.FrameWork.csprojAssemblyReference.cache
+F:\Myproject\WJZH\Tuby.Api\Tuby.Api.FrameWork\obj\Debug\netcoreapp2.2\Tuby.Api.FrameWork.csproj.CoreCompileInputs.cache
+F:\Myproject\WJZH\Tuby.Api\Tuby.Api.FrameWork\obj\Debug\netcoreapp2.2\Tuby.Api.FrameWork.AssemblyInfoInputs.cache
+F:\Myproject\WJZH\Tuby.Api\Tuby.Api.FrameWork\obj\Debug\netcoreapp2.2\Tuby.Api.FrameWork.AssemblyInfo.cs
+F:\Myproject\WJZH\Tuby.Api\Tuby.Api.FrameWork\obj\Debug\netcoreapp2.2\Tuby.Api.FrameWork.dll
+F:\Myproject\WJZH\Tuby.Api\Tuby.Api.FrameWork\obj\Debug\netcoreapp2.2\Tuby.Api.FrameWork.pdb
+F:\Myproject\WJZH\Tuby.Api\Tuby.Api.FrameWork\bin\Debug\netcoreapp2.2\Tuby.Api.FrameWork.deps.json
+F:\Myproject\WJZH\Tuby.Api\Tuby.Api.FrameWork\bin\Debug\netcoreapp2.2\Tuby.Api.FrameWork.dll
+F:\Myproject\WJZH\Tuby.Api\Tuby.Api.FrameWork\bin\Debug\netcoreapp2.2\Tuby.Api.FrameWork.pdb
+F:\Myproject\WJZH\Tuby.Api\Tuby.Api.FrameWork\bin\Debug\netcoreapp2.2\Tuby.Api.Common.dll
+F:\Myproject\WJZH\Tuby.Api\Tuby.Api.FrameWork\bin\Debug\netcoreapp2.2\Tuby.Api.IRepositoty.dll
+F:\Myproject\WJZH\Tuby.Api\Tuby.Api.FrameWork\bin\Debug\netcoreapp2.2\Tuby.Api.IServices.dll
+F:\Myproject\WJZH\Tuby.Api\Tuby.Api.FrameWork\bin\Debug\netcoreapp2.2\Tuby.Api.Model.dll
+F:\Myproject\WJZH\Tuby.Api\Tuby.Api.FrameWork\bin\Debug\netcoreapp2.2\Tuby.Api.IRepositoty.pdb
+F:\Myproject\WJZH\Tuby.Api\Tuby.Api.FrameWork\bin\Debug\netcoreapp2.2\Tuby.Api.IServices.pdb
+F:\Myproject\WJZH\Tuby.Api\Tuby.Api.FrameWork\bin\Debug\netcoreapp2.2\Tuby.Api.Common.pdb
+F:\Myproject\WJZH\Tuby.Api\Tuby.Api.FrameWork\bin\Debug\netcoreapp2.2\Tuby.Api.Model.pdb
+F:\Myproject\WJZH\Tuby.Api\Tuby.Api.FrameWork\bin\Debug\netcoreapp2.2\Tuby.Api.Model.xml
+F:\Myproject\WJZH\Tuby.Api\Tuby.Api.FrameWork\obj\Debug\netcoreapp2.2\Tuby.Api.FrameWork.csproj.CopyComplete

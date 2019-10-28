@@ -52,6 +52,11 @@ namespace Tuby.Api.Services.BASE
             return await baseDal.Add(entity);
         }
 
+        public async Task<int> AddList(List<TEntity> list)
+        {
+            return await baseDal.AddList(list);
+        }
+
         /// <summary>
         /// 更新实体数据
         /// </summary>
@@ -352,6 +357,18 @@ namespace Tuby.Api.Services.BASE
             Expression<Func<T, T2, T3, T4, T5, T6, T7, T8, bool>> whereLambda = null) where T : class, new()
         {
             return await baseDal.QueryMuch<T, T2, T3, T4, T5, T6, T7, T8, TResult>(joinExpression, whereLambda);
+        }
+        public async Task<PageModel<TResult>> QueryMuch<T, T2, T3, T4, T5, T6, T7, T8, T9, TResult>(
+    Expression<Func<T, T2, T3, T4, T5, T6, T7, T8, T9, object[]>> joinExpression, int intPageIndex = 0, int intPageSize = 20,
+    Expression<Func<T, T2, T3, T4, T5, T6, T7, T8, T9, bool>> whereLambda = null) where T : class, new()
+        {
+            return await baseDal.QueryMuch<T, T2, T3, T4, T5, T6, T7, T8, T9, TResult>(joinExpression, intPageIndex, intPageSize, whereLambda);
+        }
+        public async Task<List<TResult>> QueryMuch<T, T2, T3, T4, T5, T6, T7, T8, T9, TResult>(
+            Expression<Func<T, T2, T3, T4, T5, T6, T7, T8, T9, object[]>> joinExpression,
+            Expression<Func<T, T2, T3, T4, T5, T6, T7, T8, T9, bool>> whereLambda = null) where T : class, new()
+        {
+            return await baseDal.QueryMuch<T, T2, T3, T4, T5, T6, T7, T8, T9, TResult>(joinExpression, whereLambda);
         }
     }
 }

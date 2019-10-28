@@ -17,7 +17,10 @@ namespace Tuby.Api.IRepository.Base
 
         Task<int> Add(TEntity model);
 
+        Task<int> AddList(List<TEntity> list);
+
         Task<bool> DeleteById(object id);
+        Task<bool> DeleteValue(Expression<Func<TEntity, bool>> whereExpression);
 
         Task<bool> Delete(TEntity model);
 
@@ -29,6 +32,8 @@ namespace Tuby.Api.IRepository.Base
 
         Task<List<TEntity>> Query();
         Task<List<TEntity>> Query(string strWhere);
+        Task<List<string>> QueryField(Expression<Func<TEntity, string>> selectExpression);
+        Task<List<object>> QueryField(Expression<Func<TEntity, object>> selectExpression);
         Task<List<TEntity>> Query(Expression<Func<TEntity, bool>> whereExpression);
         Task<List<TEntity>> Query(Expression<Func<TEntity, bool>> whereExpression, string strOrderByFileds);
         Task<List<TEntity>> Query(Expression<Func<TEntity, bool>> whereExpression, Expression<Func<TEntity, object>> orderByExpression, bool isAsc = true);
@@ -70,5 +75,11 @@ namespace Tuby.Api.IRepository.Base
         Task<List<TResult>> QueryMuch<T, T2, T3, T4, T5, T6, T7, T8, TResult>(
            Expression<Func<T, T2, T3, T4, T5, T6, T7, T8, object[]>> joinExpression,
            Expression<Func<T, T2, T3, T4, T5, T6, T7, T8, bool>> whereLambda = null) where T : class, new();
+        Task<PageModel<TResult>> QueryMuch<T, T2, T3, T4, T5, T6, T7, T8, T9, TResult>(
+           Expression<Func<T, T2, T3, T4, T5, T6, T7, T8, T9, object[]>> joinExpression, int intPageIndex = 0, int intPageSize = 20,
+           Expression<Func<T, T2, T3, T4, T5, T6, T7, T8, T9, bool>> whereLambda = null) where T : class, new();
+        Task<List<TResult>> QueryMuch<T, T2, T3, T4, T5, T6, T7, T8, T9, TResult>(
+           Expression<Func<T, T2, T3, T4, T5, T6, T7, T8, T9, object[]>> joinExpression,
+           Expression<Func<T, T2, T3, T4, T5, T6, T7, T8, T9, bool>> whereLambda = null) where T : class, new();
     }
 }

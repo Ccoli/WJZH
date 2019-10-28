@@ -12,5 +12,6 @@ namespace Tuby.Api.IRepositoty
     {
         Task<PageModel<SoldierInfoView>> QueryMuchTable(int page,int pagesize);
         Task<List<SoldierInfoView>> QueryMuchTable(string name);
+
     }
 }

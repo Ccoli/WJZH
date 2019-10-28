@@ -20,11 +20,11 @@ namespace Tuby.Api.Model
         /// <summary>
         /// 
         /// </summary>
-        public int ID { get; set; }
+        public int NationID { get; set; }
    
         /// <summary>
         /// 
         /// </summary>
-        public string Name { get; set; }
+        public string NationName { get; set; }
     }
 }

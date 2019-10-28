@@ -47,7 +47,16 @@ namespace Tuby.Api.Controllers
         {
             return await _d_soldierServices.Query("", page, 10, "");
         }
-
+        /// <summary>
+        /// 查询名字列表
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        [Route("getname")]
+        public async Task<List<object>> Getname()
+        {
+            return await _d_soldierServices.QueryNameList();
+        }
         /// <summary>
 		///根据id查询数据
 		/// </summary>
@@ -64,7 +73,7 @@ namespace Tuby.Api.Controllers
        public async Task<MessageModel<string>> Post([FromBody] d_soldier d_soldier)
         {
 			var data = new MessageModel<string>();
-
+            d_soldier.UpdateTime = DateTime.Now;
             var id = (await _d_soldierServices.Add(d_soldier));
             data.success = id > 0;
             if (data.success)
@@ -86,6 +95,7 @@ namespace Tuby.Api.Controllers
 			var data = new MessageModel<string>();
             if (d_soldier != null && d_soldier.ID > 0)
             {
+                d_soldier.UpdateTime = DateTime.Now;
                 var id = (await _d_soldierServices.Update(d_soldier));
                 data.success = id;
                 if (data.success)

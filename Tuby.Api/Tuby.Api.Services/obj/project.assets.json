@@ -3543,8 +3543,6 @@
       "type": "package",
       "path": "microsoft.win32.registry/4.4.0",
       "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
         "LICENSE.TXT",
         "THIRD-PARTY-NOTICES.TXT",
         "lib/net46/Microsoft.Win32.Registry.dll",
@@ -3806,7 +3804,6 @@
       "type": "package",
       "path": "runtime.native.system.data.sqlclient.sni/4.4.0",
       "files": [
-        ".nupkg.metadata",
         "LICENSE.TXT",
         "THIRD-PARTY-NOTICES.TXT",
         "runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
@@ -4263,7 +4260,6 @@
       "type": "package",
       "path": "system.collections.immutable/1.2.0",
       "files": [
-        ".nupkg.metadata",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/netstandard1.0/System.Collections.Immutable.dll",
@@ -4279,7 +4275,6 @@
       "type": "package",
       "path": "system.collections.nongeneric/4.0.1",
       "files": [
-        ".nupkg.metadata",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -4670,8 +4665,6 @@
       "type": "package",
       "path": "system.diagnostics.process/4.1.0",
       "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -4767,8 +4760,6 @@
       "type": "package",
       "path": "system.diagnostics.tracesource/4.0.0",
       "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -5358,7 +5349,6 @@
       "path": "system.net.http/4.1.0",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/Xamarinmac20/_._",
@@ -5439,7 +5429,6 @@
       "type": "package",
       "path": "system.net.nameresolution/4.0.0",
       "files": [
-        ".nupkg.metadata",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -5558,7 +5547,6 @@
       "type": "package",
       "path": "system.net.requests/4.0.11",
       "files": [
-        ".nupkg.metadata",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -5677,7 +5665,6 @@
       "type": "package",
       "path": "system.net.webheadercollection/4.0.1",
       "files": [
-        ".nupkg.metadata",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -5992,7 +5979,6 @@
       "type": "package",
       "path": "system.reflection.metadata/1.3.0",
       "files": [
-        ".nupkg.metadata",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/netstandard1.1/System.Reflection.Metadata.dll",
@@ -6684,8 +6670,6 @@
       "type": "package",
       "path": "system.security.accesscontrol/4.4.0",
       "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
         "LICENSE.TXT",
         "THIRD-PARTY-NOTICES.TXT",
         "lib/net46/System.Security.AccessControl.dll",
@@ -7130,8 +7114,6 @@
       "type": "package",
       "path": "system.text.encoding.codepages/4.4.0",
       "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
         "LICENSE.TXT",
         "THIRD-PARTY-NOTICES.TXT",
         "lib/MonoAndroid10/_._",
@@ -7438,7 +7420,6 @@
       "type": "package",
       "path": "system.threading.overlapped/4.0.1",
       "files": [
-        ".nupkg.metadata",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/net46/System.Threading.Overlapped.dll",
@@ -7550,8 +7531,6 @@
       "type": "package",
       "path": "system.threading.thread/4.0.0",
       "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -7590,8 +7569,6 @@
       "type": "package",
       "path": "system.threading.threadpool/4.0.10",
       "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -7829,11 +7806,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "H:\\MyProjects\\Tuby.Api - 副本\\Tuby.Api.Services\\Tuby.Api.Services.csproj",
+      "projectUniqueName": "H:\\MyProjects\\Tuby.Api\\Tuby.Api.Services\\Tuby.Api.Services.csproj",
       "projectName": "Tuby.Api.Services",
-      "projectPath": "H:\\MyProjects\\Tuby.Api - 副本\\Tuby.Api.Services\\Tuby.Api.Services.csproj",
+      "projectPath": "H:\\MyProjects\\Tuby.Api\\Tuby.Api.Services\\Tuby.Api.Services.csproj",
       "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-      "outputPath": "H:\\MyProjects\\Tuby.Api - 副本\\Tuby.Api.Services\\obj\\",
+      "outputPath": "H:\\MyProjects\\Tuby.Api\\Tuby.Api.Services\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -7852,14 +7829,14 @@
       "frameworks": {
         "netcoreapp2.2": {
           "projectReferences": {
-            "H:\\MyProjects\\Tuby.Api - 副本\\Tuby.Api.IRepositoty\\Tuby.Api.IRepositoty.csproj": {
-              "projectPath": "H:\\MyProjects\\Tuby.Api - 副本\\Tuby.Api.IRepositoty\\Tuby.Api.IRepositoty.csproj"
+            "H:\\MyProjects\\Tuby.Api\\Tuby.Api.IRepositoty\\Tuby.Api.IRepositoty.csproj": {
+              "projectPath": "H:\\MyProjects\\Tuby.Api\\Tuby.Api.IRepositoty\\Tuby.Api.IRepositoty.csproj"
             },
-            "H:\\MyProjects\\Tuby.Api - 副本\\Tuby.Api.IServices\\Tuby.Api.IServices.csproj": {
-              "projectPath": "H:\\MyProjects\\Tuby.Api - 副本\\Tuby.Api.IServices\\Tuby.Api.IServices.csproj"
+            "H:\\MyProjects\\Tuby.Api\\Tuby.Api.IServices\\Tuby.Api.IServices.csproj": {
+              "projectPath": "H:\\MyProjects\\Tuby.Api\\Tuby.Api.IServices\\Tuby.Api.IServices.csproj"
             },
-            "H:\\MyProjects\\Tuby.Api - 副本\\Tuby.Api.Repository\\Tuby.Api.Repository.csproj": {
-              "projectPath": "H:\\MyProjects\\Tuby.Api - 副本\\Tuby.Api.Repository\\Tuby.Api.Repository.csproj"
+            "H:\\MyProjects\\Tuby.Api\\Tuby.Api.Repository\\Tuby.Api.Repository.csproj": {
+              "projectPath": "H:\\MyProjects\\Tuby.Api\\Tuby.Api.Repository\\Tuby.Api.Repository.csproj"
             }
           }
         }

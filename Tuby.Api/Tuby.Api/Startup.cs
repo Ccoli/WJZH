@@ -159,8 +159,16 @@ namespace Tuby.Api
                 // 全局异常过滤
                 o.Filters.Add(typeof(GlobalExceptionsFilter));
             })
-            .SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            .SetCompatibilityVersion(CompatibilityVersion.Version_2_2)
+            .AddJsonOptions(options =>
+            {
+                //配置大小写问题，默认是首字母小写
+                //options.SerializerSettings.ContractResolver = new Newtonsoft.Json.Serialization.DefaultContractResolver();
+                //配置序列化时时间格式为yyyy-MM-dd HH:mm:ss
+                options.SerializerSettings.DateFormatString = "yyyy-MM-dd HH:mm:ss";
+            });;
             #endregion
+
 
             #region Httpcontext
 

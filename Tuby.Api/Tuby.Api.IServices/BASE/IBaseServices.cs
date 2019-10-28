@@ -16,6 +16,8 @@ namespace Tuby.Api.IServices.BASE
 
         Task<int> Add(TEntity model);
 
+        Task<int> AddList(List<TEntity> list);
+
         Task<bool> DeleteById(object id);
 
         Task<bool> Delete(TEntity model);
@@ -70,5 +72,11 @@ namespace Tuby.Api.IServices.BASE
         Task<List<TResult>> QueryMuch<T, T2, T3, T4, T5, T6, T7, T8, TResult>(
             Expression<Func<T, T2, T3, T4, T5, T6, T7, T8, object[]>> joinExpression, 
             Expression<Func<T, T2, T3, T4, T5, T6, T7, T8, bool>> whereLambda = null) where T : class, new();
+        Task<PageModel<TResult>> QueryMuch<T, T2, T3, T4, T5, T6, T7, T8, T9, TResult>(
+            Expression<Func<T, T2, T3, T4, T5, T6, T7, T8, T9, object[]>> joinExpression, int intPageIndex = 0, int intPageSize = 20,
+            Expression<Func<T, T2, T3, T4, T5, T6, T7, T8, T9, bool>> whereLambda = null) where T : class, new();
+        Task<List<TResult>> QueryMuch<T, T2, T3, T4, T5, T6, T7, T8, T9, TResult>(
+            Expression<Func<T, T2, T3, T4, T5, T6, T7, T8, T9, object[]>> joinExpression,
+            Expression<Func<T, T2, T3, T4, T5, T6, T7, T8, T9, bool>> whereLambda = null) where T : class, new();
     }
 }

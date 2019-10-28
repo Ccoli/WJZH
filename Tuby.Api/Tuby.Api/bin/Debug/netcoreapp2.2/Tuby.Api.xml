@@ -602,6 +602,56 @@
             </summary>
             <returns></returns>
         </member>
+        <member name="T:Tuby.Api.Controllers.d_dutyController">
+            <summary>
+            d_dutyControllers
+            </summary>	
+        </member>
+        <member name="M:Tuby.Api.Controllers.d_dutyController.#ctor(Tuby.Api.IServices.Id_dutyServices)">
+            <summary>
+            构造函数
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Tuby.Api.Controllers.d_dutyController.Get">
+             <summary>
+            查询执勤信息表
+             </summary>	
+        </member>
+        <member name="M:Tuby.Api.Controllers.d_dutyController.GetPage(System.Int32)">
+            <summary>
+            分页查询
+            </summary>
+            <param name="page"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tuby.Api.Controllers.d_dutyController.Get(System.Int32)">
+             <summary>
+            根据id查询数据
+             </summary>
+        </member>
+        <member name="M:Tuby.Api.Controllers.d_dutyController.Post(Tuby.Api.Model.viewmodels.DutyEntity)">
+            <summary>
+            使用post方法添加数据
+            </summary>
+        </member>
+        <member name="M:Tuby.Api.Controllers.d_dutyController.Update(Tuby.Api.Model.d_duty)">
+             <summary>
+            更新数据
+             </summary>
+        </member>
+        <member name="M:Tuby.Api.Controllers.d_dutyController.Delete(System.Int32)">
+            <summary>
+            根据id使用get方法删除数据
+            </summary>
+        </member>
+        <member name="M:Tuby.Api.Controllers.d_dutyController.DeleteMuch(System.Object[])">
+            <summary>
+            批量删除
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
         <member name="M:Tuby.Api.Controllers.GunInfoController.#ctor(Tuby.Api.IServices.IGunInfoServices)">
             <summary>
             构造函数
@@ -4020,6 +4070,12 @@
             分页查询
             </summary>
             <param name="page"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tuby.Api.Controllers.d_soldierController.Getname">
+            <summary>
+            查询名字列表
+            </summary>
             <returns></returns>
         </member>
         <member name="M:Tuby.Api.Controllers.d_soldierController.Get(System.Int32)">
