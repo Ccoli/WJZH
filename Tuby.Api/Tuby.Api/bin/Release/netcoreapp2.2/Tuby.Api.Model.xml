@@ -24,6 +24,26 @@
             返回数据集合
             </summary>
         </member>
+        <member name="P:Tuby.Api.Model.Models.Menu.Id">
+            <summary>
+            id
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.Models.Menu.MenuName">
+            <summary>
+            菜单名
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.Models.Menu.CreateTime">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.Models.Menu.IsDeleted">
+            <summary>
+            是否删除
+            </summary>
+        </member>
         <member name="T:Tuby.Api.Model.Models.Module">
             <summary>
             接口API地址信息表
@@ -850,6 +870,16 @@
             是否父节点
             </summary>
         </member>
+        <member name="P:Tuby.Api.Model.viewmodels.LeaveRecordView.Name">
+            <summary>
+            姓名
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.LeaveRecordView.LeaveName">
+            <summary>
+            离队原因
+            </summary>
+        </member>
         <member name="P:Tuby.Api.Model.viewmodels.PhoneTableView.TypeName">
             <summary>
             电话本类型
@@ -1635,7 +1665,7 @@
             
             </summary>
         </member>
-        <member name="P:Tuby.Api.Model.b_leave_reason.Name">
+        <member name="P:Tuby.Api.Model.b_leave_reason.LeaveName">
             <summary>
             
             </summary>

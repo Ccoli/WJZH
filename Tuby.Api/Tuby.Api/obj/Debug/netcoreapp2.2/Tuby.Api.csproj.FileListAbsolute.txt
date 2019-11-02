@@ -24,8 +24,6 @@ H:\MyProjects\Tuby.Api\Tuby.Api\bin\Debug\netcoreapp2.2\Tuby.Api.Common.dll
 H:\MyProjects\Tuby.Api\Tuby.Api\bin\Debug\netcoreapp2.2\Tuby.Api.Common.pdb
 H:\MyProjects\Tuby.Api\Tuby.Api\bin\Debug\netcoreapp2.2\appsettings.json
 H:\MyProjects\Tuby.Api\Tuby.Api\obj\Debug\netcoreapp2.2\Tuby.Api.csprojAssemblyReference.cache
-H:\MyProjects\Tuby.Api\Tuby.Api\bin\Debug\netcoreapp2.2\Tuby.Api.Services.pdb
-H:\MyProjects\Tuby.Api\Tuby.Api\bin\Debug\netcoreapp2.2\Tuby.Api.Repository.pdb
 H:\MyProjects\Tuby.Api - 副本\Tuby.Api\bin\Debug\netcoreapp2.2\appsettings.json
 H:\MyProjects\Tuby.Api - 副本\Tuby.Api\bin\Debug\netcoreapp2.2\Tuby.Api.deps.json
 H:\MyProjects\Tuby.Api - 副本\Tuby.Api\bin\Debug\netcoreapp2.2\Tuby.Api.runtimeconfig.json
@@ -80,3 +78,5 @@ F:\Myproject\WJZH\Tuby.Api\Tuby.Api\obj\Debug\netcoreapp2.2\Tuby.Api.RazorTarget
 F:\Myproject\WJZH\Tuby.Api\Tuby.Api\obj\Debug\netcoreapp2.2\Tuby.Api.csproj.CopyComplete
 F:\Myproject\WJZH\Tuby.Api\Tuby.Api\bin\Debug\netcoreapp2.2\Tuby.Api.Services.pdb
 F:\Myproject\WJZH\Tuby.Api\Tuby.Api\bin\Debug\netcoreapp2.2\Tuby.Api.Repository.pdb
+H:\MyProjects\Tuby.Api\Tuby.Api\bin\Debug\netcoreapp2.2\Tuby.Api.Services.pdb
+H:\MyProjects\Tuby.Api\Tuby.Api\bin\Debug\netcoreapp2.2\Tuby.Api.Repository.pdb

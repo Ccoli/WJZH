@@ -6,6 +6,8 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Tuby.Api.Model;
 using Tuby.Api.IServices;
+using Microsoft.AspNetCore.Authorization;
+using Tuby.Api.Model.viewmodels;
 
 namespace Tuby.Api.Controllers
 {	
@@ -15,7 +17,8 @@ namespace Tuby.Api.Controllers
 	[Produces("application/json")]
 	[Route("api/[controller]")]
     [ApiController]
-	public class d_soldierController : ControllerBase
+    [Authorize(Permissions.Name)]
+    public class d_soldierController : ControllerBase
     { 
 		 readonly Id_soldierServices _d_soldierServices;
 
@@ -56,6 +59,17 @@ namespace Tuby.Api.Controllers
         public async Task<List<object>> Getname()
         {
             return await _d_soldierServices.QueryNameList();
+        }
+        /// <summary>
+        /// 获取统计信息
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        [Route("getcount")]
+        [AllowAnonymous]
+        public async Task<CountSoldierEntity> GetCount()
+        {
+            return await _d_soldierServices.GetCount();
         }
         /// <summary>
 		///根据id查询数据

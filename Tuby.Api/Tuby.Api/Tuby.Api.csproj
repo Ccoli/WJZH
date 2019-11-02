@@ -15,6 +15,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="没用到的权限接口\**" />
+    <Content Remove="没用到的权限接口\**" />
+    <EmbeddedResource Remove="没用到的权限接口\**" />
+    <None Remove="没用到的权限接口\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="4.4.0" />
     <PackageReference Include="Autofac.Extras.DynamicProxy" Version="4.5.0" />
     <PackageReference Include="AutoMapper" Version="8.1.1" />

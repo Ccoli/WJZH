@@ -30,7 +30,7 @@ namespace Tuby.Api.Model
         /// <summary>
         /// 请假原因
         /// </summary>
-        public string Reason { get; set; }
+        public int Reason { get; set; }
    
         /// <summary>
         /// 离队时间

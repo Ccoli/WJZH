@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using Tuby.Api.IServices.BASE;
 using Tuby.Api.Model;
+using Tuby.Api.Model.viewmodels;
 
 namespace Tuby.Api.IServices
 {	
@@ -13,6 +14,7 @@ namespace Tuby.Api.IServices
 	{
         Task<List<string>> QueryList();
         Task<List<object>> QueryNameList();
+        Task<CountSoldierEntity> GetCount();
     }
 }
 

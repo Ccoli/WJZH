@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Tuby.Api.Model;
 using Tuby.Api.IServices;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Tuby.Api.Controllers
 {	
@@ -15,7 +16,8 @@ namespace Tuby.Api.Controllers
 	[Produces("application/json")]
 	[Route("api/[controller]")]
     [ApiController]
-	public class d_target_carController : ControllerBase
+    [Authorize(Permissions.Name)]
+    public class d_target_carController : ControllerBase
     { 
 		 readonly Id_target_carServices _d_target_carServices;
 

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using SqlSugar;
@@ -16,6 +17,7 @@ namespace Tuby.Api.Controllers
     /// </summary>
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize(Permissions.Name)]
     public class AlarmInfoController : ControllerBase
     {
         readonly IAlarmInfoServices _AlarmInfoServices;

@@ -239,7 +239,7 @@ namespace Tuby.Api
                 audienceConfig["Issuer"],//发行人
                 audienceConfig["Audience"],//听众
                 signingCredentials,//签名凭据
-                expiration: TimeSpan.FromSeconds(60 * 60)//接口的过期时间
+                expiration: TimeSpan.FromSeconds(7 * 24 * 60 * 60)//接口的过期时间
                 );
             #endregion
 
@@ -276,11 +276,9 @@ namespace Tuby.Api
             };
 
             //2.1【认证】、core自带官方JWT认证
-            services.AddAuthentication(x =>
-            {
-                x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-                x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-            })
+            // 开启Bearer认证
+            services.AddAuthentication("Bearer")
+             // 添加JwtBearer服务
              .AddJwtBearer(o =>
              {
                  o.TokenValidationParameters = tokenValidationParameters;

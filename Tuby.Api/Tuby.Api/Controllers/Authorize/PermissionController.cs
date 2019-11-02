@@ -232,6 +232,27 @@ namespace Tuby.Api.Controllers
             return data;
         }
 
+        [HttpPost]
+        [AllowAnonymous]
+        [Route("insert")]
+        public async Task<bool> InsertModule()
+        {
+            var flag = false;
+            for(int i = 38; i< 562; i++)
+            {
+                RoleModulePermission roleModulePermission = new RoleModulePermission()
+                {
+                    IsDeleted = false,
+                    RoleId = 4,
+                    ModuleId = i,
+                    PermissionId = 0,
+                };
+                flag = (await _roleModulePermissionServices.Add(roleModulePermission)) > 0;
+            }
+           
+            return flag;
+        }
+
 
         /// <summary>
         /// 获取菜单树

@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Tuby.Api.Model;
 using Tuby.Api.IServices;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Tuby.Api.Controllers
 {	
@@ -15,7 +16,8 @@ namespace Tuby.Api.Controllers
 	[Produces("application/json")]
 	[Route("api/[controller]")]
     [ApiController]
-	public class dr_department_soldierController : ControllerBase
+    [Authorize(Permissions.Name)]
+    public class dr_department_soldierController : ControllerBase
     { 
 		 readonly Idr_department_soldierServices _dr_department_soldierServices;
 

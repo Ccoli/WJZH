@@ -5,6 +5,7 @@ using Tuby.Api.IServices;
 using Tuby.Api.Services.BASE;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Tuby.Api.Model.viewmodels;
 
 namespace Tuby.Api.Services
 {	
@@ -29,6 +30,39 @@ namespace Tuby.Api.Services
         {
             return await dal.QueryNameList();
         }
+
+        public async Task<CountSoldierEntity> GetCount()
+        {
+            var list = await dal.Query();
+            CountSoldierEntity count = new CountSoldierEntity();
+            count.StateCount = 0;
+            count.LeaveCount = 0;
+            count.ToLoanCount = 0;
+            count.TrainCount = 0;
+
+            foreach (var item in list)
+            {
+                if (item.SoilderStateID == 1)
+                {
+                    count.StateCount++;
+                }
+                if (item.SoilderStateID==0)
+                {
+                    count.LeaveCount++;
+                }
+                if (item.SoldierID.Contains("½èµ÷"))
+                {
+                    count.ToLoanCount++;
+                }
+                if (item.SoldierID.Contains("ÐÂÑµ"))
+                {
+                    count.TrainCount++;
+                }
+
+            }
+            return count;
+        }
+       
     }
 }
 	

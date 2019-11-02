@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Tuby.Api.IServices;
@@ -12,6 +13,7 @@ namespace Tuby.Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize(Permissions.Name)]
     public class DeviceListController : ControllerBase
     {
         readonly IDeviceListServices _DeviceListServices;
