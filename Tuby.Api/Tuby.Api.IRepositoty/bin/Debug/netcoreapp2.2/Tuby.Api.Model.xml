@@ -890,6 +890,41 @@
             是否父节点
             </summary>
         </member>
+        <member name="P:Tuby.Api.Model.viewmodels.HandAlarm.ID">
+            <summary>
+            id
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.HandAlarm.X">
+            <summary>
+            x
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.HandAlarm.Y">
+            <summary>
+            y
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.HandAlarm.Z">
+            <summary>
+            z
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.HandAlarm.content">
+            <summary>
+            报警内容
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.HandAlarm.alarm">
+            <summary>
+            报警类型
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.HandAlarm.time">
+            <summary>
+            报警时间
+            </summary>
+        </member>
         <member name="P:Tuby.Api.Model.viewmodels.LeaveRecordView.Name">
             <summary>
             姓名
