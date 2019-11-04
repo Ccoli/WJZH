@@ -29,7 +29,7 @@ namespace Tuby.Api.Services
             }
 
             List<NodeData> list1 = nodes.Values.ToList();
-            list.Reverse();
+            //list.Reverse();
             List<NodeData> result = new List<NodeData>();
             for (int i = list.Count - 1; i >= 0; i--)
             {
@@ -46,6 +46,7 @@ namespace Tuby.Api.Services
                     result.Add(node);
                 }
             }
+            result.Reverse();
             return result;
         }
     }

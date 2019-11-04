@@ -28,6 +28,7 @@ namespace Tuby.Api.Controllers
         }
         // GET: api/DeviceList
         [HttpGet]
+        [AllowAnonymous]
         public async Task<List<NodeData>> GetAsync()
         {
             return await _DeviceListServices.GetListData();
