@@ -22,5 +22,13 @@ namespace Tuby.Api.Model.viewmodels
         /// 培训统计
         /// </summary>
         public int TrainCount { get; set; }
+        /// <summary>
+        /// 休假统计
+        /// </summary>
+        public int VacationCount { get; set; }
+        /// <summary>
+        /// 集训统计
+        /// </summary>
+        public int AllTrainCount { get; set; }
     }
 }

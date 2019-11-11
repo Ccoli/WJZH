@@ -34,6 +34,7 @@ namespace Tuby.Api.Controllers
 		///查询所有数据
 		/// </summary>	
 		 [HttpGet]
+         [AllowAnonymous]
         public async Task<List<d_soldier>> Get()
         {
             return await _d_soldierServices.Query();
@@ -46,6 +47,7 @@ namespace Tuby.Api.Controllers
         /// <returns></returns>
         [HttpGet]
         [Route("getpage")]
+        [AllowAnonymous]
         public async Task<PageModel<d_soldier>> GetPage(int page)
         {
             return await _d_soldierServices.Query("", page, 10, "");
@@ -75,6 +77,7 @@ namespace Tuby.Api.Controllers
 		///根据id查询数据
 		/// </summary>
         [HttpGet("{id}")]
+        [AllowAnonymous]
         public async Task<List<d_soldier>> Get(int id)
         {
             return await _d_soldierServices.Query(c => c.ID == id);

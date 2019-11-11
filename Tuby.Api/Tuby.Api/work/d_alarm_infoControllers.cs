@@ -23,24 +23,27 @@ namespace Tuby.Api.Controllers
 		 readonly Id_alarm_infoServices _d_alarm_infoServices;
         readonly Ib_alarm_typeServices _b_alarm_typeServices;
         readonly ItopicsdkjgServices _topicsdkjgServices;
+        readonly IHandAlarmServices _HandAlarmServices;
 
         /// <summary>
         /// 构造函数
         /// </summary>
         /// <returns></returns>
-        public d_alarm_infoController(Id_alarm_infoServices d_alarm_infoServices, Ib_alarm_typeServices b_alarm_typeServices, ItopicsdkjgServices topicsdkjgServices)
+        public d_alarm_infoController(Id_alarm_infoServices d_alarm_infoServices, Ib_alarm_typeServices b_alarm_typeServices, ItopicsdkjgServices topicsdkjgServices, IHandAlarmServices HandAlarmServices)
         {
             _d_alarm_infoServices = d_alarm_infoServices;
             _b_alarm_typeServices = b_alarm_typeServices;
             _topicsdkjgServices = topicsdkjgServices;
+            _HandAlarmServices = HandAlarmServices;
         }
 		/// <summary>
 		///查询所有数据
 		/// </summary>	
 		 [HttpGet]
+        [AllowAnonymous]
         public async Task<List<d_alarm_info>> Get()
         {
-            return await _d_alarm_infoServices.Query();
+            return await _d_alarm_infoServices.Query("","updatetime desc");
         }
 
 		/// <summary>
@@ -50,6 +53,7 @@ namespace Tuby.Api.Controllers
         /// <returns></returns>
         [HttpGet]
         [Route("getpage")]
+        [AllowAnonymous]
         public async Task<PageModel<d_alarm_info>> GetPage(int page)
         {
             return await _d_alarm_infoServices.Query("", page, 10, "");
@@ -89,7 +93,7 @@ namespace Tuby.Api.Controllers
         [HttpPost]
         [Route("topicsdkjg")]
         [AllowAnonymous]
-        public async Task<MessageModel<string>> Post([FromBody] JGAlarmView JGAlarmView)
+        public async Task<MessageModel<string>> PostJG([FromBody] JGAlarmView JGAlarmView)
         {
             var data = new MessageModel<string>();
 
@@ -119,9 +123,30 @@ namespace Tuby.Api.Controllers
             return data;
         }
 
-         /// <summary>
-		///更新数据
+        /// <summary>
+		/// 使用post方法添加手动报警数据
 		/// </summary>
+        [HttpPost]
+        [Route("topicvideohand")]
+        [AllowAnonymous]
+        public async Task<MessageModel<string>> PostHand([FromBody] HandAlarm HandAlarm)
+        {
+            var data = new MessageModel<string>();
+
+            var id = (await _HandAlarmServices.Add(HandAlarm));
+            data.success = id > 0;
+            if (data.success)
+            {
+                data.response = id.ObjToString();
+                data.msg = "添加成功";
+            }
+
+            return data;
+        }
+
+        /// <summary>
+        ///更新数据
+        /// </summary>
         [HttpPost]
         [Route("update")]
         public async Task<MessageModel<string>> Update([FromBody] d_alarm_info d_alarm_info)

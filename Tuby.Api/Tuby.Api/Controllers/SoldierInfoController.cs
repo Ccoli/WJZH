@@ -46,6 +46,7 @@ namespace Tuby.Api.Controllers
         ///<param name="pagesize">页大小</param>
         /// <returns></returns>
         [HttpGet]
+        [AllowAnonymous]
         public async Task<PageModel<SoldierInfoView>> GetPage(int page,int pagesize)
         {
             var list = await _SoldierInfoServices.QueryMuchTable(page, pagesize);

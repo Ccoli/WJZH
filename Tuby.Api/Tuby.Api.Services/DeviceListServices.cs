@@ -25,7 +25,7 @@ namespace Tuby.Api.Services
             Dictionary<int, NodeData> nodes = new Dictionary<int, NodeData>();
             for (var i = 0; i < list.Count; i++)
             {
-                nodes.Add(list[i].id, new NodeData(list[i].id, list[i].pid, list[i].channel, list[i].timeLine, list[i].comment, list[i].ip, list[i].isParent));
+                nodes.Add(list[i].id, new NodeData(list[i].id, list[i].pid,list[i].name, list[i].channel, list[i].timeLine, list[i].comment, list[i].ip, list[i].isParent));
             }
 
             List<NodeData> list1 = nodes.Values.ToList();

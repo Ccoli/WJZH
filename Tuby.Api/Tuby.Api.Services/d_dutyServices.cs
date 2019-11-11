@@ -20,7 +20,7 @@ namespace Tuby.Api.Services
         }
 
         public async Task<List<d_duty>> QueryDuty() { 
-            var list =await dal.Query("", 14, "UpdateTime desc");
+            var list =await dal.Query("", 14, "UpdateTime desc,id desc");
             if (list.Count > 0&&list!=null)
             {
                 int excutiontionTime = Convert.ToInt32(list.First().ExcutionTime);
@@ -28,12 +28,19 @@ namespace Tuby.Api.Services
                 if (excutiontionTime <= currentTime)
                 {
                     list = list.Take(7).ToList();
+                    if (list.First().Class=="第七班")
+                    {
+                        list.Reverse();
+                    }
                 }
                 else
                 {
                     list.Reverse();
                     list = list.Take(7).ToList();
-                    list.Reverse();
+                    if (list.First().Class == "第七班")
+                    {
+                        list.Reverse();
+                    }
                 }
             }
             return list;

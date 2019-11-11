@@ -38,6 +38,7 @@ namespace Tuby.Api.Controllers
         /// <param name="pagesize">页大小</param>
         /// <returns></returns>
         [HttpGet]
+        [AllowAnonymous]
         public async Task<PageModel<AlarmInfoView>> GetPage(int page,int pagesize)
         {
             //    var list = db.Queryable<d_alarm_info, b_alarm_type, d_alarm_device>(

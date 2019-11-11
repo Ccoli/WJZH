@@ -6,10 +6,11 @@ namespace Tuby.Api.Model.viewmodels
 {
     public class NodeData
     {
-        public NodeData(int id, int pid, string channel, int timeline, string comment, string ip, bool isParent)
+        public NodeData(int id, int pid,string name, string channel, int timeline, string comment, string ip, bool isParent)
         {
             this.id = id;
             this.pid = pid;
+            this.name = name;
             this.channel = channel;
             this.timeline = timeline;
             this.comment = comment;
@@ -19,6 +20,7 @@ namespace Tuby.Api.Model.viewmodels
         }
         public int id;
         public int pid;
+        public string name;
         public string channel;
         public int timeline;
         public string comment;

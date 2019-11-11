@@ -39,6 +39,8 @@ namespace Tuby.Api.Services
             count.LeaveCount = 0;
             count.ToLoanCount = 0;
             count.TrainCount = 0;
+            count.VacationCount = 0;
+            count.AllTrainCount = 0;
 
             foreach (var item in list)
             {
@@ -57,6 +59,14 @@ namespace Tuby.Api.Services
                 if (item.SoldierID.Contains("ÐÂÑµ"))
                 {
                     count.TrainCount++;
+                }
+                if (item.SoldierID.Contains("ÐÝ¼Ù"))
+                {
+                    count.VacationCount++;
+                }
+                if (item.SoldierID.Contains("¼¯Ñµ"))
+                {
+                    count.AllTrainCount++;
                 }
 
             }

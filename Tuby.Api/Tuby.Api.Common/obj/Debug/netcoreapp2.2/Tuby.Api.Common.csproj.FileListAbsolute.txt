@@ -22,4 +22,3 @@ F:\Myproject\WJZH\Tuby.Api\Tuby.Api.Common\obj\Debug\netcoreapp2.2\Tuby.Api.Comm
 F:\Myproject\WJZH\Tuby.Api\Tuby.Api.Common\bin\Debug\netcoreapp2.2\Tuby.Api.Common.deps.json
 F:\Myproject\WJZH\Tuby.Api\Tuby.Api.Common\bin\Debug\netcoreapp2.2\Tuby.Api.Common.dll
 F:\Myproject\WJZH\Tuby.Api\Tuby.Api.Common\bin\Debug\netcoreapp2.2\Tuby.Api.Common.pdb
-F:\Myproject\WJZH\Tuby.Api\Tuby.Api.Common\obj\Debug\netcoreapp2.2\Tuby.Api.Common.csprojAssemblyReference.cache

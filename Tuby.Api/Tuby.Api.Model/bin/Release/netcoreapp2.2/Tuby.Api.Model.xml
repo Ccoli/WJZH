@@ -830,6 +830,36 @@
             输入时间
             </summary>
         </member>
+        <member name="P:Tuby.Api.Model.viewmodels.CountSoldierEntity.StateCount">
+            <summary>
+            在位统计
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.CountSoldierEntity.LeaveCount">
+            <summary>
+            离位统计
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.CountSoldierEntity.ToLoanCount">
+            <summary>
+            借调统计
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.CountSoldierEntity.TrainCount">
+            <summary>
+            培训统计
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.CountSoldierEntity.VacationCount">
+            <summary>
+            休假统计
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.CountSoldierEntity.AllTrainCount">
+            <summary>
+            集训统计
+            </summary>
+        </member>
         <member name="T:Tuby.Api.Model.viewmodels.DeviceListView">
             <summary>
             设备管理列表
@@ -843,6 +873,11 @@
         <member name="P:Tuby.Api.Model.viewmodels.DeviceListView.pid">
             <summary>
             父id
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.DeviceListView.name">
+            <summary>
+            名称
             </summary>
         </member>
         <member name="P:Tuby.Api.Model.viewmodels.DeviceListView.channel">
@@ -868,6 +903,46 @@
         <member name="P:Tuby.Api.Model.viewmodels.DeviceListView.isParent">
             <summary>
             是否父节点
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.HandAlarm.ID">
+            <summary>
+            id
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.HandAlarm.X">
+            <summary>
+            x
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.HandAlarm.Y">
+            <summary>
+            y
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.HandAlarm.Z">
+            <summary>
+            z
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.HandAlarm.content">
+            <summary>
+            报警内容
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.HandAlarm.address">
+            <summary>
+            地址
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.HandAlarm.alarm">
+            <summary>
+            报警类型
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.HandAlarm.time">
+            <summary>
+            报警时间
             </summary>
         </member>
         <member name="P:Tuby.Api.Model.viewmodels.LeaveRecordView.Name">
@@ -1018,6 +1093,16 @@
         <member name="P:Tuby.Api.Model.viewmodels.TargetCarInfoView.IsWhite">
             <summary>
             是否白名单
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.topicsdkjg.ID">
+            <summary>
+            激光报警事件ID
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.topicsdkjg.Name">
+            <summary>
+            激光报警事件
             </summary>
         </member>
         <member name="T:Tuby.Api.Model.ar_usergroup_data_access">
@@ -2198,6 +2283,81 @@
         <member name="P:Tuby.Api.Model.d_duty.ExcutionTime">
             <summary>
             执行时间
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_duty_count.id">
+            <summary>
+            id
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_duty_count.a">
+            <summary>
+            a
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_duty_count.b">
+            <summary>
+            b
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_duty_count.c">
+            <summary>
+            c
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_duty_count.d">
+            <summary>
+            d
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_duty_count.e">
+            <summary>
+            e
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_duty_count.f">
+            <summary>
+            f
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_duty_count.g">
+            <summary>
+            g
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_duty_count.h">
+            <summary>
+            h
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_duty_count.i">
+            <summary>
+            i
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_duty_count.j">
+            <summary>
+            j
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_duty_count.k">
+            <summary>
+            k
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_duty_count.l">
+            <summary>
+            l
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_duty_count.m">
+            <summary>
+            m
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_duty_count.n">
+            <summary>
+            n
             </summary>
         </member>
         <member name="T:Tuby.Api.Model.d_medical">

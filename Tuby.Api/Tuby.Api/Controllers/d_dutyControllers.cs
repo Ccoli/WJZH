@@ -23,7 +23,7 @@ namespace Tuby.Api.Controllers
 		 readonly Id_dutyServices _d_dutyServices;
 
 		 /// <summary>
-        /// 构造函数
+        /// 构造函数    
         /// </summary>
         /// <returns></returns>
         public d_dutyController(Id_dutyServices d_dutyServices)
@@ -34,6 +34,7 @@ namespace Tuby.Api.Controllers
 		///查询执勤信息表
 		/// </summary>	
 		 [HttpGet]
+         [AllowAnonymous]
         public async Task<List<d_duty>> Get()
         {
             return await _d_dutyServices.QueryDuty();
@@ -74,8 +75,7 @@ namespace Tuby.Api.Controllers
                 time = d_duty.ExcutionTime;
             }
             var flag = await _d_dutyServices.DeleteDuty(time);
-            if (flag)
-            {
+
                 var id = (await _d_dutyServices.AddList(datas.tabledatas));
                 data.success = id > 0;
                 if (data.success)
@@ -83,7 +83,7 @@ namespace Tuby.Api.Controllers
                     data.response = "200";
                     data.msg = "添加成功";
                 }
-            }
+
             return data;
         }
 

@@ -9,23 +9,27 @@ namespace Tuby.Api.Model.viewmodels
         /// <summary>
         /// id
         /// </summary>
-        public int ID { get; set; }
+        public string ID { get; set; }
        /// <summary>
        /// x
        /// </summary>
-        public double X { get; set; }
+        public string X { get; set; }
         /// <summary>
         /// y
         /// </summary>
-        public double Y { get; set; }
+        public string Y { get; set; }
         /// <summary>
         /// z
         /// </summary>
-        public double Z { get; set; }
+        public string Z { get; set; }
         /// <summary>
         /// 报警内容
         /// </summary>
         public string content { get; set; }
+        /// <summary>
+        /// 地址
+        /// </summary>
+        public string address { get; set; }
         /// <summary>
         /// 报警类型
         /// </summary>
@@ -34,6 +38,6 @@ namespace Tuby.Api.Model.viewmodels
         /// <summary>
         /// 报警时间
         /// </summary>
-        public DateTime time { get; set; }
+        public string time { get; set; }
     }
 }

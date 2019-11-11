@@ -850,6 +850,16 @@
             培训统计
             </summary>
         </member>
+        <member name="P:Tuby.Api.Model.viewmodels.CountSoldierEntity.VacationCount">
+            <summary>
+            休假统计
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.CountSoldierEntity.AllTrainCount">
+            <summary>
+            集训统计
+            </summary>
+        </member>
         <member name="T:Tuby.Api.Model.viewmodels.DeviceListView">
             <summary>
             设备管理列表
@@ -863,6 +873,11 @@
         <member name="P:Tuby.Api.Model.viewmodels.DeviceListView.pid">
             <summary>
             父id
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.DeviceListView.name">
+            <summary>
+            名称
             </summary>
         </member>
         <member name="P:Tuby.Api.Model.viewmodels.DeviceListView.channel">
@@ -913,6 +928,11 @@
         <member name="P:Tuby.Api.Model.viewmodels.HandAlarm.content">
             <summary>
             报警内容
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.HandAlarm.address">
+            <summary>
+            地址
             </summary>
         </member>
         <member name="P:Tuby.Api.Model.viewmodels.HandAlarm.alarm">
@@ -2263,6 +2283,81 @@
         <member name="P:Tuby.Api.Model.d_duty.ExcutionTime">
             <summary>
             执行时间
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_duty_count.id">
+            <summary>
+            id
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_duty_count.a">
+            <summary>
+            a
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_duty_count.b">
+            <summary>
+            b
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_duty_count.c">
+            <summary>
+            c
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_duty_count.d">
+            <summary>
+            d
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_duty_count.e">
+            <summary>
+            e
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_duty_count.f">
+            <summary>
+            f
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_duty_count.g">
+            <summary>
+            g
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_duty_count.h">
+            <summary>
+            h
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_duty_count.i">
+            <summary>
+            i
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_duty_count.j">
+            <summary>
+            j
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_duty_count.k">
+            <summary>
+            k
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_duty_count.l">
+            <summary>
+            l
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_duty_count.m">
+            <summary>
+            m
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_duty_count.n">
+            <summary>
+            n
             </summary>
         </member>
         <member name="T:Tuby.Api.Model.d_medical">

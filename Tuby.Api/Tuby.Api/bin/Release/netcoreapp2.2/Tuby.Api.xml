@@ -643,7 +643,7 @@
         </member>
         <member name="M:Tuby.Api.Controllers.d_dutyController.#ctor(Tuby.Api.IServices.Id_dutyServices)">
             <summary>
-            构造函数
+            构造函数    
             </summary>
             <returns></returns>
         </member>
@@ -2538,7 +2538,7 @@
             d_alarm_infoControllers
             </summary>	
         </member>
-        <member name="M:Tuby.Api.Controllers.d_alarm_infoController.#ctor(Tuby.Api.IServices.Id_alarm_infoServices)">
+        <member name="M:Tuby.Api.Controllers.d_alarm_infoController.#ctor(Tuby.Api.IServices.Id_alarm_infoServices,Tuby.Api.IServices.Ib_alarm_typeServices,Tuby.Api.IServices.ItopicsdkjgServices,Tuby.Api.IServices.IHandAlarmServices)">
             <summary>
             构造函数
             </summary>
@@ -2564,6 +2564,16 @@
         <member name="M:Tuby.Api.Controllers.d_alarm_infoController.Post(Tuby.Api.Model.d_alarm_info)">
             <summary>
             使用post方法添加数据
+            </summary>
+        </member>
+        <member name="M:Tuby.Api.Controllers.d_alarm_infoController.PostJG(Tuby.Api.Model.viewmodels.JGAlarmView)">
+            <summary>
+            使用post方法添加激光报警
+            </summary>
+        </member>
+        <member name="M:Tuby.Api.Controllers.d_alarm_infoController.PostHand(Tuby.Api.Model.viewmodels.HandAlarm)">
+            <summary>
+            使用post方法添加手动报警数据
             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.d_alarm_infoController.Update(Tuby.Api.Model.d_alarm_info)">
@@ -2682,6 +2692,27 @@
             </summary>
             <param name="id"></param>
             <returns></returns>
+        </member>
+        <member name="T:Tuby.Api.Controllers.d_duty_countController">
+            <summary>
+            d_duty_countControllers
+            </summary>	
+        </member>
+        <member name="M:Tuby.Api.Controllers.d_duty_countController.#ctor(Tuby.Api.IServices.Id_duty_countServices)">
+            <summary>
+            构造函数
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Tuby.Api.Controllers.d_duty_countController.Get">
+             <summary>
+            查询所有数据
+             </summary>	
+        </member>
+        <member name="M:Tuby.Api.Controllers.d_duty_countController.Update(Tuby.Api.Model.d_duty_count)">
+             <summary>
+            更新数据
+             </summary>
         </member>
         <member name="T:Tuby.Api.Controllers.d_medicalController">
             <summary>
@@ -3512,6 +3543,12 @@
             </summary>
             <returns></returns>
         </member>
+        <member name="M:Tuby.Api.Controllers.d_soldierController.GetCount">
+            <summary>
+            获取统计信息
+            </summary>
+            <returns></returns>
+        </member>
         <member name="M:Tuby.Api.Controllers.d_soldierController.Get(System.Int32)">
              <summary>
             根据id查询数据
@@ -4233,6 +4270,106 @@
             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.d_target_people_whitelistController.DeleteMuch(System.Object[])">
+            <summary>
+            批量删除
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Tuby.Api.Controllers.HandAlarmController">
+            <summary>
+            HandAlarmControllers
+            </summary>	
+        </member>
+        <member name="M:Tuby.Api.Controllers.HandAlarmController.#ctor(Tuby.Api.IServices.IHandAlarmServices)">
+            <summary>
+            构造函数
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Tuby.Api.Controllers.HandAlarmController.Get">
+             <summary>
+            查询所有数据
+             </summary>	
+        </member>
+        <member name="M:Tuby.Api.Controllers.HandAlarmController.GetPage(System.Int32)">
+            <summary>
+            分页查询
+            </summary>
+            <param name="page"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tuby.Api.Controllers.HandAlarmController.Get(System.String)">
+             <summary>
+            根据id查询数据
+             </summary>
+        </member>
+        <member name="M:Tuby.Api.Controllers.HandAlarmController.Post(Tuby.Api.Model.viewmodels.HandAlarm)">
+            <summary>
+            使用post方法添加数据
+            </summary>
+        </member>
+        <member name="M:Tuby.Api.Controllers.HandAlarmController.Update(Tuby.Api.Model.viewmodels.HandAlarm)">
+             <summary>
+            更新数据
+             </summary>
+        </member>
+        <member name="M:Tuby.Api.Controllers.HandAlarmController.Delete(System.Int32)">
+            <summary>
+            根据id使用get方法删除数据
+            </summary>
+        </member>
+        <member name="M:Tuby.Api.Controllers.HandAlarmController.DeleteMuch(System.Object[])">
+            <summary>
+            批量删除
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Tuby.Api.Controllers.topicsdkjgController">
+            <summary>
+            topicsdkjgControllers
+            </summary>	
+        </member>
+        <member name="M:Tuby.Api.Controllers.topicsdkjgController.#ctor(Tuby.Api.IServices.ItopicsdkjgServices)">
+            <summary>
+            构造函数
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Tuby.Api.Controllers.topicsdkjgController.Get">
+             <summary>
+            查询所有数据
+             </summary>	
+        </member>
+        <member name="M:Tuby.Api.Controllers.topicsdkjgController.GetPage(System.Int32)">
+            <summary>
+            分页查询
+            </summary>
+            <param name="page"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tuby.Api.Controllers.topicsdkjgController.Get(System.Int32)">
+             <summary>
+            根据id查询数据
+             </summary>
+        </member>
+        <member name="M:Tuby.Api.Controllers.topicsdkjgController.Post(Tuby.Api.Model.viewmodels.topicsdkjg)">
+            <summary>
+            使用post方法添加数据
+            </summary>
+        </member>
+        <member name="M:Tuby.Api.Controllers.topicsdkjgController.Update(Tuby.Api.Model.viewmodels.topicsdkjg)">
+             <summary>
+            更新数据
+             </summary>
+        </member>
+        <member name="M:Tuby.Api.Controllers.topicsdkjgController.Delete(System.Int32)">
+            <summary>
+            根据id使用get方法删除数据
+            </summary>
+        </member>
+        <member name="M:Tuby.Api.Controllers.topicsdkjgController.DeleteMuch(System.Object[])">
             <summary>
             批量删除
             </summary>

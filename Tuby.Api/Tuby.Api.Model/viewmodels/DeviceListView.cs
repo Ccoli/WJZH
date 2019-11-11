@@ -18,6 +18,10 @@ namespace Tuby.Api.Model.viewmodels
         /// </summary>
         public int pid { get; set; }
         /// <summary>
+        /// 名称
+        /// </summary>
+        public string name { get; set; }
+        /// <summary>
         /// 通道
         /// </summary>
         public string channel { get;set; }

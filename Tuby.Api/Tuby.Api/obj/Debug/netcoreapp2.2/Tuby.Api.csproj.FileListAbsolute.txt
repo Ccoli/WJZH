@@ -76,5 +76,3 @@ F:\Myproject\WJZH\Tuby.Api\Tuby.Api\obj\Debug\netcoreapp2.2\Tuby.Api.AssemblyInf
 F:\Myproject\WJZH\Tuby.Api\Tuby.Api\obj\Debug\netcoreapp2.2\Tuby.Api.AssemblyInfo.cs
 F:\Myproject\WJZH\Tuby.Api\Tuby.Api\obj\Debug\netcoreapp2.2\Tuby.Api.RazorTargetAssemblyInfo.cache
 F:\Myproject\WJZH\Tuby.Api\Tuby.Api\obj\Debug\netcoreapp2.2\Tuby.Api.csproj.CopyComplete
-F:\Myproject\WJZH\Tuby.Api\Tuby.Api\bin\Debug\netcoreapp2.2\Tuby.Api.Services.pdb
-F:\Myproject\WJZH\Tuby.Api\Tuby.Api\bin\Debug\netcoreapp2.2\Tuby.Api.Repository.pdb
