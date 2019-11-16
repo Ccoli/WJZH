@@ -24,6 +24,26 @@
             返回数据集合
             </summary>
         </member>
+        <member name="P:Tuby.Api.Model.Models.Menu.Id">
+            <summary>
+            id
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.Models.Menu.MenuName">
+            <summary>
+            菜单名
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.Models.Menu.CreateTime">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.Models.Menu.IsDeleted">
+            <summary>
+            是否删除
+            </summary>
+        </member>
         <member name="T:Tuby.Api.Model.Models.Module">
             <summary>
             接口API地址信息表
@@ -810,6 +830,101 @@
             输入时间
             </summary>
         </member>
+        <member name="T:Tuby.Api.Model.viewmodels.CountSoldierEntity">
+            <summary>
+            士兵统计
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.CountSoldierEntity.StateCount">
+            <summary>
+            在位统计
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.CountSoldierEntity.SixStateCount">
+            <summary>
+            六中队在位统计
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.CountSoldierEntity.SevenStateCount">
+            <summary>
+            七中队在位统计
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.CountSoldierEntity.LeaveCount">
+            <summary>
+            离位统计
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.CountSoldierEntity.SixLeaveCount">
+            <summary>
+            六中队离位统计
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.CountSoldierEntity.SevenLeaveCount">
+            <summary>
+            七中队离位统计
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.CountSoldierEntity.ToLoanCount">
+            <summary>
+             借调统计
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.CountSoldierEntity.SixToLoanCount">
+            <summary>
+            六中队借调统计
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.CountSoldierEntity.SevenToLoanCount">
+            <summary>
+            七中队借调统计
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.CountSoldierEntity.TrainCount">
+            <summary>
+            培训统计
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.CountSoldierEntity.SixTrainCount">
+            <summary>
+            六中队培训统计
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.CountSoldierEntity.SevenTrainCount">
+            <summary>
+            七中队培训统计
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.CountSoldierEntity.VacationCount">
+            <summary>
+            休假统计
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.CountSoldierEntity.SixVacationCount">
+            <summary>
+            六中队休假统计
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.CountSoldierEntity.SevenVacationCount">
+            <summary>
+            七中队休假统计
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.CountSoldierEntity.AllTrainCount">
+            <summary>
+            集训统计
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.CountSoldierEntity.SixAllTrainCount">
+            <summary>
+            六中队集训统计
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.CountSoldierEntity.SevenAllTrainCount">
+            <summary>
+            七中队集训统计
+            </summary>
+        </member>
         <member name="T:Tuby.Api.Model.viewmodels.DeviceListView">
             <summary>
             设备管理列表
@@ -825,19 +940,24 @@
             父id
             </summary>
         </member>
+        <member name="P:Tuby.Api.Model.viewmodels.DeviceListView.name">
+            <summary>
+            名称
+            </summary>
+        </member>
         <member name="P:Tuby.Api.Model.viewmodels.DeviceListView.channel">
             <summary>
             通道
             </summary>
         </member>
-        <member name="P:Tuby.Api.Model.viewmodels.DeviceListView.timeLine">
+        <member name="P:Tuby.Api.Model.viewmodels.DeviceListView.videoaddress">
             <summary>
-            时间长度
+            视频地址
             </summary>
         </member>
-        <member name="P:Tuby.Api.Model.viewmodels.DeviceListView.comment">
+        <member name="P:Tuby.Api.Model.viewmodels.DeviceListView.mainstream">
             <summary>
-            内容
+            主码流
             </summary>
         </member>
         <member name="P:Tuby.Api.Model.viewmodels.DeviceListView.ip">
@@ -848,6 +968,101 @@
         <member name="P:Tuby.Api.Model.viewmodels.DeviceListView.isParent">
             <summary>
             是否父节点
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.DeviceListView.substream">
+            <summary>
+            子码流
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.DeviceListView.coordinate">
+            <summary>
+            坐标
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.DeviceListView.view">
+            <summary>
+            最佳视角
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.DeviceListView.isAddress">
+            <summary>
+            是否使用播放地址
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.DeviceListView.UserID">
+            <summary>
+            账户id
+            </summary>
+        </member>
+        <member name="T:Tuby.Api.Model.viewmodels.DeviceListView2">
+            <summary>
+            设备管理列表
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.DeviceListView2.UserName">
+            <summary>
+            用户名
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.DeviceListView2.Password">
+            <summary>
+            密码
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.DeviceListView2.DeviceFrom">
+            <summary>
+            厂家（海康，大华）
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.HandAlarm.ID">
+            <summary>
+            id
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.HandAlarm.X">
+            <summary>
+            x
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.HandAlarm.Y">
+            <summary>
+            y
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.HandAlarm.Z">
+            <summary>
+            z
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.HandAlarm.content">
+            <summary>
+            报警内容
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.HandAlarm.address">
+            <summary>
+            地址
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.HandAlarm.alarm">
+            <summary>
+            报警类型
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.HandAlarm.time">
+            <summary>
+            报警时间
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.LeaveRecordView.Name">
+            <summary>
+            姓名
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.LeaveRecordView.LeaveName">
+            <summary>
+            离队原因
             </summary>
         </member>
         <member name="P:Tuby.Api.Model.viewmodels.PhoneTableView.TypeName">
@@ -900,64 +1115,9 @@
             哨兵姓名
             </summary>
         </member>
-        <member name="P:Tuby.Api.Model.viewmodels.SoldierInfoView.ID">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="P:Tuby.Api.Model.viewmodels.SoldierInfoView.Name">
-            <summary>
-            姓名
-            </summary>
-        </member>
-        <member name="P:Tuby.Api.Model.viewmodels.SoldierInfoView.ImagePath">
-            <summary>
-            照片
-            </summary>
-        </member>
-        <member name="P:Tuby.Api.Model.viewmodels.SoldierInfoView.SoldierID">
-            <summary>
-            军人证号
-            </summary>
-        </member>
-        <member name="P:Tuby.Api.Model.viewmodels.SoldierInfoView.InductedDay">
-            <summary>
-            入伍日期
-            </summary>
-        </member>
-        <member name="P:Tuby.Api.Model.viewmodels.SoldierInfoView.LeaveDay">
-            <summary>
-            退伍日期
-            </summary>
-        </member>
-        <member name="P:Tuby.Api.Model.viewmodels.SoldierInfoView.Birthday">
-            <summary>
-            出生日期
-            </summary>
-        </member>
-        <member name="P:Tuby.Api.Model.viewmodels.SoldierInfoView.Nation">
-            <summary>
-            民族
-            </summary>
-        </member>
-        <member name="P:Tuby.Api.Model.viewmodels.SoldierInfoView.NativePlace">
-            <summary>
-            籍贯
-            </summary>
-        </member>
-        <member name="P:Tuby.Api.Model.viewmodels.SoldierInfoView.PoliceRankID">
-            <summary>
-            警衔
-            </summary>
-        </member>
         <member name="P:Tuby.Api.Model.viewmodels.SoldierInfoView.RankName">
             <summary>
             警衔
-            </summary>
-        </member>
-        <member name="P:Tuby.Api.Model.viewmodels.SoldierInfoView.PostID">
-            <summary>
-            职务
             </summary>
         </member>
         <member name="P:Tuby.Api.Model.viewmodels.SoldierInfoView.PostName">
@@ -965,24 +1125,9 @@
             职务
             </summary>
         </member>
-        <member name="P:Tuby.Api.Model.viewmodels.SoldierInfoView.Gender">
-            <summary>
-            性别
-            </summary>
-        </member>
-        <member name="P:Tuby.Api.Model.viewmodels.SoldierInfoView.HealthID">
-            <summary>
-            健康状况
-            </summary>
-        </member>
         <member name="P:Tuby.Api.Model.viewmodels.SoldierInfoView.HealthName">
             <summary>
             健康状况
-            </summary>
-        </member>
-        <member name="P:Tuby.Api.Model.viewmodels.SoldierInfoView.SoilderStateID">
-            <summary>
-            在位状态
             </summary>
         </member>
         <member name="P:Tuby.Api.Model.viewmodels.SoldierInfoView.StateName">
@@ -993,16 +1138,6 @@
         <member name="P:Tuby.Api.Model.viewmodels.SoldierInfoView.StateDescription">
             <summary>
             
-            </summary>
-        </member>
-        <member name="P:Tuby.Api.Model.viewmodels.SoldierInfoView.UpdateTime">
-            <summary>
-            修改时间
-            </summary>
-        </member>
-        <member name="P:Tuby.Api.Model.viewmodels.SoldierInfoView.RecStatus">
-            <summary>
-            记录状态
             </summary>
         </member>
         <member name="P:Tuby.Api.Model.viewmodels.SoldierInfoView.MarialName">
@@ -1020,14 +1155,9 @@
             政治面貌
             </summary>
         </member>
-        <member name="P:Tuby.Api.Model.viewmodels.SoldierInfoView.Address">
+        <member name="P:Tuby.Api.Model.viewmodels.SoldierInfoView.NationName">
             <summary>
-            地址
-            </summary>
-        </member>
-        <member name="P:Tuby.Api.Model.viewmodels.SoldierInfoView.Contact">
-            <summary>
-            联系人
+            民族
             </summary>
         </member>
         <member name="P:Tuby.Api.Model.viewmodels.TargetCarInfoView.ID">
@@ -1073,6 +1203,16 @@
         <member name="P:Tuby.Api.Model.viewmodels.TargetCarInfoView.IsWhite">
             <summary>
             是否白名单
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.topicsdkjg.ID">
+            <summary>
+            激光报警事件ID
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.topicsdkjg.Name">
+            <summary>
+            激光报警事件
             </summary>
         </member>
         <member name="T:Tuby.Api.Model.ar_usergroup_data_access">
@@ -1535,6 +1675,31 @@
             
             </summary>
         </member>
+        <member name="T:Tuby.Api.Model.b_device_account">
+            <summary>
+            摄像头账户信息
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.b_device_account.ID">
+            <summary>
+            ID
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.b_device_account.UserName">
+            <summary>
+            用户名
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.b_device_account.Password">
+            <summary>
+            密码
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.b_device_account.DeviceFrom">
+            <summary>
+            厂家（海康，大华）
+            </summary>
+        </member>
         <member name="T:Tuby.Api.Model.b_device_group">
             <summary>
             b_device_group Entity Model
@@ -1720,7 +1885,7 @@
             
             </summary>
         </member>
-        <member name="P:Tuby.Api.Model.b_leave_reason.Name">
+        <member name="P:Tuby.Api.Model.b_leave_reason.LeaveName">
             <summary>
             
             </summary>
@@ -1750,12 +1915,12 @@
             b_nation Entity Model
             </summary>   
         </member>
-        <member name="P:Tuby.Api.Model.b_nation.ID">
+        <member name="P:Tuby.Api.Model.b_nation.NationID">
             <summary>
             
             </summary>
         </member>
-        <member name="P:Tuby.Api.Model.b_nation.Name">
+        <member name="P:Tuby.Api.Model.b_nation.NationName">
             <summary>
             
             </summary>
@@ -2158,6 +2323,176 @@
         <member name="P:Tuby.Api.Model.d_camera_group.ParentID">
             <summary>
             父节点ID
+            </summary>
+        </member>
+        <member name="T:Tuby.Api.Model.d_duty">
+            <summary>
+            a_user Entity Model
+            </summary>   
+        </member>
+        <member name="P:Tuby.Api.Model.d_duty.ID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_duty.Class">
+            <summary>
+            班次
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_duty.ShaoWei1">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_duty.ShaoWei2">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_duty.ShaoWei3">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_duty.ShaoWei4">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_duty.ShaoWei5">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_duty.ShaoWei6">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_duty.ShaoWei7">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_duty.ShaoWei8">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_duty.ShaoWei9">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_duty.ShaoWei10">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_duty.ShaoWei11">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_duty.ShaoWei12">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_duty.ShaoWei13">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_duty.ShaoWei14">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_duty.UpdateTime">
+            <summary>
+            更新时间
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_duty.ExcutionTime">
+            <summary>
+            执行时间
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_duty_count.id">
+            <summary>
+            id
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_duty_count.a">
+            <summary>
+            a
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_duty_count.b">
+            <summary>
+            b
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_duty_count.c">
+            <summary>
+            c
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_duty_count.d">
+            <summary>
+            d
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_duty_count.e">
+            <summary>
+            e
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_duty_count.f">
+            <summary>
+            f
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_duty_count.g">
+            <summary>
+            g
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_duty_count.h">
+            <summary>
+            h
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_duty_count.i">
+            <summary>
+            i
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_duty_count.j">
+            <summary>
+            j
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_duty_count.k">
+            <summary>
+            k
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_duty_count.l">
+            <summary>
+            l
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_duty_count.m">
+            <summary>
+            m
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_duty_count.n">
+            <summary>
+            n
             </summary>
         </member>
         <member name="T:Tuby.Api.Model.d_medical">
@@ -2897,7 +3232,7 @@
         </member>
         <member name="P:Tuby.Api.Model.d_soldier.Nation">
             <summary>
-            民族
+            民族ID
             </summary>
         </member>
         <member name="P:Tuby.Api.Model.d_soldier.NativePlace">

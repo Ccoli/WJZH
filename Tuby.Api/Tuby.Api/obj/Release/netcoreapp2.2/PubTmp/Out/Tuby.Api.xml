@@ -184,6 +184,18 @@
             配置构造函数，用来创建关系映射
             </summary>
         </member>
+        <member name="M:Tuby.Api.Controllers.AlarmCountController.#ctor(Tuby.Api.IServices.Id_alarm_infoServices,Tuby.Api.IServices.IHandAlarmServices)">
+            <summary>
+            构造函数
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Tuby.Api.Controllers.AlarmCountController.Get">
+            <summary>
+            统计特定时间内报警次数
+            </summary>
+            <returns></returns>
+        </member>
         <member name="T:Tuby.Api.Controllers.AlarmInfoController">
             <summary>
             报警信息接口
@@ -1177,6 +1189,56 @@
             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.b_department_typeController.DeleteMuch(System.Object[])">
+            <summary>
+            批量删除
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Tuby.Api.Controllers.b_device_accountController">
+            <summary>
+            b_device_accountControllers
+            </summary>	
+        </member>
+        <member name="M:Tuby.Api.Controllers.b_device_accountController.#ctor(Tuby.Api.IServices.Ib_device_accountServices)">
+            <summary>
+            构造函数
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Tuby.Api.Controllers.b_device_accountController.Get">
+             <summary>
+            查询所有数据
+             </summary>	
+        </member>
+        <member name="M:Tuby.Api.Controllers.b_device_accountController.GetPage(System.Int32)">
+            <summary>
+            分页查询
+            </summary>
+            <param name="page"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tuby.Api.Controllers.b_device_accountController.Get(System.Int32)">
+             <summary>
+            根据id查询数据
+             </summary>
+        </member>
+        <member name="M:Tuby.Api.Controllers.b_device_accountController.Post(Tuby.Api.Model.b_device_account)">
+            <summary>
+            使用post方法添加数据
+            </summary>
+        </member>
+        <member name="M:Tuby.Api.Controllers.b_device_accountController.Update(Tuby.Api.Model.b_device_account)">
+             <summary>
+            更新数据
+             </summary>
+        </member>
+        <member name="M:Tuby.Api.Controllers.b_device_accountController.Delete(System.Int32)">
+            <summary>
+            根据id使用get方法删除数据
+            </summary>
+        </member>
+        <member name="M:Tuby.Api.Controllers.b_device_accountController.DeleteMuch(System.Object[])">
             <summary>
             批量删除
             </summary>

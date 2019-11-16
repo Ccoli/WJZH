@@ -830,9 +830,24 @@
             输入时间
             </summary>
         </member>
+        <member name="T:Tuby.Api.Model.viewmodels.CountSoldierEntity">
+            <summary>
+            士兵统计
+            </summary>
+        </member>
         <member name="P:Tuby.Api.Model.viewmodels.CountSoldierEntity.StateCount">
             <summary>
             在位统计
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.CountSoldierEntity.SixStateCount">
+            <summary>
+            六中队在位统计
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.CountSoldierEntity.SevenStateCount">
+            <summary>
+            七中队在位统计
             </summary>
         </member>
         <member name="P:Tuby.Api.Model.viewmodels.CountSoldierEntity.LeaveCount">
@@ -840,9 +855,29 @@
             离位统计
             </summary>
         </member>
+        <member name="P:Tuby.Api.Model.viewmodels.CountSoldierEntity.SixLeaveCount">
+            <summary>
+            六中队离位统计
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.CountSoldierEntity.SevenLeaveCount">
+            <summary>
+            七中队离位统计
+            </summary>
+        </member>
         <member name="P:Tuby.Api.Model.viewmodels.CountSoldierEntity.ToLoanCount">
             <summary>
-            借调统计
+             借调统计
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.CountSoldierEntity.SixToLoanCount">
+            <summary>
+            六中队借调统计
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.CountSoldierEntity.SevenToLoanCount">
+            <summary>
+            七中队借调统计
             </summary>
         </member>
         <member name="P:Tuby.Api.Model.viewmodels.CountSoldierEntity.TrainCount">
@@ -850,14 +885,44 @@
             培训统计
             </summary>
         </member>
+        <member name="P:Tuby.Api.Model.viewmodels.CountSoldierEntity.SixTrainCount">
+            <summary>
+            六中队培训统计
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.CountSoldierEntity.SevenTrainCount">
+            <summary>
+            七中队培训统计
+            </summary>
+        </member>
         <member name="P:Tuby.Api.Model.viewmodels.CountSoldierEntity.VacationCount">
             <summary>
             休假统计
             </summary>
         </member>
+        <member name="P:Tuby.Api.Model.viewmodels.CountSoldierEntity.SixVacationCount">
+            <summary>
+            六中队休假统计
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.CountSoldierEntity.SevenVacationCount">
+            <summary>
+            七中队休假统计
+            </summary>
+        </member>
         <member name="P:Tuby.Api.Model.viewmodels.CountSoldierEntity.AllTrainCount">
             <summary>
             集训统计
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.CountSoldierEntity.SixAllTrainCount">
+            <summary>
+            六中队集训统计
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.CountSoldierEntity.SevenAllTrainCount">
+            <summary>
+            七中队集训统计
             </summary>
         </member>
         <member name="T:Tuby.Api.Model.viewmodels.DeviceListView">
@@ -885,14 +950,14 @@
             通道
             </summary>
         </member>
-        <member name="P:Tuby.Api.Model.viewmodels.DeviceListView.timeLine">
+        <member name="P:Tuby.Api.Model.viewmodels.DeviceListView.videoaddress">
             <summary>
-            时间长度
+            视频地址
             </summary>
         </member>
-        <member name="P:Tuby.Api.Model.viewmodels.DeviceListView.comment">
+        <member name="P:Tuby.Api.Model.viewmodels.DeviceListView.mainstream">
             <summary>
-            内容
+            主码流
             </summary>
         </member>
         <member name="P:Tuby.Api.Model.viewmodels.DeviceListView.ip">
@@ -903,6 +968,51 @@
         <member name="P:Tuby.Api.Model.viewmodels.DeviceListView.isParent">
             <summary>
             是否父节点
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.DeviceListView.substream">
+            <summary>
+            子码流
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.DeviceListView.coordinate">
+            <summary>
+            坐标
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.DeviceListView.view">
+            <summary>
+            最佳视角
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.DeviceListView.isAddress">
+            <summary>
+            是否使用播放地址
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.DeviceListView.UserID">
+            <summary>
+            账户id
+            </summary>
+        </member>
+        <member name="T:Tuby.Api.Model.viewmodels.DeviceListView2">
+            <summary>
+            设备管理列表
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.DeviceListView2.UserName">
+            <summary>
+            用户名
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.DeviceListView2.Password">
+            <summary>
+            密码
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.DeviceListView2.DeviceFrom">
+            <summary>
+            厂家（海康，大华）
             </summary>
         </member>
         <member name="P:Tuby.Api.Model.viewmodels.HandAlarm.ID">
@@ -1563,6 +1673,31 @@
         <member name="P:Tuby.Api.Model.b_department_type.DepartmentName">
             <summary>
             
+            </summary>
+        </member>
+        <member name="T:Tuby.Api.Model.b_device_account">
+            <summary>
+            摄像头账户信息
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.b_device_account.ID">
+            <summary>
+            ID
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.b_device_account.UserName">
+            <summary>
+            用户名
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.b_device_account.Password">
+            <summary>
+            密码
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.b_device_account.DeviceFrom">
+            <summary>
+            厂家（海康，大华）
             </summary>
         </member>
         <member name="T:Tuby.Api.Model.b_device_group">

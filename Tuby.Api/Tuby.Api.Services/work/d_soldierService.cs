@@ -36,39 +36,93 @@ namespace Tuby.Api.Services
             var list = await dal.Query();
             CountSoldierEntity count = new CountSoldierEntity();
             count.StateCount = 0;
+            count.SixStateCount = 0;
+            count.SevenLeaveCount = 0;
             count.LeaveCount = 0;
             count.ToLoanCount = 0;
             count.TrainCount = 0;
             count.VacationCount = 0;
             count.AllTrainCount = 0;
 
+            count.SixLeaveCount = 0;
+            count.SixToLoanCount = 0;
+            count.SixTrainCount = 0;
+            count.SixVacationCount = 0;
+            count.SixAllTrainCount = 0;
+
+            count.SevenLeaveCount = 0;
+            count.SevenToLoanCount = 0;
+            count.SevenTrainCount = 0;
+            count.SevenVacationCount = 0;
+            count.SevenAllTrainCount = 0;
+
             foreach (var item in list)
             {
-                if (item.SoilderStateID == 1)
+                if (item.SoldierID.Contains("六中队"))
                 {
-                    count.StateCount++;
+                    if (item.SoilderStateID == 1)
+                    {
+                        count.StateCount++;
+                        count.SixStateCount++;
+                    }
+                    if (item.SoilderStateID == 0)
+                    {
+                        count.LeaveCount++;
+                        count.SixLeaveCount++;
+                    }
+                    if (item.SoldierID.Contains("借调"))
+                    {
+                        count.ToLoanCount++;
+                        count.SixTrainCount++;
+                    }
+                    if (item.SoldierID.Contains("新训"))
+                    {
+                        count.TrainCount++;
+                    }
+                    if (item.SoldierID.Contains("休假"))
+                    {
+                        count.VacationCount++;
+                        count.SixVacationCount++;
+                    }
+                    if (item.SoldierID.Contains("集训"))
+                    {
+                        count.AllTrainCount++;
+                        count.SixAllTrainCount++;
+                    }
                 }
-                if (item.SoilderStateID==0)
+                else if(item.SoldierID.Contains("七中队"))
                 {
-                    count.LeaveCount++;
+                    if (item.SoilderStateID == 1)
+                    {
+                        count.StateCount++;
+                        count.SevenLeaveCount++;
+                    }
+                    if (item.SoilderStateID == 0)
+                    {
+                        count.LeaveCount++;
+                        count.SevenLeaveCount++;
+                    }
+                    if (item.SoldierID.Contains("借调"))
+                    {
+                        count.ToLoanCount++;
+                        count.SevenToLoanCount++;
+                    }
+                    if (item.SoldierID.Contains("新训"))
+                    {
+                        count.TrainCount++;
+                        count.SevenTrainCount++;
+                    }
+                    if (item.SoldierID.Contains("休假"))
+                    {
+                        count.VacationCount++;
+                        count.SevenVacationCount++;
+                    }
+                    if (item.SoldierID.Contains("集训"))
+                    {
+                        count.AllTrainCount++;
+                        count.SevenAllTrainCount++;
+                    }
                 }
-                if (item.SoldierID.Contains("借调"))
-                {
-                    count.ToLoanCount++;
-                }
-                if (item.SoldierID.Contains("新训"))
-                {
-                    count.TrainCount++;
-                }
-                if (item.SoldierID.Contains("休假"))
-                {
-                    count.VacationCount++;
-                }
-                if (item.SoldierID.Contains("集训"))
-                {
-                    count.AllTrainCount++;
-                }
-
             }
             return count;
         }

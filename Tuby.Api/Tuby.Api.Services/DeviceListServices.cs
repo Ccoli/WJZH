@@ -21,11 +21,12 @@ namespace Tuby.Api.Services
 
         public async Task<List<NodeData>> GetListData()
         {
-            var list = await base.Query();
+            var list = await dal.QueryMuchTable();
+
             Dictionary<int, NodeData> nodes = new Dictionary<int, NodeData>();
             for (var i = 0; i < list.Count; i++)
             {
-                nodes.Add(list[i].id, new NodeData(list[i].id, list[i].pid,list[i].name, list[i].channel, list[i].timeLine, list[i].comment, list[i].ip, list[i].isParent));
+                nodes.Add(list[i].id, new NodeData(list[i].id, list[i].pid,list[i].name, list[i].channel, list[i].videoaddress, list[i].mainstream, list[i].ip, list[i].isParent,list[i].substream,list[i].coordinate, list[i].view, list[i].isAddress,list[i].UserName, list[i].Password, list[i].DeviceFrom) );
             }
 
             List<NodeData> list1 = nodes.Values.ToList();

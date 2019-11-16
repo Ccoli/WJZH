@@ -26,13 +26,13 @@ namespace Tuby.Api.Model.viewmodels
         /// </summary>
         public string channel { get;set; }
         /// <summary>
-        /// 时间长度
+        /// 视频地址
         /// </summary>
-        public int timeLine { get; set; }
+        public string videoaddress { get; set; }
         /// <summary>
-        /// 内容
+        /// 主码流
         /// </summary>
-        public string comment { get; set; }
+        public  string mainstream { get; set; }
         /// <summary>
         /// 设备ip
         /// </summary>
@@ -41,5 +41,25 @@ namespace Tuby.Api.Model.viewmodels
         /// 是否父节点
         /// </summary>
         public bool isParent { get; set; }
+        /// <summary>
+        /// 子码流
+        /// </summary>
+        public string substream { get; set; }
+        /// <summary>
+        /// 坐标
+        /// </summary>
+        public string coordinate { get; set; }
+        /// <summary>
+        /// 最佳视角
+        /// </summary>
+        public string view { get; set; }
+        /// <summary>
+        /// 是否使用播放地址
+        /// </summary>
+        public bool isAddress { get; set; }
+        /// <summary>
+        /// 账户id
+        /// </summary>
+        public int UserID { get; set; }
     }
 }

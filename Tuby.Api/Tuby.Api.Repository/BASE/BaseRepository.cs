@@ -391,6 +391,13 @@ namespace Tuby.Api.Repository.Base
             Expression<Func<T, T2, object[]>> joinExpression,
             Expression<Func<T, T2, TResult>> selectExpression) where T : class, new()
         {
+            if (selectExpression == null)
+            {
+                var list = await Task.Run(() => db.Queryable(joinExpression).Select<TResult>()
+              .Select<TResult>()
+              .ToList());
+                return list;
+            }
             return await Task.Run(() => db.Queryable(joinExpression).Select(selectExpression).ToList());
                 
         }

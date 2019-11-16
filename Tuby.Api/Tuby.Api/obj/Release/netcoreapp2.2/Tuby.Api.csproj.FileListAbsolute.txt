@@ -24,8 +24,6 @@ H:\MyProjects\Tuby.Api\Tuby.Api\bin\Release\netcoreapp2.2\Tuby.Api.Model.xml
 H:\MyProjects\Tuby.Api\Tuby.Api\bin\Release\netcoreapp2.2\Tuby.Api.Common.dll
 H:\MyProjects\Tuby.Api\Tuby.Api\bin\Release\netcoreapp2.2\Tuby.Api.Common.pdb
 H:\MyProjects\Tuby.Api\Tuby.Api\bin\Release\netcoreapp2.2\appsettings.json
-H:\MyProjects\Tuby.Api\Tuby.Api\bin\Release\netcoreapp2.2\Tuby.Api.Services.pdb
-H:\MyProjects\Tuby.Api\Tuby.Api\bin\Release\netcoreapp2.2\Tuby.Api.Repository.pdb
 H:\MyProjects\Tuby.Api - 副本\Tuby.Api\bin\Release\netcoreapp2.2\appsettings.json
 H:\MyProjects\Tuby.Api - 副本\Tuby.Api\bin\Release\netcoreapp2.2\Tuby.Api.deps.json
 H:\MyProjects\Tuby.Api - 副本\Tuby.Api\bin\Release\netcoreapp2.2\Tuby.Api.runtimeconfig.json
@@ -82,3 +80,5 @@ F:\Myproject\WJZH\Tuby.Api\Tuby.Api\obj\Release\netcoreapp2.2\Tuby.Api.RazorTarg
 F:\Myproject\WJZH\Tuby.Api\Tuby.Api\obj\Release\netcoreapp2.2\Tuby.Api.csproj.CopyComplete
 F:\Myproject\WJZH\Tuby.Api\Tuby.Api\obj\Release\netcoreapp2.2\Tuby.Api.dll
 F:\Myproject\WJZH\Tuby.Api\Tuby.Api\obj\Release\netcoreapp2.2\Tuby.Api.pdb
+H:\MyProjects\Tuby.Api\Tuby.Api\bin\Release\netcoreapp2.2\Tuby.Api.Services.pdb
+H:\MyProjects\Tuby.Api\Tuby.Api\bin\Release\netcoreapp2.2\Tuby.Api.Repository.pdb
