@@ -61,5 +61,9 @@ namespace Tuby.Api.Model.viewmodels
         /// 账户id
         /// </summary>
         public int UserID { get; set; }
+        /// <summary>
+        /// 设备id
+        /// </summary>
+        public string DeviceID { get; set; }
     }
 }

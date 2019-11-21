@@ -37,7 +37,7 @@ namespace Tuby.Api.Services
             CountSoldierEntity count = new CountSoldierEntity();
             count.StateCount = 0;
             count.SixStateCount = 0;
-            count.SevenLeaveCount = 0;
+            count.SevenStateCount = 0;
             count.LeaveCount = 0;
             count.ToLoanCount = 0;
             count.TrainCount = 0;
@@ -95,7 +95,7 @@ namespace Tuby.Api.Services
                     if (item.SoilderStateID == 1)
                     {
                         count.StateCount++;
-                        count.SevenLeaveCount++;
+                        count.SevenStateCount++;
                     }
                     if (item.SoilderStateID == 0)
                     {

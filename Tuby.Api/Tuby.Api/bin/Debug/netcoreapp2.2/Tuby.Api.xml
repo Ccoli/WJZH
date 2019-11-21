@@ -648,6 +648,11 @@
             </summary>
             <returns></returns>
         </member>
+        <member name="M:Tuby.Api.Controllers.DeviceListController.Get(System.String)">
+             <summary>
+            根据id查询数据
+             </summary>
+        </member>
         <member name="T:Tuby.Api.Controllers.d_dutyController">
             <summary>
             d_dutyControllers
@@ -2631,6 +2636,11 @@
         <member name="M:Tuby.Api.Controllers.d_alarm_infoController.PostJG(Tuby.Api.Model.viewmodels.JGAlarmView)">
             <summary>
             使用post方法添加激光报警
+            </summary>
+        </member>
+        <member name="M:Tuby.Api.Controllers.d_alarm_infoController.PostZJ(Tuby.Api.Model.viewmodels.ZJAlarmView)">
+            <summary>
+            使用post方法添加周界报警
             </summary>
         </member>
         <member name="M:Tuby.Api.Controllers.d_alarm_infoController.PostHand(Tuby.Api.Model.viewmodels.HandAlarm)">

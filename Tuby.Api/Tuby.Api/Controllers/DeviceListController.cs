@@ -33,5 +33,15 @@ namespace Tuby.Api.Controllers
         {
             return await _DeviceListServices.GetListData();
         }
+
+        /// <summary>
+        ///根据id查询数据
+        /// </summary>
+        [HttpGet("{id}")]
+        [AllowAnonymous]
+        public async Task<List<DeviceListView>> Get(string id)
+        {
+            return await _DeviceListServices.Query(c => c.DeviceID == id);
+        }
     }
 }

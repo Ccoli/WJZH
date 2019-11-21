@@ -124,6 +124,42 @@ namespace Tuby.Api.Controllers
         }
 
         /// <summary>
+        /// 使用post方法添加周界报警
+        /// </summary>
+        [HttpPost]
+        [Route("SmartBICapture")]
+        [AllowAnonymous]
+        public async Task<MessageModel<string>> PostZJ([FromBody] ZJAlarmView ZJAlarmView)
+        {
+            var data = new MessageModel<string>();
+
+            d_alarm_info dai = new d_alarm_info();
+            var list = await _b_alarm_typeServices.Query();
+            foreach (var item in list)
+            {
+                if (item.Name.Contains("越界"))
+                {
+                    dai.AlarmTypeID = item.ID;
+                    break;
+                }
+            }
+            //dai.AlarmDeviceID = ZJAlarmView.CameraId;
+            dai.VedioRecrdPath = ZJAlarmView.ImageUrl;
+            dai.Content = ZJAlarmView.EventType;
+            dai.UpdateTime = DateTime.Now;
+            dai.AlarmTime =Convert.ToDateTime(ZJAlarmView.time);
+            var id = (await _d_alarm_infoServices.Add(dai));
+            data.success = id > 0;
+            if (data.success)
+            {
+                data.response = id.ObjToString();
+                data.msg = "添加成功";
+            }
+
+            return data;
+        }
+
+        /// <summary>
 		/// 使用post方法添加手动报警数据
 		/// </summary>
         [HttpPost]
