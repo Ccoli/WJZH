@@ -34,20 +34,25 @@ namespace Tuby.Api.Controllers
         {
             List<Dictionary<string, int>> list = new List<Dictionary<string, int>>();
             DateTime dt = DateTime.Now;
-
-            var jgList = await _d_alarm_infoServices.Query(a => a.AlarmTime > dt.AddDays(-1));
-            var handList = await _HandAlarmServices.Query(a => Convert.ToDateTime(a.time) > dt.AddDays(-1));
+            var zjList = await _d_alarm_infoServices.Query(a => a.AlarmTime > dt.Date && a.AlarmTypeID == 2);
+            var jgList = await _d_alarm_infoServices.Query(a => a.AlarmTime >dt.Date&&a.AlarmTypeID==14);
+            var handList = await _HandAlarmServices.Query(a => Convert.ToDateTime(a.time) > dt.Date);
             Dictionary<string, int> dc = new Dictionary<string, int>();
+            dc.Add("dayzj", zjList.Count);
             dc.Add("dayjg", jgList.Count);
             dc.Add("dayhand", handList.Count);
             DateTime week =Convert.ToDateTime(dt.AddDays(1 - Convert.ToInt32(dt.DayOfWeek.ToString("d"))).ToString("yyyy-MM-dd 00:00:00"));
-            jgList = await _d_alarm_infoServices.Query(a => a.AlarmTime > week);
+            zjList = await _d_alarm_infoServices.Query(a => a.AlarmTime > week && a.AlarmTypeID == 2);
+            jgList = await _d_alarm_infoServices.Query(a => a.AlarmTime > week && a.AlarmTypeID == 14);
             handList = await _HandAlarmServices.Query(a => Convert.ToDateTime(a.time) >week);
+            dc.Add("weekzj", zjList.Count);
             dc.Add("weekjg", jgList.Count);
             dc.Add("weekhand", handList.Count);
-            DateTime month = dt.AddDays(1 - dt.Day);
-            jgList = await _d_alarm_infoServices.Query(a => a.AlarmTime > month);
+            DateTime month = Convert.ToDateTime(dt.AddDays(1 - dt.Day).ToString("yyyy-MM-dd 00:00:00"));
+            zjList = await _d_alarm_infoServices.Query(a => a.AlarmTime > month && a.AlarmTypeID == 2);
+            jgList = await _d_alarm_infoServices.Query(a => a.AlarmTime > month && a.AlarmTypeID == 14);
             handList = await _HandAlarmServices.Query(a => Convert.ToDateTime(a.time) > month);
+            dc.Add("monthzj", zjList.Count);
             dc.Add("monthjg", jgList.Count);
             dc.Add("monthhand", handList.Count);
             return dc;

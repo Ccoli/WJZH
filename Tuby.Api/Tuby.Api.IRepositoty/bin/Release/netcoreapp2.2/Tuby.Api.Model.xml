@@ -995,6 +995,11 @@
             账户id
             </summary>
         </member>
+        <member name="P:Tuby.Api.Model.viewmodels.DeviceListView.DeviceID">
+            <summary>
+            设备id
+            </summary>
+        </member>
         <member name="T:Tuby.Api.Model.viewmodels.DeviceListView2">
             <summary>
             设备管理列表
