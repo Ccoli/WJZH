@@ -1,0 +1,76 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Tuby.Api.IRepositoty\Tuby.Api.IRepositoty.csproj" />
+    <ProjectReference Include="..\Tuby.Api.IServices\Tuby.Api.IServices.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Tuby.Api.FrameWork.Controllers\Tuby.Api.FrameWork.tt">
+      <LastGenOutput>Tuby.Api.FrameWork.cs</LastGenOutput>
+      <Generator>TextTemplatingFileGenerator</Generator>
+    </None>
+    <None Update="Tuby.Api.FrameWork.Entity\Tuby.Api.FrameWork.Entity.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Tuby.Api.FrameWork.Entity.cs</LastGenOutput>
+    </None>
+    <None Update="Tuby.Api.FrameWork.IRepository\Tuby.Api.FrameWork.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Tuby.Api.FrameWork.cs</LastGenOutput>
+    </None>
+    <None Update="Tuby.Api.FrameWork.IServices\Tuby.Api.FrameWork.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Tuby.Api.FrameWork.cs</LastGenOutput>
+    </None>
+    <None Update="Tuby.Api.FrameWork.Repository\Tuby.Api.FrameWork.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Tuby.Api.FrameWork.cs</LastGenOutput>
+    </None>
+    <None Update="Tuby.Api.FrameWork.Services\Tuby.Api.FrameWork.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Tuby.Api.FrameWork.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Tuby.Api.FrameWork.Controllers\Tuby.Api.FrameWork.cs">
+      <DependentUpon>Tuby.Api.FrameWork.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Update="Tuby.Api.FrameWork.Entity\Tuby.Api.FrameWork.Entity.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Tuby.Api.FrameWork.Entity.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Tuby.Api.FrameWork.IRepository\Tuby.Api.FrameWork.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Tuby.Api.FrameWork.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Tuby.Api.FrameWork.IServices\Tuby.Api.FrameWork.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Tuby.Api.FrameWork.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Tuby.Api.FrameWork.Repository\Tuby.Api.FrameWork.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Tuby.Api.FrameWork.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Tuby.Api.FrameWork.Services\Tuby.Api.FrameWork.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Tuby.Api.FrameWork.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+</Project>
