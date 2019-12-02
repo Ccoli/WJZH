@@ -1,0 +1,3899 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Tuby.Api.Model</name>
+    </assembly>
+    <members>
+        <member name="T:Tuby.Api.Model.MessageModel`1">
+            <summary>
+            通用返回信息类
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.MessageModel`1.success">
+            <summary>
+            操作是否成功
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.MessageModel`1.msg">
+            <summary>
+            返回信息
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.MessageModel`1.response">
+            <summary>
+            返回数据集合
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.Models.Menu.Id">
+            <summary>
+            id
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.Models.Menu.MenuName">
+            <summary>
+            菜单名
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.Models.Menu.CreateTime">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.Models.Menu.IsDeleted">
+            <summary>
+            是否删除
+            </summary>
+        </member>
+        <member name="T:Tuby.Api.Model.Models.Module">
+            <summary>
+            接口API地址信息表
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.Models.Module.IsDeleted">
+             <summary>
+            获取或设置是否禁用，逻辑上的删除，非物理删除
+             </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.Models.Module.ParentId">
+            <summary>
+            父ID
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.Models.Module.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.Models.Module.LinkUrl">
+            <summary>
+            菜单链接地址
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.Models.Module.Area">
+            <summary>
+            区域名称
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.Models.Module.Controller">
+            <summary>
+            控制器名称
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.Models.Module.Action">
+            <summary>
+            Action名称
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.Models.Module.Icon">
+            <summary>
+            图标
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.Models.Module.Code">
+            <summary>
+            菜单编号
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.Models.Module.OrderSort">
+            <summary>
+            排序
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.Models.Module.Description">
+            <summary>
+            /描述
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.Models.Module.IsMenu">
+            <summary>
+            是否是右侧菜单
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.Models.Module.Enabled">
+            <summary>
+            是否激活
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.Models.Module.CreateId">
+            <summary>
+            创建ID
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.Models.Module.CreateBy">
+            <summary>
+            创建者
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.Models.Module.CreateTime">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.Models.Module.ModifyId">
+            <summary>
+            修改ID
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.Models.Module.ModifyBy">
+            <summary>
+            修改者
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.Models.Module.ModifyTime">
+            <summary>
+            修改时间
+            </summary>
+        </member>
+        <member name="T:Tuby.Api.Model.Models.ModulePermission">
+            <summary>
+            菜单与按钮关系表
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.Models.ModulePermission.IsDeleted">
+             <summary>
+            获取或设置是否禁用，逻辑上的删除，非物理删除
+             </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.Models.ModulePermission.ModuleId">
+            <summary>
+            菜单ID
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.Models.ModulePermission.PermissionId">
+            <summary>
+            按钮ID
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.Models.ModulePermission.CreateId">
+            <summary>
+            创建ID
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.Models.ModulePermission.CreateBy">
+            <summary>
+            创建者
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.Models.ModulePermission.CreateTime">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.Models.ModulePermission.ModifyId">
+            <summary>
+            修改ID
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.Models.ModulePermission.ModifyBy">
+            <summary>
+            修改者
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.Models.ModulePermission.ModifyTime">
+             <summary>
+            修改时间
+             </summary>
+        </member>
+        <member name="T:Tuby.Api.Model.Models.OperateLog">
+            <summary>
+            日志记录
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.Models.OperateLog.IsDeleted">
+             <summary>
+            获取或设置是否禁用，逻辑上的删除，非物理删除
+             </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.Models.OperateLog.Area">
+            <summary>
+            区域名
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.Models.OperateLog.Controller">
+            <summary>
+            区域控制器名
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.Models.OperateLog.Action">
+            <summary>
+            Action名称
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.Models.OperateLog.IPAddress">
+            <summary>
+            IP地址
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.Models.OperateLog.Description">
+            <summary>
+            描述
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.Models.OperateLog.LogTime">
+            <summary>
+            登录时间
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.Models.OperateLog.LoginName">
+            <summary>
+            登录名称
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.Models.OperateLog.UserId">
+            <summary>
+            用户ID
+            </summary>
+        </member>
+        <member name="T:Tuby.Api.Model.Models.PasswordLib">
+            <summary>
+            密码库表
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.Models.PasswordLib.IsDeleted">
+             <summary>
+            获取或设置是否禁用，逻辑上的删除，非物理删除
+             </summary>
+        </member>
+        <member name="T:Tuby.Api.Model.Models.Permission">
+            <summary>
+            路由菜单表
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.Models.Permission.Code">
+            <summary>
+            菜单执行Action名
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.Models.Permission.Name">
+            <summary>
+            菜单显示名（如用户页、编辑(按钮)、删除(按钮)）
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.Models.Permission.IsButton">
+            <summary>
+            是否是按钮
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.Models.Permission.IsHide">
+            <summary>
+            是否是隐藏菜单
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.Models.Permission.Pid">
+            <summary>
+            上一级菜单（0表示上一级无菜单）
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.Models.Permission.Func">
+            <summary>
+            按钮事件
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.Models.Permission.Mid">
+            <summary>
+            接口api
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.Models.Permission.OrderSort">
+            <summary>
+            排序
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.Models.Permission.Icon">
+            <summary>
+            菜单图标
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.Models.Permission.Description">
+            <summary>
+            菜单描述    
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.Models.Permission.Enabled">
+            <summary>
+            激活状态
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.Models.Permission.CreateId">
+            <summary>
+            创建ID
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.Models.Permission.CreateBy">
+            <summary>
+            创建者
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.Models.Permission.CreateTime">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.Models.Permission.ModifyId">
+            <summary>
+            修改ID
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.Models.Permission.ModifyBy">
+            <summary>
+            修改者
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.Models.Permission.ModifyTime">
+            <summary>
+            修改时间
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.Models.Permission.IsDeleted">
+             <summary>
+            获取或设置是否禁用，逻辑上的删除，非物理删除
+             </summary>
+        </member>
+        <member name="T:Tuby.Api.Model.Models.Role">
+            <summary>
+            角色表
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.Models.Role.IsDeleted">
+             <summary>
+            获取或设置是否禁用，逻辑上的删除，非物理删除
+             </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.Models.Role.Name">
+            <summary>
+            角色名
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.Models.Role.Description">
+             <summary>
+            描述
+             </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.Models.Role.OrderSort">
+             <summary>
+            排序
+             </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.Models.Role.Enabled">
+            <summary>
+            是否激活
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.Models.Role.CreateId">
+            <summary>
+            创建ID
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.Models.Role.CreateBy">
+            <summary>
+            创建者
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.Models.Role.CreateTime">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.Models.Role.ModifyId">
+            <summary>
+            修改ID
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.Models.Role.ModifyBy">
+            <summary>
+            修改者
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.Models.Role.ModifyTime">
+            <summary>
+            修改时间
+            </summary>
+        </member>
+        <member name="T:Tuby.Api.Model.Models.RoleModulePermission">
+            <summary>
+            按钮跟权限关联表
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.Models.RoleModulePermission.IsDeleted">
+             <summary>
+            获取或设置是否禁用，逻辑上的删除，非物理删除
+             </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.Models.RoleModulePermission.RoleId">
+            <summary>
+            角色ID
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.Models.RoleModulePermission.ModuleId">
+            <summary>
+            菜单ID
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.Models.RoleModulePermission.PermissionId">
+            <summary>
+            按钮ID
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.Models.RoleModulePermission.CreateId">
+            <summary>
+            创建ID
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.Models.RoleModulePermission.CreateBy">
+            <summary>
+            创建者
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.Models.RoleModulePermission.CreateTime">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.Models.RoleModulePermission.ModifyId">
+            <summary>
+            修改ID
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.Models.RoleModulePermission.ModifyBy">
+            <summary>
+            修改者
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.Models.RoleModulePermission.ModifyTime">
+            <summary>
+            修改时间
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.Models.RootEntity.Id">
+            <summary>
+            ID
+            </summary>
+        </member>
+        <member name="T:Tuby.Api.Model.Models.sysUserInfo">
+            <summary>
+            用户信息表
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.Models.sysUserInfo.uID">
+            <summary>
+            用户ID
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.Models.sysUserInfo.uLoginName">
+            <summary>
+            登录账号
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.Models.sysUserInfo.uLoginPWD">
+            <summary>
+            登录密码
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.Models.sysUserInfo.uRealName">
+            <summary>
+            真实姓名
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.Models.sysUserInfo.uStatus">
+            <summary>
+            状态
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.Models.sysUserInfo.uRemark">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.Models.sysUserInfo.uCreateTime">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.Models.sysUserInfo.uUpdateTime">
+            <summary>
+            更新时间
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.Models.sysUserInfo.uLastErrTime">
+             <summary>
+            最后登录时间 
+             </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.Models.sysUserInfo.uErrorCount">
+             <summary>
+            错误次数 
+             </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.Models.sysUserInfo.name">
+            <summary>
+            登录账号
+            </summary>
+        </member>
+        <member name="T:Tuby.Api.Model.Models.Topic">
+            <summary>
+            Tibug 类别
+            </summary>
+        </member>
+        <member name="T:Tuby.Api.Model.Models.TopicDetail">
+            <summary>
+            Tibug 博文
+            </summary>
+        </member>
+        <member name="T:Tuby.Api.Model.Models.UserRole">
+            <summary>
+            用户跟角色关联表
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.Models.UserRole.IsDeleted">
+             <summary>
+            获取或设置是否禁用，逻辑上的删除，非物理删除
+             </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.Models.UserRole.UserId">
+            <summary>
+            用户ID
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.Models.UserRole.RoleId">
+            <summary>
+            角色ID
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.Models.UserRole.CreateId">
+            <summary>
+            创建ID
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.Models.UserRole.CreateBy">
+            <summary>
+            创建者
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.Models.UserRole.CreateTime">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.Models.UserRole.ModifyId">
+            <summary>
+            修改ID
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.Models.UserRole.ModifyBy">
+            <summary>
+            修改者
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.Models.UserRole.ModifyTime">
+            <summary>
+            修改时间
+            </summary>
+        </member>
+        <member name="T:Tuby.Api.Model.PageModel`1">
+            <summary>
+            通用分页信息类
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.PageModel`1.page">
+            <summary>
+            当前页标
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.PageModel`1.pageCount">
+            <summary>
+            总页数
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.PageModel`1.dataCount">
+            <summary>
+            数据总数
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.PageModel`1.PageSize">
+            <summary>
+            每页大小
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.PageModel`1.data">
+            <summary>
+            返回数据
+            </summary>
+        </member>
+        <member name="M:Tuby.Api.Model.Seed.DBSeed.SeedAsync(Tuby.Api.Model.Seed.MyContext)">
+            <summary>
+            异步添加种子数据
+            </summary>
+            <param name="myContext"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Tuby.Api.Model.Seed.MyContext.ConnectionString">
+            <summary>
+            连接字符串 
+            Tuby.Api
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.Seed.MyContext.DbType">
+            <summary>
+            数据库类型 
+            Tuby.Api 
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.Seed.MyContext.Db">
+            <summary>
+            数据连接对象 
+            Tuby.Api 
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.Seed.MyContext.Context">
+            <summary>
+            数据库上下文实例（自动关闭连接）
+            Tuby.Api 
+            </summary>
+        </member>
+        <member name="M:Tuby.Api.Model.Seed.MyContext.#ctor">
+            <summary>
+            功能描述:构造函数
+            作　　者:Tuby.Api
+            </summary>
+        </member>
+        <member name="M:Tuby.Api.Model.Seed.MyContext.GetEntityDB``1">
+            <summary>
+            功能描述:获取数据库处理对象
+            作　　者:Tuby.Api
+            </summary>
+            <returns>返回值</returns>
+        </member>
+        <member name="M:Tuby.Api.Model.Seed.MyContext.GetEntityDB``1(SqlSugar.SqlSugarClient)">
+            <summary>
+            功能描述:获取数据库处理对象
+            作　　者:Tuby.Api
+            </summary>
+            <param name="db">db</param>
+            <returns>返回值</returns>
+        </member>
+        <member name="M:Tuby.Api.Model.Seed.MyContext.CreateClassFileByDBTalbe(System.String)">
+            <summary>
+            功能描述:根据数据库表生产实体类
+            作　　者:Tuby.Api
+            </summary>       
+            <param name="strPath">实体类存放路径</param>
+        </member>
+        <member name="M:Tuby.Api.Model.Seed.MyContext.CreateClassFileByDBTalbe(System.String,System.String)">
+            <summary>
+            功能描述:根据数据库表生产实体类
+            作　　者:Tuby.Api
+            </summary>
+            <param name="strPath">实体类存放路径</param>
+            <param name="strNameSpace">命名空间</param>
+        </member>
+        <member name="M:Tuby.Api.Model.Seed.MyContext.CreateClassFileByDBTalbe(System.String,System.String,System.String[])">
+            <summary>
+            功能描述:根据数据库表生产实体类
+            作　　者:Tuby.Api
+            </summary>
+            <param name="strPath">实体类存放路径</param>
+            <param name="strNameSpace">命名空间</param>
+            <param name="lstTableNames">生产指定的表</param>
+        </member>
+        <member name="M:Tuby.Api.Model.Seed.MyContext.CreateClassFileByDBTalbe(System.String,System.String,System.String[],System.String,System.Boolean)">
+            <summary>
+            功能描述:根据数据库表生产实体类
+            作　　者:Tuby.Api
+            </summary>
+            <param name="strPath">实体类存放路径</param>
+            <param name="strNameSpace">命名空间</param>
+            <param name="lstTableNames">生产指定的表</param>
+            <param name="strInterface">实现接口</param>
+            <param name="blnSerializable">是否序列化</param>
+        </member>
+        <member name="M:Tuby.Api.Model.Seed.MyContext.CreateTableByEntity``1(System.Boolean,``0[])">
+            <summary>
+            功能描述:根据实体类生成数据库表
+            作　　者:Tuby.Api
+            </summary>
+            <param name="blnBackupTable">是否备份表</param>
+            <param name="lstEntitys">指定的实体</param>
+        </member>
+        <member name="M:Tuby.Api.Model.Seed.MyContext.CreateTableByEntity(System.Boolean,System.Type[])">
+            <summary>
+            功能描述:根据实体类生成数据库表
+            作　　者:Tuby.Api
+            </summary>
+            <param name="blnBackupTable">是否备份表</param>
+            <param name="lstEntitys">指定的实体</param>
+        </member>
+        <member name="M:Tuby.Api.Model.Seed.MyContext.GetDbContext">
+            <summary>
+            功能描述:获得一个DbContext
+            作　　者:Tuby.Api
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Tuby.Api.Model.Seed.MyContext.Init(System.String,SqlSugar.DbType)">
+            <summary>
+            功能描述:设置初始化参数
+            作　　者:Tuby.Api
+            </summary>
+            <param name="strConnectionString">连接字符串</param>
+            <param name="enmDbType">数据库类型</param>
+        </member>
+        <member name="M:Tuby.Api.Model.Seed.MyContext.GetConnectionConfig(System.Boolean,System.Boolean)">
+            <summary>
+            功能描述:创建一个链接配置
+            作　　者:Tuby.Api
+            </summary>
+            <param name="blnIsAutoCloseConnection">是否自动关闭连接</param>
+            <param name="blnIsShardSameThread">是否夸类事务</param>
+            <returns>ConnectionConfig</returns>
+        </member>
+        <member name="M:Tuby.Api.Model.Seed.MyContext.GetCustomDB(SqlSugar.ConnectionConfig)">
+            <summary>
+            功能描述:获取一个自定义的DB
+            作　　者:Tuby.Api
+            </summary>
+            <param name="config">config</param>
+            <returns>返回值</returns>
+        </member>
+        <member name="M:Tuby.Api.Model.Seed.MyContext.GetCustomEntityDB``1(SqlSugar.SqlSugarClient)">
+            <summary>
+            功能描述:获取一个自定义的数据库处理对象
+            作　　者:Tuby.Api
+            </summary>
+            <param name="sugarClient">sugarClient</param>
+            <returns>返回值</returns>
+        </member>
+        <member name="M:Tuby.Api.Model.Seed.MyContext.GetCustomEntityDB``1(SqlSugar.ConnectionConfig)">
+            <summary>
+            功能描述:获取一个自定义的数据库处理对象
+            作　　者:Tuby.Api
+            </summary>
+            <param name="config">config</param>
+            <returns>返回值</returns>
+        </member>
+        <member name="T:Tuby.Api.Model.TableModel`1">
+            <summary>
+            表格数据，支持分页
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.TableModel`1.Msg">
+            <summary>
+            返回信息
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.TableModel`1.Count">
+            <summary>
+            记录总数
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.TableModel`1.data">
+            <summary>
+            返回数据集
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.AlarmInfoView.Name">
+            <summary>
+            报警名称
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.AlarmInfoView.Description">
+            <summary>
+            报警描述
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.AlarmInfoView.AlarmLevelID">
+            <summary>
+            报警等级ID
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.AlarmInfoView.DeviceName">
+            <summary>
+            设备名称
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.AlarmInfoView.AlarmDeviceTypeID">
+            <summary>
+            报警设备报警登记
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.AlarmInfoView.LevelName">
+            <summary>
+            报警等级名称
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.AlarmInfoView.LevelDescription">
+            <summary>
+            报警等级描述
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.AlarmInfoView.Entrytime">
+            <summary>
+            输入时间
+            </summary>
+        </member>
+        <member name="T:Tuby.Api.Model.viewmodels.CountSoldierEntity">
+            <summary>
+            士兵统计
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.CountSoldierEntity.StateCount">
+            <summary>
+            在位统计
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.CountSoldierEntity.SixStateCount">
+            <summary>
+            六中队在位统计
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.CountSoldierEntity.SevenStateCount">
+            <summary>
+            七中队在位统计
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.CountSoldierEntity.LeaveCount">
+            <summary>
+            离位统计
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.CountSoldierEntity.SixLeaveCount">
+            <summary>
+            六中队离位统计
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.CountSoldierEntity.SevenLeaveCount">
+            <summary>
+            七中队离位统计
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.CountSoldierEntity.ToLoanCount">
+            <summary>
+             借调统计
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.CountSoldierEntity.SixToLoanCount">
+            <summary>
+            六中队借调统计
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.CountSoldierEntity.SevenToLoanCount">
+            <summary>
+            七中队借调统计
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.CountSoldierEntity.TrainCount">
+            <summary>
+            培训统计
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.CountSoldierEntity.SixTrainCount">
+            <summary>
+            六中队培训统计
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.CountSoldierEntity.SevenTrainCount">
+            <summary>
+            七中队培训统计
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.CountSoldierEntity.VacationCount">
+            <summary>
+            休假统计
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.CountSoldierEntity.SixVacationCount">
+            <summary>
+            六中队休假统计
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.CountSoldierEntity.SevenVacationCount">
+            <summary>
+            七中队休假统计
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.CountSoldierEntity.AllTrainCount">
+            <summary>
+            集训统计
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.CountSoldierEntity.SixAllTrainCount">
+            <summary>
+            六中队集训统计
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.CountSoldierEntity.SevenAllTrainCount">
+            <summary>
+            七中队集训统计
+            </summary>
+        </member>
+        <member name="T:Tuby.Api.Model.viewmodels.DeviceListView">
+            <summary>
+            设备管理列表
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.DeviceListView.id">
+            <summary>
+            id
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.DeviceListView.pid">
+            <summary>
+            父id
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.DeviceListView.name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.DeviceListView.channel">
+            <summary>
+            通道
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.DeviceListView.videoaddress">
+            <summary>
+            视频地址
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.DeviceListView.mainstream">
+            <summary>
+            主码流
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.DeviceListView.ip">
+            <summary>
+            设备ip
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.DeviceListView.isParent">
+            <summary>
+            是否父节点
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.DeviceListView.substream">
+            <summary>
+            子码流
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.DeviceListView.coordinate">
+            <summary>
+            坐标
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.DeviceListView.view">
+            <summary>
+            最佳视角
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.DeviceListView.isAddress">
+            <summary>
+            是否使用播放地址
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.DeviceListView.UserID">
+            <summary>
+            账户id
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.DeviceListView.DeviceID">
+            <summary>
+            设备id
+            </summary>
+        </member>
+        <member name="T:Tuby.Api.Model.viewmodels.DeviceListView2">
+            <summary>
+            设备管理列表
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.DeviceListView2.UserName">
+            <summary>
+            用户名
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.DeviceListView2.Password">
+            <summary>
+            密码
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.DeviceListView2.DeviceFrom">
+            <summary>
+            厂家（海康，大华）
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.HandAlarm.ID">
+            <summary>
+            id
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.HandAlarm.X">
+            <summary>
+            x
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.HandAlarm.Y">
+            <summary>
+            y
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.HandAlarm.Z">
+            <summary>
+            z
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.HandAlarm.content">
+            <summary>
+            报警内容
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.HandAlarm.address">
+            <summary>
+            地址
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.HandAlarm.alarm">
+            <summary>
+            报警类型
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.HandAlarm.time">
+            <summary>
+            报警时间
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.LeaveRecordView.Name">
+            <summary>
+            姓名
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.LeaveRecordView.LeaveName">
+            <summary>
+            离队原因
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.PhoneTableView.TypeName">
+            <summary>
+            电话本类型
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.PhoneTableView.DepartmentName">
+            <summary>
+            单位名称
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.ShaoWeiArrangeView.ShaoWeiName">
+            <summary>
+            哨位名
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.ShaoWeiArrangeView.Name">
+            <summary>
+            哨兵姓名
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.ShaoWeiCheckView.ShaoWeiName">
+            <summary>
+            哨位名
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.ShaoWeiCheckView.Name">
+            <summary>
+            哨兵姓名
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.ShaoWeiListView.ShaoWeiTypeName">
+            <summary>
+            哨位类型
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.ShaoWeiListView.DepartmentName">
+            <summary>
+            执勤单位
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.ShaoWeiTurnView.ShaoWeiName">
+            <summary>
+            哨位名
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.ShaoWeiTurnView.Name">
+            <summary>
+            哨兵姓名
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.SoldierInfoView.RankName">
+            <summary>
+            警衔
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.SoldierInfoView.PostName">
+            <summary>
+            职务
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.SoldierInfoView.HealthName">
+            <summary>
+            健康状况
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.SoldierInfoView.StateName">
+            <summary>
+            在位状态
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.SoldierInfoView.StateDescription">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.SoldierInfoView.MarialName">
+            <summary>
+            婚姻状态
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.SoldierInfoView.EducationName">
+            <summary>
+            教育程度
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.SoldierInfoView.PoloticName">
+            <summary>
+            政治面貌
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.SoldierInfoView.NationName">
+            <summary>
+            民族
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.TargetCarInfoView.ID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.TargetCarInfoView.Name">
+            <summary>
+            车名
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.TargetCarInfoView.ImagePath">
+            <summary>
+            照片
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.TargetCarInfoView.CarID">
+            <summary>
+            车牌号
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.TargetCarInfoView.SecurityLevelID">
+            <summary>
+            安全级别
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.TargetCarInfoView.UpdateTime">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.TargetCarInfoView.RecStatus">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.TargetCarInfoView.IsBlack">
+            <summary>
+            是否黑名单
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.TargetCarInfoView.IsWhite">
+            <summary>
+            是否白名单
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.topicsdkjg.ID">
+            <summary>
+            激光报警事件ID
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.topicsdkjg.Name">
+            <summary>
+            激光报警事件
+            </summary>
+        </member>
+        <member name="T:Tuby.Api.Model.ar_usergroup_data_access">
+            <summary>
+            ar_usergroup_data_access Entity Model
+            </summary>   
+        </member>
+        <member name="P:Tuby.Api.Model.ar_usergroup_data_access.UserGroupID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.ar_usergroup_data_access.DataAccessID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.ar_usergroup_data_access.DataAccessTypeID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Tuby.Api.Model.ar_usergroup_ui_access">
+            <summary>
+            ar_usergroup_ui_access Entity Model
+            </summary>   
+        </member>
+        <member name="P:Tuby.Api.Model.ar_usergroup_ui_access.UserGroupID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.ar_usergroup_ui_access.UiAccessID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.ar_usergroup_ui_access.UiAccessTypeID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Tuby.Api.Model.ar_usergroup_user">
+            <summary>
+            ar_usergroup_user Entity Model
+            </summary>   
+        </member>
+        <member name="P:Tuby.Api.Model.ar_usergroup_user.UserGroupID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.ar_usergroup_user.UserID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Tuby.Api.Model.ar_user_data_access">
+            <summary>
+            ar_user_data_access Entity Model
+            </summary>   
+        </member>
+        <member name="P:Tuby.Api.Model.ar_user_data_access.UserID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.ar_user_data_access.DataAccessID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.ar_user_data_access.DataAccessTypeId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Tuby.Api.Model.ar_user_ui_access">
+            <summary>
+            ar_user_ui_access Entity Model
+            </summary>   
+        </member>
+        <member name="P:Tuby.Api.Model.ar_user_ui_access.UserID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.ar_user_ui_access.UiAccessID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.ar_user_ui_access.UiAccessTypeID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Tuby.Api.Model.a_data_access">
+            <summary>
+            a_data_access Entity Model
+            </summary>   
+        </member>
+        <member name="P:Tuby.Api.Model.a_data_access.ID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.a_data_access.Name">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.a_data_access.Description">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Tuby.Api.Model.a_data_access_type">
+            <summary>
+            a_data_access_type Entity Model
+            </summary>   
+        </member>
+        <member name="P:Tuby.Api.Model.a_data_access_type.ID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.a_data_access_type.Name">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.a_data_access_type.Description">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Tuby.Api.Model.a_department">
+            <summary>
+            a_department Entity Model
+            </summary>   
+        </member>
+        <member name="P:Tuby.Api.Model.a_department.ID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.a_department.DepartmentName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.a_department.Order">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.a_department.DepartmentTypeID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.a_department.ParentID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.a_department.AddTime">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.a_department.UpdateTime">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.a_department.RecStatus">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Tuby.Api.Model.a_ui_access">
+            <summary>
+            a_ui_access Entity Model
+            </summary>   
+        </member>
+        <member name="P:Tuby.Api.Model.a_ui_access.ID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.a_ui_access.Name">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.a_ui_access.Description">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Tuby.Api.Model.a_ui_access_type">
+            <summary>
+            a_ui_access_type Entity Model
+            </summary>   
+        </member>
+        <member name="P:Tuby.Api.Model.a_ui_access_type.ID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.a_ui_access_type.Name">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.a_ui_access_type.Description">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Tuby.Api.Model.a_user">
+            <summary>
+            a_user Entity Model
+            </summary>   
+        </member>
+        <member name="P:Tuby.Api.Model.a_user.ID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.a_user.DepartmentID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.a_user.Name">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.a_user.Password">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.a_user.NeekName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.a_user.Order">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.a_user.UpdateTime">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.a_user.RecStatus">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Tuby.Api.Model.a_usergroup">
+            <summary>
+            a_usergroup Entity Model
+            </summary>   
+        </member>
+        <member name="P:Tuby.Api.Model.a_usergroup.ID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.a_usergroup.Name">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Tuby.Api.Model.b_administrative_division">
+            <summary>
+            b_administrative_division Entity Model
+            </summary>   
+        </member>
+        <member name="P:Tuby.Api.Model.b_administrative_division.ID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.b_administrative_division.Name">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.b_administrative_division.ParentID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.b_administrative_division.UpdateTime">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Tuby.Api.Model.b_alarm_device_type">
+            <summary>
+            b_alarm_device_type Entity Model
+            </summary>   
+        </member>
+        <member name="P:Tuby.Api.Model.b_alarm_device_type.ID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.b_alarm_device_type.Name">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Tuby.Api.Model.b_alarm_level">
+            <summary>
+            b_alarm_level Entity Model
+            </summary>   
+        </member>
+        <member name="P:Tuby.Api.Model.b_alarm_level.ID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.b_alarm_level.LevelName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.b_alarm_level.LevelDescription">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.b_alarm_level.Entrytime">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Tuby.Api.Model.b_alarm_type">
+            <summary>
+            b_alarm_type Entity Model
+            </summary>   
+        </member>
+        <member name="P:Tuby.Api.Model.b_alarm_type.ID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.b_alarm_type.Name">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.b_alarm_type.Description">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.b_alarm_type.AlarmLevelID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Tuby.Api.Model.b_camera_type">
+            <summary>
+            b_camera_type Entity Model
+            </summary>   
+        </member>
+        <member name="P:Tuby.Api.Model.b_camera_type.ID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.b_camera_type.Name">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.b_camera_type.Description">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Tuby.Api.Model.b_camera_usage_group">
+            <summary>
+            b_camera_usage_group Entity Model
+            </summary>   
+        </member>
+        <member name="P:Tuby.Api.Model.b_camera_usage_group.ID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.b_camera_usage_group.Name">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.b_camera_usage_group.Description">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Tuby.Api.Model.b_car_status">
+            <summary>
+            b_car_status Entity Model
+            </summary>   
+        </member>
+        <member name="P:Tuby.Api.Model.b_car_status.ID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.b_car_status.Name">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Tuby.Api.Model.b_car_type">
+            <summary>
+            b_car_type Entity Model
+            </summary>   
+        </member>
+        <member name="P:Tuby.Api.Model.b_car_type.ID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.b_car_type.Name">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.b_car_type.Description">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Tuby.Api.Model.b_department_type">
+            <summary>
+            b_department_type Entity Model
+            </summary>   
+        </member>
+        <member name="P:Tuby.Api.Model.b_department_type.ID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.b_department_type.DepartmentName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Tuby.Api.Model.b_device_account">
+            <summary>
+            摄像头账户信息
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.b_device_account.ID">
+            <summary>
+            ID
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.b_device_account.UserName">
+            <summary>
+            用户名
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.b_device_account.Password">
+            <summary>
+            密码
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.b_device_account.DeviceFrom">
+            <summary>
+            厂家（海康，大华）
+            </summary>
+        </member>
+        <member name="T:Tuby.Api.Model.b_device_group">
+            <summary>
+            b_device_group Entity Model
+            </summary>   
+        </member>
+        <member name="P:Tuby.Api.Model.b_device_group.ID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.b_device_group.Name">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.b_device_group.Description">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Tuby.Api.Model.b_device_status">
+            <summary>
+            b_device_status Entity Model
+            </summary>   
+        </member>
+        <member name="P:Tuby.Api.Model.b_device_status.ID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.b_device_status.Name">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.b_device_status.Description">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Tuby.Api.Model.b_device_type">
+            <summary>
+            b_device_type Entity Model
+            </summary>   
+        </member>
+        <member name="P:Tuby.Api.Model.b_device_type.ID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.b_device_type.Name">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.b_device_type.Description">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Tuby.Api.Model.b_device_usage">
+            <summary>
+            b_device_usage Entity Model
+            </summary>   
+        </member>
+        <member name="P:Tuby.Api.Model.b_device_usage.ID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.b_device_usage.Name">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.b_device_usage.Description">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Tuby.Api.Model.b_education_level">
+            <summary>
+            b_education_level Entity Model
+            </summary>   
+        </member>
+        <member name="P:Tuby.Api.Model.b_education_level.ID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.b_education_level.EducationName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Tuby.Api.Model.b_equipment_status">
+            <summary>
+            b_equipment_status Entity Model
+            </summary>   
+        </member>
+        <member name="P:Tuby.Api.Model.b_equipment_status.ID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.b_equipment_status.Name">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.b_equipment_status.Description">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Tuby.Api.Model.b_equipment_type">
+            <summary>
+            b_equipment_type Entity Model
+            </summary>   
+        </member>
+        <member name="P:Tuby.Api.Model.b_equipment_type.ID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.b_equipment_type.Name">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.b_equipment_type.Description">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Tuby.Api.Model.b_gun_type">
+            <summary>
+            b_gun_type Entity Model
+            </summary>   
+        </member>
+        <member name="P:Tuby.Api.Model.b_gun_type.ID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.b_gun_type.Name">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.b_gun_type.Description">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.b_gun_type.ImagePath">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Tuby.Api.Model.b_health">
+            <summary>
+            b_health Entity Model
+            </summary>   
+        </member>
+        <member name="P:Tuby.Api.Model.b_health.ID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.b_health.HealthName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Tuby.Api.Model.b_leave_reason">
+            <summary>
+            b_leave_reason Entity Model
+            </summary>   
+        </member>
+        <member name="P:Tuby.Api.Model.b_leave_reason.ID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.b_leave_reason.LeaveName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.b_leave_reason.Description">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Tuby.Api.Model.b_marial_status">
+            <summary>
+            b_marial_status Entity Model
+            </summary>   
+        </member>
+        <member name="P:Tuby.Api.Model.b_marial_status.ID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.b_marial_status.MarialName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Tuby.Api.Model.b_nation">
+            <summary>
+            b_nation Entity Model
+            </summary>   
+        </member>
+        <member name="P:Tuby.Api.Model.b_nation.NationID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.b_nation.NationName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Tuby.Api.Model.b_pap_post">
+            <summary>
+            b_pap_post Entity Model
+            </summary>   
+        </member>
+        <member name="P:Tuby.Api.Model.b_pap_post.ID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.b_pap_post.PostName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Tuby.Api.Model.b_pap_rank">
+            <summary>
+            b_pap_rank Entity Model
+            </summary>   
+        </member>
+        <member name="P:Tuby.Api.Model.b_pap_rank.ID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.b_pap_rank.RankName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Tuby.Api.Model.b_phone_table_type">
+            <summary>
+            b_phone_table_type Entity Model
+            </summary>   
+        </member>
+        <member name="P:Tuby.Api.Model.b_phone_table_type.ID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.b_phone_table_type.TypeName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Tuby.Api.Model.b_politic_role">
+            <summary>
+            b_politic_role Entity Model
+            </summary>   
+        </member>
+        <member name="P:Tuby.Api.Model.b_politic_role.ID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.b_politic_role.PoloticName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Tuby.Api.Model.b_shaowei_type">
+            <summary>
+            b_shaowei_type Entity Model
+            </summary>   
+        </member>
+        <member name="P:Tuby.Api.Model.b_shaowei_type.ID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.b_shaowei_type.ShaoWeiTypeName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Tuby.Api.Model.b_soldier_state">
+            <summary>
+            b_soldier_state Entity Model
+            </summary>   
+        </member>
+        <member name="P:Tuby.Api.Model.b_soldier_state.ID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.b_soldier_state.StateName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.b_soldier_state.StateDescription">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Tuby.Api.Model.b_target_car_security_level">
+            <summary>
+            b_target_car_security_level Entity Model
+            </summary>   
+        </member>
+        <member name="P:Tuby.Api.Model.b_target_car_security_level.ID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.b_target_car_security_level.Name">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.b_target_car_security_level.Description">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Tuby.Api.Model.b_target_car_type">
+            <summary>
+            b_target_car_type Entity Model
+            </summary>   
+        </member>
+        <member name="P:Tuby.Api.Model.b_target_car_type.ID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.b_target_car_type.Name">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.b_target_car_type.Description">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Tuby.Api.Model.b_target_people_security_level">
+            <summary>
+            b_target_people_security_level Entity Model
+            </summary>   
+        </member>
+        <member name="P:Tuby.Api.Model.b_target_people_security_level.ID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.b_target_people_security_level.Name">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.b_target_people_security_level.Description">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Tuby.Api.Model.b_target_people_type">
+            <summary>
+            b_target_people_type Entity Model
+            </summary>   
+        </member>
+        <member name="P:Tuby.Api.Model.b_target_people_type.ID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.b_target_people_type.Name">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.b_target_people_type.Description">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Tuby.Api.Model.b_zhd_architecture">
+            <summary>
+            b_zhd_architecture Entity Model
+            </summary>   
+        </member>
+        <member name="P:Tuby.Api.Model.b_zhd_architecture.ID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.b_zhd_architecture.Name">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.b_zhd_architecture.Description">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Tuby.Api.Model.dr_arsenal_equipment">
+            <summary>
+            dr_arsenal_equipment Entity Model
+            </summary>   
+        </member>
+        <member name="P:Tuby.Api.Model.dr_arsenal_equipment.ArsenalID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.dr_arsenal_equipment.EquipmentID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Tuby.Api.Model.dr_cameragroup_camera">
+            <summary>
+            dr_cameragroup_camera Entity Model
+            </summary>   
+        </member>
+        <member name="P:Tuby.Api.Model.dr_cameragroup_camera.CameraGroupID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.dr_cameragroup_camera.CameraID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Tuby.Api.Model.dr_department_soldier">
+            <summary>
+            dr_department_soldier Entity Model
+            </summary>   
+        </member>
+        <member name="P:Tuby.Api.Model.dr_department_soldier.DepartmentID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.dr_department_soldier.SoldierID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Tuby.Api.Model.d_alarm_device">
+            <summary>
+            d_alarm_device Entity Model
+            </summary>   
+        </member>
+        <member name="P:Tuby.Api.Model.d_alarm_device.ID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_alarm_device.DeviceName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_alarm_device.AlarmDeviceTypeID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_alarm_device.AlarmLevelID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_alarm_device.RecStatus">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_alarm_device.UpdateTime">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Tuby.Api.Model.d_alarm_info">
+            <summary>
+            d_alarm_info Entity Model
+            </summary>   
+        </member>
+        <member name="P:Tuby.Api.Model.d_alarm_info.ID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_alarm_info.Content">
+            <summary>
+            报警内容
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_alarm_info.AlarmTime">
+            <summary>
+            报警时间
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_alarm_info.AlarmTypeID">
+            <summary>
+            报警类别ID
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_alarm_info.AlarmDeviceID">
+            <summary>
+            报警设备ID
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_alarm_info.VedioRecrdPath">
+            <summary>
+            视频记录
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_alarm_info.UpdateTime">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_alarm_info.RecStatus">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Tuby.Api.Model.d_camera">
+            <summary>
+            d_camera Entity Model
+            </summary>   
+        </member>
+        <member name="P:Tuby.Api.Model.d_camera.ID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_camera.Name">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_camera.Longitude">
+            <summary>
+            经度
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_camera.Latitude">
+            <summary>
+            纬度
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_camera.Altitude">
+            <summary>
+            高度
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_camera.CameraTypeID">
+            <summary>
+            摄像机类型
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_camera.IPAddress">
+            <summary>
+            ip地址
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_camera.Port">
+            <summary>
+            端口
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_camera.UpdateTime">
+            <summary>
+            更新时间
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_camera.RecStatus">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Tuby.Api.Model.d_camera_group">
+            <summary>
+            d_camera_group Entity Model
+            </summary>   
+        </member>
+        <member name="P:Tuby.Api.Model.d_camera_group.ID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_camera_group.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_camera_group.NodeType">
+            <summary>
+            节点类型
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_camera_group.ParentID">
+            <summary>
+            父节点ID
+            </summary>
+        </member>
+        <member name="T:Tuby.Api.Model.d_duty">
+            <summary>
+            a_user Entity Model
+            </summary>   
+        </member>
+        <member name="P:Tuby.Api.Model.d_duty.ID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_duty.Class">
+            <summary>
+            班次
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_duty.ShaoWei1">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_duty.ShaoWei2">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_duty.ShaoWei3">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_duty.ShaoWei4">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_duty.ShaoWei5">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_duty.ShaoWei6">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_duty.ShaoWei7">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_duty.ShaoWei8">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_duty.ShaoWei9">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_duty.ShaoWei10">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_duty.ShaoWei11">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_duty.ShaoWei12">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_duty.ShaoWei13">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_duty.ShaoWei14">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_duty.UpdateTime">
+            <summary>
+            更新时间
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_duty.ExcutionTime">
+            <summary>
+            执行时间
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_duty_count.id">
+            <summary>
+            id
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_duty_count.a">
+            <summary>
+            a
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_duty_count.b">
+            <summary>
+            b
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_duty_count.c">
+            <summary>
+            c
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_duty_count.d">
+            <summary>
+            d
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_duty_count.e">
+            <summary>
+            e
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_duty_count.f">
+            <summary>
+            f
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_duty_count.g">
+            <summary>
+            g
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_duty_count.h">
+            <summary>
+            h
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_duty_count.i">
+            <summary>
+            i
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_duty_count.j">
+            <summary>
+            j
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_duty_count.k">
+            <summary>
+            k
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_duty_count.l">
+            <summary>
+            l
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_duty_count.m">
+            <summary>
+            m
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_duty_count.n">
+            <summary>
+            n
+            </summary>
+        </member>
+        <member name="T:Tuby.Api.Model.d_medical">
+             <summary>
+            d_medical Entity Model
+             </summary>   
+        </member>
+        <member name="P:Tuby.Api.Model.d_medical.ID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_medical.SoldierID">
+            <summary>
+            士兵id
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_medical.Content">
+            <summary>
+            就诊内容
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_medical.Address">
+            <summary>
+            就诊地址
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_medical.Time">
+            <summary>
+            就诊时间
+            </summary>
+        </member>
+        <member name="T:Tuby.Api.Model.d_pap_arsenal">
+            <summary>
+            d_pap_arsenal Entity Model
+            </summary>   
+        </member>
+        <member name="P:Tuby.Api.Model.d_pap_arsenal.ID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_pap_arsenal.Name">
+            <summary>
+            仓库名
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_pap_arsenal.DepartmentID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_pap_arsenal.Description">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_pap_arsenal.Longitude">
+            <summary>
+            经度
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_pap_arsenal.Latitude">
+            <summary>
+            维度
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_pap_arsenal.Altitude">
+            <summary>
+            高程
+            </summary>
+        </member>
+        <member name="T:Tuby.Api.Model.d_pap_camera_record_car">
+            <summary>
+            d_pap_camera_record_car Entity Model
+            </summary>   
+        </member>
+        <member name="P:Tuby.Api.Model.d_pap_camera_record_car.ID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_pap_camera_record_car.CarID">
+            <summary>
+            车辆
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_pap_camera_record_car.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_pap_camera_record_car.RecTime">
+            <summary>
+            时间
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_pap_camera_record_car.ImagePath">
+            <summary>
+            抓拍照片
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_pap_camera_record_car.RecStatus">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_pap_camera_record_car.UpdateTime">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Tuby.Api.Model.d_pap_camera_record_people">
+            <summary>
+            d_pap_camera_record_people Entity Model
+            </summary>   
+        </member>
+        <member name="P:Tuby.Api.Model.d_pap_camera_record_people.ID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_pap_camera_record_people.SoldierID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_pap_camera_record_people.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_pap_camera_record_people.RecTime">
+            <summary>
+            时间
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_pap_camera_record_people.ImagePath">
+            <summary>
+            抓拍照片
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_pap_camera_record_people.RecStatus">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_pap_camera_record_people.UpdateTime">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Tuby.Api.Model.d_pap_car">
+            <summary>
+            d_pap_car Entity Model
+            </summary>   
+        </member>
+        <member name="P:Tuby.Api.Model.d_pap_car.ID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_pap_car.Name">
+            <summary>
+            车名
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_pap_car.ImagePath">
+            <summary>
+            照片
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_pap_car.CarID">
+            <summary>
+            车牌号
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_pap_car.InductedDay">
+            <summary>
+            使用日期
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_pap_car.CanUseYear">
+            <summary>
+            使用年限
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_pap_car.CarStatusID">
+            <summary>
+            车辆状态
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_pap_car.UpdateTime">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_pap_car.RecStatus">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Tuby.Api.Model.d_pap_car_leave">
+            <summary>
+            d_pap_car_leave Entity Model
+            </summary>   
+        </member>
+        <member name="P:Tuby.Api.Model.d_pap_car_leave.ID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_pap_car_leave.CarID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_pap_car_leave.Reason">
+            <summary>
+            事由
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_pap_car_leave.LeaveTime">
+            <summary>
+            离队时间
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_pap_car_leave.ReturnTime">
+            <summary>
+            归队时间
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_pap_car_leave.PlanLeaveTime">
+            <summary>
+            计划离队时间
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_pap_car_leave.PlanReturnTime">
+            <summary>
+            计划归队时间
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_pap_car_leave.AuthorizeMan">
+            <summary>
+            批准人
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_pap_car_leave.RecordMan">
+            <summary>
+            登记人
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_pap_car_leave.UpdateTime">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_pap_car_leave.RecStatus">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Tuby.Api.Model.d_pap_car_maintain">
+            <summary>
+            d_pap_car_maintain Entity Model
+            </summary>   
+        </member>
+        <member name="P:Tuby.Api.Model.d_pap_car_maintain.ID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_pap_car_maintain.CarID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_pap_car_maintain.Content">
+            <summary>
+            维护内容
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_pap_car_maintain.RecTime">
+            <summary>
+            维护时间
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_pap_car_maintain.AuthorizeMan">
+            <summary>
+            批准人
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_pap_car_maintain.RecordMan">
+            <summary>
+            维护人
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_pap_car_maintain.UpdateTime">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_pap_car_maintain.RecStatus">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Tuby.Api.Model.d_pap_equipment">
+            <summary>
+            d_pap_equipment Entity Model
+            </summary>   
+        </member>
+        <member name="P:Tuby.Api.Model.d_pap_equipment.ID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_pap_equipment.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_pap_equipment.EquipmentID">
+            <summary>
+            装备编号
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_pap_equipment.EquipmentTypeID">
+            <summary>
+            装备类型
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_pap_equipment.EquipmentStatusID">
+            <summary>
+            状态
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_pap_equipment.ImagePath">
+            <summary>
+            照片
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_pap_equipment.JoinTime">
+            <summary>
+            入编时间
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_pap_equipment.UpdateTime">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_pap_equipment.RecStatus">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Tuby.Api.Model.d_pap_gun">
+            <summary>
+            d_pap_gun Entity Model
+            </summary>   
+        </member>
+        <member name="P:Tuby.Api.Model.d_pap_gun.ID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_pap_gun.Name">
+            <summary>
+            枪名
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_pap_gun.ImagePath">
+            <summary>
+            照片
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_pap_gun.GunTypeID">
+            <summary>
+            类型
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_pap_gun.SoldierID">
+            <summary>
+            持有人
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_pap_gun.UpdateTime">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_pap_gun.RecStatus">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Tuby.Api.Model.d_pap_matter">
+            <summary>
+            d_pap_matter Entity Model
+            </summary>   
+        </member>
+        <member name="P:Tuby.Api.Model.d_pap_matter.ID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_pap_matter.Content">
+            <summary>
+            事件内容
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_pap_matter.RecTime">
+            <summary>
+            离队时间
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_pap_matter.AuthorizeMan">
+            <summary>
+            审核人
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_pap_matter.RecordMan">
+            <summary>
+            登记人
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_pap_matter.UpdateTime">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_pap_matter.RecStatus">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Tuby.Api.Model.d_phone_table">
+            <summary>
+            d_phone_table Entity Model
+            </summary>   
+        </member>
+        <member name="P:Tuby.Api.Model.d_phone_table.ID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_phone_table.Name">
+            <summary>
+            通联表名称
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_phone_table.PhoneTableTypeID">
+            <summary>
+            通联表类型
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_phone_table.DepartmentID">
+            <summary>
+            单位
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_phone_table.ImagePath">
+            <summary>
+            图片路径
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_phone_table.UpdateTime">
+            <summary>
+            更新时间
+            </summary>
+        </member>
+        <member name="T:Tuby.Api.Model.d_shaowei">
+            <summary>
+            d_shaowei Entity Model
+            </summary>   
+        </member>
+        <member name="P:Tuby.Api.Model.d_shaowei.ID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_shaowei.ShaoWeiName">
+            <summary>
+            哨位名
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_shaowei.DepartmentID">
+            <summary>
+            执勤单位
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_shaowei.ShaoweiTypeID">
+            <summary>
+            哨位类型
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_shaowei.Description">
+            <summary>
+            描述
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_shaowei.StartTime">
+            <summary>
+            上勤时间
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_shaowei.LeaveTime">
+            <summary>
+            撤勤时间
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_shaowei.UpdateTime">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_shaowei.RecStatus">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Tuby.Api.Model.d_shaowei_arrange">
+            <summary>
+            d_shaowei_arrange Entity Model
+            </summary>   
+        </member>
+        <member name="P:Tuby.Api.Model.d_shaowei_arrange.ID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_shaowei_arrange.SoildierID">
+            <summary>
+            哨兵
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_shaowei_arrange.ShaoweiID">
+            <summary>
+            哨位
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_shaowei_arrange.Deacription">
+            <summary>
+            描述
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_shaowei_arrange.StartTime">
+            <summary>
+            上哨时间
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_shaowei_arrange.EndTime">
+            <summary>
+            下哨时间
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_shaowei_arrange.UpdateTime">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_shaowei_arrange.RecStatus">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_shaowei_arrange.AdvanceTime">
+            <summary>
+            提前时间
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_shaowei_arrange.DelayTime">
+            <summary>
+            延后时间
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_shaowei_arrange.ScheduleName">
+            <summary>
+            排班表名
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_shaowei_arrange.DutySoildier">
+            <summary>
+            当班士兵
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_shaowei_arrange.DutyTime">
+            <summary>
+            值班时间
+            </summary>
+        </member>
+        <member name="T:Tuby.Api.Model.d_shaowei_check">
+            <summary>
+            d_shaowei_check Entity Model
+            </summary>   
+        </member>
+        <member name="P:Tuby.Api.Model.d_shaowei_check.ID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_shaowei_check.SoldierID">
+            <summary>
+            查哨人
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_shaowei_check.ShaoweiID">
+            <summary>
+            哨位
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_shaowei_check.Description">
+            <summary>
+            描述
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_shaowei_check.CheckTime">
+            <summary>
+            查哨时间
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_shaowei_check.VideoPath">
+            <summary>
+            视频
+            </summary>
+        </member>
+        <member name="T:Tuby.Api.Model.d_shaowei_preplan">
+            <summary>
+            d_shaowei_preplan Entity Model
+            </summary>   
+        </member>
+        <member name="P:Tuby.Api.Model.d_shaowei_preplan.ID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_shaowei_preplan.Name">
+            <summary>
+            预案名称
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_shaowei_preplan.ShaowenID">
+            <summary>
+            哨位
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_shaowei_preplan.ImagePath">
+            <summary>
+            图片路径
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_shaowei_preplan.UpdateTime">
+            <summary>
+            更新时间
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_shaowei_preplan.RecStatus">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Tuby.Api.Model.d_shaowei_turn">
+            <summary>
+            d_shaowei_turn Entity Model
+            </summary>   
+        </member>
+        <member name="P:Tuby.Api.Model.d_shaowei_turn.ID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_shaowei_turn.SoldierID">
+            <summary>
+            接哨人
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_shaowei_turn.ShaoWeiID">
+            <summary>
+            哨位
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_shaowei_turn.Description">
+            <summary>
+            描述
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_shaowei_turn.TurnTime">
+            <summary>
+            交接哨时间
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_shaowei_turn.VideoPath">
+            <summary>
+            视频
+            </summary>
+        </member>
+        <member name="T:Tuby.Api.Model.d_soldier">
+            <summary>
+            d_soldier Entity Model
+            </summary>   
+        </member>
+        <member name="P:Tuby.Api.Model.d_soldier.ID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_soldier.Name">
+            <summary>
+            姓名
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_soldier.ImagePath">
+            <summary>
+            照片
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_soldier.SoldierID">
+            <summary>
+            军人证号
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_soldier.InductedDay">
+            <summary>
+            入伍日期
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_soldier.LeaveDay">
+            <summary>
+            退伍日期
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_soldier.Birthday">
+            <summary>
+            出生日期
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_soldier.Nation">
+            <summary>
+            民族ID
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_soldier.NativePlace">
+            <summary>
+            籍贯
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_soldier.PoliceRankID">
+            <summary>
+            警衔
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_soldier.PostID">
+            <summary>
+            职务
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_soldier.Gender">
+            <summary>
+            性别
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_soldier.HealthID">
+            <summary>
+            健康状况
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_soldier.SoilderStateID">
+            <summary>
+            在位状态
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_soldier.UpdateTime">
+            <summary>
+            修改时间
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_soldier.RecStatus">
+            <summary>
+            记录状态
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_soldier.IsMarriageID">
+            <summary>
+            婚姻状态
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_soldier.EducationID">
+            <summary>
+            教育程度
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_soldier.PoliticalRoleID">
+            <summary>
+            政治面貌
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_soldier.Address">
+            <summary>
+            地址
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_soldier.Contact">
+            <summary>
+            联系人
+            </summary>
+        </member>
+        <member name="T:Tuby.Api.Model.d_soldier_leave">
+            <summary>
+            d_soldier_leave Entity Model
+            </summary>   
+        </member>
+        <member name="P:Tuby.Api.Model.d_soldier_leave.ID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_soldier_leave.SoldierID">
+            <summary>
+            士兵
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_soldier_leave.Reason">
+            <summary>
+            请假原因
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_soldier_leave.LeaveTime">
+            <summary>
+            离队时间
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_soldier_leave.ReturnTime">
+            <summary>
+            归队时间
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_soldier_leave.PlanLeaveTime">
+            <summary>
+            计划离队时间
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_soldier_leave.PlanReturnTime">
+            <summary>
+            计划归队时间
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_soldier_leave.LeaveLocal">
+            <summary>
+            是否离开驻地
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_soldier_leave.AuthorizeMan">
+            <summary>
+            批准人
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_soldier_leave.RecordMan">
+            <summary>
+            登记人
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_soldier_leave.UpdateTime">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_soldier_leave.RecStatus">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Tuby.Api.Model.d_soldier_train">
+            <summary>
+            d_soldier_train Entity Model
+            </summary>   
+        </member>
+        <member name="P:Tuby.Api.Model.d_soldier_train.ID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_soldier_train.SoldierID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_soldier_train.Description">
+            <summary>
+            描述
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_soldier_train.Place">
+            <summary>
+            学习/培训地点
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_soldier_train.LeaveTime">
+            <summary>
+            离队时间
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_soldier_train.ReturnTime">
+            <summary>
+            归队时间
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_soldier_train.PlanLeaveTime">
+            <summary>
+            计划离队时间
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_soldier_train.PlanReturnTime">
+            <summary>
+            计划归队时间
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_soldier_train.AuthorizeMan">
+            <summary>
+            批准人
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_soldier_train.RecordMan">
+            <summary>
+            登记人
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_soldier_train.UpdateTime">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_soldier_train.RecStatus">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Tuby.Api.Model.d_soldier_treatment">
+            <summary>
+            d_soldier_treatment Entity Model
+            </summary>   
+        </member>
+        <member name="P:Tuby.Api.Model.d_soldier_treatment.ID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_soldier_treatment.SoldierID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_soldier_treatment.Descripiton">
+            <summary>
+            描述
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_soldier_treatment.Place">
+            <summary>
+            目的地
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_soldier_treatment.LeaveTime">
+            <summary>
+            离队时间
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_soldier_treatment.ReturnTime">
+            <summary>
+            归队时间
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_soldier_treatment.PlanLeaveTime">
+            <summary>
+            计划离队时间
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_soldier_treatment.PlanReturnTime">
+            <summary>
+            计划归队时间
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_soldier_treatment.AuthorizeMan">
+            <summary>
+            批准人
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_soldier_treatment.RecordMan">
+            <summary>
+            登记人
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_soldier_treatment.UpdateTime">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_soldier_treatment.RecStatus">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Tuby.Api.Model.d_study_record">
+             <summary>
+            d_medical Entity Model
+             </summary>   
+        </member>
+        <member name="P:Tuby.Api.Model.d_study_record.ID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_study_record.SoldierID">
+            <summary>
+            士兵id
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_study_record.Topic">
+             <summary>
+            学习主题
+             </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_study_record.Address">
+            <summary>
+            就诊地址
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_study_record.Time">
+            <summary>
+            就诊时间
+            </summary>
+        </member>
+        <member name="T:Tuby.Api.Model.d_target_camera_record_car">
+            <summary>
+            d_target_camera_record_car Entity Model
+            </summary>   
+        </member>
+        <member name="P:Tuby.Api.Model.d_target_camera_record_car.ID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_target_camera_record_car.CarID">
+            <summary>
+            车辆信息
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_target_camera_record_car.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_target_camera_record_car.RecTime">
+            <summary>
+            时间
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_target_camera_record_car.ImagePath">
+            <summary>
+            抓拍照片
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_target_camera_record_car.RecStatus">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Tuby.Api.Model.d_target_camera_record_people">
+            <summary>
+            d_target_camera_record_people Entity Model
+            </summary>   
+        </member>
+        <member name="P:Tuby.Api.Model.d_target_camera_record_people.ID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_target_camera_record_people.PeopleID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_target_camera_record_people.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_target_camera_record_people.RecTime">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_target_camera_record_people.ImagePath">
+            <summary>
+            抓拍照片
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_target_camera_record_people.RecStatus">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Tuby.Api.Model.d_target_car">
+            <summary>
+            d_target_car Entity Model
+            </summary>   
+        </member>
+        <member name="P:Tuby.Api.Model.d_target_car.ID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_target_car.Name">
+            <summary>
+            车名
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_target_car.ImagePath">
+            <summary>
+            照片
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_target_car.CarID">
+            <summary>
+            车牌号
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_target_car.SecurityLevelID">
+            <summary>
+            安全级别
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_target_car.UpdateTime">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_target_car.RecStatus">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Tuby.Api.Model.d_target_car_blacklist">
+            <summary>
+            d_target_car_blacklist Entity Model
+            </summary>   
+        </member>
+        <member name="P:Tuby.Api.Model.d_target_car_blacklist.ID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_target_car_blacklist.CarID">
+            <summary>
+            人员
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_target_car_blacklist.RecordMan">
+            <summary>
+            登记人
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_target_car_blacklist.UpdateTime">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_target_car_blacklist.RecStatus">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Tuby.Api.Model.d_target_car_control">
+            <summary>
+            d_target_car_control Entity Model
+            </summary>   
+        </member>
+        <member name="P:Tuby.Api.Model.d_target_car_control.ID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_target_car_control.CarID">
+            <summary>
+            人员
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_target_car_control.Reason">
+            <summary>
+            进出事由
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_target_car_control.Time">
+            <summary>
+            进出时间
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_target_car_control.AuthorizeMan">
+            <summary>
+            批准人
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_target_car_control.RecordMan">
+            <summary>
+            登记人
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_target_car_control.UpdateTime">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_target_car_control.RecStatus">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Tuby.Api.Model.d_target_car_whitelist">
+            <summary>
+            d_target_car_whitelist Entity Model
+            </summary>   
+        </member>
+        <member name="P:Tuby.Api.Model.d_target_car_whitelist.ID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_target_car_whitelist.CarID">
+            <summary>
+            人员
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_target_car_whitelist.RecordMan">
+            <summary>
+            登记人
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_target_car_whitelist.UpdateTime">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_target_car_whitelist.RecStatus">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Tuby.Api.Model.d_target_people">
+            <summary>
+            d_target_people Entity Model
+            </summary>   
+        </member>
+        <member name="P:Tuby.Api.Model.d_target_people.ID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_target_people.Name">
+            <summary>
+            姓名
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_target_people.ImagePath">
+            <summary>
+            照片
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_target_people.TargetPeopleTypeID">
+            <summary>
+            人员类别
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_target_people.SecurityLevelID">
+            <summary>
+            安全级别
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_target_people.RecStatus">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_target_people.UpdateTime">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_target_people.Visreason">
+            <summary>
+            来访事由
+            </summary>
+        </member>
+        <member name="T:Tuby.Api.Model.d_target_people_blacklist">
+            <summary>
+            d_target_people_blacklist Entity Model
+            </summary>   
+        </member>
+        <member name="P:Tuby.Api.Model.d_target_people_blacklist.ID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_target_people_blacklist.TargetPeopleID">
+            <summary>
+            人员
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_target_people_blacklist.RecordMan">
+            <summary>
+            登记人
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_target_people_blacklist.UpdateTime">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_target_people_blacklist.RecStatus">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Tuby.Api.Model.d_target_people_control">
+            <summary>
+            d_target_people_control Entity Model
+            </summary>   
+        </member>
+        <member name="P:Tuby.Api.Model.d_target_people_control.ID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_target_people_control.TargetPeopleID">
+            <summary>
+            人员
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_target_people_control.Reason">
+            <summary>
+            进出事由
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_target_people_control.Time">
+            <summary>
+            进出时间
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_target_people_control.AuthorizeMan">
+            <summary>
+            批准人
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_target_people_control.RecordMan">
+            <summary>
+            登记人
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_target_people_control.UpdateTime">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_target_people_control.RecStatus">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Tuby.Api.Model.d_target_people_whitelist">
+            <summary>
+            d_target_people_whitelist Entity Model
+            </summary>   
+        </member>
+        <member name="P:Tuby.Api.Model.d_target_people_whitelist.ID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_target_people_whitelist.TargetPeopleID">
+            <summary>
+            人员
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_target_people_whitelist.RecordMan">
+            <summary>
+            登记人
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_target_people_whitelist.UpdateTime">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_target_people_whitelist.RecStatus">
+            <summary>
+            
+            </summary>
+        </member>
+    </members>
+</doc>
