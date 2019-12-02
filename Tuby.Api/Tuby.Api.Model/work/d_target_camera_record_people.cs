@@ -41,7 +41,16 @@ namespace Tuby.Api.Model
         /// 抓拍照片
         /// </summary>
         public string ImagePath { get; set; }
-   
+        /// <summary>
+        /// 相似度
+        /// </summary>
+        public int Similar { get; set; }
+
+        /// <summary>
+        /// 地点
+        /// </summary>
+        public string Position { get; set; }
+
         /// <summary>
         /// 
         /// </summary>

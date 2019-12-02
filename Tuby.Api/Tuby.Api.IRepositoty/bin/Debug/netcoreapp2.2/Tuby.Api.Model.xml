@@ -1210,6 +1210,16 @@
             是否白名单
             </summary>
         </member>
+        <member name="P:Tuby.Api.Model.viewmodels.TargetPeopleView.TypeName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.TargetPeopleView.LevelName">
+            <summary>
+            
+            </summary>
+        </member>
         <member name="P:Tuby.Api.Model.viewmodels.topicsdkjg.ID">
             <summary>
             激光报警事件ID
@@ -2075,7 +2085,7 @@
             
             </summary>
         </member>
-        <member name="P:Tuby.Api.Model.b_target_people_security_level.Name">
+        <member name="P:Tuby.Api.Model.b_target_people_security_level.LevelName">
             <summary>
             
             </summary>
@@ -2095,7 +2105,7 @@
             
             </summary>
         </member>
-        <member name="P:Tuby.Api.Model.b_target_people_type.Name">
+        <member name="P:Tuby.Api.Model.b_target_people_type.TypeName">
             <summary>
             
             </summary>
@@ -3593,6 +3603,16 @@
         <member name="P:Tuby.Api.Model.d_target_camera_record_people.ImagePath">
             <summary>
             抓拍照片
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_target_camera_record_people.Similar">
+            <summary>
+            相似度
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_target_camera_record_people.Position">
+            <summary>
+            地点
             </summary>
         </member>
         <member name="P:Tuby.Api.Model.d_target_camera_record_people.RecStatus">

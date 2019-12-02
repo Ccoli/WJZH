@@ -41,7 +41,11 @@ namespace Tuby.Api.Controllers
             dc.Add("dayzj", zjList.Count);
             dc.Add("dayjg", jgList.Count);
             dc.Add("dayhand", handList.Count);
-            DateTime week =Convert.ToDateTime(dt.AddDays(1 - Convert.ToInt32(dt.DayOfWeek.ToString("d"))).ToString("yyyy-MM-dd 00:00:00"));
+            DateTime temp = new DateTime(dt.Year, dt.Month, dt.Day);
+            int count = dt.DayOfWeek - DayOfWeek.Monday;
+            if (count == -1) count = 6;
+            temp.AddDays(-count);
+            DateTime week =Convert.ToDateTime(temp.AddDays(-count).ToString("yyyy-MM-dd 00:00:00"));
             zjList = await _d_alarm_infoServices.Query(a => a.AlarmTime > week && a.AlarmTypeID == 2);
             jgList = await _d_alarm_infoServices.Query(a => a.AlarmTime > week && a.AlarmTypeID == 14);
             handList = await _HandAlarmServices.Query(a => Convert.ToDateTime(a.time) >week);

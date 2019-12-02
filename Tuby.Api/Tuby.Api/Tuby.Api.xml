@@ -750,6 +750,24 @@
             <param name="pagesize">页大小</param>
              <returns></returns>
         </member>
+        <member name="T:Tuby.Api.Controllers.TargetPeopleController">
+            <summary>
+            报警信息接口
+            </summary>
+        </member>
+        <member name="M:Tuby.Api.Controllers.TargetPeopleController.#ctor(Tuby.Api.IServices.ITargetPeopleServices)">
+            <summary>
+            构造函数
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Tuby.Api.Controllers.TargetPeopleController.GetTypePage(System.Int32)">
+            <summary>
+            根据id获取目标人员
+            </summary>
+            <param name="id">目标人员id</param>
+            <returns></returns>
+        </member>
         <member name="T:Tuby.Api.Controllers.b_administrative_divisionController">
             <summary>
             b_administrative_divisionControllers
@@ -2605,7 +2623,7 @@
             d_alarm_infoControllers
             </summary>	
         </member>
-        <member name="M:Tuby.Api.Controllers.d_alarm_infoController.#ctor(Tuby.Api.IServices.Id_alarm_infoServices,Tuby.Api.IServices.Ib_alarm_typeServices,Tuby.Api.IServices.ItopicsdkjgServices,Tuby.Api.IServices.IHandAlarmServices)">
+        <member name="M:Tuby.Api.Controllers.d_alarm_infoController.#ctor(Tuby.Api.IServices.Id_alarm_infoServices,Tuby.Api.IServices.Ib_alarm_typeServices,Tuby.Api.IServices.ItopicsdkjgServices,Tuby.Api.IServices.IHandAlarmServices,Tuby.Api.IServices.Id_target_camera_record_peopleServices,Tuby.Api.IServices.IDeviceListServices)">
             <summary>
             构造函数
             </summary>

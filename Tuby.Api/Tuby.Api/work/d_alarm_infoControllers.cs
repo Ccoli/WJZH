@@ -24,17 +24,21 @@ namespace Tuby.Api.Controllers
         readonly Ib_alarm_typeServices _b_alarm_typeServices;
         readonly ItopicsdkjgServices _topicsdkjgServices;
         readonly IHandAlarmServices _HandAlarmServices;
+        readonly Id_target_camera_record_peopleServices _d_target_camera_record_peopleServices;
+        readonly IDeviceListServices _DeviceListServices;
 
         /// <summary>
         /// 构造函数
         /// </summary>
         /// <returns></returns>
-        public d_alarm_infoController(Id_alarm_infoServices d_alarm_infoServices, Ib_alarm_typeServices b_alarm_typeServices, ItopicsdkjgServices topicsdkjgServices, IHandAlarmServices HandAlarmServices)
+        public d_alarm_infoController(Id_alarm_infoServices d_alarm_infoServices, Ib_alarm_typeServices b_alarm_typeServices, ItopicsdkjgServices topicsdkjgServices, IHandAlarmServices HandAlarmServices, Id_target_camera_record_peopleServices d_target_camera_record_peopleServices, IDeviceListServices DeviceListServices)
         {
             _d_alarm_infoServices = d_alarm_infoServices;
             _b_alarm_typeServices = b_alarm_typeServices;
             _topicsdkjgServices = topicsdkjgServices;
             _HandAlarmServices = HandAlarmServices;
+            _d_target_camera_record_peopleServices = d_target_camera_record_peopleServices;
+            _DeviceListServices = DeviceListServices;
         }
 		/// <summary>
 		///查询所有数据
@@ -133,28 +137,52 @@ namespace Tuby.Api.Controllers
         {
             var data = new MessageModel<string>();
 
-            d_alarm_info dai = new d_alarm_info();
-            var list = await _b_alarm_typeServices.Query();
-            foreach (var item in list)
+            var type = ZJAlarmView.Type;
+            if (type == 3)
             {
-                if (item.Name.Contains("越界"))
+                d_target_camera_record_people drp = new d_target_camera_record_people();
+                var list= await _DeviceListServices.Query(c => c.DeviceID == ZJAlarmView.CameraId);
+                drp.Position = list.FirstOrDefault().name;
+                var dc = ZJAlarmView.FaceInfo;
+                drp.PeopleID =Convert.ToInt32(dc["FaceId"]);
+                drp.Name = dc["Name"];
+                drp.Similar = Convert.ToInt32(dc["Similar"]);
+                drp.ImagePath = ZJAlarmView.ImageUrl;
+                drp.RecTime = Convert.ToDateTime(ZJAlarmView.time);
+                var id = (await _d_target_camera_record_peopleServices.Add(drp));
+                data.success = id > 0;
+                if (data.success)
                 {
-                    dai.AlarmTypeID = item.ID;
-                    break;
+                    data.response = id.ObjToString();
+                    data.msg = "添加人脸识别信息成功";
                 }
             }
-            //dai.AlarmDeviceID = ZJAlarmView.CameraId;
-            dai.VedioRecrdPath = ZJAlarmView.ImageUrl;
-            dai.Content = ZJAlarmView.EventType;
-            dai.UpdateTime = DateTime.Now;
-            dai.AlarmTime =Convert.ToDateTime(ZJAlarmView.time);
-            var id = (await _d_alarm_infoServices.Add(dai));
-            data.success = id > 0;
-            if (data.success)
+            else
             {
-                data.response = id.ObjToString();
-                data.msg = "添加成功";
+                d_alarm_info dai = new d_alarm_info();
+                var list = await _b_alarm_typeServices.Query();
+                foreach (var item in list)
+                {
+                    if (item.Name.Contains("越界"))
+                    {
+                        dai.AlarmTypeID = item.ID;
+                        break;
+                    }
+                }
+                //dai.AlarmDeviceID = ZJAlarmView.CameraId;
+                dai.VedioRecrdPath = ZJAlarmView.ImageUrl;
+                dai.Content = ZJAlarmView.EventType;
+                dai.UpdateTime = DateTime.Now;
+                dai.AlarmTime = Convert.ToDateTime(ZJAlarmView.time);
+                var id = (await _d_alarm_infoServices.Add(dai));
+                data.success = id > 0;
+                if (data.success)
+                {
+                    data.response = id.ObjToString();
+                    data.msg = "添加周界报警信息成功";
+                }
             }
+            
 
             return data;
         }

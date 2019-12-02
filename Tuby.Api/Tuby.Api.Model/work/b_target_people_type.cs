@@ -25,7 +25,7 @@ namespace Tuby.Api.Model
         /// <summary>
         /// 
         /// </summary>
-        public string Name { get; set; }
+        public string TypeName { get; set; }
    
         /// <summary>
         /// 
