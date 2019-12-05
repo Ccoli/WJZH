@@ -227,11 +227,7 @@ namespace MQTTClient
             Console.WriteLine($"{Encoding.UTF8.GetString(e.ApplicationMessage.Payload)}{Environment.NewLine}");
             string json = Encoding.UTF8.GetString(e.ApplicationMessage.Payload);
             string topic= e.ApplicationMessage.Topic;
-            if (topic == "topic/video/hand")
-            {
-                json = System.Web.HttpUtility.UrlDecode(json);
-                Console.WriteLine("解码之后数据为：" + json);
-            }else if (topic == "SmartBI/Capture")
+            if (topic == "SmartBI/Capture")
             {
                 AlarmInfoHandle handle = new AlarmInfoHandle();
                 json = handle.ParsingActionJson(json);
