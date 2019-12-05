@@ -11,32 +11,34 @@ using Microsoft.AspNetCore.Authorization;
 namespace Tuby.Api.Controllers
 {	
 	/// <summary>
-	/// d_target_camera_record_carControllers
+	/// d_handle_infoControllers
 	/// </summary>	
 	[Produces("application/json")]
 	[Route("api/[controller]")]
     [ApiController]
     [Authorize(Permissions.Name)]
     [AllowAnonymous]
-    public class d_target_camera_record_carController : ControllerBase
+    public class d_handle_infoController : ControllerBase
     { 
-		 readonly Id_target_camera_record_carServices _d_target_camera_record_carServices;
+		 readonly Id_handle_infoServices _d_handle_infoServices;
+        readonly Id_alarm_infoServices _d_alarm_infoServices;
 
-		 /// <summary>
+        /// <summary>
         /// 构造函数
         /// </summary>
         /// <returns></returns>
-        public d_target_camera_record_carController(Id_target_camera_record_carServices d_target_camera_record_carServices)
+        public d_handle_infoController(Id_handle_infoServices d_handle_infoServices, Id_alarm_infoServices d_alarm_infoServices)
         {
-            _d_target_camera_record_carServices = d_target_camera_record_carServices;
+            _d_handle_infoServices = d_handle_infoServices;
+            _d_alarm_infoServices = d_alarm_infoServices;
         }
 		/// <summary>
 		///查询所有数据
 		/// </summary>	
 		 [HttpGet]
-        public async Task<List<d_target_camera_record_car>> Get()
+        public async Task<List<d_handle_info>> Get()
         {
-            return await _d_target_camera_record_carServices.Query();
+            return await _d_handle_infoServices.Query();
         }
 
 		/// <summary>
@@ -46,34 +48,45 @@ namespace Tuby.Api.Controllers
         /// <returns></returns>
         [HttpGet]
         [Route("getpage")]
-        public async Task<PageModel<d_target_camera_record_car>> GetPage(int page)
+        public async Task<PageModel<d_handle_info>> GetPage(int page)
         {
-            return await _d_target_camera_record_carServices.Query("", page, 10, "");
+            return await _d_handle_infoServices.Query("", page, 10, "");
         }
 
         /// <summary>
 		///根据id查询数据
 		/// </summary>
         [HttpGet("{id}")]
-        public async Task<List<d_target_camera_record_car>> Get(int id)
+        public async Task<List<d_handle_info>> Get(int id)
         {
-            return await _d_target_camera_record_carServices.Query(c => c.ID == id);
+            return await _d_handle_infoServices.Query(c => c.ID == id);
         }
 
         /// <summary>
 		/// 使用post方法添加数据
 		/// </summary>
         [HttpPost]
-       public async Task<MessageModel<string>> Post([FromBody] d_target_camera_record_car d_target_camera_record_car)
+       public async Task<MessageModel<string>> Post([FromBody] d_handle_info d_handle_info)
         {
 			var data = new MessageModel<string>();
 
-            var id = (await _d_target_camera_record_carServices.Add(d_target_camera_record_car));
+            var id = (await _d_handle_infoServices.Add(d_handle_info));
+            var alarmInfo = (await _d_alarm_infoServices.Query(c => c.StatusID == d_handle_info.ID)).FirstOrDefault();
+            alarmInfo.RecStatus = 1;
+            alarmInfo.UpdateTime = DateTime.Now;
             data.success = id > 0;
             if (data.success)
             {
+                var flag=await _d_alarm_infoServices.Update(alarmInfo);
                 data.response = id.ObjToString();
-                data.msg = "添加成功";
+                if (flag)
+                {
+                    data.msg = "添加成功,状态更新成功";
+                }
+                else
+                {
+                    data.msg = "添加成功,状态更新失败";
+                }
             }
 
             return data;
@@ -84,21 +97,21 @@ namespace Tuby.Api.Controllers
 		/// </summary>
         [HttpPost]
         [Route("update")]
-        public async Task<MessageModel<string>> Update([FromBody] d_target_camera_record_car d_target_camera_record_car)
+        public async Task<MessageModel<string>> Update([FromBody] d_handle_info d_handle_info)
         {
 			var data = new MessageModel<string>();
-            if (d_target_camera_record_car != null && d_target_camera_record_car.ID > 0)
+            if (d_handle_info != null && d_handle_info.ID > 0)
             {
-                var id = (await _d_target_camera_record_carServices.Update(d_target_camera_record_car));
+                var id = (await _d_handle_infoServices.Update(d_handle_info));
                 data.success = id;
                 if (data.success)
                 {
-                    data.response = "id为" +d_target_camera_record_car.ID.ToString() + "的数据更新成功";
+                    data.response = "id为" +d_handle_info.ID.ToString() + "的数据更新成功";
                     data.msg = "更新成功";
                 }
                 else
                 {
-                    data.response = "id为" +d_target_camera_record_car.ID.ToString() + "的数据不存在";
+                    data.response = "id为" +d_handle_info.ID.ToString() + "的数据不存在";
                 }
             }
 
@@ -112,7 +125,7 @@ namespace Tuby.Api.Controllers
         [Route("delete")]
 		 public async Task<MessageModel<string>> Delete(int id)
         {
-            var flag = (await _d_target_camera_record_carServices.DeleteById(id));
+            var flag = (await _d_handle_infoServices.DeleteById(id));
             var data = new MessageModel<string>();
             data.success = flag;
             if (flag)
@@ -138,7 +151,7 @@ namespace Tuby.Api.Controllers
         [Route("deletemuch")]
         public async Task<MessageModel<string>> DeleteMuch([FromBody] object[] id)
         {
-            var flag = (await _d_target_camera_record_carServices.DeleteByIds(id));
+            var flag = (await _d_handle_infoServices.DeleteByIds(id));
             var data = new MessageModel<string>();
             data.success = flag;
             if (flag)

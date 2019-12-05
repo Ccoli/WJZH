@@ -41,7 +41,27 @@ namespace Tuby.Api.Model
         /// 抓拍照片
         /// </summary>
         public string ImagePath { get; set; }
-   
+
+        /// <summary>
+        /// 车牌类型
+        /// </summary>
+        public string PlateType { get; set; }
+
+        /// <summary>
+        /// 车辆类型
+        /// </summary>
+        public string CarType { get; set; }
+
+        /// <summary>
+        /// 车辆颜色
+        /// </summary>
+        public string CarColor { get; set; }
+
+        /// <summary>
+        /// 汽车品牌
+        /// </summary>
+        public string CarLogo { get; set; }
+
         /// <summary>
         /// 
         /// </summary>

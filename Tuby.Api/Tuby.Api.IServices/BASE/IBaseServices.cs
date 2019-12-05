@@ -27,6 +27,8 @@ namespace Tuby.Api.IServices.BASE
         Task<bool> Update(TEntity model);
         Task<bool> Update(TEntity entity, string strWhere);
 
+        Task<bool> Update(TEntity entity, Expression<Func<TEntity, object>> selectExpression, Expression<Func<TEntity, bool>> whereExpression);
+
         Task<bool> Update(TEntity entity, List<string> lstColumns = null, List<string> lstIgnoreColumns = null, string strWhere = "");
 
         Task<List<TEntity>> Query();

@@ -85,7 +85,7 @@ namespace Tuby.Api.Repository.Base
         /// <summary>
         /// 批量插入实体模型
         /// </summary>
-        /// <param name="entity">博文实体类</param>
+        /// <param name="entity">实体类</param>
         /// <returns></returns>
         public async Task<int> AddList(List<TEntity> list)
         {
@@ -97,7 +97,7 @@ namespace Tuby.Api.Repository.Base
         /// <summary>
         /// 更新实体数据
         /// </summary>
-        /// <param name="entity">博文实体类</param>
+        /// <param name="entity">实体类</param>
         /// <returns></returns>
         public async Task<bool> Update(TEntity entity)
         {
@@ -109,6 +109,17 @@ namespace Tuby.Api.Repository.Base
         public async Task<bool> Update(TEntity entity, string strWhere)
         {
             return await Task.Run(() => db.Updateable(entity).Where(strWhere).ExecuteCommand() > 0);
+        }
+        /// <summary>
+        /// 根据特定条件更新特定字段
+        /// </summary>
+        /// <param name="entity">实体类</param>
+        /// <param name="selectExpression">要更新字段，如it => new Student() { Name = "a", CreateTime = DateTime.Now }</param>
+        /// <param name="whereExpression">特定条件，如it => it.Id == 11</param>
+        /// <returns></returns>
+        public async Task<bool> Update(TEntity entity, Expression<Func<TEntity, object>> selectExpression, Expression<Func<TEntity, bool>> whereExpression)
+        {
+            return await Task.Run(() => db.Updateable(entity).UpdateColumns(selectExpression).Where(whereExpression).ExecuteCommand() > 0);
         }
 
         public async Task<bool> Update(string strSql, SugarParameter[] parameters = null)

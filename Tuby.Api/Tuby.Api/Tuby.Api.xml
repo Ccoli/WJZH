@@ -2804,6 +2804,56 @@
             更新数据
              </summary>
         </member>
+        <member name="T:Tuby.Api.Controllers.d_handle_infoController">
+            <summary>
+            d_handle_infoControllers
+            </summary>	
+        </member>
+        <member name="M:Tuby.Api.Controllers.d_handle_infoController.#ctor(Tuby.Api.IServices.Id_handle_infoServices,Tuby.Api.IServices.Id_alarm_infoServices)">
+            <summary>
+            构造函数
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Tuby.Api.Controllers.d_handle_infoController.Get">
+             <summary>
+            查询所有数据
+             </summary>	
+        </member>
+        <member name="M:Tuby.Api.Controllers.d_handle_infoController.GetPage(System.Int32)">
+            <summary>
+            分页查询
+            </summary>
+            <param name="page"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tuby.Api.Controllers.d_handle_infoController.Get(System.Int32)">
+             <summary>
+            根据id查询数据
+             </summary>
+        </member>
+        <member name="M:Tuby.Api.Controllers.d_handle_infoController.Post(Tuby.Api.Model.d_handle_info)">
+            <summary>
+            使用post方法添加数据
+            </summary>
+        </member>
+        <member name="M:Tuby.Api.Controllers.d_handle_infoController.Update(Tuby.Api.Model.d_handle_info)">
+             <summary>
+            更新数据
+             </summary>
+        </member>
+        <member name="M:Tuby.Api.Controllers.d_handle_infoController.Delete(System.Int32)">
+            <summary>
+            根据id使用get方法删除数据
+            </summary>
+        </member>
+        <member name="M:Tuby.Api.Controllers.d_handle_infoController.DeleteMuch(System.Object[])">
+            <summary>
+            批量删除
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
         <member name="T:Tuby.Api.Controllers.d_medicalController">
             <summary>
             d_medicalControllers

@@ -71,6 +71,11 @@ namespace Tuby.Api.Services.BASE
             return await baseDal.Update(entity, strWhere);
         }
 
+        public async Task<bool> Update(TEntity entity, Expression<Func<TEntity, object>> selectExpression, Expression<Func<TEntity, bool>> whereExpression)
+        {
+            return await baseDal.Update(entity, selectExpression, whereExpression);
+        }
+
         public async Task<bool> Update(
          TEntity entity,
          List<string> lstColumns = null,

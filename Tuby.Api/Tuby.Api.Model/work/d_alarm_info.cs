@@ -56,5 +56,9 @@ namespace Tuby.Api.Model
         /// 
         /// </summary>
         public int RecStatus { get; set; }
+        /// <summary>
+        /// 关联处置id
+        /// </summary>
+        public int StatusID { get; set; }
     }
 }
