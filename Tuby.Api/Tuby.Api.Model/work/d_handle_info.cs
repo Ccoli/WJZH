@@ -14,7 +14,7 @@ namespace Tuby.Api.Model
         /// <summary>
         /// id
         /// </summary>
-        public int ID { get; set; }
+        public string ID { get; set; }
         /// <summary>
         /// 处置人员
         /// </summary>

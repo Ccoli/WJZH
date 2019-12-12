@@ -8,9 +8,11 @@ namespace Tuby.Api.Model.viewmodels
     {
         //{"AreaID":0,"EventID":11,"HostID":0,"ReceiverID":11,"TerminalID":109}
         public int AreaID { get; set; }
+        public string EventDescription { get; set; }
         public int EventID { get; set; }
         public int HostID { get; set; }
         public int ReceiverID { get; set; }
         public int TerminalID { get; set; }
+        public string StatusID { get; set; }
     }
 }

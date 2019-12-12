@@ -840,29 +840,9 @@
             在位统计
             </summary>
         </member>
-        <member name="P:Tuby.Api.Model.viewmodels.CountSoldierEntity.SixStateCount">
-            <summary>
-            六中队在位统计
-            </summary>
-        </member>
-        <member name="P:Tuby.Api.Model.viewmodels.CountSoldierEntity.SevenStateCount">
-            <summary>
-            七中队在位统计
-            </summary>
-        </member>
         <member name="P:Tuby.Api.Model.viewmodels.CountSoldierEntity.LeaveCount">
             <summary>
             离位统计
-            </summary>
-        </member>
-        <member name="P:Tuby.Api.Model.viewmodels.CountSoldierEntity.SixLeaveCount">
-            <summary>
-            六中队离位统计
-            </summary>
-        </member>
-        <member name="P:Tuby.Api.Model.viewmodels.CountSoldierEntity.SevenLeaveCount">
-            <summary>
-            七中队离位统计
             </summary>
         </member>
         <member name="P:Tuby.Api.Model.viewmodels.CountSoldierEntity.ToLoanCount">
@@ -870,29 +850,9 @@
              借调统计
             </summary>
         </member>
-        <member name="P:Tuby.Api.Model.viewmodels.CountSoldierEntity.SixToLoanCount">
-            <summary>
-            六中队借调统计
-            </summary>
-        </member>
-        <member name="P:Tuby.Api.Model.viewmodels.CountSoldierEntity.SevenToLoanCount">
-            <summary>
-            七中队借调统计
-            </summary>
-        </member>
         <member name="P:Tuby.Api.Model.viewmodels.CountSoldierEntity.TrainCount">
             <summary>
             培训统计
-            </summary>
-        </member>
-        <member name="P:Tuby.Api.Model.viewmodels.CountSoldierEntity.SixTrainCount">
-            <summary>
-            六中队培训统计
-            </summary>
-        </member>
-        <member name="P:Tuby.Api.Model.viewmodels.CountSoldierEntity.SevenTrainCount">
-            <summary>
-            七中队培训统计
             </summary>
         </member>
         <member name="P:Tuby.Api.Model.viewmodels.CountSoldierEntity.VacationCount">
@@ -900,29 +860,9 @@
             休假统计
             </summary>
         </member>
-        <member name="P:Tuby.Api.Model.viewmodels.CountSoldierEntity.SixVacationCount">
-            <summary>
-            六中队休假统计
-            </summary>
-        </member>
-        <member name="P:Tuby.Api.Model.viewmodels.CountSoldierEntity.SevenVacationCount">
-            <summary>
-            七中队休假统计
-            </summary>
-        </member>
         <member name="P:Tuby.Api.Model.viewmodels.CountSoldierEntity.AllTrainCount">
             <summary>
             集训统计
-            </summary>
-        </member>
-        <member name="P:Tuby.Api.Model.viewmodels.CountSoldierEntity.SixAllTrainCount">
-            <summary>
-            六中队集训统计
-            </summary>
-        </member>
-        <member name="P:Tuby.Api.Model.viewmodels.CountSoldierEntity.SevenAllTrainCount">
-            <summary>
-            七中队集训统计
             </summary>
         </member>
         <member name="T:Tuby.Api.Model.viewmodels.DeviceListView">
@@ -1163,6 +1103,41 @@
         <member name="P:Tuby.Api.Model.viewmodels.SoldierInfoView.NationName">
             <summary>
             民族
+            </summary>
+        </member>
+        <member name="T:Tuby.Api.Model.viewmodels.SWZDAlarmView">
+            <summary>
+            {"AlarmSourceID":14196190450402000896,"AlarmType":"自然灾害","Description":"一号哨发生自然灾害","DevIP":"182.167.10.110","OccurTime":"2019-12-07 16:49:26"}
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.SWZDAlarmView.AlarmSourceID">
+            <summary>
+            报警ID
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.SWZDAlarmView.AlarmType">
+            <summary>
+            报警类型
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.SWZDAlarmView.Description">
+            <summary>
+            描述
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.SWZDAlarmView.DevIP">
+            <summary>
+            设备ip
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.SWZDAlarmView.OccurTime">
+            <summary>
+            时间
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.SWZDAlarmView.StatusID">
+            <summary>
+            关联处置id
             </summary>
         </member>
         <member name="P:Tuby.Api.Model.viewmodels.TargetCarInfoView.ID">
@@ -2325,6 +2300,36 @@
             关联处置id
             </summary>
         </member>
+        <member name="P:Tuby.Api.Model.d_alarm_source.ID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_alarm_source.SourceName">
+            <summary>
+            来源名称
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_alarm_source.Enabled">
+            <summary>
+            是否启用
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_alarm_source.TopicName">
+            <summary>
+            主题名称
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_alarm_source.IsDeleted">
+            <summary>
+            是否删除
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_alarm_source.UpdateTime">
+            <summary>
+            时间
+            </summary>
+        </member>
         <member name="T:Tuby.Api.Model.d_camera">
             <summary>
             d_camera Entity Model
@@ -2403,6 +2408,66 @@
         <member name="P:Tuby.Api.Model.d_camera_group.ParentID">
             <summary>
             父节点ID
+            </summary>
+        </member>
+        <member name="T:Tuby.Api.Model.d_car_attribute">
+            <summary>
+            d_car_attribute Entity Model
+            </summary>   
+        </member>
+        <member name="P:Tuby.Api.Model.d_car_attribute.ID">
+            <summary>
+            id
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_car_attribute.Mistake">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_car_attribute.Licence">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_car_attribute.PlateColor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_car_attribute.PlateRect">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_car_attribute.PlateType">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_car_attribute.VehicleColor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_car_attribute.VehicleType">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_car_attribute.Position">
+            <summary>
+            位置
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_car_attribute.Type">
+            <summary>
+            报警类型
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_car_attribute.Time">
+            <summary>
+            报警类型
             </summary>
         </member>
         <member name="T:Tuby.Api.Model.d_duty">
@@ -3073,6 +3138,91 @@
         <member name="P:Tuby.Api.Model.d_phone_table.UpdateTime">
             <summary>
             更新时间
+            </summary>
+        </member>
+        <member name="T:Tuby.Api.Model.d_poeple_attribute">
+            <summary>
+            d_poeple_attribute Entity Model
+            </summary>   
+        </member>
+        <member name="P:Tuby.Api.Model.d_poeple_attribute.ID">
+            <summary>
+            id
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_poeple_attribute.Age">
+            <summary>
+            年龄
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_poeple_attribute.Baby">
+            <summary>
+            是否抱小孩
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_poeple_attribute.Bag">
+            <summary>
+            是否背包
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_poeple_attribute.BottomColor">
+            <summary>
+            下装颜色
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_poeple_attribute.BottomType">
+            <summary>
+            下装款式
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_poeple_attribute.Glasses">
+            <summary>
+            是否戴眼镜
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_poeple_attribute.Hat">
+            <summary>
+            双肩包
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_poeple_attribute.Knapsack">
+            <summary>
+            朝向
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_poeple_attribute.Orientation">
+            <summary>
+            性别
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_poeple_attribute.Sex">
+            <summary>
+            单肩包
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_poeple_attribute.ShoulderBag">
+            <summary>
+            是否抱小孩
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_poeple_attribute.UpperColor">
+            <summary>
+            上装颜色
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_poeple_attribute.UpperType">
+            <summary>
+            上装款式
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_poeple_attribute.Position">
+            <summary>
+            位置
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_poeple_attribute.Type">
+            <summary>
+            报警类型
             </summary>
         </member>
         <member name="T:Tuby.Api.Model.d_shaowei">
@@ -4026,6 +4176,186 @@
             </summary>
         </member>
         <member name="P:Tuby.Api.Model.d_target_people_whitelist.RecStatus">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Tuby.Api.Model.d_video_base">
+            <summary>
+            a_data_access Entity Model
+            </summary>   
+        </member>
+        <member name="P:Tuby.Api.Model.d_video_base.ID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_video_base.CameraID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_video_base.Name">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_video_base.IP">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_video_base.Channel">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_video_base.Port">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_video_base.VideoTypeID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_video_base.IsPTZ">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_video_base.Address">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_video_base.MainStream">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_video_base.SubStream">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_video_base.Coordinate">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_video_base.IsAddress">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_video_base.Version">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_video_base.ViewPoint">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_video_base.UserID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_video_base.Geographic">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_video_base.Source">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_video_base.X">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_video_base.Y">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_video_base.Z">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Tuby.Api.Model.d_video_group">
+            <summary>
+            a_data_access Entity Model
+            </summary>   
+        </member>
+        <member name="P:Tuby.Api.Model.d_video_group.ID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_video_group.GroupName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_video_group.VdieoID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Tuby.Api.Model.d_video_struct">
+            <summary>
+            a_data_access Entity Model
+            </summary>   
+        </member>
+        <member name="P:Tuby.Api.Model.d_video_struct.ID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_video_struct.PID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_video_struct.NodeName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_video_struct.IsVideo">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Tuby.Api.Model.d_video_user">
+            <summary>
+            a_data_access Entity Model
+            </summary>   
+        </member>
+        <member name="P:Tuby.Api.Model.d_video_user.ID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_video_user.UserName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_video_user.Password">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_video_user.Company">
             <summary>
             
             </summary>

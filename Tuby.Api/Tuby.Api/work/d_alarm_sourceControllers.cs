@@ -7,38 +7,37 @@ using Microsoft.AspNetCore.Mvc;
 using Tuby.Api.Model;
 using Tuby.Api.IServices;
 using Microsoft.AspNetCore.Authorization;
+using Tuby.Api.Model.viewmodels;
 
 namespace Tuby.Api.Controllers
 {	
 	/// <summary>
-	/// d_handle_infoControllers
+	/// d_alarm_sourceControllers
 	/// </summary>	
 	[Produces("application/json")]
 	[Route("api/[controller]")]
     [ApiController]
     [Authorize(Permissions.Name)]
-    [AllowAnonymous]
-    public class d_handle_infoController : ControllerBase
+    public class d_alarm_sourceController : ControllerBase
     { 
-		 readonly Id_handle_infoServices _d_handle_infoServices;
-        readonly Id_alarm_infoServices _d_alarm_infoServices;
+		 readonly Id_alarm_sourceServices _d_alarm_sourceServices;
 
-        /// <summary>
+		 /// <summary>
         /// 构造函数
         /// </summary>
         /// <returns></returns>
-        public d_handle_infoController(Id_handle_infoServices d_handle_infoServices, Id_alarm_infoServices d_alarm_infoServices)
+        public d_alarm_sourceController(Id_alarm_sourceServices d_alarm_sourceServices)
         {
-            _d_handle_infoServices = d_handle_infoServices;
-            _d_alarm_infoServices = d_alarm_infoServices;
+            _d_alarm_sourceServices = d_alarm_sourceServices;
         }
 		/// <summary>
 		///查询所有数据
 		/// </summary>	
 		 [HttpGet]
-        public async Task<List<d_handle_info>> Get()
+         [AllowAnonymous]
+        public async Task<List<d_alarm_source>> Get()
         {
-            return await _d_handle_infoServices.Query();
+            return await _d_alarm_sourceServices.Query();
         }
 
 		/// <summary>
@@ -48,45 +47,46 @@ namespace Tuby.Api.Controllers
         /// <returns></returns>
         [HttpGet]
         [Route("getpage")]
-        public async Task<PageModel<d_handle_info>> GetPage(int page)
+        [AllowAnonymous]
+        public async Task<PageModel<d_alarm_source>> GetPage(int page)
         {
-            return await _d_handle_infoServices.Query("", page, 10, "");
+            return await _d_alarm_sourceServices.Query("", page, 10, "");
+        }
+        /// <summary>
+        /// 查询主题名字列表
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        [Route("getname")]
+        public async Task<List<string>> Getname()
+        {
+            return await _d_alarm_sourceServices.QueryList();
         }
 
         /// <summary>
 		///根据id查询数据
 		/// </summary>
         [HttpGet("{id}")]
-        public async Task<List<d_handle_info>> Get(string id)
+        [AllowAnonymous]
+        public async Task<List<d_alarm_source>> Get(int id)
         {
-            return await _d_handle_infoServices.Query(c => c.ID == id);
+            return await _d_alarm_sourceServices.Query(c => c.ID == id);
         }
 
         /// <summary>
 		/// 使用post方法添加数据
 		/// </summary>
         [HttpPost]
-       public async Task<MessageModel<string>> Post([FromBody] d_handle_info d_handle_info)
+       public async Task<MessageModel<string>> Post([FromBody] d_alarm_source d_alarm_source)
         {
 			var data = new MessageModel<string>();
-
-            var id = (await _d_handle_infoServices.Add(d_handle_info));
-            var alarmInfo = (await _d_alarm_infoServices.Query(c => c.StatusID == d_handle_info.ID)).FirstOrDefault();
-            alarmInfo.RecStatus = 1;
-            alarmInfo.UpdateTime = DateTime.Now;
+            d_alarm_source.UpdateTime = DateTime.Now;
+            var id = (await _d_alarm_sourceServices.Add(d_alarm_source));
             data.success = id > 0;
             if (data.success)
             {
-                var flag=await _d_alarm_infoServices.Update(alarmInfo);
                 data.response = id.ObjToString();
-                if (flag)
-                {
-                    data.msg = "添加成功,状态更新成功";
-                }
-                else
-                {
-                    data.msg = "添加成功,状态更新失败";
-                }
+                data.msg = "添加成功";
             }
 
             return data;
@@ -97,21 +97,22 @@ namespace Tuby.Api.Controllers
 		/// </summary>
         [HttpPost]
         [Route("update")]
-        public async Task<MessageModel<string>> Update([FromBody] d_handle_info d_handle_info)
+        public async Task<MessageModel<string>> Update([FromBody] d_alarm_source d_alarm_source)
         {
 			var data = new MessageModel<string>();
-            if (d_handle_info != null)
+            if (d_alarm_source != null && d_alarm_source.ID > 0)
             {
-                var id = (await _d_handle_infoServices.Update(d_handle_info));
+                d_alarm_source.UpdateTime = DateTime.Now;
+                var id = (await _d_alarm_sourceServices.Update(d_alarm_source));
                 data.success = id;
                 if (data.success)
                 {
-                    data.response = "id为" +d_handle_info.ID.ToString() + "的数据更新成功";
+                    data.response = "id为" +d_alarm_source.ID.ToString() + "的数据更新成功";
                     data.msg = "更新成功";
                 }
                 else
                 {
-                    data.response = "id为" +d_handle_info.ID.ToString() + "的数据不存在";
+                    data.response = "id为" +d_alarm_source.ID.ToString() + "的数据不存在";
                 }
             }
 
@@ -125,7 +126,7 @@ namespace Tuby.Api.Controllers
         [Route("delete")]
 		 public async Task<MessageModel<string>> Delete(int id)
         {
-            var flag = (await _d_handle_infoServices.DeleteById(id));
+            var flag = (await _d_alarm_sourceServices.DeleteById(id));
             var data = new MessageModel<string>();
             data.success = flag;
             if (flag)
@@ -151,7 +152,7 @@ namespace Tuby.Api.Controllers
         [Route("deletemuch")]
         public async Task<MessageModel<string>> DeleteMuch([FromBody] object[] id)
         {
-            var flag = (await _d_handle_infoServices.DeleteByIds(id));
+            var flag = (await _d_alarm_sourceServices.DeleteByIds(id));
             var data = new MessageModel<string>();
             data.success = flag;
             if (flag)

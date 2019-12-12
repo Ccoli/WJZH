@@ -59,6 +59,6 @@ namespace Tuby.Api.Model
         /// <summary>
         /// 关联处置id
         /// </summary>
-        public int StatusID { get; set; }
+        public string StatusID { get; set; }
     }
 }

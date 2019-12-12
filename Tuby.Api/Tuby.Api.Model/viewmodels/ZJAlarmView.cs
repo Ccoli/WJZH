@@ -14,6 +14,7 @@ namespace Tuby.Api.Model.viewmodels
         public string Feature { set; get; }   //特征
         public string time { set; get; }   //报警时间（格式：yyyy-MM-dd HH:mm:ss）
         public Dictionary<string, string> FaceInfo { set; get; } //人脸识别信息
+        public Dictionary<string, string> MixedDetect { set; get; } //混合检测信息
 
     }
 }

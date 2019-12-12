@@ -26,12 +26,14 @@ namespace Tuby.Api.Controllers
         readonly IHandAlarmServices _HandAlarmServices;
         readonly Id_target_camera_record_peopleServices _d_target_camera_record_peopleServices;
         readonly IDeviceListServices _DeviceListServices;
+        readonly Id_poeple_attributeServices _d_poeple_attributeServices;
+        readonly Id_car_attributeServices _d_car_attributeServices;
 
         /// <summary>
         /// 构造函数
         /// </summary>
         /// <returns></returns>
-        public d_alarm_infoController(Id_alarm_infoServices d_alarm_infoServices, Ib_alarm_typeServices b_alarm_typeServices, ItopicsdkjgServices topicsdkjgServices, IHandAlarmServices HandAlarmServices, Id_target_camera_record_peopleServices d_target_camera_record_peopleServices, IDeviceListServices DeviceListServices)
+        public d_alarm_infoController(Id_alarm_infoServices d_alarm_infoServices, Ib_alarm_typeServices b_alarm_typeServices, ItopicsdkjgServices topicsdkjgServices, IHandAlarmServices HandAlarmServices, Id_target_camera_record_peopleServices d_target_camera_record_peopleServices, IDeviceListServices DeviceListServices, Id_poeple_attributeServices d_poeple_attributeServices, Id_car_attributeServices d_car_attributeServices)
         {
             _d_alarm_infoServices = d_alarm_infoServices;
             _b_alarm_typeServices = b_alarm_typeServices;
@@ -39,6 +41,8 @@ namespace Tuby.Api.Controllers
             _HandAlarmServices = HandAlarmServices;
             _d_target_camera_record_peopleServices = d_target_camera_record_peopleServices;
             _DeviceListServices = DeviceListServices;
+            _d_poeple_attributeServices = d_poeple_attributeServices;
+            _d_car_attributeServices = d_car_attributeServices;
         }
 		/// <summary>
 		///查询所有数据
@@ -92,10 +96,10 @@ namespace Tuby.Api.Controllers
         }
 
          /// <summary>
-		/// 使用post方法添加激光报警
+		/// 使用post方法添加光纤报警
 		/// </summary>
         [HttpPost]
-        [Route("topicsdkjg")]
+        [Route("topicsdkzdgq_alarm_event")]
         [AllowAnonymous]
         public async Task<MessageModel<string>> PostJG([FromBody] JGAlarmView JGAlarmView)
         {
@@ -105,7 +109,7 @@ namespace Tuby.Api.Controllers
             var list=await _b_alarm_typeServices.Query();
             foreach (var item in list)
             {
-                if (item.Name.Contains("激光"))
+                if (item.Name.Contains("震动光纤"))
                 {
                     dai.AlarmTypeID = item.ID;
                     break;
@@ -114,6 +118,61 @@ namespace Tuby.Api.Controllers
             int alarmID = JGAlarmView.EventID;
             var jgAlarm = await _topicsdkjgServices.Query(c => c.ID == alarmID);
             dai.Content = jgAlarm.First().Name;
+            dai.StatusID = JGAlarmView.StatusID;
+            dai.UpdateTime = DateTime.Now;
+            dai.AlarmTime = DateTime.Now;
+            var id = (await _d_alarm_infoServices.Add(dai));
+            data.success = id > 0;
+            if (data.success)
+            {
+                data.response = id.ObjToString();
+                data.msg = "添加成功";
+            }
+
+            return data;
+        }
+
+        /// <summary>
+		/// 使用post方法添加哨位报警
+		/// </summary>
+        [HttpPost]
+        [Route("topicsdksentry_alarm_event")]
+        [AllowAnonymous]
+        public async Task<MessageModel<string>> PostSW([FromBody] SWZDAlarmView SWZDAlarmView)
+        {
+            var data = new MessageModel<string>();
+
+            d_alarm_info dai = new d_alarm_info();
+            var list = await _b_alarm_typeServices.Query();
+            foreach (var item in list)
+            {
+                if (item.Name.Contains("脱逃"))
+                {
+                    dai.AlarmTypeID = item.ID;
+                    break;
+                }else if (item.Name.Contains("暴狱"))
+                {
+                    dai.AlarmTypeID = item.ID;
+                    break;
+                }
+                else if (item.Name.Contains("劫持"))
+                {
+                    dai.AlarmTypeID = item.ID;
+                    break;
+                }
+                else if (item.Name.Contains("袭击"))
+                {
+                    dai.AlarmTypeID = item.ID;
+                    break;
+                }
+                else if (item.Name.Contains("灾害"))
+                {
+                    dai.AlarmTypeID = item.ID;
+                    break;
+                }
+            }
+            dai.Content = SWZDAlarmView.Description;
+            dai.StatusID = SWZDAlarmView.StatusID;
             dai.UpdateTime = DateTime.Now;
             dai.AlarmTime = DateTime.Now;
             var id = (await _d_alarm_infoServices.Add(dai));
@@ -141,10 +200,10 @@ namespace Tuby.Api.Controllers
             if (type == 3)
             {
                 d_target_camera_record_people drp = new d_target_camera_record_people();
-                var list= await _DeviceListServices.Query(c => c.DeviceID == ZJAlarmView.CameraId);
+                var list = await _DeviceListServices.Query(c => c.DeviceID == ZJAlarmView.CameraId);
                 drp.Position = list.FirstOrDefault().name;
                 var dc = ZJAlarmView.FaceInfo;
-                drp.PeopleID =Convert.ToInt32(dc["FaceId"]);
+                drp.PeopleID = Convert.ToInt32(dc["FaceId"]);
                 drp.Name = dc["Name"];
                 drp.Similar = Convert.ToInt32(dc["Similar"]);
                 drp.ImagePath = ZJAlarmView.ImageUrl;
@@ -157,6 +216,56 @@ namespace Tuby.Api.Controllers
                     data.msg = "添加人脸识别信息成功";
                 }
             }
+            else if (ZJAlarmView.MixedDetect!=null)
+            {
+                var dc = ZJAlarmView.MixedDetect;
+                var id = 0;
+                if (dc["Type"] == "people")
+                {
+                    d_poeple_attribute dpa = new d_poeple_attribute();
+                    var list = await _DeviceListServices.Query(c => c.DeviceID == ZJAlarmView.CameraId);
+                    dpa.Position = list.FirstOrDefault().name;
+                    dpa.Type = dc["Type"];
+                    dpa.Age = dc["Age"];
+                    dpa.Baby = dc["Baby"];
+                    dpa.Bag = dc["Bag"];
+                    dpa.BottomColor = dc["BottomColor"];
+                    dpa.BottomType = dc["BottomType"];
+                    dpa.BottomType = dc["BottomType"];
+                    dpa.Hat = dc["Hat"];
+                    dpa.Knapsack = dc["Knapsack"];
+                    dpa.Orientation = dc["Orientation"];
+                    dpa.Sex = dc["Sex"];
+                    dpa.ShoulderBag = dc["ShoulderBag"];
+                    dpa.UpperColor = dc["UpperColor"];
+                    dpa.UpperType = dc["UpperType"];
+                    id = (await _d_poeple_attributeServices.Add(dpa));
+                }
+                else if (dc["Type"] == "car")
+                {
+                    d_car_attribute dpa = new d_car_attribute();
+                    var list = await _DeviceListServices.Query(c => c.DeviceID == ZJAlarmView.CameraId);
+                    dpa.Position = list.FirstOrDefault().name;
+                    dpa.Type = dc["Type"];
+                    dpa.Mistake = dc["Mistake"];
+                    dpa.Licence = dc["Licence"];
+                    dpa.PlateColor = dc["PlateColor"];
+                    dpa.PlateRect = dc["PlateRect"];
+                    dpa.PlateType = dc["PlateType"];
+                    dpa.VehicleColor = dc["VehicleColor"];
+                    dpa.VehicleType = dc["VehicleType"];
+                    dpa.Time = DateTime.Now;
+                    id = (await _d_car_attributeServices.Add(dpa));
+                }
+
+                data.success = id > 0;
+                if (data.success)
+                {
+                    data.response = id.ObjToString();
+                    data.msg = "添加混合检测人员信息成功";
+                }
+
+            }
             else
             {
                 d_alarm_info dai = new d_alarm_info();
@@ -164,6 +273,10 @@ namespace Tuby.Api.Controllers
                 foreach (var item in list)
                 {
                     if (item.Name.Contains("越界"))
+                    {
+                        dai.AlarmTypeID = item.ID;
+                        break;
+                    }else if (item.Name.Contains("徘徊"))
                     {
                         dai.AlarmTypeID = item.ID;
                         break;
@@ -198,6 +311,43 @@ namespace Tuby.Api.Controllers
             var data = new MessageModel<string>();
 
             var id = (await _HandAlarmServices.Add(HandAlarm));
+            data.success = id > 0;
+            if (data.success)
+            {
+                data.response = id.ObjToString();
+                data.msg = "添加成功";
+            }
+
+            return data;
+        }
+
+        /// <summary>
+		/// 使用post方法添加车辆识别报警
+		/// </summary>
+        [HttpPost]
+        [Route("topicsdkhikvision_gate_vehicle")]
+        [AllowAnonymous]
+        public async Task<MessageModel<string>> PostCar([FromBody] JGAlarmView JGAlarmView)
+        {
+            var data = new MessageModel<string>();
+
+            d_alarm_info dai = new d_alarm_info();
+            var list = await _b_alarm_typeServices.Query();
+            foreach (var item in list)
+            {
+                if (item.Name.Contains("震动光纤"))
+                {
+                    dai.AlarmTypeID = item.ID;
+                    break;
+                }
+            }
+            int alarmID = JGAlarmView.EventID;
+            var jgAlarm = await _topicsdkjgServices.Query(c => c.ID == alarmID);
+            dai.Content = jgAlarm.First().Name;
+            dai.StatusID = JGAlarmView.StatusID;
+            dai.UpdateTime = DateTime.Now;
+            dai.AlarmTime = DateTime.Now;
+            var id = (await _d_alarm_infoServices.Add(dai));
             data.success = id > 0;
             if (data.success)
             {
