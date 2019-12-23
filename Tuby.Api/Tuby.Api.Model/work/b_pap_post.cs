@@ -26,5 +26,9 @@ namespace Tuby.Api.Model
         /// 
         /// </summary>
         public string PostName { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool IsDeleted { get; set; }
     }
 }

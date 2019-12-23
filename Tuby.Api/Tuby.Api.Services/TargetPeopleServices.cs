@@ -21,7 +21,7 @@ namespace Tuby.Api.Services
         }
 
 
-        public async Task<PageModel<TargetPeopleView>> QueryMuchTable(int id)
+        public async Task<PageModel<TargetPeopleView>> QueryMuchTable(string id)
         {
             return await _dal.QueryMuchTable(id);
         }

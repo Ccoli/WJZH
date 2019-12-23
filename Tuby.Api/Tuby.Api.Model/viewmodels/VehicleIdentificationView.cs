@@ -7,9 +7,26 @@ namespace Tuby.Api.Model.viewmodels
     public class VehicleIdentificationView
     {
         /// <summary>
-        /// 报警信息类型
+        /// id
         /// </summary>
-        public string Command { get; set; }
+        public string Guid { get; set; }
+        /// <summary>
+        /// 业务线
+        /// </summary>
+        public int Business { get; set; }
+        /// <summary>
+        /// 设备id
+        /// </summary>
+        public string DeviceId { get; set; }
+        /// <summary>
+        /// 车牌颜色
+        /// </summary>
+        public int PlateColor { get; set; }
+        /// <summary>
+        /// 车牌颜色
+        /// </summary>
+        public string PlateColorString { get; set; }
+
         /// <summary>
         /// 车牌号码
         /// </summary>

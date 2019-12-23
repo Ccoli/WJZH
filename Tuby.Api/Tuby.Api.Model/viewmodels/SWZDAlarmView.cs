@@ -20,6 +20,11 @@ namespace Tuby.Api.Model.viewmodels
         public string AlarmType { get; set; }
 
         /// <summary>
+        /// 业务线
+        /// </summary>
+        public string Business { get; set; }
+
+        /// <summary>
         /// 描述
         /// </summary>
         public string Description { get; set; }
@@ -37,6 +42,6 @@ namespace Tuby.Api.Model.viewmodels
         /// <summary>
         /// 关联处置id
         /// </summary>
-        public string StatusID { get; set; }
+        public string Guid { get; set; }
     }
 }

@@ -35,5 +35,9 @@ namespace Tuby.Api.Model
         /// 
         /// </summary>
         public bool IsVideo { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool IsDeleted { get; set; }
     }
 }

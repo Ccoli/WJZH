@@ -27,6 +27,7 @@ namespace Tuby.Api.IRepository.Base
         Task<bool> DeleteByIds(object[] ids);
 
         Task<bool> Update(TEntity model);
+        Task<bool> Update(List<TEntity> entity);
         Task<bool> Update(TEntity entity, string strWhere);
         Task<bool> Update(TEntity entity, Expression<Func<TEntity, object>> selectExpression, Expression<Func<TEntity, bool>> whereExpression);
         Task<bool> Update(TEntity entity, List<string> lstColumns = null, List<string> lstIgnoreColumns = null, string strWhere = "");
@@ -35,6 +36,7 @@ namespace Tuby.Api.IRepository.Base
         Task<List<TEntity>> Query(string strWhere);
         Task<List<string>> QueryField(Expression<Func<TEntity, string>> selectExpression);
         Task<List<object>> QueryField(Expression<Func<TEntity, object>> selectExpression);
+        Task<List<object>> QueryField(Expression<Func<TEntity, object>> selectExpression, Expression<Func<TEntity, bool>> whereExpression);
         Task<List<TEntity>> Query(Expression<Func<TEntity, bool>> whereExpression);
         Task<List<TEntity>> Query(Expression<Func<TEntity, bool>> whereExpression, string strOrderByFileds);
         Task<List<TEntity>> Query(Expression<Func<TEntity, bool>> whereExpression, Expression<Func<TEntity, object>> orderByExpression, bool isAsc = true);
@@ -48,12 +50,18 @@ namespace Tuby.Api.IRepository.Base
         Task<List<TResult>> QueryMuch<T, T2, TResult>(
           Expression<Func<T, T2,object[]>> joinExpression,
             Expression<Func<T, T2,TResult>> selectExpression) where T : class, new();
+        Task<List<TResult>> QueryMuchSelect<T, T2, TResult>(
+    Expression<Func<T, T2, object[]>> joinExpression,
+    Expression<Func<T, T2, bool>> whereLambda = null) where T : class, new();
         Task<PageModel<TResult>> QueryMuch<T, T2, TResult>(
           Expression<Func<T, T2, object[]>> joinExpression,
             Expression<Func<T, T2, TResult>> selectExpression, int intPageIndex = 0, int intPageSize = 20,
            Expression<Func<T, T2, bool>> whereLambda = null) where T : class, new();
         List<TResult> QueryMuch<T, T2, T3, TResult>(
            Expression<Func<T, T2, T3, object[]>> joinExpression, int intPageIndex = 0, int intPageSize = 20) where T : class, new();
+        Task<List<TResult>> QueryMuch<T, T2, T3, TResult>(
+          Expression<Func<T, T2, T3, object[]>> joinExpression,
+          Expression<Func<T, T2, T3, TResult>> selectExpression) where T : class, new();
         Task<List<TResult>> QueryMuch<T, T2, T3, TResult>(
             Expression<Func<T, T2, T3, object[]>> joinExpression) where T : class, new();
         Task<PageModel<TResult>> QueryMuch<T, T2, T3, TResult>(

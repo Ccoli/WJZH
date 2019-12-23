@@ -36,5 +36,9 @@ namespace Tuby.Api.Model
         /// 父节点ID
         /// </summary>
         public int ParentID { get; set; }
+        /// <summary>
+        /// 是否删除
+        /// </summary>
+        public bool IsDeleted { get; set; }
     }
 }

@@ -7,20 +7,21 @@ using Microsoft.AspNetCore.Mvc;
 using Tuby.Api.Model;
 using Tuby.Api.IServices;
 using Microsoft.AspNetCore.Authorization;
+using System.Linq.Expressions;
 
 namespace Tuby.Api.Controllers
-{	
-	/// <summary>
-	/// d_handle_infoControllers
-	/// </summary>	
-	[Produces("application/json")]
-	[Route("api/[controller]")]
+{
+    /// <summary>
+    /// d_handle_infoControllers
+    /// </summary>	
+    [Produces("application/json")]
+    [Route("api/[controller]")]
     [ApiController]
     [Authorize(Permissions.Name)]
     [AllowAnonymous]
     public class d_handle_infoController : ControllerBase
-    { 
-		 readonly Id_handle_infoServices _d_handle_infoServices;
+    {
+        readonly Id_handle_infoServices _d_handle_infoServices;
         readonly Id_alarm_infoServices _d_alarm_infoServices;
 
         /// <summary>
@@ -32,16 +33,17 @@ namespace Tuby.Api.Controllers
             _d_handle_infoServices = d_handle_infoServices;
             _d_alarm_infoServices = d_alarm_infoServices;
         }
-		/// <summary>
-		///查询所有数据
-		/// </summary>	
-		 [HttpGet]
+        /// <summary>
+        ///查询所有数据
+        /// </summary>	
+        [HttpGet]
         public async Task<List<d_handle_info>> Get()
         {
-            return await _d_handle_infoServices.Query();
+            Expression<Func<d_handle_info, bool>> whereExpression = a => a.IsDeleted != true;
+            return await _d_handle_infoServices.Query(whereExpression);
         }
 
-		/// <summary>
+        /// <summary>
         /// 分页查询
         /// </summary>
         /// <param name="page"></param>
@@ -50,7 +52,8 @@ namespace Tuby.Api.Controllers
         [Route("getpage")]
         public async Task<PageModel<d_handle_info>> GetPage(int page)
         {
-            return await _d_handle_infoServices.Query("", page, 10, "");
+            Expression<Func<d_handle_info, bool>> whereExpression = a => a.IsDeleted != true;
+            return await _d_handle_infoServices.Query(whereExpression, page, 10, "");
         }
 
         /// <summary>
@@ -59,59 +62,53 @@ namespace Tuby.Api.Controllers
         [HttpGet("{id}")]
         public async Task<List<d_handle_info>> Get(string id)
         {
-            return await _d_handle_infoServices.Query(c => c.ID == id);
+            return await _d_handle_infoServices.Query(c => c.Guid == id);
         }
 
         /// <summary>
 		/// 使用post方法添加数据
 		/// </summary>
         [HttpPost]
-       public async Task<MessageModel<string>> Post([FromBody] d_handle_info d_handle_info)
+        public async Task<MessageModel<string>> Post([FromBody] d_handle_info d_handle_info)
         {
-			var data = new MessageModel<string>();
+            var data = new MessageModel<string>();
 
             var id = (await _d_handle_infoServices.Add(d_handle_info));
-            var alarmInfo = (await _d_alarm_infoServices.Query(c => c.StatusID == d_handle_info.ID)).FirstOrDefault();
-            alarmInfo.RecStatus = 1;
-            alarmInfo.UpdateTime = DateTime.Now;
+
             data.success = id > 0;
             if (data.success)
             {
-                var flag=await _d_alarm_infoServices.Update(alarmInfo);
                 data.response = id.ObjToString();
-                if (flag)
-                {
-                    data.msg = "添加成功,状态更新成功";
-                }
-                else
-                {
-                    data.msg = "添加成功,状态更新失败";
-                }
+                data.msg = "添加成功";
             }
-
+            else
+            {
+                data.response = id.ObjToString();
+                data.msg = "添加失败";
+            }
             return data;
         }
 
-         /// <summary>
-		///更新数据
-		/// </summary>
+        /// <summary>
+        ///更新数据
+        /// </summary>
         [HttpPost]
         [Route("update")]
         public async Task<MessageModel<string>> Update([FromBody] d_handle_info d_handle_info)
         {
-			var data = new MessageModel<string>();
+            var data = new MessageModel<string>();
             if (d_handle_info != null)
             {
                 var id = (await _d_handle_infoServices.Update(d_handle_info));
                 data.success = id;
                 if (data.success)
                 {
-                    data.response = "id为" +d_handle_info.ID.ToString() + "的数据更新成功";
+                    data.response = "id为" + d_handle_info.Guid + "的数据更新成功";
                     data.msg = "更新成功";
                 }
                 else
                 {
-                    data.response = "id为" +d_handle_info.ID.ToString() + "的数据不存在";
+                    data.response = "id为" + d_handle_info.Guid + "的数据不存在";
                 }
             }
 
@@ -123,26 +120,31 @@ namespace Tuby.Api.Controllers
 		/// </summary>
         [HttpGet]
         [Route("delete")]
-		 public async Task<MessageModel<string>> Delete(int id)
+        public async Task<MessageModel<string>> Delete(string id)
         {
-            var flag = (await _d_handle_infoServices.DeleteById(id));
             var data = new MessageModel<string>();
-            data.success = flag;
-            if (flag)
+            if (id != "")
             {
-                data.response = id.ToString()+"数据删除";
-                data.msg = "删除成功";
-            }
-            else
-            {
-                data.response ="id为"+ id.ToString() + "的数据找不到";
-                data.msg = "删除失败";
+                var model = await _d_handle_infoServices.QueryByID(id);
+                model.IsDeleted = true;
+                var flag = await _d_handle_infoServices.Update(model);
+                data.success = flag;
+                if (flag)
+                {
+                    data.response = id.ToString() + "数据删除";
+                    data.msg = "删除成功";
+                }
+                else
+                {
+                    data.response = "id为" + id.ToString() + "的数据找不到";
+                    data.msg = "删除失败";
+                }
             }
 
             return data;
         }
 
-		/// <summary>
+        /// <summary>
         /// 批量删除
         /// </summary>
         /// <param name="id"></param>
@@ -151,7 +153,12 @@ namespace Tuby.Api.Controllers
         [Route("deletemuch")]
         public async Task<MessageModel<string>> DeleteMuch([FromBody] object[] id)
         {
-            var flag = (await _d_handle_infoServices.DeleteByIds(id));
+            var list = await _d_handle_infoServices.QueryByIDs(id);
+            foreach (var item in list)
+            {
+                item.IsDeleted = true;
+            }
+            var flag = await _d_handle_infoServices.Update(list);
             var data = new MessageModel<string>();
             data.success = flag;
             if (flag)
@@ -170,4 +177,3 @@ namespace Tuby.Api.Controllers
     }
 }
 
-	

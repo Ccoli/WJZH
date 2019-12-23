@@ -119,7 +119,14 @@ namespace Tuby.Api.Model
         /// 联系人
         /// </summary>
         public string Contact { get; set; }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        public string Guid { get; set; }
         //public string Unit { get; set; }
+        /// <summary>
+        /// 是否删除
+        /// </summary>
+        public bool IsDeleted { get; set; }
     }
 }

@@ -39,5 +39,9 @@ namespace Tuby.Api.Model.viewmodels
         /// 报警时间
         /// </summary>
         public string time { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool IsDeleted { get; set; }
     }
 }

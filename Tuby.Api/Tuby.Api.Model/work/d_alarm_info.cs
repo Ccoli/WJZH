@@ -56,9 +56,22 @@ namespace Tuby.Api.Model
         /// 
         /// </summary>
         public int RecStatus { get; set; }
+
         /// <summary>
-        /// 关联处置id
+        /// guid
         /// </summary>
-        public string StatusID { get; set; }
+        public string Guid { get; set; }
+        /// <summary>
+        /// 处置id
+        /// </summary>
+        public string HandleID { get; set; }
+        /// <summary>
+        /// 是否删除
+        /// </summary>
+        public bool IsDeleted { get; set; }
+        /// <summary>
+        /// 报警位置
+        /// </summary>
+        public string Position { get; set; }
     }
 }

@@ -66,6 +66,15 @@ namespace Tuby.Api.Services.BASE
         {
             return await baseDal.Update(entity);
         }
+        /// <summary>
+        /// 批量更新实体数据
+        /// </summary>
+        /// <param name="entity">博文实体类</param>
+        /// <returns></returns>
+        public async Task<bool> Update(List<TEntity> entity)
+        {
+            return await baseDal.Update(entity);
+        }
         public async Task<bool> Update(TEntity entity, string strWhere)
         {
             return await baseDal.Update(entity, strWhere);

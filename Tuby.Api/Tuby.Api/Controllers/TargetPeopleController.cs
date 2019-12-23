@@ -39,7 +39,7 @@ namespace Tuby.Api.Controllers
         [HttpGet]
         [Route("getpeople")]
         [AllowAnonymous]
-        public async Task<PageModel<TargetPeopleView>> GetTypePage(int id)
+        public async Task<PageModel<TargetPeopleView>> GetTypePage(string id)
         {
             var list = await _TargetPeopleServices.QueryMuchTable(id);
             return list;

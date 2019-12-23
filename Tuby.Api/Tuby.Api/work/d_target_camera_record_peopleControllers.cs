@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Tuby.Api.Model;
 using Tuby.Api.IServices;
 using Microsoft.AspNetCore.Authorization;
+using System.Linq.Expressions;
 
 namespace Tuby.Api.Controllers
 {	
@@ -35,7 +36,8 @@ namespace Tuby.Api.Controllers
 		 [HttpGet]
         public async Task<List<d_target_camera_record_people>> Get()
         {
-            return await _d_target_camera_record_peopleServices.Query();
+            Expression<Func<d_target_camera_record_people, bool>> whereExpression = a => a.IsDeleted != true;
+            return await _d_target_camera_record_peopleServices.Query(whereExpression);
         }
 
 		/// <summary>
@@ -47,16 +49,17 @@ namespace Tuby.Api.Controllers
         [Route("getpage")]
         public async Task<PageModel<d_target_camera_record_people>> GetPage(int page)
         {
-            return await _d_target_camera_record_peopleServices.Query("", page, 10, "");
+            Expression<Func<d_target_camera_record_people, bool>> whereExpression = a => a.IsDeleted != true;
+            return await _d_target_camera_record_peopleServices.Query(whereExpression, page, 10, "");
         }
 
         /// <summary>
 		///根据id查询数据
 		/// </summary>
         [HttpGet("{id}")]
-        public async Task<List<d_target_camera_record_people>> Get(int id)
+        public async Task<List<d_target_camera_record_people>> Get(string id)
         {
-            return await _d_target_camera_record_peopleServices.Query(c => c.ID == id);
+            return await _d_target_camera_record_peopleServices.Query(c => c.Guid == id);
         }
 
         /// <summary>
@@ -66,7 +69,7 @@ namespace Tuby.Api.Controllers
        public async Task<MessageModel<string>> Post([FromBody] d_target_camera_record_people d_target_camera_record_people)
         {
 			var data = new MessageModel<string>();
-
+            d_target_camera_record_people.Guid = Guid.NewGuid().ToString();
             var id = (await _d_target_camera_record_peopleServices.Add(d_target_camera_record_people));
             data.success = id > 0;
             if (data.success)
@@ -86,7 +89,7 @@ namespace Tuby.Api.Controllers
         public async Task<MessageModel<string>> Update([FromBody] d_target_camera_record_people d_target_camera_record_people)
         {
 			var data = new MessageModel<string>();
-            if (d_target_camera_record_people != null && d_target_camera_record_people.ID > 0)
+            if (d_target_camera_record_people != null )
             {
                 var id = (await _d_target_camera_record_peopleServices.Update(d_target_camera_record_people));
                 data.success = id;
@@ -105,30 +108,62 @@ namespace Tuby.Api.Controllers
         }
 
         /// <summary>
-		/// 根据id使用get方法删除数据
-		/// </summary>
-        [HttpGet]
-        [Route("delete")]
-		 public async Task<MessageModel<string>> Delete(int id)
+        ///更新处置状态数据
+        /// </summary>
+        [HttpPost]
+        [Route("updatestatus")]
+        [AllowAnonymous]
+        public async Task<MessageModel<string>> UpdateStatus(string id)
         {
-            var flag = (await _d_target_camera_record_peopleServices.DeleteById(id));
             var data = new MessageModel<string>();
+            var alarmInfo = (await _d_target_camera_record_peopleServices.Query(c => c.HandleID == id)).FirstOrDefault();
+            alarmInfo.RecStatus = 1;
+            //d_handle_info.Guid = Guid.NewGuid().ToString();
+            var flag = await _d_target_camera_record_peopleServices.Update(alarmInfo);
             data.success = flag;
-            if (flag)
+            if (data.success)
             {
-                data.response = id.ToString()+"数据删除";
-                data.msg = "删除成功";
+                data.response = "数据更新成功";
+                data.msg = "更新成功";
             }
             else
             {
-                data.response ="id为"+ id.ToString() + "的数据找不到";
-                data.msg = "删除失败";
+                data.response = "数据不存在";
             }
 
             return data;
         }
 
-		/// <summary>
+        /// <summary>
+		/// 根据id使用get方法删除数据
+		/// </summary>
+        [HttpGet]
+        [Route("delete")]
+        public async Task<MessageModel<string>> Delete(string id)
+        {
+            var data = new MessageModel<string>();
+            if (id != "")
+            {
+                var model = await _d_target_camera_record_peopleServices.QueryByID(id);
+                model.IsDeleted = true;
+                var flag = await _d_target_camera_record_peopleServices.Update(model);
+                data.success = flag;
+                if (flag)
+                {
+                    data.response = id.ToString() + "数据删除";
+                    data.msg = "删除成功";
+                }
+                else
+                {
+                    data.response = "id为" + id.ToString() + "的数据找不到";
+                    data.msg = "删除失败";
+                }
+            }
+
+            return data;
+        }
+
+        /// <summary>
         /// 批量删除
         /// </summary>
         /// <param name="id"></param>
@@ -137,7 +172,12 @@ namespace Tuby.Api.Controllers
         [Route("deletemuch")]
         public async Task<MessageModel<string>> DeleteMuch([FromBody] object[] id)
         {
-            var flag = (await _d_target_camera_record_peopleServices.DeleteByIds(id));
+            var list = await _d_target_camera_record_peopleServices.QueryByIDs(id);
+            foreach (var item in list)
+            {
+                item.IsDeleted = true;
+            }
+            var flag = await _d_target_camera_record_peopleServices.Update(list);
             var data = new MessageModel<string>();
             data.success = flag;
             if (flag)

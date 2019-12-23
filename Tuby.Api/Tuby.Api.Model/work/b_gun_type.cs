@@ -36,5 +36,9 @@ namespace Tuby.Api.Model
         /// 
         /// </summary>
         public string ImagePath { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool IsDeleted { get; set; }
     }
 }

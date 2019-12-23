@@ -77,7 +77,7 @@ namespace Tuby.Api.Repository.Base
         /// <returns></returns>
         public async Task<int> Add(TEntity entity)
         {
-            var i = await Task.Run(() => db.Insertable(entity).ExecuteReturnBigIdentity());
+            var i = await Task.Run(() => db.Insertable(entity).ExecuteCommand());
             //返回的i是long类型,这里你可以根据你的业务需要进行处理
             return (int)i;
         }
@@ -100,6 +100,18 @@ namespace Tuby.Api.Repository.Base
         /// <param name="entity">实体类</param>
         /// <returns></returns>
         public async Task<bool> Update(TEntity entity)
+        {
+            //这种方式会以主键为条件
+            var i = await Task.Run(() => db.Updateable(entity).ExecuteCommand());
+            return i > 0;
+        }
+
+        /// <summary>
+        /// 批量更新实体数据
+        /// </summary>
+        /// <param name="entity">实体类</param>
+        /// <returns></returns>
+        public async Task<bool> Update(List<TEntity> entity)
         {
             //这种方式会以主键为条件
             var i = await Task.Run(() => db.Updateable(entity).ExecuteCommand());
@@ -237,6 +249,10 @@ namespace Tuby.Api.Repository.Base
         public async Task<List<object>> QueryField(Expression<Func<TEntity, object>> selectExpression)
         {
             return await Task.Run(() => db.Queryable<TEntity>().Select(selectExpression).ToList());
+        }
+        public async Task<List<object>> QueryField(Expression<Func<TEntity, object>> selectExpression,Expression<Func<TEntity, bool>> whereExpression)
+        {
+            return await Task.Run(() => db.Queryable<TEntity>().Where(whereExpression).Select(selectExpression).ToList());
         }
 
 
@@ -412,6 +428,25 @@ namespace Tuby.Api.Repository.Base
             return await Task.Run(() => db.Queryable(joinExpression).Select(selectExpression).ToList());
                 
         }
+        public async Task<List<TResult>> QueryMuchSelect<T, T2, TResult>(
+    Expression<Func<T, T2,  object[]>> joinExpression,
+    Expression<Func<T, T2, bool>> whereLambda = null) where T : class, new()
+        {
+            RefAsync<int> totalCount = 0;
+            //return await Task.Run(() => db.Queryable(joinExpression).Select(selectExpression).ToList());
+            var list = await Task.Run(() => db.Queryable(joinExpression).Select<TResult>()
+                .Select<TResult>()
+                .ToList());
+            if (whereLambda != null)
+            {
+                list = await Task.Run(() => db.Queryable(joinExpression).Where(whereLambda).Select<TResult>()
+                .Select<TResult>()
+                .ToList());
+            }
+
+            return list;
+        }
+
         public async Task<PageModel<TResult>> QueryMuch<T, T2, TResult>(
            Expression<Func<T, T2,  object[]>> joinExpression,
             Expression<Func<T, T2, TResult>> selectExpression, int intPageIndex = 0, int intPageSize = 20,
@@ -450,6 +485,20 @@ namespace Tuby.Api.Repository.Base
             return db.Queryable(joinExpression)
                 .Select<TResult>()
                 .ToPageList(intPageIndex, intPageSize);
+        }
+        public async Task<List<TResult>> QueryMuch<T, T2, T3, TResult>(
+          Expression<Func<T, T2, T3, object[]>> joinExpression,
+          Expression<Func<T, T2, T3, TResult>> selectExpression) where T : class, new()
+        {
+            if (selectExpression == null)
+            {
+                var list = await Task.Run(() => db.Queryable(joinExpression).Select<TResult>()
+              .Select<TResult>()
+              .ToList());
+                return list;
+            }
+            return await Task.Run(() => db.Queryable(joinExpression).Select(selectExpression).ToList());
+
         }
         public async Task<List<TResult>> QueryMuch<T, T2, T3, TResult>(
             Expression<Func<T, T2, T3, object[]>> joinExpression) where T : class, new()

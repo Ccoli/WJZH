@@ -77,5 +77,13 @@ namespace Tuby.Api.Model
         /// 报警类型
         /// </summary>
         public string Type { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public string Guid { get; set; }
+        /// <summary>
+        /// 是否删除
+        /// </summary>
+        public bool IsDeleted { get; set; }
     }
 }

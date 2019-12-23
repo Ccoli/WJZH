@@ -4,6 +4,7 @@ using Tuby.Api.Model;
 using Tuby.Api.IRepository;
 using System.Threading.Tasks;
 using System.Collections.Generic;
+using System.Linq.Expressions;
 
 namespace Tuby.Api.Repository
 {	
@@ -18,10 +19,12 @@ namespace Tuby.Api.Repository
         }
         public async Task<List<object>> QueryNameList()
         {
+            Expression<Func<d_alarm_source, bool>> whereExpression = a => a.IsDeleted != true;
             return await QueryField(s => new {
                 s.ID,
-                s.TopicName
-            });
+                s.TopicName,
+                s.Enabled
+            }, whereExpression);
         }
     }
 }

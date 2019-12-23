@@ -16,6 +16,7 @@ namespace Tuby.Api.Model
         /// </summary>
         public string SourceName { get; set; }
 
+
         /// <summary>
         /// 是否启用
         /// </summary>

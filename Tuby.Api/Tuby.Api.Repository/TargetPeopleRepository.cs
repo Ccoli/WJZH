@@ -16,13 +16,13 @@ namespace Tuby.Api.Repository
     {
 
 
-        public async Task<PageModel<TargetPeopleView>> QueryMuchTable(int id)
+        public async Task<PageModel<TargetPeopleView>> QueryMuchTable(string id)
         {
             return await QueryMuch<d_target_people, b_target_people_type, b_target_people_security_level,  TargetPeopleView>(
                     (dtp, btpt, bpsl) => new object[] {
                 JoinType.Left,dtp.TargetPeopleTypeID==btpt.ID,
                JoinType.Left,dtp.SecurityLevelID==bpsl.ID
-                    }, 1, 20, (dtp, btpt, bpsl) => dtp.ID==id
+                    }, 1, 20, (dtp, btpt, bpsl) => dtp.Guid==id
                     );
         }
 

@@ -33,5 +33,13 @@ namespace Tuby.Api.Model
         /// 就诊时间
         /// </summary>
         public DateTime Time { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public string Guid { get; set; }
+        /// <summary>
+        /// 是否删除
+        /// </summary>
+        public bool IsDeleted { get; set; }
     }
 }

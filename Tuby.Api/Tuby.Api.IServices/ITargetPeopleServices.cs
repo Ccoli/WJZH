@@ -10,6 +10,6 @@ namespace Tuby.Api.IServices
 {
     public interface ITargetPeopleServices:IBaseServices<TargetPeopleView>
     {
-        Task<PageModel<TargetPeopleView>> QueryMuchTable(int id);
+        Task<PageModel<TargetPeopleView>> QueryMuchTable(string id);
     }
 }

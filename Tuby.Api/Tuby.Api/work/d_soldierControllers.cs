@@ -8,6 +8,7 @@ using Tuby.Api.Model;
 using Tuby.Api.IServices;
 using Microsoft.AspNetCore.Authorization;
 using Tuby.Api.Model.viewmodels;
+using System.Linq.Expressions;
 
 namespace Tuby.Api.Controllers
 {	
@@ -37,7 +38,8 @@ namespace Tuby.Api.Controllers
          [AllowAnonymous]
         public async Task<List<d_soldier>> Get()
         {
-            return await _d_soldierServices.Query();
+            Expression<Func<d_soldier, bool>> whereExpression = a => a.IsDeleted != true;
+            return await _d_soldierServices.Query(whereExpression);
         }
 
 		/// <summary>
@@ -50,7 +52,8 @@ namespace Tuby.Api.Controllers
         [AllowAnonymous]
         public async Task<PageModel<d_soldier>> GetPage(int page)
         {
-            return await _d_soldierServices.Query("", page, 10, "");
+            Expression<Func<d_soldier, bool>> whereExpression = a => a.IsDeleted != true;
+            return await _d_soldierServices.Query(whereExpression, page, 10, "");
         }
         /// <summary>
         /// 查询名字列表
@@ -78,9 +81,9 @@ namespace Tuby.Api.Controllers
 		/// </summary>
         [HttpGet("{id}")]
         [AllowAnonymous]
-        public async Task<List<d_soldier>> Get(int id)
+        public async Task<List<d_soldier>> Get(string id)
         {
-            return await _d_soldierServices.Query(c => c.ID == id);
+            return await _d_soldierServices.Query(c => c.Guid == id);
         }
 
         /// <summary>
@@ -91,6 +94,7 @@ namespace Tuby.Api.Controllers
         {
 			var data = new MessageModel<string>();
             d_soldier.UpdateTime = DateTime.Now;
+            d_soldier.Guid = Guid.NewGuid().ToString();
             var id = (await _d_soldierServices.Add(d_soldier));
             data.success = id > 0;
             if (data.success)
@@ -110,7 +114,7 @@ namespace Tuby.Api.Controllers
         public async Task<MessageModel<string>> Update([FromBody] d_soldier d_soldier)
         {
 			var data = new MessageModel<string>();
-            if (d_soldier != null && d_soldier.ID > 0)
+            if (d_soldier != null)
             {
                 d_soldier.UpdateTime = DateTime.Now;
                 var id = (await _d_soldierServices.Update(d_soldier));
@@ -134,26 +138,31 @@ namespace Tuby.Api.Controllers
 		/// </summary>
         [HttpGet]
         [Route("delete")]
-		 public async Task<MessageModel<string>> Delete(int id)
+        public async Task<MessageModel<string>> Delete(string id)
         {
-            var flag = (await _d_soldierServices.DeleteById(id));
             var data = new MessageModel<string>();
-            data.success = flag;
-            if (flag)
+            if (id != "")
             {
-                data.response = id.ToString()+"数据删除";
-                data.msg = "删除成功";
-            }
-            else
-            {
-                data.response ="id为"+ id.ToString() + "的数据找不到";
-                data.msg = "删除失败";
+                var model = await _d_soldierServices.QueryByID(id);
+                model.IsDeleted = true;
+                var flag = await _d_soldierServices.Update(model);
+                data.success = flag;
+                if (flag)
+                {
+                    data.response = id.ToString() + "数据删除";
+                    data.msg = "删除成功";
+                }
+                else
+                {
+                    data.response = "id为" + id.ToString() + "的数据找不到";
+                    data.msg = "删除失败";
+                }
             }
 
             return data;
         }
 
-		/// <summary>
+        /// <summary>
         /// 批量删除
         /// </summary>
         /// <param name="id"></param>
@@ -162,7 +171,12 @@ namespace Tuby.Api.Controllers
         [Route("deletemuch")]
         public async Task<MessageModel<string>> DeleteMuch([FromBody] object[] id)
         {
-            var flag = (await _d_soldierServices.DeleteByIds(id));
+            var list = await _d_soldierServices.QueryByIDs(id);
+            foreach (var item in list)
+            {
+                item.IsDeleted = true;
+            }
+            var flag = await _d_soldierServices.Update(list);
             var data = new MessageModel<string>();
             data.success = flag;
             if (flag)

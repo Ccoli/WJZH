@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Tuby.Api.Model;
 using Tuby.Api.IServices;
 using Microsoft.AspNetCore.Authorization;
+using System.Linq.Expressions;
 
 namespace Tuby.Api.Controllers
 {	
@@ -36,7 +37,8 @@ namespace Tuby.Api.Controllers
 		 [HttpGet]
         public async Task<List<d_car_attribute>> Get()
         {
-            return await _d_car_attributeServices.Query();
+            Expression<Func<d_car_attribute, bool>> whereExpression = a => a.IsDeleted != true;
+            return await _d_car_attributeServices.Query(whereExpression);
         }
 
 		/// <summary>
@@ -48,16 +50,17 @@ namespace Tuby.Api.Controllers
         [Route("getpage")]
         public async Task<PageModel<d_car_attribute>> GetPage(int page)
         {
-            return await _d_car_attributeServices.Query("", page, 10, "");
+            Expression<Func<d_car_attribute, bool>> whereExpression = a => a.IsDeleted != true;
+            return await _d_car_attributeServices.Query(whereExpression, page, 10, "");
         }
 
         /// <summary>
 		///根据id查询数据
 		/// </summary>
         [HttpGet("{id}")]
-        public async Task<List<d_car_attribute>> Get(int id)
+        public async Task<List<d_car_attribute>> Get(string id)
         {
-            return await _d_car_attributeServices.Query(c => c.ID == id);
+            return await _d_car_attributeServices.Query(c => c.Guid == id);
         }
 
         /// <summary>
@@ -67,7 +70,7 @@ namespace Tuby.Api.Controllers
        public async Task<MessageModel<string>> Post([FromBody] d_car_attribute d_car_attribute)
         {
 			var data = new MessageModel<string>();
-
+            d_car_attribute.Guid = Guid.NewGuid().ToString();
             var id = (await _d_car_attributeServices.Add(d_car_attribute));
             data.success = id > 0;
             if (data.success)
@@ -87,7 +90,7 @@ namespace Tuby.Api.Controllers
         public async Task<MessageModel<string>> Update([FromBody] d_car_attribute d_car_attribute)
         {
 			var data = new MessageModel<string>();
-            if (d_car_attribute != null && d_car_attribute.ID > 0)
+            if (d_car_attribute != null )
             {
                 var id = (await _d_car_attributeServices.Update(d_car_attribute));
                 data.success = id;
@@ -106,30 +109,61 @@ namespace Tuby.Api.Controllers
         }
 
         /// <summary>
-		/// 根据id使用get方法删除数据
-		/// </summary>
-        [HttpGet]
-        [Route("delete")]
-		 public async Task<MessageModel<string>> Delete(int id)
+        ///更新处置状态数据
+        /// </summary>
+        [HttpPost]
+        [Route("updatestatus")]
+        public async Task<MessageModel<string>> UpdateStatus(string id)
         {
-            var flag = (await _d_car_attributeServices.DeleteById(id));
             var data = new MessageModel<string>();
+            var alarmInfo = (await _d_car_attributeServices.Query(c => c.HandleID == id)).FirstOrDefault();
+            alarmInfo.RecStatus = 1;
+            //d_handle_info.Guid = Guid.NewGuid().ToString();
+            var flag = await _d_car_attributeServices.Update(alarmInfo);
             data.success = flag;
-            if (flag)
+            if (data.success)
             {
-                data.response = id.ToString()+"数据删除";
-                data.msg = "删除成功";
+                data.response = "数据更新成功";
+                data.msg = "更新成功";
             }
             else
             {
-                data.response ="id为"+ id.ToString() + "的数据找不到";
-                data.msg = "删除失败";
+                data.response = "数据不存在";
             }
 
             return data;
         }
 
-		/// <summary>
+        /// <summary>
+		/// 根据id使用get方法删除数据
+		/// </summary>
+        [HttpGet]
+        [Route("delete")]
+        public async Task<MessageModel<string>> Delete(string id)
+        {
+            var data = new MessageModel<string>();
+            if (id != "")
+            {
+                var model = await _d_car_attributeServices.QueryByID(id);
+                model.IsDeleted = true;
+                var flag = await _d_car_attributeServices.Update(model);
+                data.success = flag;
+                if (flag)
+                {
+                    data.response = id.ToString() + "数据删除";
+                    data.msg = "删除成功";
+                }
+                else
+                {
+                    data.response = "id为" + id.ToString() + "的数据找不到";
+                    data.msg = "删除失败";
+                }
+            }
+
+            return data;
+        }
+
+        /// <summary>
         /// 批量删除
         /// </summary>
         /// <param name="id"></param>
@@ -138,7 +172,12 @@ namespace Tuby.Api.Controllers
         [Route("deletemuch")]
         public async Task<MessageModel<string>> DeleteMuch([FromBody] object[] id)
         {
-            var flag = (await _d_car_attributeServices.DeleteByIds(id));
+            var list = await _d_car_attributeServices.QueryByIDs(id);
+            foreach (var item in list)
+            {
+                item.IsDeleted = true;
+            }
+            var flag = await _d_car_attributeServices.Update(list);
             var data = new MessageModel<string>();
             data.success = flag;
             if (flag)

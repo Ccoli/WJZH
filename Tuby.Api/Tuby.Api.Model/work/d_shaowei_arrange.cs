@@ -81,5 +81,13 @@ namespace Tuby.Api.Model
         /// 值班时间
         /// </summary>
         public string DutyTime { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public string Guid { get; set; }
+        /// <summary>
+        /// 是否删除
+        /// </summary>
+        public bool IsDeleted { get; set; }
     }
 }

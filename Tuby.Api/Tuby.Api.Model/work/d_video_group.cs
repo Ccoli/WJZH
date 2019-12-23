@@ -31,5 +31,13 @@ namespace Tuby.Api.Model
         /// 
         /// </summary>
         public int VdieoID { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public string Guid { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool IsDeleted { get; set; }
     }
 }

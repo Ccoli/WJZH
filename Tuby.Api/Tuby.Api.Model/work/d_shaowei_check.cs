@@ -46,5 +46,13 @@ namespace Tuby.Api.Model
         /// 视频
         /// </summary>
         public string VideoPath { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public string Guid { get; set; }
+        /// <summary>
+        /// 是否删除
+        /// </summary>
+        public bool IsDeleted { get; set; }
     }
 }

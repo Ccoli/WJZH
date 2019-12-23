@@ -14,5 +14,9 @@ namespace Tuby.Api.Model.viewmodels
         /// 激光报警事件
         /// </summary>
         public string Name { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool IsDeleted { get; set; }
     }
 }

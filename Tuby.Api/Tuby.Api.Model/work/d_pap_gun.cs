@@ -51,5 +51,14 @@ namespace Tuby.Api.Model
         /// 
         /// </summary>
         public int RecStatus { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public string Guid { get; set; }
+        /// <summary>
+        /// 是否删除
+        /// </summary>
+        public bool IsDeleted { get; set; }
     }
 }

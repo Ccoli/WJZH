@@ -46,5 +46,13 @@ namespace Tuby.Api.Model
         /// 
         /// </summary>
         public DateTime UpdateTime { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public string Guid { get; set; }
+        /// <summary>
+        /// ÊÇ·ñÉ¾³ý
+        /// </summary>
+        public bool IsDeleted { get; set; }
     }
 }

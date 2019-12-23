@@ -73,6 +73,7 @@ namespace Tuby.Api.Controllers
             {
                 d_duty.UpdateTime = DateTime.Now;
                 time = d_duty.ExcutionTime;
+                d_duty.Guid = Guid.NewGuid().ToString();
             }
             var flag = await _d_dutyServices.DeleteDuty(time);
 

@@ -25,6 +25,7 @@ namespace Tuby.Api.IServices.BASE
         Task<bool> DeleteByIds(object[] ids);
 
         Task<bool> Update(TEntity model);
+        Task<bool> Update(List<TEntity> entity);
         Task<bool> Update(TEntity entity, string strWhere);
 
         Task<bool> Update(TEntity entity, Expression<Func<TEntity, object>> selectExpression, Expression<Func<TEntity, bool>> whereExpression);

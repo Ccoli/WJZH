@@ -36,5 +36,9 @@ namespace Tuby.Api.Model
         /// 
         /// </summary>
         public DateTime Entrytime { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool IsDeleted { get; set; }
     }
 }

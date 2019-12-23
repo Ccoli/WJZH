@@ -27,5 +27,9 @@ namespace Tuby.Api.Model
         /// 厂家（海康，大华）
         /// </summary>
         public string DeviceFrom { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool IsDeleted { get; set; }
     }
 }

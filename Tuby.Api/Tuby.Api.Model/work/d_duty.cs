@@ -91,5 +91,9 @@ namespace Tuby.Api.Model
         /// </summary>
         public string ExcutionTime { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        public string Guid { get; set; }
     }
 }

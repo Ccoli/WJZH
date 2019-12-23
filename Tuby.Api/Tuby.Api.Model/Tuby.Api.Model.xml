@@ -790,6 +790,21 @@
             返回数据集
             </summary>
         </member>
+        <member name="P:Tuby.Api.Model.AlarmBusinessView.Enabled">
+            <summary>
+            是否启用
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.AlarmBusinessView.TopicName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.AlarmBusinessView.SourceName">
+            <summary>
+            
+            </summary>
+        </member>
         <member name="P:Tuby.Api.Model.viewmodels.AlarmInfoView.Name">
             <summary>
             报警名称
@@ -960,6 +975,11 @@
             厂家（海康，大华）
             </summary>
         </member>
+        <member name="P:Tuby.Api.Model.viewmodels.FaceAlarmYFT.HandleID">
+            <summary>
+            
+            </summary>
+        </member>
         <member name="P:Tuby.Api.Model.viewmodels.HandAlarm.ID">
             <summary>
             id
@@ -998,6 +1018,11 @@
         <member name="P:Tuby.Api.Model.viewmodels.HandAlarm.time">
             <summary>
             报警时间
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.HandAlarm.IsDeleted">
+            <summary>
+            
             </summary>
         </member>
         <member name="P:Tuby.Api.Model.viewmodels.LeaveRecordView.Name">
@@ -1120,6 +1145,11 @@
             报警类型
             </summary>
         </member>
+        <member name="P:Tuby.Api.Model.viewmodels.SWZDAlarmView.Business">
+            <summary>
+            业务线
+            </summary>
+        </member>
         <member name="P:Tuby.Api.Model.viewmodels.SWZDAlarmView.Description">
             <summary>
             描述
@@ -1135,7 +1165,7 @@
             时间
             </summary>
         </member>
-        <member name="P:Tuby.Api.Model.viewmodels.SWZDAlarmView.StatusID">
+        <member name="P:Tuby.Api.Model.viewmodels.SWZDAlarmView.Guid">
             <summary>
             关联处置id
             </summary>
@@ -1205,9 +1235,34 @@
             激光报警事件
             </summary>
         </member>
-        <member name="P:Tuby.Api.Model.viewmodels.VehicleIdentificationView.Command">
+        <member name="P:Tuby.Api.Model.viewmodels.topicsdkjg.IsDeleted">
             <summary>
-            报警信息类型
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.VehicleIdentificationView.Guid">
+            <summary>
+            id
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.VehicleIdentificationView.Business">
+            <summary>
+            业务线
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.VehicleIdentificationView.DeviceId">
+            <summary>
+            设备id
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.VehicleIdentificationView.PlateColor">
+            <summary>
+            车牌颜色
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.VehicleIdentificationView.PlateColorString">
+            <summary>
+            车牌颜色
             </summary>
         </member>
         <member name="P:Tuby.Api.Model.viewmodels.VehicleIdentificationView.PlateNumber">
@@ -1261,6 +1316,31 @@
             </summary>
         </member>
         <member name="P:Tuby.Api.Model.viewmodels.VehicleIdentificationView.wVehicleLogoRecogString">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.viewmodels.ZJAlarmView.HandleID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.VideoView.UserName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.VideoView.Password">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.VideoView.Company">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.VideoView.TypeName">
             <summary>
             
             </summary>
@@ -1570,6 +1650,11 @@
             
             </summary>
         </member>
+        <member name="P:Tuby.Api.Model.b_administrative_division.IsDeleted">
+            <summary>
+            
+            </summary>
+        </member>
         <member name="T:Tuby.Api.Model.b_alarm_device_type">
             <summary>
             b_alarm_device_type Entity Model
@@ -1581,6 +1666,11 @@
             </summary>
         </member>
         <member name="P:Tuby.Api.Model.b_alarm_device_type.Name">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.b_alarm_device_type.IsDeleted">
             <summary>
             
             </summary>
@@ -1610,6 +1700,11 @@
             
             </summary>
         </member>
+        <member name="P:Tuby.Api.Model.b_alarm_level.IsDeleted">
+            <summary>
+            
+            </summary>
+        </member>
         <member name="T:Tuby.Api.Model.b_alarm_type">
             <summary>
             b_alarm_type Entity Model
@@ -1635,6 +1730,11 @@
             
             </summary>
         </member>
+        <member name="P:Tuby.Api.Model.b_alarm_type.IsDeleted">
+            <summary>
+            
+            </summary>
+        </member>
         <member name="T:Tuby.Api.Model.b_camera_type">
             <summary>
             b_camera_type Entity Model
@@ -1651,6 +1751,11 @@
             </summary>
         </member>
         <member name="P:Tuby.Api.Model.b_camera_type.Description">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.b_camera_type.IsDeleted">
             <summary>
             
             </summary>
@@ -1675,6 +1780,11 @@
             
             </summary>
         </member>
+        <member name="P:Tuby.Api.Model.b_camera_usage_group.IsDeleted">
+            <summary>
+            
+            </summary>
+        </member>
         <member name="T:Tuby.Api.Model.b_car_status">
             <summary>
             b_car_status Entity Model
@@ -1686,6 +1796,11 @@
             </summary>
         </member>
         <member name="P:Tuby.Api.Model.b_car_status.Name">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.b_car_status.IsDeleted">
             <summary>
             
             </summary>
@@ -1710,6 +1825,11 @@
             
             </summary>
         </member>
+        <member name="P:Tuby.Api.Model.b_car_type.IsDeleted">
+            <summary>
+            
+            </summary>
+        </member>
         <member name="T:Tuby.Api.Model.b_department_type">
             <summary>
             b_department_type Entity Model
@@ -1721,6 +1841,11 @@
             </summary>
         </member>
         <member name="P:Tuby.Api.Model.b_department_type.DepartmentName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.b_department_type.IsDeleted">
             <summary>
             
             </summary>
@@ -1750,6 +1875,11 @@
             厂家（海康，大华）
             </summary>
         </member>
+        <member name="P:Tuby.Api.Model.b_device_account.IsDeleted">
+            <summary>
+            
+            </summary>
+        </member>
         <member name="T:Tuby.Api.Model.b_device_group">
             <summary>
             b_device_group Entity Model
@@ -1766,6 +1896,11 @@
             </summary>
         </member>
         <member name="P:Tuby.Api.Model.b_device_group.Description">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.b_device_group.IsDeleted">
             <summary>
             
             </summary>
@@ -1790,6 +1925,11 @@
             
             </summary>
         </member>
+        <member name="P:Tuby.Api.Model.b_device_status.IsDeleted">
+            <summary>
+            
+            </summary>
+        </member>
         <member name="T:Tuby.Api.Model.b_device_type">
             <summary>
             b_device_type Entity Model
@@ -1806,6 +1946,11 @@
             </summary>
         </member>
         <member name="P:Tuby.Api.Model.b_device_type.Description">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.b_device_type.IsDeleted">
             <summary>
             
             </summary>
@@ -1830,6 +1975,11 @@
             
             </summary>
         </member>
+        <member name="P:Tuby.Api.Model.b_device_usage.IsDeleted">
+            <summary>
+            
+            </summary>
+        </member>
         <member name="T:Tuby.Api.Model.b_education_level">
             <summary>
             b_education_level Entity Model
@@ -1841,6 +1991,11 @@
             </summary>
         </member>
         <member name="P:Tuby.Api.Model.b_education_level.EducationName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.b_education_level.IsDeleted">
             <summary>
             
             </summary>
@@ -1865,6 +2020,11 @@
             
             </summary>
         </member>
+        <member name="P:Tuby.Api.Model.b_equipment_status.IsDeleted">
+            <summary>
+            
+            </summary>
+        </member>
         <member name="T:Tuby.Api.Model.b_equipment_type">
             <summary>
             b_equipment_type Entity Model
@@ -1881,6 +2041,11 @@
             </summary>
         </member>
         <member name="P:Tuby.Api.Model.b_equipment_type.Description">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.b_equipment_type.IsDeleted">
             <summary>
             
             </summary>
@@ -1910,6 +2075,11 @@
             
             </summary>
         </member>
+        <member name="P:Tuby.Api.Model.b_gun_type.IsDeleted">
+            <summary>
+            
+            </summary>
+        </member>
         <member name="T:Tuby.Api.Model.b_health">
             <summary>
             b_health Entity Model
@@ -1921,6 +2091,11 @@
             </summary>
         </member>
         <member name="P:Tuby.Api.Model.b_health.HealthName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.b_health.IsDeleted">
             <summary>
             
             </summary>
@@ -1945,6 +2120,11 @@
             
             </summary>
         </member>
+        <member name="P:Tuby.Api.Model.b_leave_reason.IsDeleted">
+            <summary>
+            
+            </summary>
+        </member>
         <member name="T:Tuby.Api.Model.b_marial_status">
             <summary>
             b_marial_status Entity Model
@@ -1956,6 +2136,11 @@
             </summary>
         </member>
         <member name="P:Tuby.Api.Model.b_marial_status.MarialName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.b_marial_status.IsDeleted">
             <summary>
             
             </summary>
@@ -1975,6 +2160,11 @@
             
             </summary>
         </member>
+        <member name="P:Tuby.Api.Model.b_nation.IsDeleted">
+            <summary>
+            
+            </summary>
+        </member>
         <member name="T:Tuby.Api.Model.b_pap_post">
             <summary>
             b_pap_post Entity Model
@@ -1986,6 +2176,11 @@
             </summary>
         </member>
         <member name="P:Tuby.Api.Model.b_pap_post.PostName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.b_pap_post.IsDeleted">
             <summary>
             
             </summary>
@@ -2005,6 +2200,11 @@
             
             </summary>
         </member>
+        <member name="P:Tuby.Api.Model.b_pap_rank.IsDeleted">
+            <summary>
+            
+            </summary>
+        </member>
         <member name="T:Tuby.Api.Model.b_phone_table_type">
             <summary>
             b_phone_table_type Entity Model
@@ -2016,6 +2216,11 @@
             </summary>
         </member>
         <member name="P:Tuby.Api.Model.b_phone_table_type.TypeName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.b_phone_table_type.IsDeleted">
             <summary>
             
             </summary>
@@ -2035,6 +2240,11 @@
             
             </summary>
         </member>
+        <member name="P:Tuby.Api.Model.b_politic_role.IsDeleted">
+            <summary>
+            
+            </summary>
+        </member>
         <member name="T:Tuby.Api.Model.b_shaowei_type">
             <summary>
             b_shaowei_type Entity Model
@@ -2046,6 +2256,11 @@
             </summary>
         </member>
         <member name="P:Tuby.Api.Model.b_shaowei_type.ShaoWeiTypeName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.b_shaowei_type.IsDeleted">
             <summary>
             
             </summary>
@@ -2070,6 +2285,11 @@
             
             </summary>
         </member>
+        <member name="P:Tuby.Api.Model.b_soldier_state.IsDeleted">
+            <summary>
+            
+            </summary>
+        </member>
         <member name="T:Tuby.Api.Model.b_target_car_security_level">
             <summary>
             b_target_car_security_level Entity Model
@@ -2086,6 +2306,11 @@
             </summary>
         </member>
         <member name="P:Tuby.Api.Model.b_target_car_security_level.Description">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.b_target_car_security_level.IsDeleted">
             <summary>
             
             </summary>
@@ -2110,6 +2335,11 @@
             
             </summary>
         </member>
+        <member name="P:Tuby.Api.Model.b_target_car_type.IsDeleted">
+            <summary>
+            
+            </summary>
+        </member>
         <member name="T:Tuby.Api.Model.b_target_people_security_level">
             <summary>
             b_target_people_security_level Entity Model
@@ -2126,6 +2356,11 @@
             </summary>
         </member>
         <member name="P:Tuby.Api.Model.b_target_people_security_level.Description">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.b_target_people_security_level.IsDeleted">
             <summary>
             
             </summary>
@@ -2150,6 +2385,36 @@
             
             </summary>
         </member>
+        <member name="P:Tuby.Api.Model.b_target_people_type.IsDeleted">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Tuby.Api.Model.b_video_type">
+            <summary>
+            a_data_access Entity Model
+            </summary>   
+        </member>
+        <member name="P:Tuby.Api.Model.b_video_type.ID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.b_video_type.TypeName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.b_video_type.Description">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.b_video_type.IsDeleted">
+            <summary>
+            
+            </summary>
+        </member>
         <member name="T:Tuby.Api.Model.b_zhd_architecture">
             <summary>
             b_zhd_architecture Entity Model
@@ -2166,6 +2431,11 @@
             </summary>
         </member>
         <member name="P:Tuby.Api.Model.b_zhd_architecture.Description">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.b_zhd_architecture.IsDeleted">
             <summary>
             
             </summary>
@@ -2215,6 +2485,36 @@
             
             </summary>
         </member>
+        <member name="P:Tuby.Api.Model.d_alarm_business.ID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_alarm_business.BusinessName">
+            <summary>
+            报警名称
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_alarm_business.BySouceID">
+            <summary>
+            报警来源id
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_alarm_business.VideoID">
+            <summary>
+            视频id
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_alarm_business.IsDeleted">
+            <summary>
+            是否删除
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_alarm_business.UpdateTime">
+            <summary>
+            时间
+            </summary>
+        </member>
         <member name="T:Tuby.Api.Model.d_alarm_device">
             <summary>
             d_alarm_device Entity Model
@@ -2248,6 +2548,16 @@
         <member name="P:Tuby.Api.Model.d_alarm_device.UpdateTime">
             <summary>
             
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_alarm_device.Guid">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_alarm_device.IsDeleted">
+            <summary>
+            是否删除
             </summary>
         </member>
         <member name="T:Tuby.Api.Model.d_alarm_info">
@@ -2295,9 +2605,54 @@
             
             </summary>
         </member>
-        <member name="P:Tuby.Api.Model.d_alarm_info.StatusID">
+        <member name="P:Tuby.Api.Model.d_alarm_info.Guid">
             <summary>
-            关联处置id
+            guid
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_alarm_info.HandleID">
+            <summary>
+            处置id
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_alarm_info.IsDeleted">
+            <summary>
+            是否删除
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_alarm_info.Position">
+            <summary>
+            报警位置
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_alarm_source.ID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_alarm_source.SourceName">
+            <summary>
+            来源名称
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_alarm_source.Enabled">
+            <summary>
+            是否启用
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_alarm_source.TopicName">
+            <summary>
+            主题名称
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_alarm_source.IsDeleted">
+            <summary>
+            是否删除
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_alarm_source.UpdateTime">
+            <summary>
+            时间
             </summary>
         </member>
         <member name="T:Tuby.Api.Model.d_camera">
@@ -2355,6 +2710,11 @@
             
             </summary>
         </member>
+        <member name="P:Tuby.Api.Model.d_camera.IsDeleted">
+            <summary>
+            是否删除
+            </summary>
+        </member>
         <member name="T:Tuby.Api.Model.d_camera_group">
             <summary>
             d_camera_group Entity Model
@@ -2378,6 +2738,11 @@
         <member name="P:Tuby.Api.Model.d_camera_group.ParentID">
             <summary>
             父节点ID
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_camera_group.IsDeleted">
+            <summary>
+            是否删除
             </summary>
         </member>
         <member name="T:Tuby.Api.Model.d_car_attribute">
@@ -2438,6 +2803,26 @@
         <member name="P:Tuby.Api.Model.d_car_attribute.Time">
             <summary>
             报警类型
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_car_attribute.Guid">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_car_attribute.IsDeleted">
+            <summary>
+            是否删除
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_car_attribute.RecStatus">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_car_attribute.HandleID">
+            <summary>
+            
             </summary>
         </member>
         <member name="T:Tuby.Api.Model.d_duty">
@@ -2535,6 +2920,11 @@
             执行时间
             </summary>
         </member>
+        <member name="P:Tuby.Api.Model.d_duty.Guid">
+            <summary>
+            
+            </summary>
+        </member>
         <member name="P:Tuby.Api.Model.d_duty_count.id">
             <summary>
             id
@@ -2615,11 +3005,6 @@
             d_handle_info Entity Model
             </summary>   
         </member>
-        <member name="P:Tuby.Api.Model.d_handle_info.ID">
-            <summary>
-            id
-            </summary>
-        </member>
         <member name="P:Tuby.Api.Model.d_handle_info.Name">
             <summary>
             处置人员
@@ -2638,6 +3023,16 @@
         <member name="P:Tuby.Api.Model.d_handle_info.UpdateTime">
             <summary>
             更新时间
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_handle_info.Guid">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_handle_info.IsDeleted">
+            <summary>
+            是否删除
             </summary>
         </member>
         <member name="T:Tuby.Api.Model.d_medical">
@@ -2668,6 +3063,16 @@
         <member name="P:Tuby.Api.Model.d_medical.Time">
             <summary>
             就诊时间
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_medical.Guid">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_medical.IsDeleted">
+            <summary>
+            是否删除
             </summary>
         </member>
         <member name="T:Tuby.Api.Model.d_pap_arsenal">
@@ -2710,6 +3115,16 @@
             高程
             </summary>
         </member>
+        <member name="P:Tuby.Api.Model.d_pap_arsenal.Guid">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_pap_arsenal.IsDeleted">
+            <summary>
+            是否删除
+            </summary>
+        </member>
         <member name="T:Tuby.Api.Model.d_pap_camera_record_car">
             <summary>
             d_pap_camera_record_car Entity Model
@@ -2750,6 +3165,16 @@
             
             </summary>
         </member>
+        <member name="P:Tuby.Api.Model.d_pap_camera_record_car.Guid">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_pap_camera_record_car.IsDeleted">
+            <summary>
+            是否删除
+            </summary>
+        </member>
         <member name="T:Tuby.Api.Model.d_pap_camera_record_people">
             <summary>
             d_pap_camera_record_people Entity Model
@@ -2788,6 +3213,16 @@
         <member name="P:Tuby.Api.Model.d_pap_camera_record_people.UpdateTime">
             <summary>
             
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_pap_camera_record_people.Guid">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_pap_camera_record_people.IsDeleted">
+            <summary>
+            是否删除
             </summary>
         </member>
         <member name="T:Tuby.Api.Model.d_pap_car">
@@ -2838,6 +3273,11 @@
         <member name="P:Tuby.Api.Model.d_pap_car.RecStatus">
             <summary>
             
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_pap_car.IsDeleted">
+            <summary>
+            是否删除
             </summary>
         </member>
         <member name="T:Tuby.Api.Model.d_pap_car_leave">
@@ -2900,6 +3340,16 @@
             
             </summary>
         </member>
+        <member name="P:Tuby.Api.Model.d_pap_car_leave.Guid">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_pap_car_leave.IsDeleted">
+            <summary>
+            是否删除
+            </summary>
+        </member>
         <member name="T:Tuby.Api.Model.d_pap_car_maintain">
             <summary>
             d_pap_car_maintain Entity Model
@@ -2943,6 +3393,16 @@
         <member name="P:Tuby.Api.Model.d_pap_car_maintain.RecStatus">
             <summary>
             
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_pap_car_maintain.Guid">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_pap_car_maintain.IsDeleted">
+            <summary>
+            是否删除
             </summary>
         </member>
         <member name="T:Tuby.Api.Model.d_pap_equipment">
@@ -2995,6 +3455,16 @@
             
             </summary>
         </member>
+        <member name="P:Tuby.Api.Model.d_pap_equipment.Guid">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_pap_equipment.IsDeleted">
+            <summary>
+            是否删除
+            </summary>
+        </member>
         <member name="T:Tuby.Api.Model.d_pap_gun">
             <summary>
             d_pap_gun Entity Model
@@ -3033,6 +3503,16 @@
         <member name="P:Tuby.Api.Model.d_pap_gun.RecStatus">
             <summary>
             
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_pap_gun.Guid">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_pap_gun.IsDeleted">
+            <summary>
+            是否删除
             </summary>
         </member>
         <member name="T:Tuby.Api.Model.d_pap_matter">
@@ -3075,6 +3555,16 @@
             
             </summary>
         </member>
+        <member name="P:Tuby.Api.Model.d_pap_matter.Guid">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_pap_matter.IsDeleted">
+            <summary>
+            是否删除
+            </summary>
+        </member>
         <member name="T:Tuby.Api.Model.d_phone_table">
             <summary>
             d_phone_table Entity Model
@@ -3108,6 +3598,16 @@
         <member name="P:Tuby.Api.Model.d_phone_table.UpdateTime">
             <summary>
             更新时间
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_phone_table.Guid">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_phone_table.IsDeleted">
+            <summary>
+            是否删除
             </summary>
         </member>
         <member name="T:Tuby.Api.Model.d_poeple_attribute">
@@ -3195,6 +3695,16 @@
             报警类型
             </summary>
         </member>
+        <member name="P:Tuby.Api.Model.d_poeple_attribute.Guid">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_poeple_attribute.IsDeleted">
+            <summary>
+            是否删除
+            </summary>
+        </member>
         <member name="T:Tuby.Api.Model.d_shaowei">
             <summary>
             d_shaowei Entity Model
@@ -3243,6 +3753,16 @@
         <member name="P:Tuby.Api.Model.d_shaowei.RecStatus">
             <summary>
             
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_shaowei.Guid">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_shaowei.IsDeleted">
+            <summary>
+            是否删除
             </summary>
         </member>
         <member name="T:Tuby.Api.Model.d_shaowei_arrange">
@@ -3315,6 +3835,16 @@
             值班时间
             </summary>
         </member>
+        <member name="P:Tuby.Api.Model.d_shaowei_arrange.Guid">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_shaowei_arrange.IsDeleted">
+            <summary>
+            是否删除
+            </summary>
+        </member>
         <member name="T:Tuby.Api.Model.d_shaowei_check">
             <summary>
             d_shaowei_check Entity Model
@@ -3348,6 +3878,16 @@
         <member name="P:Tuby.Api.Model.d_shaowei_check.VideoPath">
             <summary>
             视频
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_shaowei_check.Guid">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_shaowei_check.IsDeleted">
+            <summary>
+            是否删除
             </summary>
         </member>
         <member name="T:Tuby.Api.Model.d_shaowei_preplan">
@@ -3385,6 +3925,16 @@
             
             </summary>
         </member>
+        <member name="P:Tuby.Api.Model.d_shaowei_preplan.Guid">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_shaowei_preplan.IsDeleted">
+            <summary>
+            是否删除
+            </summary>
+        </member>
         <member name="T:Tuby.Api.Model.d_shaowei_turn">
             <summary>
             d_shaowei_turn Entity Model
@@ -3418,6 +3968,16 @@
         <member name="P:Tuby.Api.Model.d_shaowei_turn.VideoPath">
             <summary>
             视频
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_shaowei_turn.Guid">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_shaowei_turn.IsDeleted">
+            <summary>
+            是否删除
             </summary>
         </member>
         <member name="T:Tuby.Api.Model.d_soldier">
@@ -3530,6 +4090,16 @@
             联系人
             </summary>
         </member>
+        <member name="P:Tuby.Api.Model.d_soldier.Guid">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_soldier.IsDeleted">
+            <summary>
+            是否删除
+            </summary>
+        </member>
         <member name="T:Tuby.Api.Model.d_soldier_leave">
             <summary>
             d_soldier_leave Entity Model
@@ -3593,6 +4163,16 @@
         <member name="P:Tuby.Api.Model.d_soldier_leave.RecStatus">
             <summary>
             
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_soldier_leave.Guid">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_soldier_leave.IsDeleted">
+            <summary>
+            是否删除
             </summary>
         </member>
         <member name="T:Tuby.Api.Model.d_soldier_train">
@@ -3660,6 +4240,16 @@
             
             </summary>
         </member>
+        <member name="P:Tuby.Api.Model.d_soldier_train.Guid">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_soldier_train.IsDeleted">
+            <summary>
+            是否删除
+            </summary>
+        </member>
         <member name="T:Tuby.Api.Model.d_soldier_treatment">
             <summary>
             d_soldier_treatment Entity Model
@@ -3725,6 +4315,16 @@
             
             </summary>
         </member>
+        <member name="P:Tuby.Api.Model.d_soldier_treatment.Guid">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_soldier_treatment.IsDeleted">
+            <summary>
+            是否删除
+            </summary>
+        </member>
         <member name="T:Tuby.Api.Model.d_study_record">
              <summary>
             d_medical Entity Model
@@ -3753,6 +4353,16 @@
         <member name="P:Tuby.Api.Model.d_study_record.Time">
             <summary>
             就诊时间
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_study_record.Guid">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_study_record.IsDeleted">
+            <summary>
+            是否删除
             </summary>
         </member>
         <member name="T:Tuby.Api.Model.d_target_camera_record_car">
@@ -3810,6 +4420,16 @@
             
             </summary>
         </member>
+        <member name="P:Tuby.Api.Model.d_target_camera_record_car.Guid">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_target_camera_record_car.IsDeleted">
+            <summary>
+            是否删除
+            </summary>
+        </member>
         <member name="T:Tuby.Api.Model.d_target_camera_record_people">
             <summary>
             d_target_camera_record_people Entity Model
@@ -3855,6 +4475,21 @@
             
             </summary>
         </member>
+        <member name="P:Tuby.Api.Model.d_target_camera_record_people.Guid">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_target_camera_record_people.IsDeleted">
+            <summary>
+            是否删除
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_target_camera_record_people.HandleID">
+            <summary>
+            
+            </summary>
+        </member>
         <member name="T:Tuby.Api.Model.d_target_car">
             <summary>
             d_target_car Entity Model
@@ -3895,6 +4530,16 @@
             
             </summary>
         </member>
+        <member name="P:Tuby.Api.Model.d_target_car.Guid">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_target_car.IsDeleted">
+            <summary>
+            是否删除
+            </summary>
+        </member>
         <member name="T:Tuby.Api.Model.d_target_car_blacklist">
             <summary>
             d_target_car_blacklist Entity Model
@@ -3923,6 +4568,16 @@
         <member name="P:Tuby.Api.Model.d_target_car_blacklist.RecStatus">
             <summary>
             
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_target_car_blacklist.Guid">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_target_car_blacklist.IsDeleted">
+            <summary>
+            是否删除
             </summary>
         </member>
         <member name="T:Tuby.Api.Model.d_target_car_control">
@@ -3970,6 +4625,16 @@
             
             </summary>
         </member>
+        <member name="P:Tuby.Api.Model.d_target_car_control.Guid">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_target_car_control.IsDeleted">
+            <summary>
+            是否删除
+            </summary>
+        </member>
         <member name="T:Tuby.Api.Model.d_target_car_whitelist">
             <summary>
             d_target_car_whitelist Entity Model
@@ -3998,6 +4663,16 @@
         <member name="P:Tuby.Api.Model.d_target_car_whitelist.RecStatus">
             <summary>
             
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_target_car_whitelist.Guid">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_target_car_whitelist.IsDeleted">
+            <summary>
+            是否删除
             </summary>
         </member>
         <member name="T:Tuby.Api.Model.d_target_people">
@@ -4045,6 +4720,16 @@
             来访事由
             </summary>
         </member>
+        <member name="P:Tuby.Api.Model.d_target_people.Guid">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_target_people.IsDeleted">
+            <summary>
+            是否删除
+            </summary>
+        </member>
         <member name="T:Tuby.Api.Model.d_target_people_blacklist">
             <summary>
             d_target_people_blacklist Entity Model
@@ -4073,6 +4758,16 @@
         <member name="P:Tuby.Api.Model.d_target_people_blacklist.RecStatus">
             <summary>
             
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_target_people_blacklist.Guid">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_target_people_blacklist.IsDeleted">
+            <summary>
+            是否删除
             </summary>
         </member>
         <member name="T:Tuby.Api.Model.d_target_people_control">
@@ -4120,6 +4815,16 @@
             
             </summary>
         </member>
+        <member name="P:Tuby.Api.Model.d_target_people_control.Guid">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_target_people_control.IsDeleted">
+            <summary>
+            是否删除
+            </summary>
+        </member>
         <member name="T:Tuby.Api.Model.d_target_people_whitelist">
             <summary>
             d_target_people_whitelist Entity Model
@@ -4146,6 +4851,334 @@
             </summary>
         </member>
         <member name="P:Tuby.Api.Model.d_target_people_whitelist.RecStatus">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_target_people_whitelist.Guid">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_target_people_whitelist.IsDeleted">
+            <summary>
+            是否删除
+            </summary>
+        </member>
+        <member name="T:Tuby.Api.Model.d_video_base">
+            <summary>
+            a_data_access Entity Model
+            </summary>   
+        </member>
+        <member name="P:Tuby.Api.Model.d_video_base.ID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_video_base.PID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_video_base.DeviceId">
+            <summary>
+            
+            </summary>
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_video_base.Name">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_video_base.IP">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_video_base.Channel">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_video_base.Port">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_video_base.VideoTypeID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_video_base.IsPTZ">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_video_base.Address">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_video_base.MainStream">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_video_base.SubStream">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_video_base.Coordinate">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_video_base.IsAddress">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_video_base.Version">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_video_base.ViewPoint">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_video_base.UserID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_video_base.Geographic">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_video_base.Source">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_video_base.X">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_video_base.Y">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_video_base.Z">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_video_base.Guid">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_video_base.ZAdjust">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_video_base.Video">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_video_base.IsDeleted">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Tuby.Api.Model.d_video_base1">
+            <summary>
+            a_data_access Entity Model
+            </summary>   
+        </member>
+        <member name="P:Tuby.Api.Model.d_video_base1.Guid">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_video_base1.Name">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_video_base1.X">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_video_base1.Y">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_video_base1.Z">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_video_base1.Mode">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_video_base1.Line">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_video_base1.MarkId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_video_base1.Video">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_video_base1.IsDeleted">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_video_base1.CreateTime">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_video_base1.UpdateTime">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Tuby.Api.Model.d_video_group">
+            <summary>
+            a_data_access Entity Model
+            </summary>   
+        </member>
+        <member name="P:Tuby.Api.Model.d_video_group.ID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_video_group.GroupName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_video_group.VdieoID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_video_group.Guid">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_video_group.IsDeleted">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Tuby.Api.Model.d_video_struct">
+            <summary>
+            a_data_access Entity Model
+            </summary>   
+        </member>
+        <member name="P:Tuby.Api.Model.d_video_struct.ID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_video_struct.PID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_video_struct.NodeName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_video_struct.IsVideo">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_video_struct.IsDeleted">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Tuby.Api.Model.d_video_user">
+            <summary>
+            a_data_access Entity Model
+            </summary>   
+        </member>
+        <member name="P:Tuby.Api.Model.d_video_user.ID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_video_user.UserName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_video_user.Password">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_video_user.Company">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_video_user.IsDeleted">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Tuby.Api.Model.d_view_point">
+            <summary>
+            a_data_access Entity Model
+            </summary>   
+        </member>
+        <member name="P:Tuby.Api.Model.d_view_point.ID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_view_point.Cont">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_view_point.Name">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tuby.Api.Model.d_view_point.IsDeleted">
             <summary>
             
             </summary>

@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Tuby.Api.Model;
 using Tuby.Api.IServices;
 using Microsoft.AspNetCore.Authorization;
+using System.Linq.Expressions;
 
 namespace Tuby.Api.Controllers
 {	
@@ -35,7 +36,8 @@ namespace Tuby.Api.Controllers
 		 [HttpGet]
         public async Task<List<b_administrative_division>> Get()
         {
-            return await _b_administrative_divisionServices.Query();
+            Expression<Func<b_administrative_division, bool>> whereExpression = a => a.IsDeleted != true;
+            return await _b_administrative_divisionServices.Query(whereExpression);
         }
 
 		/// <summary>
@@ -47,7 +49,8 @@ namespace Tuby.Api.Controllers
         [Route("getpage")]
         public async Task<PageModel<b_administrative_division>> GetPage(int page)
         {
-            return await _b_administrative_divisionServices.Query("", page, 10, "");
+            Expression<Func<b_administrative_division, bool>> whereExpression = a => a.IsDeleted != true;
+            return await _b_administrative_divisionServices.Query(whereExpression, page, 10, "");
         }
 
         /// <summary>
@@ -65,7 +68,7 @@ namespace Tuby.Api.Controllers
         [HttpPost]
        public async Task<MessageModel<string>> Post([FromBody] b_administrative_division b_administrative_division)
         {
-			var data = new MessageModel<string>();
+            var data = new MessageModel<string>();
 
             var id = (await _b_administrative_divisionServices.Add(b_administrative_division));
             data.success = id > 0;
@@ -111,20 +114,24 @@ namespace Tuby.Api.Controllers
         [Route("delete")]
 		 public async Task<MessageModel<string>> Delete(int id)
         {
-            var flag = (await _b_administrative_divisionServices.DeleteById(id));
             var data = new MessageModel<string>();
-            data.success = flag;
-            if (flag)
+            if (id > 0)
             {
-                data.response = id.ToString()+"数据删除";
-                data.msg = "删除成功";
+                var model = await _b_administrative_divisionServices.QueryByID(id);
+                model.IsDeleted = true;
+                var flag = await _b_administrative_divisionServices.Update(model);
+                data.success = flag;
+                if (flag)
+                {
+                    data.response = id.ToString() + "数据删除";
+                    data.msg = "删除成功";
+                }
+                else
+                {
+                    data.response = "id为" + id.ToString() + "的数据找不到";
+                    data.msg = "删除失败";
+                }
             }
-            else
-            {
-                data.response ="id为"+ id.ToString() + "的数据找不到";
-                data.msg = "删除失败";
-            }
-
             return data;
         }
 
@@ -137,7 +144,12 @@ namespace Tuby.Api.Controllers
         [Route("deletemuch")]
         public async Task<MessageModel<string>> DeleteMuch([FromBody] object[] id)
         {
-            var flag = (await _b_administrative_divisionServices.DeleteByIds(id));
+            var list = await _b_administrative_divisionServices.QueryByIDs(id);
+            foreach (var item in list)
+            {
+                item.IsDeleted = true;
+            }
+            var flag = await _b_administrative_divisionServices.Update(list);
             var data = new MessageModel<string>();
             data.success = flag;
             if (flag)
@@ -150,6 +162,7 @@ namespace Tuby.Api.Controllers
                 data.response = "id为" + id.ToString() + "的数据找不到";
                 data.msg = "删除失败";
             }
+
 
             return data;
         }

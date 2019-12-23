@@ -10,6 +10,6 @@ namespace Tuby.Api.IRepositoty
 {
     public interface ITargetPeopleRepository:IBaseRepository<TargetPeopleView>
     {
-        Task<PageModel<TargetPeopleView>> QueryMuchTable(int id);
+        Task<PageModel<TargetPeopleView>> QueryMuchTable(string id);
     }
 }

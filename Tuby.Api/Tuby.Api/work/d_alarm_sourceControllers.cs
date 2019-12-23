@@ -8,6 +8,7 @@ using Tuby.Api.Model;
 using Tuby.Api.IServices;
 using Microsoft.AspNetCore.Authorization;
 using Tuby.Api.Model.viewmodels;
+using System.Linq.Expressions;
 
 namespace Tuby.Api.Controllers
 {	
@@ -18,6 +19,7 @@ namespace Tuby.Api.Controllers
 	[Route("api/[controller]")]
     [ApiController]
     [Authorize(Permissions.Name)]
+    [AllowAnonymous]
     public class d_alarm_sourceController : ControllerBase
     { 
 		 readonly Id_alarm_sourceServices _d_alarm_sourceServices;
@@ -37,7 +39,9 @@ namespace Tuby.Api.Controllers
          [AllowAnonymous]
         public async Task<List<d_alarm_source>> Get()
         {
-            return await _d_alarm_sourceServices.Query();
+            //return await _d_alarm_sourceServices.Query();
+            Expression<Func<d_alarm_source, bool>> whereExpression = a => a.IsDeleted != true;
+            return await _d_alarm_sourceServices.Query(whereExpression);
         }
 
 		/// <summary>
@@ -50,7 +54,8 @@ namespace Tuby.Api.Controllers
         [AllowAnonymous]
         public async Task<PageModel<d_alarm_source>> GetPage(int page)
         {
-            return await _d_alarm_sourceServices.Query("", page, 10, "");
+            Expression<Func<d_alarm_source, bool>> whereExpression = a => a.IsDeleted != true;
+            return await _d_alarm_sourceServices.Query(whereExpression, page, 10, "");
         }
         /// <summary>
         /// 查询主题名字列表
@@ -58,9 +63,12 @@ namespace Tuby.Api.Controllers
         /// <returns></returns>
         [HttpGet]
         [Route("getname")]
-        public async Task<List<string>> Getname()
+        public async Task<Dictionary<string, List<object>>> Getname()
         {
-            return await _d_alarm_sourceServices.QueryList();
+            Dictionary<string, List<object>> data = new Dictionary<string, List<object>>();
+                
+            data.Add("data", await _d_alarm_sourceServices.QueryNameList());
+            return data;
         }
 
         /// <summary>
@@ -126,18 +134,23 @@ namespace Tuby.Api.Controllers
         [Route("delete")]
 		 public async Task<MessageModel<string>> Delete(int id)
         {
-            var flag = (await _d_alarm_sourceServices.DeleteById(id));
             var data = new MessageModel<string>();
-            data.success = flag;
-            if (flag)
+            if (id >0)
             {
-                data.response = id.ToString()+"数据删除";
-                data.msg = "删除成功";
-            }
-            else
-            {
-                data.response ="id为"+ id.ToString() + "的数据找不到";
-                data.msg = "删除失败";
+                var model = await _d_alarm_sourceServices.QueryByID(id);
+                model.IsDeleted = true;
+                var flag = await _d_alarm_sourceServices.Update(model);
+                data.success = flag;
+                if (flag)
+                {
+                    data.response = id.ToString() + "数据删除";
+                    data.msg = "删除成功";
+                }
+                else
+                {
+                    data.response = "id为" + id.ToString() + "的数据找不到";
+                    data.msg = "删除失败";
+                }
             }
 
             return data;
@@ -152,7 +165,12 @@ namespace Tuby.Api.Controllers
         [Route("deletemuch")]
         public async Task<MessageModel<string>> DeleteMuch([FromBody] object[] id)
         {
-            var flag = (await _d_alarm_sourceServices.DeleteByIds(id));
+            var list = await _d_alarm_sourceServices.QueryByIDs(id);
+            foreach (var item in list)
+            {
+                item.IsDeleted = true;
+            }
+            var flag = await _d_alarm_sourceServices.Update(list);
             var data = new MessageModel<string>();
             data.success = flag;
             if (flag)
@@ -165,6 +183,7 @@ namespace Tuby.Api.Controllers
                 data.response = "id为" + id.ToString() + "的数据找不到";
                 data.msg = "删除失败";
             }
+
 
             return data;
         }

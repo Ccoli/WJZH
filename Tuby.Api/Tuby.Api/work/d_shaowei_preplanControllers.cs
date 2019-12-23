@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Tuby.Api.Model;
 using Tuby.Api.IServices;
 using Microsoft.AspNetCore.Authorization;
+using System.Linq.Expressions;
 
 namespace Tuby.Api.Controllers
 {	
@@ -35,7 +36,8 @@ namespace Tuby.Api.Controllers
 		 [HttpGet]
         public async Task<List<d_shaowei_preplan>> Get()
         {
-            return await _d_shaowei_preplanServices.Query();
+            Expression<Func<d_shaowei_preplan, bool>> whereExpression = a => a.IsDeleted != true;
+            return await _d_shaowei_preplanServices.Query(whereExpression);
         }
 
 		/// <summary>
@@ -47,16 +49,17 @@ namespace Tuby.Api.Controllers
         [Route("getpage")]
         public async Task<PageModel<d_shaowei_preplan>> GetPage(int page)
         {
-            return await _d_shaowei_preplanServices.Query("", page, 10, "");
+            Expression<Func<d_shaowei_preplan, bool>> whereExpression = a => a.IsDeleted != true;
+            return await _d_shaowei_preplanServices.Query(whereExpression, page, 10, "");
         }
 
         /// <summary>
 		///根据id查询数据
 		/// </summary>
         [HttpGet("{id}")]
-        public async Task<List<d_shaowei_preplan>> Get(int id)
+        public async Task<List<d_shaowei_preplan>> Get(string id)
         {
-            return await _d_shaowei_preplanServices.Query(c => c.ID == id);
+            return await _d_shaowei_preplanServices.Query(c => c.Guid == id);
         }
 
         /// <summary>
@@ -66,7 +69,7 @@ namespace Tuby.Api.Controllers
        public async Task<MessageModel<string>> Post([FromBody] d_shaowei_preplan d_shaowei_preplan)
         {
 			var data = new MessageModel<string>();
-
+            d_shaowei_preplan.Guid = Guid.NewGuid().ToString();
             var id = (await _d_shaowei_preplanServices.Add(d_shaowei_preplan));
             data.success = id > 0;
             if (data.success)
@@ -86,7 +89,7 @@ namespace Tuby.Api.Controllers
         public async Task<MessageModel<string>> Update([FromBody] d_shaowei_preplan d_shaowei_preplan)
         {
 			var data = new MessageModel<string>();
-            if (d_shaowei_preplan != null && d_shaowei_preplan.ID > 0)
+            if (d_shaowei_preplan != null )
             {
                 var id = (await _d_shaowei_preplanServices.Update(d_shaowei_preplan));
                 data.success = id;
@@ -109,26 +112,31 @@ namespace Tuby.Api.Controllers
 		/// </summary>
         [HttpGet]
         [Route("delete")]
-		 public async Task<MessageModel<string>> Delete(int id)
+        public async Task<MessageModel<string>> Delete(string id)
         {
-            var flag = (await _d_shaowei_preplanServices.DeleteById(id));
             var data = new MessageModel<string>();
-            data.success = flag;
-            if (flag)
+            if (id != "")
             {
-                data.response = id.ToString()+"数据删除";
-                data.msg = "删除成功";
-            }
-            else
-            {
-                data.response ="id为"+ id.ToString() + "的数据找不到";
-                data.msg = "删除失败";
+                var model = await _d_shaowei_preplanServices.QueryByID(id);
+                model.IsDeleted = true;
+                var flag = await _d_shaowei_preplanServices.Update(model);
+                data.success = flag;
+                if (flag)
+                {
+                    data.response = id.ToString() + "数据删除";
+                    data.msg = "删除成功";
+                }
+                else
+                {
+                    data.response = "id为" + id.ToString() + "的数据找不到";
+                    data.msg = "删除失败";
+                }
             }
 
             return data;
         }
 
-		/// <summary>
+        /// <summary>
         /// 批量删除
         /// </summary>
         /// <param name="id"></param>
@@ -137,7 +145,12 @@ namespace Tuby.Api.Controllers
         [Route("deletemuch")]
         public async Task<MessageModel<string>> DeleteMuch([FromBody] object[] id)
         {
-            var flag = (await _d_shaowei_preplanServices.DeleteByIds(id));
+            var list = await _d_shaowei_preplanServices.QueryByIDs(id);
+            foreach (var item in list)
+            {
+                item.IsDeleted = true;
+            }
+            var flag = await _d_shaowei_preplanServices.Update(list);
             var data = new MessageModel<string>();
             data.success = flag;
             if (flag)

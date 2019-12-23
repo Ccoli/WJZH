@@ -31,5 +31,9 @@ namespace Tuby.Api.Model
         /// 
         /// </summary>
         public string Description { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool IsDeleted { get; set; }
     }
 }

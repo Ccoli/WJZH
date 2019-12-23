@@ -21,11 +21,18 @@ namespace Tuby.Api.Model
         /// 
         /// </summary>
         public int ID { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public int PID { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        public int CameraID { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public string DeviceId { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -94,14 +101,30 @@ namespace Tuby.Api.Model
         /// <summary>
         /// 
         /// </summary>
-        public string X { get; set; }
+        public double X { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public string Y { get; set; }
+        public double Y { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public string Z { get; set; }
+        public double Z { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public string Guid { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public double ZAdjust { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public string Video { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool IsDeleted { get; set; }
     }
 }
