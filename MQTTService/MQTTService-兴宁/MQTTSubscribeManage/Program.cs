@@ -1,4 +1,5 @@
 ﻿using MQTTClient;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -20,13 +21,14 @@ namespace MQTTSubscribeManage
             {
                 //string topic = ConfigurationManager.AppSettings["topic"];
                 //var topicArr = topic.Split('|');
+               
                 Task.Run(async () => {
                     await mqttclient.ConnectMqttServerAsync();
                     //for (int i = 0; i < topicArr.Length; i++)
                     //{
                     //    await mqttclient.Subscribe(topicArr[i]);
                     //}
-                });
+            });
             }
             catch (Exception ex)
             {

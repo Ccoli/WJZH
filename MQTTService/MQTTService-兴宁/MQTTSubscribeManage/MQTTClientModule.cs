@@ -12,7 +12,7 @@ using MQTTSubscribeManage;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Net.Http.Formatting;
-using Fleck;
+using Newtonsoft.Json.Linq;
 
 namespace MQTTClient
 {
@@ -25,11 +25,6 @@ namespace MQTTClient
         private string ip = ConfigurationManager.AppSettings["ip"];
         private string port = ConfigurationManager.AppSettings["port"];
         private string clientId = Guid.NewGuid().ToString("D");
-
-        /// <summary>
-        /// websocket服务，因为一开始就需要打开，在一开始打开
-        /// </summary>
-        List<IWebSocketConnection> allSockets = new List<IWebSocketConnection>();
 
         /// <summary>
         /// 发布主题信息
@@ -61,7 +56,7 @@ namespace MQTTClient
                 .WithTopic(topic)
                 .WithPayload(json)
                 .WithAtMostOnceQoS()
-                .WithRetainFlag(true)
+                .WithRetainFlag(false)
                 .Build();
 
             await mqttClient.PublishAsync(message);
@@ -196,60 +191,63 @@ namespace MQTTClient
             }
         }
 
-        private async Task<bool> InsertTable(string json,string topic)
+        public async Task<object> Data()
         {
-            var client = new HttpClient();
-            string baseUrl = ConfigurationManager.AppSettings["url"];
-            //基本的API URL
-            client.BaseAddress = new Uri(baseUrl);
-            //默认希望响应使用Json序列化(内容协商机制，我接受json格式的数据)
-            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-
-            object obj = JsonConvert.DeserializeObject<object>(json);
-            string api = "api/d_alarm_info/" + topic.Replace("/", "").Trim();
-
-            var result = await client.PostAsJsonAsync(api, obj)
-                            //返回请求是否执行成功，即HTTP Code是否为2XX
-                            .ContinueWith(x => x.Result.IsSuccessStatusCode);
-            if (result)
-            {
-                Console.WriteLine("数据入库成功！");
-            }
-            else
-            {
-                Console.WriteLine("数据入库失败！");
-            }
-            return result;
+            APIHelper api = new APIHelper();
+            return await api.GetData("api/d_alarm_source/getname");
         }
 
+
+        public Dictionary<string, bool> dcr = new Dictionary<string, bool>();
         private void MqttClient_ApplicationMessageReceived(object sender, MqttApplicationMessageReceivedEventArgs e)
         {
-            Console.WriteLine($"{Encoding.UTF8.GetString(e.ApplicationMessage.Payload)}{Environment.NewLine}");
-            string json = Encoding.UTF8.GetString(e.ApplicationMessage.Payload);
-            string topic= e.ApplicationMessage.Topic;
-            if (topic == "SmartBI/Capture")
+            //获取主题
+            string topic = e.ApplicationMessage.Topic;
+
+            if (topic == "ClientWeb/Alarm/Status")
             {
-                AlarmInfoHandle handle = new AlarmInfoHandle();
-                json = handle.ParsingActionJson(json);
-                Task.Run(async () => {
-                    await Publish("Web/SmartBI/Capture", json);
-                });
+                dcr = new Dictionary<string, bool>();
+                string data = Data().GetAwaiter().GetResult().ToString();
+                JObject jobj = (JObject)JsonConvert.DeserializeObject(data);
+                var obj = jobj["data"];
+
+                foreach (var item in obj)
+                {
+                    var name = item["TopicName"].ToString();
+                    var enabled = Convert.ToBoolean(item["Enabled"]);
+                    dcr.Add(name, enabled);
+                }
+                return;
             }
-           
             try
             {
-                var result = InsertTable(json, topic);
-
-                //Console.ReadLine();
-                //数据入库
+                var flag = dcr[topic];
+                if (!flag)
+                {
+                    //Console.WriteLine($"{topic},{dcr[topic]}");
+                    return;
+                }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-                Console.WriteLine("json转换数据失败！" + Environment.NewLine+ex.Message);
-                Trace.WriteLine("json转换数据失败！" + ex.Message + Environment.NewLine, "MqttConnectStatus");
+
             }
-            
-            
+
+
+            APIHelper ah = new APIHelper();
+            AlarmBusinessHandle abh = new AlarmBusinessHandle();
+            string json = abh.AnalysisTopic(topic, e.ApplicationMessage.Payload);
+            if (json != "")
+            {
+                Task.Run(async () =>
+                {
+                    var result = ah.InsertTable(json, topic);
+                    if (await result)
+                    {
+                        await Publish("Server/" + topic, json);
+                    }
+                });
+            }
         }
 
         private void MqttClient_Connected(object sender, EventArgs e)
@@ -258,11 +256,13 @@ namespace MQTTClient
             Trace.WriteLine("已连接到MQTT服务器！" + Environment.NewLine, "MqttConnectStatus");
             string topic = ConfigurationManager.AppSettings["topic"];
             var topicArr = topic.Split('|');
-            Task.Run(async () => {
+            Task.Run(async () =>
+            {
                 for (int i = 0; i < topicArr.Length; i++)
                 {
                     await Subscribe(topicArr[i]);
                 }
+                await Publish("CleintWeb/Alarm/Status", "123");
             });
         }
         private void MqttClient_Disconnected(object sender, EventArgs e)

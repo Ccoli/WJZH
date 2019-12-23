@@ -1,48 +1,80 @@
-{
-  "CameraId": "40cda183-a8ce-4a48-8eca-c60fa456c2ff",
+Ôªø{
+  "CameraId": "30cda183-a8ce-4a48-8eca-c60fa456c3ff",
   "NonVehiclesInfo": [
   ],
   "carInfo": [
   ],
   "faceInfo": [
+  ],
+  "imageUrl": "30cda183-a8ce-4a48-8eca-c60fa456c3ff/2019-12-07-12-46-21.jpg",
+  "peopleInfo": [
     {
-      "attribute": "",
-      "confidence": 999068,
-      "eventType": "faceDetect",
-      "faceLibraryInfo": [
-        {
-          "addr": "1",
-          "birthday": "",
-          "card_validity": "2022-11-30",
-          "cardnumber": "33333",
-          "cardtype": "IDcard",
-          "custom1": "1",
-          "custom2": "1",
-          "id": "555",
-          "imageSize": 7862,
-          "imageurl": "/data/picture/face_picture/00002/2000000000000000000000_jpeg20191125141144393000000000000",
-          "libraryid": "2",
-          "name": "??",
-          "nation": "?",
-          "native": "1",
-          "sex": "man",
-          "similar": 77,
-          "telnum": "1",
-          "work_no": "1"
+      "attribute": {
+        "Age": {
+          "Name": "??",
+          "Score": 96
+        },
+        "Baby": {
+          "Name": "????",
+          "Score": 99
+        },
+        "Bag": {
+          "Name": "????",
+          "Score": 99
+        },
+        "BottomColor": {
+          "Name": "?",
+          "Score": 99
+        },
+        "BottomType": {
+          "Name": "??",
+          "Score": 96
+        },
+        "Glasses": {
+          "Name": "???",
+          "Score": 99
+        },
+        "Hat": {
+          "Name": "????",
+          "Score": 99
+        },
+        "Knapsack": {
+          "Name": "??",
+          "Score": 85
+        },
+        "Orientation": {
+          "Name": "?",
+          "Score": 96
+        },
+        "Sex": {
+          "Name": "?",
+          "Score": 99
+        },
+        "ShoulderBag": {
+          "Name": "????",
+          "Score": 99
+        },
+        "UpperColor": {
+          "Name": "??",
+          "Score": 99
+        },
+        "UpperType": {
+          "Name": "??",
+          "Score": 98
         }
+      },
+      "confidence": 1000012,
+      "eventType": "mixedDetect",
+      "faceLibraryInfo": [
       ],
-      "feature": "\"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÷‹“ª 11‘¬ 25 17:49:00 2019 PingResponse",
-      "Wz3YGg+7PdIZPMjZB7yc7+o8niNcvSDvrz2W5RK9NzMKPVF/YT3YHUs7jhXOvOZZJrz1AmQ8Vug7vXlom73sKYA9OAVnvdqHcb0=\",": null,
-      "height": 192,
-      "id": 911,
-      "imageSize": 16452,
-      "width": 144,
-      "x": 274,
-      "y": 122
+      "feature": "",
+      "height": 576,
+      "id": 14,
+      "imageSize": 97207,
+      "width": 448,
+      "x": 1274,
+      "y": 350
     }
   ],
-  "imageUrl": "40cda183-a8ce-4a48-8eca-c60fa456c2ff/2019-11-25-17-48-35.jpg",
-  "peopleInfo": [
-  ],
-  "time": "1574675278635"
+  "time": "1575693922937"
 }
